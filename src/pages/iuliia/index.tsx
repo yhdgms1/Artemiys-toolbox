@@ -52,9 +52,9 @@ const descriptions = [
     "Old and ugly. Replaced by ГОСТ 7.79-2000",
     "Standard for road signs",
     "In the 2000s it was used by the ФМС for passports. Replaced by ICAO DOC 9303",
-    "idk",
-    "idk",
-    "idk",
+    "",
+    "",
+    "",
     "International standard for names. Used for driver's licenses and passports. Without diacritics",
     "An ancient international standard. Disgusting. Replaced by ISO/R 9:1968, then by ISO 9:1995",
     "An ancient international standard. Maximally disgusting. Replaced by ISO 9:1995",
@@ -76,7 +76,9 @@ export default function IulliaOnline(): Component {
             <Link href={`/iuliia/${item}`} class={card.card}>
               <div class={card.card__container}>
                 <h3>{item}</h3>
-                <p>{descriptions[index()]}</p>
+                {descriptions[index()] !== '' && (
+                  <p>{descriptions[index()]}</p>
+                )}
               </div>
               <div class={card.card__active} />
             </Link>
