@@ -6,6 +6,7 @@ export const main = css`
 	grid-template-columns: repeat(3, 1fr);
 	column-gap: 1rem;
    	row-gap: 1rem;
+    width: 100%;
     @media screen and (max-width: 768px){
 		grid-template-columns: repeat(2, 1fr);
 	}
