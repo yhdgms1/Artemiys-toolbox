@@ -1,9 +1,7 @@
 import type { Component } from "solid-js";
 import { createSignal } from "solid-js";
 import * as styles from "./repeat-it-n-times.styles";
-import { text as text_style } from "../styles/text";
-import { button } from '../styles/button';
-import { textarea } from '../styles/textarea';
+import { text as text_style, button, textarea } from "../styles/shared";
 
 export default function RepeatItSomethingTimes(): Component {
   const [text, setText] = createSignal("");

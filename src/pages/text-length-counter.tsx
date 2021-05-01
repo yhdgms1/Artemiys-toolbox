@@ -2,8 +2,7 @@ import type { Component } from "solid-js";
 import { createSignal, onMount } from "solid-js";
 import * as styles from "./text-length-counter.styles";
 import Graphemer from "graphemer";
-import { text as text_style } from "../styles/text";
-import { textarea } from '../styles/textarea';
+import { text as text_style, textarea } from "../styles/shared";
 
 export default function textLengthCounter(): Component {
   const [text, setText] = createSignal("");
@@ -13,8 +12,7 @@ export default function textLengthCounter(): Component {
     <>
       <p class={text_style}>Length: {splitter.countGraphemes(text())}</p>
       <p class={text_style}>
-        Length without whitespaces:{" "}
-        {splitter.countGraphemes(text().replaceAll(" ", ""))}
+        Length without whitespaces: {splitter.countGraphemes(text().replaceAll(" ", ""))}
       </p>
       <textarea
         placeholder="Input your text here to count"

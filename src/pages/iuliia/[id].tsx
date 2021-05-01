@@ -1,30 +1,22 @@
-import { big_text, link, text as text_style } from "../../styles/text";
+import { big_text, link, text as text_style, textarea, button } from "../../styles/shared";
 import { Link } from 'solid-app-router';
-import iuliia from 'iuliia';
-import { button } from '../../styles/button';
-import { textarea } from '../../styles/textarea';
 import { createSignal, Show } from 'solid-js';
+import schemas from './schemas.js';
+import { translate } from '@artemis69/iuliia';
+
 
 export default function Iullia(props){
 
-    let schema;
-
-    try {
-        schema = iuliia.Schemas.get(props.params.id)
-    } catch{
-        schema = '';
-    }
-
-    const schemas = iuliia.Schemas.names()
+    const schema = props.params.id;
 
     const [text, setText] = createSignal("");
     const [output, setOutput] = createSignal("");
 
     return(
         <>
-            <Show when={schemas.includes(schema.name)} fallback={<Error/>}>
+            <Show when={(schema in schemas)} fallback={<Error/>}>
                 <Link class={`${big_text} ${link}`} href="/iuliia">go back</Link>
-                <p class={text_style}>Current schema is {schema.name}</p>
+                <p class={text_style}>Current schema is {schema}</p>
                 <textarea 
                     class={textarea}
                     spellcheck="false"
@@ -33,7 +25,7 @@ export default function Iullia(props){
                 />
                 <button 
                     class={button}
-                    onClick={() => setOutput(iuliia.translate(text(), schema))}
+                    onClick={() => setOutput(translate(text(), schemas[schema]))}
                 >
                     Transliterate!
                 </button>

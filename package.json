@@ -12,9 +12,9 @@
     "vite-plugin-solid": "^1.6.1"
   },
   "dependencies": {
+    "@artemis69/iuliia": "^0.0.1",
     "@artemis69/vite-plugin-linaria-css": "^1.0.4",
     "graphemer": "^1.2.0",
-    "iuliia": "^0.6.1",
     "linaria": "3.0.0-beta.3",
     "solid-app-router": "^0.0.39",
     "solid-js": "^0.26.5"

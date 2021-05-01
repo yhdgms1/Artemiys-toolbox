@@ -1,4 +1,4 @@
-import * as card from "../styles/card";
+import { card, card__container, card__active } from "../styles/shared";
 import { Link } from "solid-app-router";
 import type { Component } from "solid-js";
 
@@ -6,7 +6,7 @@ const tools = [
   {
     title: "text length counter",
     description:
-      "Count the length of the text with and without spaces. Text length for javascript or human",
+      "Count the length of the text with and without spaces",
     link: "text-length-counter",
   },
   {
@@ -18,7 +18,7 @@ const tools = [
   {
     title: "transliteration",
     description:
-      "Transliteration of text from russian into english using iuliia with multiple standards",
+      "Transliterate Cyrillic to Latin using iuliia in every possible way",
     link: "iuliia",
   },
 ] as const;
@@ -27,12 +27,12 @@ export default function Home(): Component {
   return (
     <>
       {tools.map((tool) => (
-        <Link href={`/${tool.link}`} class={card.card}>
-          <div class={card.card__container}>
+        <Link href={`/${tool.link}`} class={card}>
+          <div class={card__container}>
             <h3>{tool.title}</h3>
             <p>{tool.description}</p>
           </div>
-          <div class={card.card__active} />
+          <div class={card__active} />
         </Link>
       ))}
     </>
