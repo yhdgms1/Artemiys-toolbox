@@ -126,7 +126,6 @@ export default function IulliaOnline(): Component {
               <h3>{scheme.name}</h3>
               <p>{scheme.description}</p>
             </div>
-            <div class={card__active} />
           </Link>
         ))}
       </div>

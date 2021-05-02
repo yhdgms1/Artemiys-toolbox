@@ -70,6 +70,9 @@ export const button = css`
             box-shadow: 0 0 2px #080808;
         }
     }
+    @media screen and (max-width: 640px) {
+		display: block;
+    }
 `;
 
 export const text = css`
@@ -88,18 +91,6 @@ export const link = css`
     }
 `;
 
-export const card__active = css`
-    position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 2;
-	opacity: 0;
-	background: #ff7aa2;
-	transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-`;
-
 export const card__container = css`
     padding: 1.25rem 1rem;
 	height: 100%;
@@ -113,6 +104,18 @@ export const card__container = css`
     }
     & > p{
         color: #000;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        opacity: 0;
+        background: #ff7aa2;
+        transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     }
 `;
 
@@ -131,7 +134,7 @@ export const card = css`
     &:active {
         border-color: #ff9ebb;
         background: #ffc2d4;
-        & > .${card__active}{
+        & > .${card__container}::after{
             opacity: 0.2;
         }
     }
@@ -169,7 +172,6 @@ export const textarea = css`
     border: 1px solid #ccc;
     border-radius: 2px;
     padding: 1.25rem 1rem;
-    width: 50%;
     @media (prefers-color-scheme: dark){
         background: #161616;
         border-color: #262626;
@@ -179,7 +181,17 @@ export const textarea = css`
         }
     }
     max-width: 100%;
-    width: 100%;
+    width: 90%;
     padding: 0.4rem;
     resize: vertical;
+    height: clamp(25vh, 30vh, 30vh);
+`;
+
+export const responsive_container = css`
+    @media screen and (max-width: 640px) {
+		display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-items: center;
+    }
 `;

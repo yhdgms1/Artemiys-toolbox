@@ -32,7 +32,6 @@ export default function Home(): Component {
             <h3>{tool.title}</h3>
             <p>{tool.description}</p>
           </div>
-          <div class={card__active} />
         </Link>
       ))}
     </>

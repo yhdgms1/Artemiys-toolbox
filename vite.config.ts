@@ -8,7 +8,11 @@ export default defineConfig({
     linariaPlugin()
   ],
   build: {
-    target: "esnext",
+    target: [
+      "esnext",
+      "chrome83",
+      "firefox84"
+    ],
     polyfillDynamicImport: false,
   },
 });

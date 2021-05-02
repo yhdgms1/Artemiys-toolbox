@@ -1,7 +1,7 @@
 import type { Component } from "solid-js";
 import { createSignal } from "solid-js";
 import * as styles from "./repeat-it-n-times.styles";
-import { text as text_style, button, textarea } from "../styles/shared";
+import { text as text_style, button, textarea, responsive_container } from "../styles/shared";
 
 export default function RepeatItSomethingTimes(): Component {
   const [text, setText] = createSignal("");
@@ -11,7 +11,7 @@ export default function RepeatItSomethingTimes(): Component {
 
   return (
     <>
-      <div class={text_style}>
+      <div class={`${text_style} ${responsive_container}`}>
         <label for="repeat">Repeat</label>
         <input
           type="text"
@@ -20,6 +20,7 @@ export default function RepeatItSomethingTimes(): Component {
           placeholder="it"
           class={styles.input}
           onInput={(e) => setText(e.target.value)}
+          spellcheck="false"
         />
         <input
           type="number"
@@ -33,7 +34,7 @@ export default function RepeatItSomethingTimes(): Component {
         />
         <label for="times">times</label>
       </div>
-      <div>
+      <div class={responsive_container}>
         <button
           class={button}
           onClick={() => count() <= 5_368_708 ? setOutput(text().repeat(count())) : alert('The number of reps is too high')}

@@ -13,4 +13,18 @@ export const input = css`
             outline-color: #ccc;
         }
     }
+    @media screen and (max-width: 640px){
+        text-align: center;
+		&::-webkit-input-placeholder {
+            text-align: center;
+        }
+
+        &::-moz-placeholder {
+            text-align: center;  
+        }
+
+        &:-ms-input-placeholder {  
+            text-align: center; 
+        }
+	}   
 `;
