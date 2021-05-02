@@ -20,6 +20,11 @@ const tools = [
     description:
       "Transliterate Cyrillic to Latin using iuliia in every possible way",
     link: "iuliia",
+  },
+  {
+    title: "punto switcher",
+    description: "Change the keyboard layout from Russian to English and back again",
+    link: 'punto-switcher'
   }
 ] as const;
 

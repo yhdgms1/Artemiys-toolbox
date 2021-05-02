@@ -25,6 +25,10 @@ export const routes: RouteDefinition[] = [
     component: lazy(() => import("./pages/iuliia/[id]")),
   },
   {
+    path: "/punto-switcher",
+    component: lazy(() => import("./pages/punto-switcher")),
+  },
+  {
     path: "**",
     component: lazy(() => import("./errors/404")),
   },
