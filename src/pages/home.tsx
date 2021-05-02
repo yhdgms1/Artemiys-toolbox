@@ -20,13 +20,7 @@ const tools = [
     description:
       "Transliterate Cyrillic to Latin using iuliia in every possible way",
     link: "iuliia",
-  },
-  {
-    title: "cheap sluts",
-    description:
-      "Humiliate a fiend by showing his profile on a fake hooker site",
-    link: "cheap-sluts",
-  },
+  }
 ] as const;
 
 export default function Home(): Component {

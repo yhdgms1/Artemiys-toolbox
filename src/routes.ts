@@ -25,24 +25,6 @@ export const routes: RouteDefinition[] = [
     component: lazy(() => import("./pages/iuliia/[id]")),
   },
   {
-    path: "/cheap-sluts",
-    component: lazy(() => import("./pages/cheap-sluts")),
-  },
-  //todo figure out how to use children
-  // {
-  //   path: "/cheap-sluts/create",
-  //   component: lazy(() => import("./pages/cheap-sluts/create")),
-  // },
-  {
-    path: "/cheap-sluts/create-vk",
-    component: lazy(() => import("./pages/cheap-sluts/create-vk")),
-  },
-  // {
-  //   path: "/cheap-sluts/delete",
-  //   component: lazy(() => import("./pages/cheap-sluts/delete")),
-  // },
-  //todo end
-  {
     path: "**",
     component: lazy(() => import("./errors/404")),
   },
