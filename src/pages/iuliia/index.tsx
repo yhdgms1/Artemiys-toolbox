@@ -112,7 +112,7 @@ const schemes = [
     name: "ala_lc_alt",
     description: "ALA-LC transliteration schema",
   }
-]
+] as const;
 
 export default function IulliaOnline(): Component {
   return (
