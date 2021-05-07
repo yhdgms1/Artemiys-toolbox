@@ -4,18 +4,20 @@
   "description": "My solid + vite project + ts",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "license": "ISC",
   "devDependencies": {
-    "vite": "^2.2.3",
+    "@artemis69/vite-plugin-linaria-css": "^1.0.4",
+    "vite": "^2.2.4",
     "vite-plugin-solid": "^1.6.1"
   },
   "dependencies": {
     "@artemis69/iuliia": "^0.0.1",
-    "@artemis69/vite-plugin-linaria-css": "^1.0.4",
+    "@artemis69/swagify": "^1.0.0",
     "graphemer": "^1.2.0",
-    "linaria": "3.0.0-beta.3",
+    "linaria": "3.0.0-beta.4",
     "solid-app-router": "^0.0.39",
     "solid-js": "^0.26.5"
   }
