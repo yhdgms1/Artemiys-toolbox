@@ -1,7 +1,13 @@
 import type { Component } from "solid-js";
-import { For } from "solid-js";
 import { Link } from "solid-app-router";
-import { main, big_text, text as text_style, card, card__container, card__active } from '../../styles/shared';
+import {
+  big_text,
+  card,
+  card__active,
+  card__container,
+  main,
+  text as text_style,
+} from "../../styles/shared";
 
 const schemes = [
   {
@@ -111,7 +117,7 @@ const schemes = [
   {
     name: "ala_lc_alt",
     description: "ALA-LC transliteration schema",
-  }
+  },
 ] as const;
 
 export default function IulliaOnline(): Component {
@@ -120,7 +126,7 @@ export default function IulliaOnline(): Component {
       <p class={big_text}>Iuliia</p>
       <p class={text_style}>Select transliteration standard</p>
       <div class={main}>
-        {schemes.map(scheme => (
+        {schemes.map((scheme) => (
           <Link href={`/iuliia/${scheme.name}`} class={card}>
             <div class={card__container}>
               <h3>{scheme.name}</h3>

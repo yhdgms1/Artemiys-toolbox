@@ -171,7 +171,6 @@ export const textarea = css`
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 2px;
-    padding: 1.25rem 1rem;
     @media (prefers-color-scheme: dark){
         background: #161616;
         border-color: #262626;
@@ -227,4 +226,53 @@ export const input = css`
 
 export const width_70 = css`
     width: 70vw;
+`;
+
+export const row = css`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+`;
+
+export const four_x_four_grid_layout = css`
+    padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+	column-gap: 1rem;
+   	row-gap: 1rem;
+    width: 100%;
+    @media screen and (max-width: 768px){
+		grid-template-columns: repeat(2, 1fr);
+	}
+    @media screen and (max-width: 640px){
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+`;
+
+export const heading = css`
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
+`;
+
+export const btn_as_link = css`
+    border: none;
+    border-bottom: 1px dashed;
+    background: transparent;
+    color: #f67288;
+    margin: 0 .4em;
+    cursor: pointer;
+    &.active{
+        color: #000;
+        cursor: initial;
+        border-bottom: none;
+        @media (prefers-color-scheme: dark){
+            color: #eee;
+        }
+    }
 `;

@@ -1,8 +1,14 @@
 import type { Component } from "solid-js";
 import { createSignal } from "solid-js";
-import { text as text_style, button, textarea, responsive_container, input } from "../styles/shared";
+import {
+  button,
+  input,
+  responsive_container,
+  text as text_style,
+  textarea,
+} from "../styles/shared";
 
-export default function RepeatItSomethingTimes(): Component {
+export default function (): Component {
   const [text, setText] = createSignal("");
   const [count, setCount] = createSignal(0);
   const [output, setOutput] = createSignal("");
@@ -36,7 +42,10 @@ export default function RepeatItSomethingTimes(): Component {
       <div class={responsive_container}>
         <button
           class={button}
-          onClick={() => count() <= 5_368_708 ? setOutput(text().repeat(count())) : alert('The number of reps is too high')}
+          onClick={() =>
+            count() <= 5_368_708
+              ? setOutput(text().repeat(count()))
+              : alert("The number of reps is too high")}
         >
           Repeat!
         </button>

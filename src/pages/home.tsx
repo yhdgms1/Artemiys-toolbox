@@ -1,12 +1,11 @@
-import { card, card__container, card__active } from "../styles/shared";
+import { card, card__active, card__container } from "../styles/shared";
 import { Link } from "solid-app-router";
 import type { Component } from "solid-js";
 
 const tools = [
   {
     title: "text length counter",
-    description:
-      "Count the length of the text with and without spaces",
+    description: "Count the length of the text with and without spaces",
     link: "text-length-counter",
   },
   {
@@ -23,12 +22,28 @@ const tools = [
   },
   {
     title: "punto switcher",
-    description: "Change the keyboard layout from Russian to English and back again",
-    link: 'punto-switcher'
-  }
+    description:
+      "Change the keyboard layout from Russian to English and back again",
+    link: "punto-switcher",
+  },
+  // {
+  //   title: "url encoder for svg",
+  //   description: "Use you'r svg in background-image",
+  //   link: 'url-encoder'
+  // },
+  {
+    title: "uwuifier",
+    description: "Uwuify any sentence or word",
+    link: "uwuifier",
+  },
+  {
+    title: "swagify",
+    description: "Swagify any sentence or word and then #SwagAllDay",
+    link: "swagify",
+  },
 ] as const;
 
-export default function Home(): Component {
+export default function (): Component {
   return (
     <>
       {tools.map((tool) => (

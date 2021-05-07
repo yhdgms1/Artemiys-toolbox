@@ -28,6 +28,18 @@ export const routes: RouteDefinition[] = [
     path: "/punto-switcher",
     component: lazy(() => import("./pages/punto-switcher")),
   },
+  // {
+  //   path: '/url-encoder',
+  //   component: lazy(() => import('./pages/url-encoder')),
+  // },
+  {
+    path: "/uwuifier",
+    component: lazy(() => import("./pages/uwuifier")),
+  },
+  {
+    path: "/swagify",
+    component: lazy(() => import("./pages/swagify")),
+  },
   {
     path: "**",
     component: lazy(() => import("./errors/404")),

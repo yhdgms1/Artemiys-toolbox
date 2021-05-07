@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
 import { Link, Route, useRouter } from "solid-app-router";
 import * as styles from "./app.styles";
-import { link, main, main_layout } from './styles/shared';
+import { link, main, main_layout } from "./styles/shared";
 
 const App: Component = () => {
   const [router] = useRouter();
