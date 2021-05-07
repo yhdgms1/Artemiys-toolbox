@@ -120,7 +120,7 @@ const schemes = [
   },
 ] as const;
 
-export default function IulliaOnline(): Component {
+export default function (): Component {
   return (
     <>
       <p class={big_text}>Iuliia</p>

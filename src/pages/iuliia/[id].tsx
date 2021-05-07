@@ -10,7 +10,7 @@ import { createSignal, Show } from "solid-js";
 import schemas from "./schemas.js";
 import { translate } from "@artemis69/iuliia";
 
-export default function Iullia(props) {
+export default function (props) {
   const schema = props.params.id;
 
   const [text, setText] = createSignal("");

@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import solidPlugin from "vite-plugin-solid";
+import { default as solidPlugin } from "vite-plugin-solid";
 import { linaria as linariaPlugin } from '@artemis69/vite-plugin-linaria-css';
 
 export default defineConfig({
@@ -9,9 +9,9 @@ export default defineConfig({
   ],
   build: {
     target: [
-      "esnext",
-      "chrome83",
-      "firefox84"
+      "es2020",
+      "chrome84",
+      "firefox74"
     ],
     polyfillDynamicImport: false,
   },

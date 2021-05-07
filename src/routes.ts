@@ -1,6 +1,6 @@
-import { lazy } from "solid-js";
-import { RouteDefinition } from "solid-app-router";
+import type { RouteDefinition } from "solid-app-router";
 
+import { lazy } from "solid-js";
 import Home from "./pages/home";
 
 export const routes: RouteDefinition[] = [
@@ -28,10 +28,6 @@ export const routes: RouteDefinition[] = [
     path: "/punto-switcher",
     component: lazy(() => import("./pages/punto-switcher")),
   },
-  // {
-  //   path: '/url-encoder',
-  //   component: lazy(() => import('./pages/url-encoder')),
-  // },
   {
     path: "/uwuifier",
     component: lazy(() => import("./pages/uwuifier")),

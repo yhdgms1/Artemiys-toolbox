@@ -1,6 +1,6 @@
+import type { Component } from "solid-js";
 import { card, card__active, card__container } from "../styles/shared";
 import { Link } from "solid-app-router";
-import type { Component } from "solid-js";
 
 const tools = [
   {
@@ -26,11 +26,6 @@ const tools = [
       "Change the keyboard layout from Russian to English and back again",
     link: "punto-switcher",
   },
-  // {
-  //   title: "url encoder for svg",
-  //   description: "Use you'r svg in background-image",
-  //   link: 'url-encoder'
-  // },
   {
     title: "uwuifier",
     description: "Uwuify any sentence or word",

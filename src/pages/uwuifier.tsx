@@ -1,4 +1,5 @@
 import type { Component } from "solid-js";
+//vite is shit -> import deno version
 import Uwuifier from "../modules/uwuifier";
 import { createSignal } from "solid-js";
 import * as styles from "../styles/shared";
