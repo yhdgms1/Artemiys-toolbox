@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-import Uwuifier from "uwuifier";
+import Uwuifier from "uwuifier/dist/index.js";
 import { createSignal } from "solid-js";
 import * as styles from "../styles/shared";
 
