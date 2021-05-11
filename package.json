@@ -1,17 +1,17 @@
 {
   "name": "vite-template-solid",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "My solid + vite project + ts",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview"
   },
   "license": "ISC",
   "devDependencies": {
     "@artemis69/vite-plugin-linaria-css": "^1.0.4",
-    "vite": "^2.2.4",
-    "vite-plugin-solid": "^1.6.1"
+    "vite": "^2.3.0",
+    "vite-plugin-solid": "^1.7.0"
   },
   "dependencies": {
     "@artemis69/iuliia": "^0.0.1",

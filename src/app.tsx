@@ -8,6 +8,7 @@ const App: Component = () => {
   return (
     <>
       <nav class={styles.nav}>
+        <h1>
         <Link
           href="/"
           class={`${styles.title} ${link} ${
@@ -16,6 +17,7 @@ const App: Component = () => {
         >
           Artemiy's Toolbox
         </Link>
+        </h1>
       </nav>
       <main class={router.location === "/" ? main : main_layout}>
         <Route />

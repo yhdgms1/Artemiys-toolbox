@@ -82,6 +82,7 @@ export const text = css`
 
 export const big_text = css`
     font-size: 1.7rem;
+    font-weight: normal;
 `;
 
 export const link = css`

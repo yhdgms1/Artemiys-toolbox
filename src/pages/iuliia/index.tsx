@@ -123,7 +123,7 @@ const schemes = [
 export default function (): Component {
   return (
     <>
-      <p class={big_text}>Iuliia</p>
+      <h1 class={big_text}>Iuliia</h1>
       <p class={text_style}>Select transliteration standard</p>
       <div class={main}>
         {schemes.map((scheme) => (

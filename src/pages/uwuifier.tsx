@@ -17,22 +17,20 @@ export default function (): Component {
         placeholder="Enter the text to uwuify"
         onInput={(e) => setOutput(uwuifier.uwuifySentence(e.target.value))}
       />
-      <div class={styles.responsive_container}>
-        <button
-          class={styles.button}
-          onClick={() => {
-            navigator.clipboard.writeText(output()).then(() => {
-              setCopyButtonContent("Copied!");
-              const timeout = setTimeout(() => {
-                setCopyButtonContent("Copy!");
-                clearTimeout(timeout);
-              }, 750);
-            });
-          }}
-        >
-          {copyButtonContent()}
-        </button>
-      </div>
+      <button
+        class={styles.button}
+        onClick={() => {
+          navigator.clipboard.writeText(output()).then(() => {
+            setCopyButtonContent("Copied!");
+            const timeout = setTimeout(() => {
+              setCopyButtonContent("Copy!");
+              clearTimeout(timeout);
+            }, 750);
+          });
+        }}
+      >
+        {copyButtonContent()}
+      </button>
       <textarea
         readonly
         class={styles.textarea}
