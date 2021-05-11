@@ -16,6 +16,7 @@ export default function (): Component {
       </p>
       <textarea
         placeholder="Input your text here to count"
+        aria-placeholder="Input your text here to count"
         class={styles.textarea}
         spellcheck="false"
         onInput={(e) => setText(e.target.value)}

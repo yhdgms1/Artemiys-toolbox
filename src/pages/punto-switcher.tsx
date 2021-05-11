@@ -178,6 +178,7 @@ export default function (): Component {
       <textarea
         class={textarea}
         placeholder="Enter the text you want to change the layout of"
+        aria-placeholder="Enter the text you want to change the layout of"
         onInput={(e) => setText(e.target.value)}
       />
       <div class={responsive_container}>
@@ -207,6 +208,7 @@ export default function (): Component {
         class={textarea}
         value={output()}
         placeholder="Result will be here"
+        aria-placeholder="Result will be here"
       />
     </>
   );

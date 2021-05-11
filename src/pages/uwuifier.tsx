@@ -15,6 +15,7 @@ export default function (): Component {
       <textarea
         class={styles.textarea}
         placeholder="Enter the text to uwuify"
+        aria-placeholder="Enter the text to uwuify"
         onInput={(e) => setOutput(uwuifier.uwuifySentence(e.target.value))}
       />
       <button
@@ -36,6 +37,7 @@ export default function (): Component {
         class={styles.textarea}
         value={output()}
         placeholder="Result will be here"
+        aria-placeholder="Result will be here"
       />
     </>
   );

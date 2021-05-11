@@ -43,9 +43,7 @@ export default function (): Component {
         <button
           class={button}
           onClick={() =>
-            count() <= 5_368_708
-              ? setOutput(text().repeat(count()))
-              : alert("The number of reps is too high")}
+            count() <= 5368708 ? setOutput(text().repeat(count())) : alert("The number of reps is too high")}
         >
           Repeat!
         </button>
@@ -69,6 +67,7 @@ export default function (): Component {
         class={textarea}
         value={output()}
         placeholder="Result will be here"
+        aria-placeholder="Result will be here"
       />
     </>
   );

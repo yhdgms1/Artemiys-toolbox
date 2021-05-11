@@ -25,6 +25,7 @@ export default function (props) {
           class={textarea}
           spellcheck="false"
           placeholder="Type the text here"
+          aria-placeholder="Type the text here"
           onInput={(e) => setText(e.target.value)}
         />
         <button
@@ -38,6 +39,7 @@ export default function (props) {
           spellcheck="false"
           readonly
           placeholder="Transliterated text will be here"
+          aria-placeholder="Transliterated text will be here"
           value={output()}
         />
       </Show>
