@@ -20,7 +20,6 @@ export const main = css`
 
 export const main_layout = css`
 	padding: 1rem;
-	min-height: calc(100vh - 1.92307692rem);
 	display: flex;
 	flex-direction: column;
 	align-items: center;

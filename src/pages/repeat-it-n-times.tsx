@@ -41,6 +41,7 @@ export default function (): Component {
       </div>
       <div class={responsive_container}>
         <button
+          type="button"
           class={button}
           onClick={() =>
             count() <= 5368708 ? setOutput(text().repeat(count())) : alert("The number of reps is too high")}
@@ -48,6 +49,7 @@ export default function (): Component {
           Repeat!
         </button>
         <button
+          type="button"
           class={button}
           onClick={() => {
             navigator.clipboard.writeText(output()).then(() => {

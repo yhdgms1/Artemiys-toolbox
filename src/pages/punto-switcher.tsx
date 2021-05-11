@@ -183,12 +183,14 @@ export default function (): Component {
       />
       <div class={responsive_container}>
         <button
+          type="button"
           class={button}
           onClick={() => setOutput(changeLayout(text()))}
         >
           Change layout
         </button>
         <button
+          type="button"
           class={button}
           onClick={() => {
             navigator.clipboard.writeText(output()).then(() => {

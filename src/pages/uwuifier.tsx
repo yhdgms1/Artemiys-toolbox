@@ -19,6 +19,7 @@ export default function (): Component {
         onInput={(e) => setOutput(uwuifier.uwuifySentence(e.target.value))}
       />
       <button
+        type="button"
         class={styles.button}
         onClick={() => {
           navigator.clipboard.writeText(output()).then(() => {

@@ -16,6 +16,7 @@ export default function (): Component {
         onInput={(e) => setOutput(swagify(e.target.value))}
       />
       <button
+        type="button"
         class={styles.button}
         onClick={() => {
           console.log(output())
