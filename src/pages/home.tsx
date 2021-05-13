@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-import { card, card__active, card__container } from "../styles/shared";
+import * as styles from "../styles/shared";
 import { Link } from "solid-app-router";
 
 const tools = [
@@ -11,13 +11,13 @@ const tools = [
   {
     title: "repeat something n times",
     description:
-      "Repeat the string many times. You decide what to repeat and how many times",
+      "Repeat the string many times",
     link: "repeat-it-n-times",
   },
   {
     title: "transliteration",
     description:
-      "Transliterate Cyrillic to Latin using iuliia in every possible way",
+      "Transliterate Cyrillic to Latin using iuliia",
     link: "iuliia",
   },
   {
@@ -42,8 +42,8 @@ export default function (): Component {
   return (
     <>
       {tools.map((tool) => (
-        <Link href={`/${tool.link}`} class={card}>
-          <div class={card__container}>
+        <Link href={`/${tool.link}`} class={styles.card}>
+          <div class={styles.card__container}>
             <h3>{tool.title}</h3>
             <p>{tool.description}</p>
           </div>
