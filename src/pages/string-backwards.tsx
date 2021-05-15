@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js'
 import { createSignal } from 'solid-js'
-import * as styles from '../../styles/shared'
+import * as styles from '../styles/shared'
 import Graphemer from 'graphemer'
 
 export default function (): Component {
