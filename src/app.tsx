@@ -1,29 +1,29 @@
-import type { Component } from "solid-js";
-import { Link, Route, useRouter } from "solid-app-router";
-import * as styles from "./app.styles";
-import { link, main, main_layout } from "./styles/shared";
+import type { Component } from 'solid-js'
+import { Link, Route, useRouter } from 'solid-app-router'
+import * as styles from './app.styles'
+import { link, main, main_layout } from './styles/shared'
 
 const App: Component = () => {
-  const [router] = useRouter();
+  const [router] = useRouter()
   return (
     <>
       <nav class={styles.nav}>
         <h1>
-        <Link
-          href="/"
-          class={`${styles.title} ${link} ${
-            router.location === "/" ? styles.no_underline : ""
-          }`}
-        >
-          Artemiy's Toolbox
-        </Link>
+          <Link
+            href="/"
+            class={`${styles.title} ${link} ${
+              router.location === '/' ? styles.no_underline : ''
+            }`}
+          >
+            Artemiy's Toolbox
+          </Link>
         </h1>
       </nav>
-      <main class={router.location === "/" ? main : main_layout}>
+      <main class={router.location === '/' ? main : main_layout}>
         <Route />
       </main>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

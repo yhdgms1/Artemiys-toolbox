@@ -1,47 +1,56 @@
-import type { Component } from "solid-js";
-import * as styles from "../styles/shared";
-import { Link } from "solid-app-router";
+import type { Component } from 'solid-js'
+import * as styles from '../styles/shared'
+import { Link } from 'solid-app-router'
 
-const tools = [
+interface ITools {
+  title: string
+  description: string
+  link: string
+}
+
+const tools: ITools[] = [
   {
-    title: "text length counter",
-    description: "Count the length of the text with and without spaces",
-    link: "text-length-counter",
+    title: 'text length counter',
+    description: 'Count the length of the text with and without spaces',
+    link: 'text-length-counter',
   },
   {
-    title: "repeat something n times",
+    title: 'repeat something n times',
+    description: 'Repeat the string many times',
+    link: 'repeat-it-n-times',
+  },
+  {
+    title: 'transliteration',
+    description: 'Transliterate Cyrillic to Latin using iuliia',
+    link: 'iuliia',
+  },
+  {
+    title: 'punto switcher',
     description:
-      "Repeat the string many times",
-    link: "repeat-it-n-times",
+      'Change the keyboard layout from Russian to English and back again',
+    link: 'punto-switcher',
   },
   {
-    title: "transliteration",
-    description:
-      "Transliterate Cyrillic to Latin using iuliia",
-    link: "iuliia",
+    title: 'uwuifier',
+    description: 'Uwuify any sentence or word',
+    link: 'uwuifier',
   },
   {
-    title: "punto switcher",
-    description:
-      "Change the keyboard layout from Russian to English and back again",
-    link: "punto-switcher",
+    title: 'swagify',
+    description: 'Swagify any sentence or word and then #SwagAllDay',
+    link: 'swagify',
   },
   {
-    title: "uwuifier",
-    description: "Uwuify any sentence or word",
-    link: "uwuifier",
+    title: 'flip text upside down',
+    description: 'Turning text upside down and backwards',
+    link: 'flip-text-upside-down',
   },
-  {
-    title: "swagify",
-    description: "Swagify any sentence or word and then #SwagAllDay",
-    link: "swagify",
-  },
-] as const;
+] as const
 
 export default function (): Component {
   return (
     <>
-      {tools.map((tool) => (
+      {tools.map(tool => (
         <Link href={`/${tool.link}`} class={styles.card}>
           <div class={styles.card__container}>
             <h3>{tool.title}</h3>
@@ -50,5 +59,5 @@ export default function (): Component {
         </Link>
       ))}
     </>
-  );
+  )
 }

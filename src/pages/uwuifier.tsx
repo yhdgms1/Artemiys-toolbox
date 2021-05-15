@@ -1,14 +1,14 @@
-import type { Component } from "solid-js";
+import type { Component } from 'solid-js'
 //vite is shit -> import deno version
-import Uwuifier from "../modules/uwuifier";
-import { createSignal } from "solid-js";
-import * as styles from "../styles/shared";
+import Uwuifier from '../modules/uwuifier'
+import { createSignal } from 'solid-js'
+import * as styles from '../styles/shared'
 
 export default function (): Component {
-  const uwuifier = new Uwuifier();
+  const uwuifier = new Uwuifier()
 
-  const [copyButtonContent, setCopyButtonContent] = createSignal("Copy!");
-  const [output, setOutput] = createSignal("");
+  const [copyButtonContent, setCopyButtonContent] = createSignal('Copy!')
+  const [output, setOutput] = createSignal('')
 
   return (
     <>
@@ -16,19 +16,19 @@ export default function (): Component {
         class={styles.textarea}
         placeholder="Enter the text to uwuify"
         aria-placeholder="Enter the text to uwuify"
-        onInput={(e) => setOutput(uwuifier.uwuifySentence(e.target.value))}
+        onInput={e => setOutput(uwuifier.uwuifySentence(e.target.value))}
       />
       <button
         type="button"
         class={styles.button}
         onClick={() => {
           navigator.clipboard.writeText(output()).then(() => {
-            setCopyButtonContent("Copied!");
+            setCopyButtonContent('Copied!')
             const timeout = setTimeout(() => {
-              setCopyButtonContent("Copy!");
-              clearTimeout(timeout);
-            }, 750);
-          });
+              setCopyButtonContent('Copy!')
+              clearTimeout(timeout)
+            }, 750)
+          })
         }}
       >
         {copyButtonContent()}
@@ -41,5 +41,5 @@ export default function (): Component {
         aria-placeholder="Result will be here"
       />
     </>
-  );
+  )
 }

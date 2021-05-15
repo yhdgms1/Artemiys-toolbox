@@ -1,26 +1,28 @@
-import * as styles from "../../styles/shared";
-import { Link } from "solid-app-router";
-import { createSignal, Show } from "solid-js";
-import schemas from "./schemas.js";
-import { translate } from "@artemis69/iuliia";
+import * as styles from '../../styles/shared'
+import { Link } from 'solid-app-router'
+import { createSignal, Show } from 'solid-js'
+import schemas from './schemas.js'
+import { translate } from '@artemis69/iuliia'
 
 export default function (props) {
-  const schema = props.params.id;
+  const schema = props.params.id
 
-  const [text, setText] = createSignal("");
-  const [output, setOutput] = createSignal("");
+  const [text, setText] = createSignal('')
+  const [output, setOutput] = createSignal('')
 
   return (
     <>
-      <Show when={(schema in schemas)} fallback={<Error />}>
-        <Link class={`${styles.big_text} ${styles.link}`} href="/iuliia">go back</Link>
+      <Show when={schema in schemas} fallback={<Error />}>
+        <Link class={`${styles.big_text} ${styles.link}`} href="/iuliia">
+          go back
+        </Link>
         <p class={styles.text}>Current schema is {schema}</p>
         <textarea
           class={styles.textarea}
           spellcheck="false"
           placeholder="Type the text here"
           aria-placeholder="Type the text here"
-          onInput={(e) => setText(e.target.value)}
+          onInput={e => setText(e.target.value)}
         />
         <button
           type="button"
@@ -39,14 +41,16 @@ export default function (props) {
         />
       </Show>
     </>
-  );
+  )
 }
 
 function Error() {
   return (
     <>
       <p class={styles.big_text}>Schema does not exists</p>
-      <Link class={`${styles.link}`} href="/iuliia">view existing</Link>
+      <Link class={`${styles.link}`} href="/iuliia">
+        view existing
+      </Link>
     </>
-  );
+  )
 }

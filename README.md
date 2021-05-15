@@ -8,6 +8,7 @@ Note that any package manager should work. I'd just advice you to remove the `pn
 ```bash
 $ pnpm install # or npm install or yarn install
 ```
+
 ## Available Scripts
 
 In the project directory, you can run:
