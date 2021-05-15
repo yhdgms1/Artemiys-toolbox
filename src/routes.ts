@@ -37,8 +37,8 @@ export const routes: RouteDefinition[] = [
     component: lazy(() => import('./pages/swagify')),
   },
   {
-    path: 'flip-text-upside-down',
-    component: lazy(() => import('./pages/flip-text-upside-down')),
+    path: 'string-backwards',
+    component: lazy(() => import('./pages/string-backwards')),
   },
   {
     path: '**',

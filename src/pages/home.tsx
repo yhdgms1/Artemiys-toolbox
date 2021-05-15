@@ -41,9 +41,9 @@ const tools: ITools[] = [
     link: 'swagify',
   },
   {
-    title: 'flip text upside down',
-    description: 'Turning text upside down and backwards',
-    link: 'flip-text-upside-down',
+    title: 'string backwards',
+    description: 'Turning text backwards',
+    link: 'string-backwards',
   },
 ] as const
 
