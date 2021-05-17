@@ -7,6 +7,15 @@ export default {
             button: 'Сменить раскладку',
             button_copy: 'Скопировать!',
             button_copy_active: 'Скопировано!',
+        },
+        repeatItSomeTimes: {
+            repeat: 'Повторить',
+            repeat_it: 'это',
+            repeat_so_many: 'столько',
+            times: 'раз',
+            button_copy: 'Скопировать!',
+            button_copy_active: 'Скопировано!',
+            result: 'Результат будет здесь',
         }
     }
 }
