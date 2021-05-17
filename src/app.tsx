@@ -1,10 +1,21 @@
 import type { Component } from 'solid-js'
+import { onMount } from 'solid-js';
 import { Link, Route, useRouter } from 'solid-app-router'
 import * as styles from './app.styles'
 import { link, main, main_layout } from './styles/shared'
+import { useI18n } from "./solid-i18n";
 
 const App: Component = () => {
   const [router] = useRouter()
+  const [, { locale }] = useI18n();
+
+  if(window.navigator.language.toLowerCase().includes('ru')){
+    locale("ru")
+  }else{
+    locale("unknownLanguage")
+  }
+  
+
   return (
     <>
       <nav class={styles.nav}>

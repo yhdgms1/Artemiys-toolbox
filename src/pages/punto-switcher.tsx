@@ -1,11 +1,7 @@
 import type { Component } from 'solid-js'
 import { createSignal } from 'solid-js'
-import {
-  button,
-  responsive_container,
-  text as text_style,
-  textarea,
-} from '../styles/shared'
+import * as styles from '../styles/shared'
+import { useI18n } from '../solid-i18n';
 
 const rules = {
   '~': 'Ё',
@@ -149,8 +145,9 @@ const rules = {
 }
 
 export default function (): Component {
+  const [t] = useI18n()
   const [text, setText] = createSignal('')
-  const [copyButtonContent, setCopyButtonContent] = createSignal('Copy!')
+  const [copyButtonContent, setCopyButtonContent] = createSignal(t('puntoSwitcher.button_copy', null, 'Copy!'))
   const [output, setOutput] = createSignal('')
 
   const setCharAt = (string, index, char) =>
@@ -174,29 +171,29 @@ export default function (): Component {
 
   return (
     <>
-      <p class={text_style}>Note: Contains bugs</p>
+      <p class={styles.text}>{t('puntoSwitcher.note', null, 'Note: Contains bugs')}</p>
       <textarea
-        class={textarea}
-        placeholder="Enter the text you want to change the layout of"
-        aria-placeholder="Enter the text you want to change the layout of"
+        class={styles.textarea}
+        placeholder={t('puntoSwitcher.input_placeholder', null, 'Enter the text you want to change the layout of')}
+        aria-placeholder={t('puntoSwitcher.input_placeholder', null, 'Enter the text you want to change the layout of')}
         onInput={e => setText(e.target.value)}
       />
-      <div class={responsive_container}>
+      <div class={styles.responsive_container}>
         <button
           type="button"
-          class={button}
+          class={styles.button}
           onClick={() => setOutput(changeLayout(text()))}
         >
-          Change layout
+          {t('puntoSwitcher.button', null, 'Change layout')}
         </button>
         <button
           type="button"
-          class={button}
+          class={styles.button}
           onClick={() => {
             navigator.clipboard.writeText(output()).then(() => {
-              setCopyButtonContent('Copied!')
+              setCopyButtonContent(t('puntoSwitcher.button_copy_active', null, 'Copied!'))
               const timeout = setTimeout(() => {
-                setCopyButtonContent('Copy!')
+                setCopyButtonContent(t('puntoSwitcher.button_copy', null, 'Copy!'))
                 clearTimeout(timeout)
               }, 750)
             })
@@ -207,10 +204,10 @@ export default function (): Component {
       </div>
       <textarea
         readonly
-        class={textarea}
+        class={styles.textarea}
         value={output()}
-        placeholder="Result will be here"
-        aria-placeholder="Result will be here"
+        placeholder={t('puntoSwitcher.output_placeholder', null, 'Result will be here')}
+        aria-placeholder={t('puntoSwitcher.output_placeholder', null, 'Result will be here')}
       />
     </>
   )
