@@ -48,7 +48,6 @@ const tools: ITools[] = [
 ] as const
 
 export default function (): Component {
-
   return (
     <>
       {tools.map(tool => (

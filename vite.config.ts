@@ -9,6 +9,6 @@ export default defineConfig({
     polyfillDynamicImport: false,
   },
   optimizeDeps: {
-    exclude: ['@amoutonbrady/solid-i18n']
-  }
+    exclude: ['@amoutonbrady/solid-i18n'],
+  },
 })

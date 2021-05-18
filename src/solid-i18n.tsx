@@ -1,1 +1,0 @@
-export * from '../node_modules/@amoutonbrady/solid-i18n/dist/source/solid-i18n'

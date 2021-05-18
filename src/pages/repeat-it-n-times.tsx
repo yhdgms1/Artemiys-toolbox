@@ -1,24 +1,22 @@
 import type { Component } from 'solid-js'
 import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
-import { useI18n } from '../solid-i18n';
 
 export default function (): Component {
-  const [t] = useI18n()
   const [text, setText] = createSignal('')
   const [count, setCount] = createSignal(0)
   const [output, setOutput] = createSignal('')
-  const [copyButtonContent, setCopyButtonContent] = createSignal(t('repeatItSomeTimes.button_copy', null, 'Copy!'))
+  const [copyButtonContent, setCopyButtonContent] = createSignal('Copy!')
 
   return (
     <>
       <div class={`${styles.text} ${styles.responsive_container}`}>
-        <label for="repeat">{t('repeatItSomeTimes.repeat', null, 'Repeat')}</label>
+        <label for="repeat">Repeat</label>
         <input
           type="text"
           id="repeat"
           name="repeat"
-          placeholder={t('repeatItSomeTimes.repeat_it', null, 'it')}
+          placeholder="it"
           class={styles.input}
           onInput={e => setText(e.target.value)}
           spellcheck="false"
@@ -27,13 +25,13 @@ export default function (): Component {
           type="number"
           id="times"
           name="times"
-          placeholder={t('repeatItSomeTimes.repeat_so_many', null, 'so many')}
+          placeholder="so many"
           class={styles.input}
           onInput={e => setCount(e.target.valueAsNumber)}
           min="1"
           max="5368708"
         />
-        <label for="times">{t('repeatItSomeTimes.times', null, 'times')}</label>
+        <label for="times">times</label>
       </div>
       <div class={styles.responsive_container}>
         <button
@@ -45,16 +43,16 @@ export default function (): Component {
               : alert('The number of reps is too high')
           }
         >
-          {t('repeatItSomeTimes.repeat', null, 'Repeat') + '!'}
+          Repeat!
         </button>
         <button
           type="button"
           class={styles.button}
           onClick={() => {
             navigator.clipboard.writeText(output()).then(() => {
-              setCopyButtonContent(t('repeatItSomeTimes.button_copy_active', null, 'Copy!'))
+              setCopyButtonContent('Copied!')
               const timeout = setTimeout(() => {
-                setCopyButtonContent(t('repeatItSomeTimes.button_copy', null, 'Copy!'))
+                setCopyButtonContent('Copy!')
                 clearTimeout(timeout)
               }, 750)
             })
@@ -67,8 +65,8 @@ export default function (): Component {
         readonly
         class={styles.textarea}
         value={output()}
-        placeholder={t('repeatItSomeTimes.result', null, 'Result will be here')}
-        aria-placeholder={t('repeatItSomeTimes.result', null, 'Result will be here')}
+        placeholder="Result will be here"
+        aria-placeholder="Result will be here"
       />
     </>
   )

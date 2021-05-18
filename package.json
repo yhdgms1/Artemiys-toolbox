@@ -13,16 +13,15 @@
   "devDependencies": {
     "@artemis69/vite-plugin-linaria-css": "^1.0.4",
     "prettier": "2.3.0",
-    "vite": "^2.3.2",
+    "vite": "^2.3.3",
     "vite-plugin-solid": "^1.8.0"
   },
   "dependencies": {
-    "@amoutonbrady/solid-i18n": "^0.3.0",
     "@artemis69/iuliia": "^0.0.1",
     "@artemis69/swagify": "^1.1.0",
     "graphemer": "^1.2.0",
     "linaria": "3.0.0-beta.4",
-    "solid-app-router": "^0.0.40",
+    "solid-app-router": "^0.0.45",
     "solid-js": "^0.26.5"
   }
 }
