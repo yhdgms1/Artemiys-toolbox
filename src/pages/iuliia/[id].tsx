@@ -1,10 +1,11 @@
 import * as styles from '../../styles/shared'
 import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
+import type { Component } from 'solid-js';
 import schemas from './schemas.js'
 import { translate } from '@artemis69/iuliia'
 
-export default function (props) {
+export default function (props): Component {
   const schema = props.params.id
 
   const [text, setText] = createSignal('')
@@ -12,7 +13,7 @@ export default function (props) {
 
   return (
     <>
-      <Show when={schema in schemas} fallback={<Error />}>
+      <Show when={schema in schemas} fallback={<Fallback />}>
         <Link class={`${styles.big_text} ${styles.link}`} href="/iuliia">
           go back
         </Link>
@@ -44,13 +45,11 @@ export default function (props) {
   )
 }
 
-function Error() {
-  return (
-    <>
-      <p class={styles.big_text}>Schema does not exists</p>
-      <Link class={`${styles.link}`} href="/iuliia">
-        view existing
-      </Link>
-    </>
-  )
-}
+const Fallback: Component = () => (
+  <>
+    <p class={styles.big_text}>Schema does not exists</p>
+    <Link class={`${styles.link}`} href="/iuliia">
+      view existing
+    </Link>
+  </>
+)
