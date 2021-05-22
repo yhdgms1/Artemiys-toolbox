@@ -186,7 +186,7 @@ export default function (): Component {
         </button>
         <button
           type="button"
-          class={styles.button}
+          class={styles.button + ' ' + styles.copy_btn}
           onClick={() => {
             navigator.clipboard.writeText(output()).then(() => {
               setCopyButtonContent('Copied!')

@@ -285,3 +285,6 @@ export const btn_as_link = css`
 export const padding_bottom_sm = css`
   padding-bottom: 0.7rem;
 `
+export const copy_btn = css`
+  cursor: copy;
+`;

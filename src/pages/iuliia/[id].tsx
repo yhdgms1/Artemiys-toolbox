@@ -1,7 +1,7 @@
 import * as styles from '../../styles/shared'
 import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
-import type { Component } from 'solid-js';
+import type { Component } from 'solid-js'
 import schemas from './schemas.js'
 import { translate } from '@artemis69/iuliia'
 

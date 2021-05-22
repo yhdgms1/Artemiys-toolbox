@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-"@amoutonbrady/solid-i18n@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@amoutonbrady/solid-i18n/-/solid-i18n-0.3.0.tgz#ce9fae5dcab16b7a21e5b2c3a5afcdaf683aeec8"
-  integrity sha512-a66Q4wxz9s5zil53W5oF6+DSeW8zdnYTJ7SmF6jf6M4MpDop/KJb4uWG/j1RdVuPRNC3qBwjhOFEJr4QvxHSsg==
-  dependencies:
-    solid-js "^0.24.2"
-
 "@artemis69/iuliia@^0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@artemis69/iuliia/-/iuliia-0.0.1.tgz#11557c82304484a6defe30836b3b82ce440732ca"
@@ -1419,7 +1412,7 @@ error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-esbuild@^0.11.20:
+esbuild@^0.11.20, esbuild@^0.11.23:
   version "0.11.23"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.11.23.tgz#c42534f632e165120671d64db67883634333b4b8"
   integrity sha512-iaiZZ9vUF5wJV8ob1tl+5aJTrwDczlvGP0JoMmnpC2B0ppiMCu8n8gmy5ZTGl5bcG081XBVn+U+jP+mPFm5T5Q==
@@ -2237,15 +2230,10 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-solid-app-router@^0.0.40:
-  version "0.0.40"
-  resolved "https://registry.yarnpkg.com/solid-app-router/-/solid-app-router-0.0.40.tgz#424cce8a22081ca91d5110b1deeb6ceac22dd98d"
-  integrity sha512-G1Omf+ILLbYJFHCVfIYFi18zQsXOfjpWao6hldWIUQIBOgaSZszXVncLooaR8GJWeNY7nOVwHgJ/wcSIJCVTgA==
-
-solid-js@^0.24.2:
-  version "0.24.16"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.24.16.tgz#42e1f5dcebffa1142d068fb17f1ce46bd42b4a13"
-  integrity sha512-KZ3HcnM1QPZJJ6BIZqZDYDGyEzgy3PQPkRvY+XBr3qPhmH7r3kH0ytxHkqRwg7TIOmvOpuH2nlS6Gu0kur8Zfw==
+solid-app-router@^0.0.45:
+  version "0.0.45"
+  resolved "https://registry.yarnpkg.com/solid-app-router/-/solid-app-router-0.0.45.tgz#873141627d5d57432aaa9a627123395d21a7db7f"
+  integrity sha512-tWsZS1B8ClAxNcZgrYPbke5ebz0TN9dS/z4BotN6NVWE1mfW3k0EWvYKwvrefCyRlKu3boruEJe5yf3XxKxBtg==
 
 solid-js@^0.26.5:
   version "0.26.5"
@@ -2456,6 +2444,18 @@ vite@^2.3.2:
   integrity sha512-QhLdOompDrfkyryCNTts9HE+eJhvhN9ibKNJ5Q8DpQai+6nOsuIlaveZNg67e1O/2QaWqXeBo82eHnAs1De2bQ==
   dependencies:
     esbuild "^0.11.20"
+    postcss "^8.2.10"
+    resolve "^1.19.0"
+    rollup "^2.38.5"
+  optionalDependencies:
+    fsevents "~2.3.1"
+
+vite@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.3.3.tgz#7e88a71abd03985c647789938d784cce0ee3b0fd"
+  integrity sha512-eO1iwRbn3/BfkNVMNJDeANAFCZ5NobYOFPu7IqfY7DcI7I9nFGjJIZid0EViTmLDGwwSUPmRAq3cRBbO3+DsMA==
+  dependencies:
+    esbuild "^0.11.23"
     postcss "^8.2.10"
     resolve "^1.19.0"
     rollup "^2.38.5"

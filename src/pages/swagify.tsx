@@ -17,7 +17,7 @@ export default function (): Component {
       />
       <button
         type="button"
-        class={styles.button}
+        class={styles.button + ' ' + styles.copy_btn}
         onClick={() => {
           console.log(output())
           navigator.clipboard.writeText(output()).then(() => {
