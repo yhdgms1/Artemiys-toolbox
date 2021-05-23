@@ -1,6 +1,7 @@
 import type { Component } from 'solid-js'
 import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
+import { t } from '../i18n'
 
 const rules = {
   '~': 'Ё',
@@ -145,7 +146,7 @@ const rules = {
 
 export default function (): Component {
   const [text, setText] = createSignal('')
-  const [copyButtonContent, setCopyButtonContent] = createSignal('Copy!')
+  const [copyButtonContent, setCopyButtonContent] = createSignal(t(['btn__copy', 'default']))
   const [output, setOutput] = createSignal('')
 
   const setCharAt = (string, index, char) =>
@@ -189,9 +190,9 @@ export default function (): Component {
           class={styles.button + ' ' + styles.copy_btn}
           onClick={() => {
             navigator.clipboard.writeText(output()).then(() => {
-              setCopyButtonContent('Copied!')
+              setCopyButtonContent(t(['btn__copy', 'active']))
               const timeout = setTimeout(() => {
-                setCopyButtonContent('Copy!')
+                setCopyButtonContent(t(['btn__copy', 'default']))
                 clearTimeout(timeout)
               }, 750)
             })

@@ -2,9 +2,10 @@ import type { Component } from 'solid-js'
 import { swagify } from '@artemis69/swagify'
 import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
+import { t } from '../i18n'
 
 export default function (): Component {
-  const [copyButtonContent, setCopyButtonContent] = createSignal('Copy!')
+  const [copyButtonContent, setCopyButtonContent] = createSignal(t(['btn__copy', 'default']))
   const [output, setOutput] = createSignal('')
 
   return (
@@ -21,9 +22,9 @@ export default function (): Component {
         onClick={() => {
           console.log(output())
           navigator.clipboard.writeText(output()).then(() => {
-            setCopyButtonContent('Copied!')
+            setCopyButtonContent(t(['btn__copy', 'active']))
             const timeout = setTimeout(() => {
-              setCopyButtonContent('Copy!')
+              setCopyButtonContent(t(['btn__copy', 'default']))
               clearTimeout(timeout)
             }, 750)
           })

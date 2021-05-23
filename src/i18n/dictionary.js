@@ -10,6 +10,10 @@ export default {
         input_textarea_placehoder: 'Type text',
         out_textarea_description: 'text backwards:',
         out_textarea_placehoder: "text backwards text will be here"
+      },
+      btn__copy: {
+        default: 'Copy!',
+        active: 'Copied!'
       }
     },
     ru: {
@@ -21,8 +25,12 @@ export default {
       string_backwards: {
         header: 'Перевернуть текст задом наперёд',
         input_textarea_placehoder: 'Введите текст',
-        out_textarea_description: 'текст задом напердёд:',
+        out_textarea_description: 'текст задом наперёд:',
         out_textarea_placehoder: 'Текст будет тут'
+      },
+      btn__copy: {
+        default: 'Скопировать!',
+        active: 'Скопировано!'
       }
     }
 }
