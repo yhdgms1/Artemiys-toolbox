@@ -2,6 +2,7 @@ import type { Component } from 'solid-js'
 import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import Graphemer from 'graphemer'
+import { t } from '../i18n'
 
 export default function (): Component {
   const [text, setText] = createSignal('')
@@ -10,21 +11,21 @@ export default function (): Component {
   return (
     <>
       <h1 class={styles.big_text + ' ' + styles.padding_bottom_sm}>
-        turning text backwards
+        {t(['string_backwards', 'header'])}
       </h1>
       <textarea
         class={styles.textarea}
-        placeholder="Type plain text"
-        aria-placeholder="Type plain text"
+        placeholder={t(['string_backwards', 'input_textarea_placehoder'])}
+        aria-placeholder={t(['string_backwards', 'input_textarea_placehoder'])}
         onInput={e => setText(e.target.value)}
       />
-      <p>text backwards:</p>
+      <p>{t(['string_backwards', 'out_textarea_description'])}</p>
       <textarea
         readonly
         class={styles.textarea}
         value={splitter.splitGraphemes(text()).reverse().join('')}
-        placeholder="text backwards text will be here"
-        aria-placeholder="text backwards text will be here"
+        placeholder={t(['string_backwards', 'out_textarea_placehoder'])}
+        aria-placeholder={t(['string_backwards', 'out_textarea_placehoder'])}
       />
     </>
   )
