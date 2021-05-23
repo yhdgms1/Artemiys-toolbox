@@ -3,13 +3,13 @@ import dict from './dictionary'
 
 const i18n = rosetta(dict);
 
-const user_locale = navigator.language || navigator.userLanguage;
+const isRussian = (navigator.language || navigator.userLanguage).toLowerCase().includes('ru');
 
 document.documentElement.setAttribute(
   "lang",
-  user_locale === "ru" ? "ru" : "en"
+  isRussian ? 'ru' : 'en'
 );
 
-i18n.locale(user_locale === "ru" ? "ru" : "en");
+i18n.locale(isRussian ? 'ru' : 'en');
 
 export const { t, locale, set, table } = i18n;
