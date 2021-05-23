@@ -3,9 +3,10 @@ import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import Graphemer from 'graphemer'
 import { t } from '../i18n'
+import CopyBtn from '../components/ButtonCopy'
 
 export default function (): Component {
-  const [text, setText] = createSignal('')
+  const [output, setOutput] = createSignal('')
   const splitter = new Graphemer()
 
   return (
@@ -17,16 +18,16 @@ export default function (): Component {
         class={styles.textarea}
         placeholder={t(['string_backwards', 'input_textarea_placehoder'])}
         aria-placeholder={t(['string_backwards', 'input_textarea_placehoder'])}
-        onInput={e => setText(e.target.value)}
+        onInput={e => setOutput(splitter.splitGraphemes(e.target.value).reverse().join(''))}
       />
-      <p>{t(['string_backwards', 'out_textarea_description'])}</p>
+      <CopyBtn copy={output()}/>
       <textarea
         readonly
         class={styles.textarea}
-        value={splitter.splitGraphemes(text()).reverse().join('')}
+        value={output()}
         placeholder={t(['string_backwards', 'out_textarea_placehoder'])}
         aria-placeholder={t(['string_backwards', 'out_textarea_placehoder'])}
-      />
+      /> 
     </>
   )
 }
