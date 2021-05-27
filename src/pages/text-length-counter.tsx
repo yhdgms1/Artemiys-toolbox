@@ -10,14 +10,17 @@ export default function (): Component {
 
   return (
     <>
-      <p class={styles.text}>{t(['text_length_counter','length'])}{splitter.countGraphemes(text())}</p>
       <p class={styles.text}>
-        {t(['text_length_counter','length_without_ws'])}
+        {t(['text_length_counter', 'length'])}
+        {splitter.countGraphemes(text())}
+      </p>
+      <p class={styles.text}>
+        {t(['text_length_counter', 'length_without_ws'])}
         {splitter.countGraphemes(text().replaceAll(' ', ''))}
       </p>
       <textarea
-        placeholder={t(['text_length_counter','textarea_placeholder'])}
-        aria-placeholder={t(['text_length_counter','textarea_placeholder'])}
+        placeholder={t(['text_length_counter', 'textarea_placeholder'])}
+        aria-placeholder={t(['text_length_counter', 'textarea_placeholder'])}
         class={styles.textarea}
         spellcheck="false"
         onInput={e => setText(e.target.value)}

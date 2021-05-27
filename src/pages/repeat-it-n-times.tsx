@@ -46,7 +46,7 @@ export default function (): Component {
         >
           Repeat!
         </button>
-        <CopyBtn copy={output()}/>
+        <CopyBtn copy={output()} />
       </div>
       <textarea
         readonly

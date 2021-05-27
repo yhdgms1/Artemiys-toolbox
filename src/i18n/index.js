@@ -1,15 +1,14 @@
-import rosetta from "rosetta";
+import rosetta from 'rosetta'
 import dict from './dictionary'
 
-const i18n = rosetta(dict);
+const i18n = rosetta(dict)
 
-const isRussian = (navigator.language || navigator.userLanguage).toLowerCase().includes('ru');
+const isRussian = (navigator.language || navigator.userLanguage)
+  .toLowerCase()
+  .includes('ru')
 
-document.documentElement.setAttribute(
-  "lang",
-  isRussian ? 'ru' : 'en'
-);
+document.documentElement.setAttribute('lang', isRussian ? 'ru' : 'en')
 
-i18n.locale(isRussian ? 'ru' : 'en');
+i18n.locale(isRussian ? 'ru' : 'en')
 
-export const { t, locale, set, table } = i18n;
+export const { t, locale, set, table } = i18n

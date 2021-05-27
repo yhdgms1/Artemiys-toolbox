@@ -16,7 +16,7 @@ export default function (): Component {
         aria-placeholder="Enter the text to swagify"
         onInput={e => setOutput(swagify(e.target.value))}
       />
-      <CopyBtn copy={output()}/>
+      <CopyBtn copy={output()} />
       <textarea
         readonly
         class={styles.textarea}

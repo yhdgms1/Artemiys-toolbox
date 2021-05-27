@@ -185,7 +185,7 @@ export default function (): Component {
         >
           Change layout
         </button>
-        <CopyBtn copy={output()}/>
+        <CopyBtn copy={output()} />
       </div>
       <textarea
         readonly

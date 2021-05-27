@@ -18,16 +18,18 @@ export default function (): Component {
         class={styles.textarea}
         placeholder={t(['string_backwards', 'input_textarea_placehoder'])}
         aria-placeholder={t(['string_backwards', 'input_textarea_placehoder'])}
-        onInput={e => setOutput(splitter.splitGraphemes(e.target.value).reverse().join(''))}
+        onInput={e =>
+          setOutput(splitter.splitGraphemes(e.target.value).reverse().join(''))
+        }
       />
-      <CopyBtn copy={output()}/>
+      <CopyBtn copy={output()} />
       <textarea
         readonly
         class={styles.textarea}
         value={output()}
         placeholder={t(['string_backwards', 'out_textarea_placehoder'])}
         aria-placeholder={t(['string_backwards', 'out_textarea_placehoder'])}
-      /> 
+      />
     </>
   )
 }
