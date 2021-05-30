@@ -14,6 +14,10 @@ export default {
       default: 'Copy!',
       active: 'Copied!',
     },
+    uwuifier: {
+      input: 'Enter the text to uwuify',
+      output: 'Result will be here'
+    }
   },
   ru: {
     text_length_counter: {
@@ -30,5 +34,9 @@ export default {
       default: 'Скопировать!',
       active: 'Скопировано!',
     },
+    uwuifier: {
+      input: 'Введите текст, что бы сделать его UwUшным',
+      output: 'UwUшный текст будет тут'
+    }
   },
 }
