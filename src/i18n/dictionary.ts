@@ -18,6 +18,13 @@ export default {
       input: 'Enter the text to uwuify',
       output: 'Result will be here',
     },
+    'repeat-it-n-times': {
+      result: 'Result will be here',
+      repeat: 'Repeat',
+      it: 'it',
+      'so many': 'so many',
+      times: 'times'
+    }
   },
   ru: {
     text_length_counter: {
@@ -38,5 +45,12 @@ export default {
       input: 'Введите текст, что бы сделать его UwUшным',
       output: 'UwUшный текст будет тут',
     },
+    'repeat-it-n-times': {
+      result: 'Результат будет тут',
+      repeat: 'Повторить',
+      it: 'это',
+      'so many': 'столько',
+      times: 'раз'
+    }
   },
 }

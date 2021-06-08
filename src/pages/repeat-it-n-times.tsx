@@ -12,27 +12,23 @@ export default function (): Component {
   return (
     <>
       <div class={`${styles.text} ${styles.responsive_container}`}>
-        <label for="repeat">Repeat</label>
+        <label>{t(['repeat-it-n-times', 'repeat'])}</label>
         <input
           type="text"
-          id="repeat"
-          name="repeat"
-          placeholder="it"
+          placeholder={t(['repeat-it-n-times', 'it'])}
           class={styles.input}
           onInput={e => setText(e.target.value)}
           spellcheck="false"
         />
         <input
           type="number"
-          id="times"
-          name="times"
-          placeholder="so many"
+          placeholder={t(['repeat-it-n-times', 'so many'])}
           class={styles.input}
           onInput={e => setCount(e.target.valueAsNumber)}
           min="1"
           max="5368708"
         />
-        <label for="times">times</label>
+        <label>{t(['repeat-it-n-times', 'times'])}</label>
       </div>
       <div class={styles.responsive_container}>
         <button
@@ -41,10 +37,10 @@ export default function (): Component {
           onClick={() =>
             count() <= 5368708
               ? setOutput(text().repeat(count()))
-              : alert('The number of reps is too high')
+              : alert('The number is too high')
           }
         >
-          Repeat!
+          {t(['repeat-it-n-times', 'repeat'])}!
         </button>
         <CopyBtn copy={output()} />
       </div>
@@ -52,8 +48,8 @@ export default function (): Component {
         readonly
         class={styles.textarea}
         value={output()}
-        placeholder="Result will be here"
-        aria-placeholder="Result will be here"
+        placeholder={t(['repeat-it-n-times', 'result'])}
+        aria-placeholder={t(['repeat-it-n-times', 'result'])}
       />
     </>
   )

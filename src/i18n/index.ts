@@ -3,7 +3,7 @@ import dict from './dictionary'
 
 const i18n = rosetta(dict)
 
-const isRussian = (navigator.language || navigator.userLanguage)
+const isRussian: boolean = (navigator.language || navigator.userLanguage)
   .toLowerCase()
   .includes('ru')
 
