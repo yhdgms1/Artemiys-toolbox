@@ -2,6 +2,7 @@ import type { Component } from 'solid-js'
 import { Link, Route, useRouter } from 'solid-app-router'
 import { css } from 'linaria'
 import * as styles from './styles/shared'
+import clsx from 'clsx';
 
 const title = css`
   font-size: 1.625em;
@@ -28,9 +29,7 @@ const App: Component = () => {
         <h1>
           <Link
             href="/"
-            class={`${title} ${styles.link} ${
-              router.location === '/' ? no_underline : ''
-            }`}
+            class={clsx(title, styles.link, router.location === '/' ? no_underline : '')}
           >
             Artemiy's Toolbox
           </Link>

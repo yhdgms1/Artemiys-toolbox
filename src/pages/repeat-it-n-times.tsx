@@ -3,6 +3,7 @@ import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
 import CopyBtn from '../components/ButtonCopy'
+import clsx from 'clsx';
 
 export default function (): Component {
   const [text, setText] = createSignal('')
@@ -11,7 +12,7 @@ export default function (): Component {
 
   return (
     <>
-      <div class={`${styles.text} ${styles.responsive_container}`}>
+      <div class={clsx(styles.text, styles.responsive_container)}>
         <label>{t(['repeat-it-n-times', 'repeat'])}</label>
         <input
           type="text"

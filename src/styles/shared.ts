@@ -29,7 +29,7 @@ export const button = css`
   font-size: 16px;
   padding: 0.8rem 2.4rem;
   margin: 1.124rem;
-  border-radius: 4px;
+  border-radius: 6px;
   color: #000;
   border: 2px solid transparent;
   background: #ff7aa2;
@@ -175,7 +175,7 @@ export const textarea = css`
   margin: 0 0 0.5em 0;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: 6px;
   @media (prefers-color-scheme: dark) {
     background: #161616;
     border-color: #262626;
@@ -205,7 +205,7 @@ export const input = css`
   box-sizing: border-box;
   border: unset;
   background: unset;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 0.25rem;
   @media (prefers-color-scheme: dark) {
     color: #eee;

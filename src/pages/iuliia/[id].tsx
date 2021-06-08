@@ -4,6 +4,8 @@ import { createSignal, Show } from 'solid-js'
 import type { Component } from 'solid-js'
 import schemas from './schemas.js'
 import { translate } from '@artemis69/iuliia'
+import CopyBtn from '../../components/ButtonCopy'
+import clsx from 'clsx';
 
 export default function (props): Component {
   const schema = props.params.id
@@ -14,7 +16,7 @@ export default function (props): Component {
   return (
     <>
       <Show when={schema in schemas} fallback={<Fallback />}>
-        <Link class={`${styles.big_text} ${styles.link}`} href="/iuliia">
+        <Link class={clsx(styles.link, styles.big_text)} href="/iuliia">
           go back
         </Link>
         <p class={styles.text}>Current schema is {schema}</p>
@@ -25,13 +27,16 @@ export default function (props): Component {
           aria-placeholder="Type the text here"
           onInput={e => setText(e.target.value)}
         />
-        <button
-          type="button"
-          class={styles.button}
-          onClick={() => setOutput(translate(text(), schemas[schema]))}
-        >
-          Transliterate!
-        </button>
+        <div class={styles.responsive_container}>
+          <button
+            type="button"
+            class={styles.button}
+            onClick={() => setOutput(translate(text(), schemas[schema]))}
+          >
+            Transliterate!
+          </button>
+          <CopyBtn copy={output()} />
+        </div>
         <textarea
           class={styles.textarea}
           spellcheck="false"
@@ -48,7 +53,7 @@ export default function (props): Component {
 const Fallback: Component = () => (
   <>
     <p class={styles.big_text}>Schema does not exists</p>
-    <Link class={`${styles.link}`} href="/iuliia">
+    <Link class={styles.link} href="/iuliia">
       view existing
     </Link>
   </>
