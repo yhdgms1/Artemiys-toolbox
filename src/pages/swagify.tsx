@@ -6,6 +6,7 @@ import { t } from '../i18n'
 import CopyBtn from '../components/ButtonCopy'
 
 export default function (): Component {
+  const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
 
   return (
@@ -14,9 +15,18 @@ export default function (): Component {
         class={styles.textarea}
         placeholder="Enter the text to swagify"
         aria-placeholder="Enter the text to swagify"
-        onInput={e => setOutput(swagify(e.target.value))}
+        onInput={e => setText(e.target.value)}
       />
-      <CopyBtn copy={output()} />
+      <div class={styles.responsive_container}>
+        <button
+          type="button"
+          class={styles.button}
+          onClick={() => setOutput(swagify(text()))}
+        >
+          Swagify!
+        </button>
+        <CopyBtn copy={output()} />
+      </div>
       <textarea
         readonly
         class={styles.textarea}

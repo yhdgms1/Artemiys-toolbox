@@ -16,8 +16,8 @@ export default {
     },
     uwuifier: {
       input: 'Enter the text to uwuify',
-      output: 'Result will be here'
-    }
+      output: 'Result will be here',
+    },
   },
   ru: {
     text_length_counter: {
@@ -36,7 +36,7 @@ export default {
     },
     uwuifier: {
       input: 'Введите текст, что бы сделать его UwUшным',
-      output: 'UwUшный текст будет тут'
-    }
+      output: 'UwUшный текст будет тут',
+    },
   },
 }
