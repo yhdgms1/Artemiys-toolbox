@@ -31,8 +31,8 @@ export default function (): Component {
         readonly
         class={styles.textarea}
         value={output()}
-        placeholder="Result will be here"
-        aria-placeholder="Result will be here"
+        placeholder={t(['swagify', 'result'])}
+        aria-placeholder={t(['swagify', 'result'])}
       />
     </>
   )

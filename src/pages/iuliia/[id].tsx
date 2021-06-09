@@ -5,7 +5,7 @@ import type { Component } from 'solid-js'
 import schemas from './schemas.js'
 import { translate } from '@artemis69/iuliia'
 import CopyBtn from '../../components/ButtonCopy'
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 export default function (props): Component {
   const schema = props.params.id

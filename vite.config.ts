@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import { default as solidPlugin } from 'vite-plugin-solid'
-import { linaria as linariaPlugin } from '@artemis69/vite-plugin-linaria-css'
+import { default as linariaPlugin } from 'vite-plugin-linaria'
 
 export default defineConfig({
   plugins: [solidPlugin(), linariaPlugin()],

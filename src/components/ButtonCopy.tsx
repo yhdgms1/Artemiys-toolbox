@@ -2,7 +2,7 @@ import type { Component, JSX } from 'solid-js'
 import { createSignal } from 'solid-js'
 import { t } from '../i18n'
 import * as styles from '../styles/shared'
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 interface Props extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
   copy: string

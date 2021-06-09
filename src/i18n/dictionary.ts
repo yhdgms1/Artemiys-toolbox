@@ -1,11 +1,11 @@
 export default {
   en: {
-    text_length_counter: {
+    'text-length-counter': {
       textarea_placeholder: 'Input your text here to count',
       length: 'Length: ',
       length_without_ws: 'Length without whitespaces: ',
     },
-    string_backwards: {
+    'string-backwards': {
       header: 'turning text backwards',
       input_textarea_placehoder: 'Type text',
       out_textarea_placehoder: 'Text backwards will be here',
@@ -23,16 +23,25 @@ export default {
       repeat: 'Repeat',
       it: 'it',
       'so many': 'so many',
-      times: 'times'
+      times: 'times',
+    },
+    'punto-switcher': {
+      'input-placeholder': "Enter the text you want to change the layout of",
+      'button': 'Change layout',
+      'result': "Result will be here",
+      'note': 'Note: Contains bugs'
+    },
+    'swagify': {
+      'result': "Result will be here",
     }
   },
   ru: {
-    text_length_counter: {
+    'text-length-counter': {
       textarea_placeholder: 'Введите текст, чтобы сосчитать',
       length: 'Длина: ',
       length_without_ws: 'Длина без учёта пробелов: ',
     },
-    string_backwards: {
+    'string-backwards': {
       header: 'Перевернуть текст задом наперёд',
       input_textarea_placehoder: 'Введите текст',
       out_textarea_placehoder: 'Текст задом наперёд будет тут',
@@ -50,7 +59,16 @@ export default {
       repeat: 'Повторить',
       it: 'это',
       'so many': 'столько',
-      times: 'раз'
+      times: 'раз',
+    },
+    'punto-switcher': {
+      'input-placeholder': "Введите текст, раскладку которого вы хотите изменить",
+      'button': 'Изменить раскладку',
+      'result': "Результат будет тут",
+      'note': 'Примечание: Содержит баги'
+    },
+    'swagify': {
+      'result': "Результат будет тут",
     }
   },
 }

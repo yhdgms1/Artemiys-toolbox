@@ -12,12 +12,12 @@ export default function (): Component {
   return (
     <>
       <h1 class={styles.big_text + ' ' + styles.padding_bottom_sm}>
-        {t(['string_backwards', 'header'])}
+        {t(['string-backwards', 'header'])}
       </h1>
       <textarea
         class={styles.textarea}
-        placeholder={t(['string_backwards', 'input_textarea_placehoder'])}
-        aria-placeholder={t(['string_backwards', 'input_textarea_placehoder'])}
+        placeholder={t(['string-backwards', 'input_textarea_placehoder'])}
+        aria-placeholder={t(['string-backwards', 'input_textarea_placehoder'])}
         onInput={e =>
           setOutput(splitter.splitGraphemes(e.target.value).reverse().join(''))
         }
@@ -27,8 +27,8 @@ export default function (): Component {
         readonly
         class={styles.textarea}
         value={output()}
-        placeholder={t(['string_backwards', 'out_textarea_placehoder'])}
-        aria-placeholder={t(['string_backwards', 'out_textarea_placehoder'])}
+        placeholder={t(['string-backwards', 'out_textarea_placehoder'])}
+        aria-placeholder={t(['string-backwards', 'out_textarea_placehoder'])}
       />
     </>
   )

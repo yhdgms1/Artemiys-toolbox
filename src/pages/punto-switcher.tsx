@@ -170,11 +170,11 @@ export default function (): Component {
 
   return (
     <>
-      <p class={styles.text}>Note: Contains bugs</p>
+      <p class={styles.text}>{t(['punto-switcher', 'note'])}</p>
       <textarea
         class={styles.textarea}
-        placeholder="Enter the text you want to change the layout of"
-        aria-placeholder="Enter the text you want to change the layout of"
+        placeholder={t(['punto-switcher', 'input-placeholder'])}
+        aria-placeholder={t(['punto-switcher', 'input-placeholder'])}
         onInput={e => setText(e.target.value)}
       />
       <div class={styles.responsive_container}>
@@ -183,7 +183,7 @@ export default function (): Component {
           class={styles.button}
           onClick={() => setOutput(changeLayout(text()))}
         >
-          Change layout
+          {t(['punto-switcher', 'button'])}!
         </button>
         <CopyBtn copy={output()} />
       </div>
@@ -191,8 +191,8 @@ export default function (): Component {
         readonly
         class={styles.textarea}
         value={output()}
-        placeholder="Result will be here"
-        aria-placeholder="Result will be here"
+        placeholder={t(['punto-switcher', 'result'])}
+        aria-placeholder={t(['punto-switcher', 'result'])}
       />
     </>
   )

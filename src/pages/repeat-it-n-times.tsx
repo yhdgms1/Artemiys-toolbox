@@ -3,7 +3,7 @@ import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
 import CopyBtn from '../components/ButtonCopy'
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 export default function (): Component {
   const [text, setText] = createSignal('')
