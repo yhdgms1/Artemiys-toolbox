@@ -129,7 +129,7 @@ export default function (): Component {
           <Link href={`/iuliia/${scheme.name}`} class={styles.card}>
             <div class={styles.card__container}>
               <h3>{scheme.name}</h3>
-              <p>{t(['iuliia', 'schema'], { name:  scheme.description})}</p>
+              <p>{t(['iuliia', 'schema'], { name: scheme.description })}</p>
             </div>
           </Link>
         ))}

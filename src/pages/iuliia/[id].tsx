@@ -20,7 +20,9 @@ export default function (props): Component {
         <Link class={clsx(styles.link, styles.big_text)} href="/iuliia">
           {t(['iuliia-id', 'go back'])}
         </Link>
-        <p class={styles.text}>{t(['iuliia-id', 'current-schema'], { schema })}</p>
+        <p class={styles.text}>
+          {t(['iuliia-id', 'current-schema'], { schema })}
+        </p>
         <textarea
           class={styles.textarea}
           spellcheck="false"

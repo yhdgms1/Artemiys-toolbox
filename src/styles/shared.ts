@@ -32,20 +32,21 @@ export const button = css`
   font-size: 16px;
   border-radius: 7px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
   box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
   border: 1px solid #0000002e;
   background: #f2f2f2;
   color: #323130;
-  &:hover{
-    box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%), 0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
+  &:hover {
+    box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%),
+      0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
   }
-  @media (prefers-color-scheme: dark){
+  @media (prefers-color-scheme: dark) {
     box-shadow: 0 5px 10px 0 rgb(58 59 66 / 37%);
     border: 1px solid #ffffff2e;
     background: #252525;
     color: #d5ded7;
-    &:hover{
+    &:hover {
       box-shadow: 0 1px 4px 0 rgb(58 59 66 / 37%);
     }
   }
@@ -110,7 +111,8 @@ export const card = css`
   background: #fff;
   text-decoration: none;
   position: relative;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     border-color: #ffc2d4;
     background: #ffe0e9;
   }
@@ -137,7 +139,8 @@ export const card = css`
         color: #eee;
       }
     }
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: #e69ab0;
       background: #ff9ebb;
       outline: transparent;
