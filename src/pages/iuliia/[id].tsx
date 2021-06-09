@@ -1,11 +1,12 @@
+import type { Component } from 'solid-js'
 import * as styles from '../../styles/shared'
 import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
-import type { Component } from 'solid-js'
 import schemas from './schemas.js'
 import { translate } from '@artemis69/iuliia'
 import CopyBtn from '../../components/ButtonCopy'
 import clsx from 'clsx'
+import { t } from '../../i18n'
 
 export default function (props): Component {
   const schema = props.params.id
@@ -17,14 +18,14 @@ export default function (props): Component {
     <>
       <Show when={schema in schemas} fallback={<Fallback />}>
         <Link class={clsx(styles.link, styles.big_text)} href="/iuliia">
-          go back
+          {t(['iuliia-id', 'go back'])}
         </Link>
-        <p class={styles.text}>Current schema is {schema}</p>
+        <p class={styles.text}>{t(['iuliia-id', 'current-schema'], { schema })}</p>
         <textarea
           class={styles.textarea}
           spellcheck="false"
-          placeholder="Type the text here"
-          aria-placeholder="Type the text here"
+          placeholder={t(['iuliia-id', 'input'])}
+          aria-placeholder={t(['iuliia-id', 'input'])}
           onInput={e => setText(e.target.value)}
         />
         <div class={styles.responsive_container}>
@@ -33,7 +34,7 @@ export default function (props): Component {
             class={styles.button}
             onClick={() => setOutput(translate(text(), schemas[schema]))}
           >
-            Transliterate!
+            {t(['iuliia-id', 'button'])}!
           </button>
           <CopyBtn copy={output()} />
         </div>
@@ -41,8 +42,8 @@ export default function (props): Component {
           class={styles.textarea}
           spellcheck="false"
           readonly
-          placeholder="Transliterated text will be here"
-          aria-placeholder="Transliterated text will be here"
+          placeholder={t(['iuliia-id', 'output'])}
+          aria-placeholder={t(['iuliia-id', 'output'])}
           value={output()}
         />
       </Show>
@@ -52,9 +53,9 @@ export default function (props): Component {
 
 const Fallback: Component = () => (
   <>
-    <p class={styles.big_text}>Schema does not exists</p>
+    <p class={styles.big_text}>{t(['iuliia-id', 'not exist'])}</p>
     <Link class={styles.link} href="/iuliia">
-      view existing
+      {t(['iuliia-id', 'view existing'])}
     </Link>
   </>
 )

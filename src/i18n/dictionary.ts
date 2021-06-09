@@ -33,6 +33,19 @@ export default {
     },
     'swagify': {
       'result': "Result will be here",
+    },
+    'iuliia': {
+      'desc': 'Select transliteration standard',
+      'schema': '{{ name }} transliteration schema',
+    },
+    'iuliia-id': {
+      'go back': 'go back',
+      'current-schema': 'Current schema is {{ schema }}',
+      'input': 'Type the text here',
+      'output': 'Transliterated text will be here',
+      'button': 'Transliterate',
+      'not exist': 'Schema does not exists',
+      'view existing': "view existing"
     }
   },
   ru: {
@@ -69,6 +82,19 @@ export default {
     },
     'swagify': {
       'result': "Результат будет тут",
+    },
+    'iuliia': {
+      'desk': "Выберите стандарт транслитерации",
+      'schema': 'Схема транслитерации {{ name }}'
+    },
+    'iuliia-id': {
+      'go back': 'назад',
+      'current-schema': 'Текущая схема - {{ schema }}',
+      'input': 'Введите сюда текст',
+      'output': 'Транслитерированный текст будет здесь',
+      'button': 'Транслитерировать',
+      'not exist': 'Схема не существует',
+      'view existing': 'посмотреть существующие'
     }
   },
 }
