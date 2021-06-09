@@ -26,47 +26,27 @@ export const main_layout = css`
 `
 
 export const button = css`
-  font-size: 16px;
-  padding: 0.8rem 2.4rem;
   margin: 1.124rem;
-  border-radius: 6px;
-  color: #000;
-  border: 2px solid transparent;
-  background: #ff7aa2;
+  height: 2.7rem;
+  width: 13rem;
+  font-size: 16px;
+  border-radius: 7px;
   cursor: pointer;
-  transition: all 200ms ease;
-  &[disabled] {
-    color: #333;
+  transition: all .3s;
+  box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
+  border: 1px solid #0000002e;
+  background: #f2f2f2;
+  color: #323130;
+  &:hover{
+    box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%), 0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
   }
-  &[disabled]:hover {
-    background: #ffa6c1;
-  }
-  &:hover {
-    border: 2px solid #ffc2d4;
-    background: #ff93b3;
-  }
-  &:active {
-    border: 2px solid #ffe0e9;
-    background: #ff7aa2;
-    box-shadow: 0 0 2px #ffe8ef;
-  }
-  @media (prefers-color-scheme: dark) {
-    color: #eee;
-    background: #121212;
-    &[disabled] {
-      color: #ddd;
-    }
-    &[disabled]:hover {
-      background: #141414;
-    }
-    &:hover {
-      border: 2px solid #121212;
-      background: #161616;
-    }
-    &:active {
-      border: 2px solid #161616;
-      background: #121212;
-      box-shadow: 0 0 2px #080808;
+  @media (prefers-color-scheme: dark){
+    box-shadow: 0 5px 10px 0 rgb(58 59 66 / 37%);
+    border: 1px solid #ffffff2e;
+    background: #252525;
+    color: #d5ded7;
+    &:hover{
+      box-shadow: 0 1px 4px 0 rgb(58 59 66 / 37%);
     }
   }
   @media screen and (max-width: 640px) {
@@ -130,7 +110,7 @@ export const card = css`
   background: #fff;
   text-decoration: none;
   position: relative;
-  &:hover {
+  &:hover, &:focus {
     border-color: #ffc2d4;
     background: #ffe0e9;
   }
@@ -146,10 +126,10 @@ export const card = css`
     width: 100%;
   }
   @media (prefers-color-scheme: dark) {
-    background: #161616;
+    background: #171717;
     border-color: #333;
     & > .${card__container} {
-      background: #161616;
+      background: #171717;
       & > h3 {
         color: #eee;
       }
@@ -157,9 +137,10 @@ export const card = css`
         color: #eee;
       }
     }
-    &:hover {
+    &:hover, &:focus {
       border-color: #e69ab0;
       background: #ff9ebb;
+      outline: transparent;
     }
     &:active {
       background: #fd8aac;
@@ -177,8 +158,8 @@ export const textarea = css`
   border: 1px solid #ccc;
   border-radius: 6px;
   @media (prefers-color-scheme: dark) {
-    background: #161616;
-    border-color: #262626;
+    background: #0000;
+    border-color: #3b3b3b;
     color: #eee;
     &:focus {
       outline-color: #ccc;
