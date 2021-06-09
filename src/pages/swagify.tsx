@@ -4,6 +4,7 @@ import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
 import CopyBtn from '../components/ButtonCopy'
+import { Title } from '../components/Title'
 
 export default function (): Component {
   const [text, setText] = createSignal('')
@@ -11,6 +12,9 @@ export default function (): Component {
 
   return (
     <>
+      <Title>
+        Swagify
+      </Title>
       <textarea
         class={styles.textarea}
         placeholder="Enter the text to swagify"

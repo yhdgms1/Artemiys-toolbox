@@ -2,6 +2,7 @@ import type { Component } from 'solid-js'
 import { Link } from 'solid-app-router'
 import * as styles from '../../styles/shared'
 import { t } from '../../i18n'
+import { Title } from '../../components/Title'
 
 interface ISchema {
   name: string
@@ -122,6 +123,7 @@ const schemes: ISchema[] = [
 export default function (): Component {
   return (
     <>
+      <Title>Iuliia</Title>
       <h1 class={styles.big_text}>Iuliia</h1>
       <p class={styles.text}>{t(['iuliia', 'desk'])}</p>
       <div class={styles.main}>

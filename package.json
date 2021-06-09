@@ -19,10 +19,10 @@
   },
   "dependencies": {
     "@artemis69/iuliia": "^0.0.1",
-    "@artemis69/swagify": "^1.1.0",
+    "@artemis69/swagify": "^1.1.1",
     "clsx": "^1.1.1",
     "graphemer": "^1.2.0",
-    "linaria": "3.0.0-beta.5",
+    "linaria": "3.0.0-beta.6",
     "rosetta": "^1.1.0",
     "solid-app-router": "^0.0.45",
     "solid-js": "^1.0.0-rc.2",

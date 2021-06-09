@@ -3,6 +3,7 @@ import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
 import CopyBtn from '../components/ButtonCopy'
+import { Title } from '../components/Title'
 
 const rules = {
   '~': 'Ё',
@@ -170,6 +171,9 @@ export default function (): Component {
 
   return (
     <>
+      <Title>
+        Punto Switcher
+      </Title>
       <p class={styles.text}>{t(['punto-switcher', 'note'])}</p>
       <textarea
         class={styles.textarea}

@@ -4,6 +4,7 @@ import * as styles from '../styles/shared'
 import Graphemer from 'graphemer'
 import { t } from '../i18n'
 import CopyBtn from '../components/ButtonCopy'
+import { Title } from '../components/Title'
 
 export default function (): Component {
   const [output, setOutput] = createSignal('')
@@ -11,6 +12,9 @@ export default function (): Component {
 
   return (
     <>
+      <Title>
+        String Backwards
+      </Title>
       <h1 class={styles.big_text + ' ' + styles.padding_bottom_sm}>
         {t(['string-backwards', 'header'])}
       </h1>

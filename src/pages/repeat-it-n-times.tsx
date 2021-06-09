@@ -4,6 +4,7 @@ import * as styles from '../styles/shared'
 import { t } from '../i18n'
 import CopyBtn from '../components/ButtonCopy'
 import clsx from 'clsx'
+import { Title } from '../components/Title'
 
 export default function (): Component {
   const [text, setText] = createSignal('')
@@ -12,6 +13,9 @@ export default function (): Component {
 
   return (
     <>
+      <Title>
+        Repeat something n times
+      </Title>
       <div class={clsx(styles.text, styles.responsive_container)}>
         <label>{t(['repeat-it-n-times', 'repeat'])}</label>
         <input

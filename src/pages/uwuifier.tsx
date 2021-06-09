@@ -4,6 +4,7 @@ import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
 import CopyBtn from '../components/ButtonCopy'
+import { Title } from '../components/Title'
 
 export default function (): Component {
   const uwuifier = new Uwuifier()
@@ -12,6 +13,9 @@ export default function (): Component {
 
   return (
     <>
+      <Title>
+        Uwuifier
+      </Title>
       <textarea
         class={styles.textarea}
         placeholder={t(['uwuifier', 'input'])}

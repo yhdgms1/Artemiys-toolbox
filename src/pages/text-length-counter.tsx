@@ -3,6 +3,7 @@ import { createSignal, onMount } from 'solid-js'
 import Graphemer from 'graphemer'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
+import { Title } from '../components/Title'
 
 export default function (): Component {
   const [text, setText] = createSignal('')
@@ -10,6 +11,9 @@ export default function (): Component {
 
   return (
     <>
+    <Title>
+      Text length counter
+    </Title>
       <p class={styles.text}>
         {t(['text-length-counter', 'length'])}
         {splitter.countGraphemes(text())}

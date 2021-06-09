@@ -1,6 +1,7 @@
 import type { Component } from 'solid-js'
 import * as styles from '../styles/shared'
 import { Link } from 'solid-app-router'
+import { Title } from '../components/Title'
 
 interface ITools {
   title: string
@@ -50,6 +51,9 @@ const tools: ITools[] = [
 export default function (): Component {
   return (
     <>
+      <Title>
+        Artemiy's Toolbox
+      </Title>
       {tools.map(tool => (
         <Link href={`/${tool.link}`} class={styles.card}>
           <div class={styles.card__container}>

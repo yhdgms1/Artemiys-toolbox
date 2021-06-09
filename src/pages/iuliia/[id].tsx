@@ -2,11 +2,12 @@ import type { Component } from 'solid-js'
 import * as styles from '../../styles/shared'
 import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
-import schemas from './schemas.js'
+import schemas from './schemas'
 import { translate } from '@artemis69/iuliia'
 import CopyBtn from '../../components/ButtonCopy'
 import clsx from 'clsx'
 import { t } from '../../i18n'
+import { Title } from '../../components/Title'
 
 export default function (props): Component {
   const schema = props.params.id
@@ -17,6 +18,9 @@ export default function (props): Component {
   return (
     <>
       <Show when={schema in schemas} fallback={<Fallback />}>
+        <Title>
+          Iuliia | {schema}
+        </Title>
         <Link class={clsx(styles.link, styles.big_text)} href="/iuliia">
           {t(['iuliia-id', 'go back'])}
         </Link>
@@ -55,6 +59,9 @@ export default function (props): Component {
 
 const Fallback: Component = () => (
   <>
+    <Title>
+      Schema does not exist
+    </Title>
     <p class={styles.big_text}>{t(['iuliia-id', 'not exist'])}</p>
     <Link class={styles.link} href="/iuliia">
       {t(['iuliia-id', 'view existing'])}
