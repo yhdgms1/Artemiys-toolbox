@@ -58,6 +58,7 @@ export const button = css`
 export const text = css`
   margin: 0.4rem 0;
   font-size: 1.2rem;
+  text-align: center;
 `
 
 export const big_text = css`
