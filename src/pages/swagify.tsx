@@ -1,25 +1,21 @@
-import type { Component } from 'solid-js'
 import { swagify } from '@artemis69/swagify'
 import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
-import CopyBtn from '../components/ButtonCopy'
-import { Title } from '../components/Title'
+import { CopyBtn, Title } from '../components'
 
-export default function (): Component {
+export default function () {
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
 
   return (
     <>
-      <Title>
-        Swagify
-      </Title>
+      <Title>Swagify</Title>
       <textarea
         class={styles.textarea}
         placeholder="Enter the text to swagify"
         aria-placeholder="Enter the text to swagify"
-        onInput={e => setText(e.target.value)}
+        onInput={e => setText((e.target as HTMLInputElement).value)}
       />
       <div class={styles.responsive_container}>
         <button

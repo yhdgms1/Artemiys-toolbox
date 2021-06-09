@@ -1,9 +1,9 @@
 {
     "theme_color" : "#FD6C9E",
-    "background_color" : "#161616",
+    "background_color" : "#171717",
     "display" : "browser",
     "scope" : "/",
     "start_url" : ".",
     "name" : "Artemiy's Toolbox",
-    "short_name" : "Toolbox"
+    "short_name" : "Artemiy's Toolbox"
 }

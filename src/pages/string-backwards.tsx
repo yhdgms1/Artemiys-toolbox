@@ -1,20 +1,16 @@
-import type { Component } from 'solid-js'
 import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import Graphemer from 'graphemer'
 import { t } from '../i18n'
-import CopyBtn from '../components/ButtonCopy'
-import { Title } from '../components/Title'
+import { CopyBtn, Title } from '../components'
 
-export default function (): Component {
+export default function () {
   const [output, setOutput] = createSignal('')
   const splitter = new Graphemer()
 
   return (
     <>
-      <Title>
-        String Backwards
-      </Title>
+      <Title>String Backwards</Title>
       <h1 class={styles.big_text + ' ' + styles.padding_bottom_sm}>
         {t(['string-backwards', 'header'])}
       </h1>
@@ -23,7 +19,12 @@ export default function (): Component {
         placeholder={t(['string-backwards', 'input_textarea_placehoder'])}
         aria-placeholder={t(['string-backwards', 'input_textarea_placehoder'])}
         onInput={e =>
-          setOutput(splitter.splitGraphemes(e.target.value).reverse().join(''))
+          setOutput(
+            splitter
+              .splitGraphemes((e.target as HTMLInputElement).value)
+              .reverse()
+              .join('')
+          )
         }
       />
       <CopyBtn copy={output()} />

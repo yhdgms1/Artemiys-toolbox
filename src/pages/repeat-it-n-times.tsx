@@ -1,35 +1,31 @@
-import type { Component } from 'solid-js'
 import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
-import CopyBtn from '../components/ButtonCopy'
+import { CopyBtn, Title } from '../components'
 import clsx from 'clsx'
-import { Title } from '../components/Title'
 
-export default function (): Component {
+export default function () {
   const [text, setText] = createSignal('')
   const [count, setCount] = createSignal(0)
   const [output, setOutput] = createSignal('')
 
   return (
     <>
-      <Title>
-        Repeat something n times
-      </Title>
+      <Title>Repeat something n times</Title>
       <div class={clsx(styles.text, styles.responsive_container)}>
         <label>{t(['repeat-it-n-times', 'repeat'])}</label>
         <input
           type="text"
           placeholder={t(['repeat-it-n-times', 'it'])}
           class={styles.input}
-          onInput={e => setText(e.target.value)}
-          spellcheck="false"
+          onInput={e => setText((e.target as HTMLInputElement).value)}
+          spellcheck={false}
         />
         <input
           type="number"
           placeholder={t(['repeat-it-n-times', 'so many'])}
           class={styles.input}
-          onInput={e => setCount(e.target.valueAsNumber)}
+          onInput={e => setCount((e.target as HTMLInputElement).valueAsNumber)}
           min="1"
           max="5368708"
         />

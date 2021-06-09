@@ -8,7 +8,4 @@ export default defineConfig({
     target: ['es2020', 'chrome84', 'firefox74'],
     polyfillDynamicImport: false,
   },
-  optimizeDeps: {
-    exclude: ['@amoutonbrady/solid-i18n'],
-  },
 })

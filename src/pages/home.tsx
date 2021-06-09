@@ -1,12 +1,11 @@
-import type { Component } from 'solid-js'
 import * as styles from '../styles/shared'
 import { Link } from 'solid-app-router'
-import { Title } from '../components/Title'
+import { Title } from '../components'
 
 interface ITools {
-  title: string
-  description: string
-  link: string
+  readonly title: string
+  readonly description: string
+  readonly link: string
 }
 
 const tools: ITools[] = [
@@ -46,14 +45,12 @@ const tools: ITools[] = [
     description: 'Turning text backwards',
     link: 'string-backwards',
   },
-] as const
+]
 
-export default function (): Component {
+export default function () {
   return (
     <>
-      <Title>
-        Artemiy's Toolbox
-      </Title>
+      <Title>Artemiy's Toolbox</Title>
       {tools.map(tool => (
         <Link href={`/${tool.link}`} class={styles.card}>
           <div class={styles.card__container}>

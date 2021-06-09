@@ -1,12 +1,11 @@
-import type { Component } from 'solid-js'
 import { Link } from 'solid-app-router'
 import * as styles from '../../styles/shared'
 import { t } from '../../i18n'
-import { Title } from '../../components/Title'
+import { Title } from '../../components'
 
 interface ISchema {
-  name: string
-  description: string
+  readonly name: string
+  readonly description: string
 }
 
 const schemes: ISchema[] = [
@@ -118,9 +117,9 @@ const schemes: ISchema[] = [
     name: 'ala_lc_alt',
     description: 'ALA-LC',
   },
-] as const
+]
 
-export default function (): Component {
+export default function () {
   return (
     <>
       <Title>Iuliia</Title>
