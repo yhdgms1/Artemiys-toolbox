@@ -99,7 +99,3 @@ export const heading = style({
   fontWeight: 400,
   fontVariationSettings: `'wght' 400`
 })
-
-export const padding_bottom_sm = style({
-  paddingBottom: '.7rem'
-})

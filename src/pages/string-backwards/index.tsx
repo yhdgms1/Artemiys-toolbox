@@ -4,7 +4,6 @@ import Graphemer from 'graphemer'
 import { t } from '../../i18n'
 import { CopyButton, Textarea } from '../../components'
 import { setTitle } from '../../helpers'
-import clsx from 'clsx'
 
 export default function () {
   setTitle('String Backwards')
@@ -14,7 +13,7 @@ export default function () {
 
   return (
     <>
-      <h2 class={clsx(styles.big_text, styles.padding_bottom_sm)}>
+      <h2 class={styles.big_text}>
         {t(['string-backwards', 'header'])}
       </h2>
       <Textarea
