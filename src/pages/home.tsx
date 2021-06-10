@@ -1,6 +1,6 @@
 import * as styles from '../styles/shared'
 import { Link } from 'solid-app-router'
-import { Title } from '../components'
+import { Title, Card } from '../components'
 
 interface ITools {
   readonly title: string
@@ -51,14 +51,7 @@ export default function () {
   return (
     <>
       <Title>Artemiy's Toolbox</Title>
-      {tools.map(tool => (
-        <Link href={`/${tool.link}`} class={styles.card}>
-          <div class={styles.card__container}>
-            <h3>{tool.title}</h3>
-            <p>{tool.description}</p>
-          </div>
-        </Link>
-      ))}
+      {tools.map(tool => <Card href={'/' + tool.link} title={tool.title} description={tool.description}/>)}
     </>
   )
 }

@@ -5,7 +5,7 @@ import schemas from './schemas'
 import { translate } from '@artemis69/iuliia'
 import clsx from 'clsx'
 import { t } from '../../i18n'
-import { Title, CopyBtn } from '../../components'
+import { Title, CopyButton, Textarea, Button } from '../../components'
 
 export default function (props) {
   const schema = props.params.id
@@ -23,25 +23,21 @@ export default function (props) {
         <p class={styles.text}>
           {t(['iuliia-id', 'current-schema'], { schema })}
         </p>
-        <textarea
-          class={styles.textarea}
+        <Textarea
           spellcheck={false}
           placeholder={t(['iuliia-id', 'input'])}
           aria-placeholder={t(['iuliia-id', 'input'])}
           onInput={e => setText((e.target as HTMLInputElement).value)}
         />
         <div class={styles.responsive_container}>
-          <button
-            type="button"
-            class={styles.button}
+          <Button
             onClick={() => setOutput(translate(text(), schemas[schema]))}
           >
             {t(['iuliia-id', 'button'])}!
-          </button>
-          <CopyBtn copy={output()} />
+          </Button>
+          <CopyButton copy={output()} />
         </div>
-        <textarea
-          class={styles.textarea}
+        <Textarea
           spellcheck={false}
           readonly
           placeholder={t(['iuliia-id', 'output'])}

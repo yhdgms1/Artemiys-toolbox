@@ -2,7 +2,7 @@ import Uwuifier from 'uwuifier'
 import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
-import { CopyBtn, Title } from '../components'
+import { CopyButton, Title, Textarea } from '../components'
 
 export default function () {
   const uwuifier = new Uwuifier()
@@ -12,8 +12,7 @@ export default function () {
   return (
     <>
       <Title>Uwuifier</Title>
-      <textarea
-        class={styles.textarea}
+      <Textarea
         placeholder={t(['uwuifier', 'input'])}
         aria-placeholder={t(['uwuifier', 'input'])}
         onInput={e =>
@@ -22,10 +21,9 @@ export default function () {
           )
         }
       />
-      <CopyBtn copy={output()} />
-      <textarea
+      <CopyButton copy={output()} />
+      <Textarea
         readonly
-        class={styles.textarea}
         value={output()}
         placeholder={t(['uwuifier', 'output'])}
         aria-placeholder={t(['uwuifier', 'output'])}

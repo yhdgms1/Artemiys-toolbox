@@ -1,7 +1,7 @@
 import { Link } from 'solid-app-router'
 import * as styles from '../../styles/shared'
 import { t } from '../../i18n'
-import { Title } from '../../components'
+import { Title, Card } from '../../components'
 
 interface ISchema {
   readonly name: string
@@ -126,14 +126,7 @@ export default function () {
       <h1 class={styles.big_text}>Iuliia</h1>
       <p class={styles.text}>{t(['iuliia', 'desk'])}</p>
       <div class={styles.main}>
-        {schemes.map(scheme => (
-          <Link href={`/iuliia/${scheme.name}`} class={styles.card}>
-            <div class={styles.card__container}>
-              <h3>{scheme.name}</h3>
-              <p>{t(['iuliia', 'schema'], { name: scheme.description })}</p>
-            </div>
-          </Link>
-        ))}
+        {schemes.map(scheme => <Card href={'/iuliia/' + scheme.name} title={scheme.name} description={t(['iuliia', 'schema'], { name: scheme.description })}/>)}
       </div>
     </>
   )

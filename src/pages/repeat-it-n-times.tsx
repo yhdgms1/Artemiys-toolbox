@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
-import { CopyBtn, Title } from '../components'
+import { CopyButton, Title, Textarea, Button } from '../components'
 import clsx from 'clsx'
 
 export default function () {
@@ -32,9 +32,7 @@ export default function () {
         <label>{t(['repeat-it-n-times', 'times'])}</label>
       </div>
       <div class={styles.responsive_container}>
-        <button
-          type="button"
-          class={styles.button}
+        <Button
           onClick={() =>
             count() <= 5368708
               ? setOutput(text().repeat(count()))
@@ -42,10 +40,10 @@ export default function () {
           }
         >
           {t(['repeat-it-n-times', 'repeat'])}!
-        </button>
-        <CopyBtn copy={output()} />
+        </Button>
+        <CopyButton copy={output()} />
       </div>
-      <textarea
+      <Textarea
         readonly
         class={styles.textarea}
         value={output()}

@@ -2,7 +2,7 @@ import { createSignal, onMount } from 'solid-js'
 import Graphemer from 'graphemer'
 import * as styles from '../styles/shared'
 import { t } from '../i18n'
-import { Title } from '../components'
+import { Title, Textarea } from '../components'
 
 export default function () {
   const [text, setText] = createSignal('')
@@ -19,13 +19,12 @@ export default function () {
         {t(['text-length-counter', 'length_without_ws'])}
         {splitter.countGraphemes(text().replaceAll(' ', ''))}
       </p>
-      <textarea
+      <Textarea
         placeholder={t(['text-length-counter', 'textarea_placeholder'])}
         aria-placeholder={t(['text-length-counter', 'textarea_placeholder'])}
-        class={styles.textarea}
         spellcheck={false}
         onInput={e => setText((e.target as HTMLInputElement).value)}
-      ></textarea>
+      ></Textarea>
     </>
   )
 }

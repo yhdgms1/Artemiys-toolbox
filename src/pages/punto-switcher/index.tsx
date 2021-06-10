@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js'
 import * as styles from '../../styles/shared'
 import { t } from '../../i18n'
-import { Title, CopyBtn } from '../../components'
+import { Title, CopyButton, Button, Textarea } from '../../components'
 import rules from './rules'
 
 export default function () {
@@ -31,25 +31,21 @@ export default function () {
     <>
       <Title>Punto Switcher</Title>
       <p class={styles.text}>{t(['punto-switcher', 'note'])}</p>
-      <textarea
-        class={styles.textarea}
+      <Textarea
         placeholder={t(['punto-switcher', 'input-placeholder'])}
         aria-placeholder={t(['punto-switcher', 'input-placeholder'])}
         onInput={e => setText((e.target as HTMLInputElement).value)}
       />
       <div class={styles.responsive_container}>
-        <button
-          type="button"
-          class={styles.button}
+        <Button
           onClick={() => setOutput(changeLayout(text()))}
         >
           {t(['punto-switcher', 'button'])}!
-        </button>
-        <CopyBtn copy={output()} />
+        </Button>
+        <CopyButton copy={output()} />
       </div>
-      <textarea
+      <Textarea
         readonly
-        class={styles.textarea}
         value={output()}
         placeholder={t(['punto-switcher', 'result'])}
         aria-placeholder={t(['punto-switcher', 'result'])}

@@ -2,7 +2,7 @@ import { createSignal } from 'solid-js'
 import * as styles from '../styles/shared'
 import Graphemer from 'graphemer'
 import { t } from '../i18n'
-import { CopyBtn, Title } from '../components'
+import { CopyButton, Title, Textarea } from '../components'
 
 export default function () {
   const [output, setOutput] = createSignal('')
@@ -11,10 +11,10 @@ export default function () {
   return (
     <>
       <Title>String Backwards</Title>
-      <h1 class={styles.big_text + ' ' + styles.padding_bottom_sm}>
+      <h2 class={styles.big_text + ' ' + styles.padding_bottom_sm}>
         {t(['string-backwards', 'header'])}
-      </h1>
-      <textarea
+      </h2>
+      <Textarea
         class={styles.textarea}
         placeholder={t(['string-backwards', 'input_textarea_placehoder'])}
         aria-placeholder={t(['string-backwards', 'input_textarea_placehoder'])}
@@ -27,8 +27,8 @@ export default function () {
           )
         }
       />
-      <CopyBtn copy={output()} />
-      <textarea
+      <CopyButton copy={output()} />
+      <Textarea
         readonly
         class={styles.textarea}
         value={output()}

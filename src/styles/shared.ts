@@ -25,36 +25,6 @@ export const main_layout = css`
   align-items: center;
 `
 
-export const button = css`
-  margin: 1.124rem;
-  height: 2.7rem;
-  width: 13rem;
-  font-size: 16px;
-  border-radius: 7px;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
-  border: 1px solid #0000002e;
-  background: #f2f2f2;
-  color: #323130;
-  &:hover {
-    box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%),
-      0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
-  }
-  @media (prefers-color-scheme: dark) {
-    box-shadow: 0 5px 10px 0 rgb(58 59 66 / 37%);
-    border: 1px solid #ffffff2e;
-    background: #252525;
-    color: #d5ded7;
-    &:hover {
-      box-shadow: 0 1px 4px 0 rgb(58 59 66 / 37%);
-    }
-  }
-  @media screen and (max-width: 640px) {
-    display: block;
-  }
-`
-
 export const text = css`
   margin: 0.4rem 0;
   font-size: 1.2rem;
@@ -73,107 +43,6 @@ export const link = css`
   &:hover {
     text-decoration-style: dotted;
   }
-`
-
-export const card__container = css`
-  padding: 1.25rem 1rem;
-  height: 100%;
-  width: 100%;
-  background: #fff;
-  border-radius: 0.125rem;
-  & > h3 {
-    font-weight: 500;
-    font-size: larger;
-    color: #000;
-  }
-  & > p {
-    color: #000;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    opacity: 0;
-    background: #ff7aa2;
-    transition: opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  }
-`
-
-export const card = css`
-  transition: background 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95),
-    border cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
-  padding: 0.3em;
-  border-radius: 0.25rem;
-  border: 1px solid #ececec;
-  background: #fff;
-  text-decoration: none;
-  position: relative;
-  &:hover,
-  &:focus {
-    border-color: #ffc2d4;
-    background: #ffe0e9;
-  }
-  &:active {
-    border-color: #ff9ebb;
-    background: #ffc2d4;
-    & > .${card__container}::after {
-      opacity: 0.2;
-    }
-  }
-  @media screen and (max-width: 640px) {
-    margin-bottom: 1rem;
-    width: 100%;
-  }
-  @media (prefers-color-scheme: dark) {
-    background: #171717;
-    border-color: #333;
-    & > .${card__container} {
-      background: #171717;
-      & > h3 {
-        color: #eee;
-      }
-      & > p {
-        color: #eee;
-      }
-    }
-    &:hover,
-    &:focus {
-      border-color: #e69ab0;
-      background: #ff9ebb;
-      outline: transparent;
-    }
-    &:active {
-      background: #fd8aac;
-    }
-  }
-`
-
-export const textarea = css`
-  font-size: inherit;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  margin: 0 0 0.5em 0;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  @media (prefers-color-scheme: dark) {
-    background: #0000;
-    border-color: #3b3b3b;
-    color: #eee;
-    &:focus {
-      outline-color: #ccc;
-    }
-  }
-  max-width: 100%;
-  width: 90%;
-  padding: 0.4rem;
-  resize: vertical;
-  height: clamp(25vh, 30vh, 30vh);
 `
 
 export const responsive_container = css`
@@ -269,7 +138,4 @@ export const btn_as_link = css`
 
 export const padding_bottom_sm = css`
   padding-bottom: 0.7rem;
-`
-export const copy_btn = css`
-  cursor: copy;
 `
