@@ -17,7 +17,6 @@
     "prettier": "2.3.1",
     "typescript": "^4.3.2",
     "vite": "^2.3.7",
-    "vite-plugin-linaria": "^1.0.0",
     "vite-plugin-solid": "^2.0.0-rc.2"
   },
   "dependencies": {
@@ -25,7 +24,6 @@
     "@artemis69/swagify": "^1.1.1",
     "clsx": "^1.1.1",
     "graphemer": "^1.2.0",
-    "linaria": "3.0.0-beta.6",
     "rosetta": "^1.1.0",
     "solid-app-router": "^0.0.45",
     "solid-js": "^1.0.0-rc.2",
