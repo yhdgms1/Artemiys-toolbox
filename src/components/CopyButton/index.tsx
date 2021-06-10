@@ -1,14 +1,11 @@
 import type { JSX } from 'solid-js'
 
 import { createSignal } from 'solid-js'
-import { t } from '../i18n'
-import { Button } from './index'
+import { t } from '../../i18n'
+import { Button } from '../index'
 import clsx from 'clsx'
-import { css } from 'linaria'
 
-const copy_btn = css`
-  cursor: copy !important;
-`
+import * as styles from './style.css'
 
 interface Props extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
   copy: string
@@ -35,5 +32,5 @@ export const CopyButton = (props: Props) => {
     }
   }
 
-  return <Button class={copy_btn} onClick={clickHandler}>{text()}!</Button>
+  return <Button class={styles.copyButton} onClick={clickHandler}>{text()}!</Button>
 }
