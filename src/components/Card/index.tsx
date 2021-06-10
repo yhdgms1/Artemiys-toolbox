@@ -1,22 +1,7 @@
 import { Link } from 'solid-app-router'
 import { css } from 'linaria'
 
-const title = css`
-  font-weight: 500;
-  font-variation-settings: 'wght' 500;
-  font-size: larger;
-  color: #000;
-  @media (prefers-color-scheme: dark) {
-    color: #eee;
-  }
-`
-
-const description = css`
-  color: #000;
-  @media (prefers-color-scheme: dark) {
-    color: #eee;
-  }
-`
+import { title, description } from './style.css'
 
 const card__container = css`
   padding: 1.25rem 1rem;
