@@ -1,5 +1,5 @@
 import { Link } from 'solid-app-router'
-import * as styles from '../../styles/shared'
+import * as styles from '../../styles/index.css'
 import { t } from '../../i18n'
 import { Card } from '../../components'
 import { setTitle } from '../../helpers'

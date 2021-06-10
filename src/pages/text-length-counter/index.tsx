@@ -1,6 +1,6 @@
 import { createSignal, onMount } from 'solid-js'
 import Graphemer from 'graphemer'
-import * as styles from '../../styles/shared'
+import * as styles from '../../styles/index.css'
 import { t } from '../../i18n'
 import { Textarea } from '../../components'
 import { setTitle } from '../../helpers'

@@ -1,6 +1,6 @@
 import { swagify } from '@artemis69/swagify'
 import { createSignal } from 'solid-js'
-import * as styles from '../../styles/shared'
+import * as styles from '../../styles/index.css'
 import { t } from '../../i18n'
 import { CopyButton, Textarea, Button } from '../../components'
 import { setTitle } from '../../helpers'

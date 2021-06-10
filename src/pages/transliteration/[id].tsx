@@ -1,4 +1,4 @@
-import * as styles from '../../styles/shared'
+import * as styles from '../../styles/index.css'
 import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import schemas from './schemas'

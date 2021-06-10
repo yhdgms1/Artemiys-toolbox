@@ -1,4 +1,4 @@
-import * as styles from '../../../styles/shared'
+import * as styles from '../../../styles/index.css'
 import clsx from 'clsx'
 
 export default function () {
