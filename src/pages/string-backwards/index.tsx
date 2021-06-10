@@ -13,9 +13,7 @@ export default function () {
 
   return (
     <>
-      <h2 class={styles.big_text}>
-        {t(['string-backwards', 'header'])}
-      </h2>
+      <h2 class={styles.big_text}>{t(['string-backwards', 'header'])}</h2>
       <Textarea
         placeholder={t(['string-backwards', 'input_textarea_placehoder'])}
         aria-placeholder={t(['string-backwards', 'input_textarea_placehoder'])}

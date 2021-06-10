@@ -24,7 +24,16 @@ const App = () => {
         </h1>
       </nav>
       <main class={router.location === '/' ? styles.main : styles.main_layout}>
-        <ErrorBoundary fallback={<div><h2 class={clsx(styles.big_text, styles.text)}>Произошла ошибка</h2><p class={styles.text}>Возможно, ваш браузер устарел</p></div>}>
+        <ErrorBoundary
+          fallback={
+            <div>
+              <h2 class={clsx(styles.big_text, styles.text)}>
+                Произошла ошибка
+              </h2>
+              <p class={styles.text}>Возможно, ваш браузер устарел</p>
+            </div>
+          }
+        >
           <Route />
         </ErrorBoundary>
       </main>

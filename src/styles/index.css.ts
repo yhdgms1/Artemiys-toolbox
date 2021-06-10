@@ -9,42 +9,42 @@ export const main = style({
   width: '100%',
   '@media': {
     'screen and (max-width: 768px)': {
-      gridTemplateColumns: 'repeat(2, 1fr)'
+      gridTemplateColumns: 'repeat(2, 1fr)',
     },
     'screen and (max-width: 640px)': {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      flexDirection: 'column'
-    }
-  }
+      flexDirection: 'column',
+    },
+  },
 })
 
 export const main_layout = style({
   padding: '1rem',
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center'
+  alignItems: 'center',
 })
 
 export const text = style({
   margin: '0.4rem 0',
   fontSize: '1.2rem',
-  textAlign: 'center'
+  textAlign: 'center',
 })
 
 export const big_text = style({
   fontSize: '1.7rem',
   fontWeight: 'normal',
   padding: '0 0 .7rem',
-  textAlign: 'center'
+  textAlign: 'center',
 })
 
 export const link = style({
   color: 'unset',
   ':hover': {
-    textDecorationStyle: 'dotted'
-  }
+    textDecorationStyle: 'dotted',
+  },
 })
 
 export const responsive_container = style({
@@ -52,9 +52,9 @@ export const responsive_container = style({
     'screen and (max-width: 640px)': {
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center'
-    }
-  }
+      alignItems: 'center',
+    },
+  },
 })
 
 export const input = style({
@@ -68,34 +68,34 @@ export const input = style({
     '(prefers-color-scheme: dark)': {
       color: '#eee',
       ':focus': {
-        outlineColor: '#ccc'
-      }
+        outlineColor: '#ccc',
+      },
     },
     'screen and (max-width: 640px)': {
       textAlign: 'center',
       '::-webkit-input-placeholder': {
-        textAlign: 'center'
+        textAlign: 'center',
       },
       '::-moz-placeholder': {
-        textAlign: 'center'
+        textAlign: 'center',
       },
-    }
-  }
+    },
+  },
 })
 
 export const width_70 = style({
-  width: '70vw'
+  width: '70vw',
 })
 
 export const row = style({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'flex-start'
+  justifyContent: 'flex-start',
 })
 
 export const heading = style({
   marginBlockStart: '1em',
   marginBlockEnd: '1em',
   fontWeight: 400,
-  fontVariationSettings: `'wght' 400`
+  fontVariationSettings: `'wght' 400`,
 })

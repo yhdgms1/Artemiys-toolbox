@@ -1,4 +1,4 @@
 node_modules
 dist
+build
 pnpm-lock.yaml
-src/.linaria_cache
