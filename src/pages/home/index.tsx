@@ -1,6 +1,5 @@
-import * as styles from '../styles/shared'
 import { Link } from 'solid-app-router'
-import { Title, Card } from '../components'
+import { Title, Card } from '../../components'
 
 interface ITools {
   readonly title: string

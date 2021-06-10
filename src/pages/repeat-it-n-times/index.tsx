@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js'
-import * as styles from '../styles/shared'
-import { t } from '../i18n'
-import { CopyButton, Title, Textarea, Button } from '../components'
+import * as styles from '../../styles/shared'
+import { t } from '../../i18n'
+import { CopyButton, Title, Textarea, Button } from '../../components'
 import clsx from 'clsx'
 
 export default function () {
@@ -45,7 +45,6 @@ export default function () {
       </div>
       <Textarea
         readonly
-        class={styles.textarea}
         value={output()}
         placeholder={t(['repeat-it-n-times', 'result'])}
         aria-placeholder={t(['repeat-it-n-times', 'result'])}

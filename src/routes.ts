@@ -2,6 +2,7 @@ import type { RouteDefinition } from 'solid-app-router'
 
 import { lazy } from 'solid-js'
 import Home from './pages/home'
+import NotFound from './pages/__errors/404'
 
 export const routes: RouteDefinition[] = [
   {
@@ -42,6 +43,6 @@ export const routes: RouteDefinition[] = [
   },
   {
     path: '**',
-    component: lazy(() => import('./pages/404')),
+    component: NotFound,
   },
 ]

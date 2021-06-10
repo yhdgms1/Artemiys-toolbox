@@ -1,8 +1,8 @@
 import Uwuifier from 'uwuifier'
 import { createSignal } from 'solid-js'
-import * as styles from '../styles/shared'
-import { t } from '../i18n'
-import { CopyButton, Title, Textarea } from '../components'
+import * as styles from '../../styles/shared'
+import { t } from '../../i18n'
+import { CopyButton, Title, Textarea } from '../../components'
 
 export default function () {
   const uwuifier = new Uwuifier()
