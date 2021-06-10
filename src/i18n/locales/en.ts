@@ -12,7 +12,7 @@ export default {
   btn__copy: {
     default: 'Copy',
     active: 'Copied',
-    err: 'Error'
+    err: 'Error',
   },
   uwuifier: {
     input: 'Enter the text to uwuify',
@@ -37,7 +37,7 @@ export default {
   t13n: {
     desc: 'Select transliteration standard',
     schema: '{{ name }} transliteration schema',
-    title: 'Transliteration'
+    title: 'Transliteration',
   },
   't13n-id': {
     'go back': 'go back',

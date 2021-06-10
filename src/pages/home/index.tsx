@@ -51,7 +51,13 @@ export default function () {
   setTitle("Artemiy's Toolbox")
   return (
     <>
-      {tools.map(tool => <Card href={'/' + tool.link} title={tool.title} description={tool.description}/>)}
+      {tools.map(tool => (
+        <Card
+          href={'/' + tool.link}
+          title={tool.title}
+          description={tool.description}
+        />
+      ))}
     </>
   )
 }

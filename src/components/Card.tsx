@@ -2,21 +2,21 @@ import { Link } from 'solid-app-router'
 import { css } from 'linaria'
 
 const title = css`
-    font-weight: 500;
-    font-variation-settings: 'wght' 500;
-    font-size: larger;
-    color: #000;
-    @media (prefers-color-scheme: dark) {
-        color: #eee;
-    }
-`;
+  font-weight: 500;
+  font-variation-settings: 'wght' 500;
+  font-size: larger;
+  color: #000;
+  @media (prefers-color-scheme: dark) {
+    color: #eee;
+  }
+`
 
 const description = css`
-    color: #000;
-    @media (prefers-color-scheme: dark) {
-        color: #eee;
-    }
-`;
+  color: #000;
+  @media (prefers-color-scheme: dark) {
+    color: #eee;
+  }
+`
 
 const card__container = css`
   padding: 1.25rem 1rem;
@@ -81,17 +81,17 @@ const card = css`
   }
 `
 
-interface Props{
-    title: string;
-    description: string;
-    href: string;
+interface Props {
+  title: string
+  description: string
+  href: string
 }
 
 export const Card = (props: Props) => (
-    <Link href={props.href} class={card}>
-        <div class={card__container}>
-            <h2 class={title}>{props.title}</h2>
-            <p class={description}>{props.description}</p>
-        </div>
-    </Link>
+  <Link href={props.href} class={card}>
+    <div class={card__container}>
+      <h2 class={title}>{props.title}</h2>
+      <p class={description}>{props.description}</p>
+    </div>
+  </Link>
 )

@@ -18,7 +18,10 @@ export default function (props) {
     <>
       <Show when={schema in schemas} fallback={<Fallback />}>
         {setTitle(t(['t13n', 'title']) + ' | ' + schema)}
-        <Link class={clsx(styles.link, styles.big_text)} href="/transliteration">
+        <Link
+          class={clsx(styles.link, styles.big_text)}
+          href="/transliteration"
+        >
           {t(['t13n-id', 'go back'])}
         </Link>
         <p class={styles.text}>
@@ -31,9 +34,7 @@ export default function (props) {
           onInput={e => setText((e.target as HTMLInputElement).value)}
         />
         <div class={styles.responsive_container}>
-          <Button
-            onClick={() => setOutput(translate(text(), schemas[schema]))}
-          >
+          <Button onClick={() => setOutput(translate(text(), schemas[schema]))}>
             {t(['t13n-id', 'button'])}!
           </Button>
           <CopyButton copy={output()} />

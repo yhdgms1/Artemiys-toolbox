@@ -39,9 +39,7 @@ export default function () {
         onInput={e => setText((e.target as HTMLInputElement).value)}
       />
       <div class={styles.responsive_container}>
-        <Button
-          onClick={() => setOutput(changeLayout(text()))}
-        >
+        <Button onClick={() => setOutput(changeLayout(text()))}>
           {t(['punto-switcher', 'button'])}!
         </Button>
         <CopyButton copy={output()} />

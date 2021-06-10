@@ -19,7 +19,7 @@ export default function () {
       </p>
       <p class={styles.text}>
         {t(['text-length-counter', 'length_without_ws'])}
-        {splitter.countGraphemes(text().replaceAll(' ', ''))}
+        {splitter.countGraphemes(text().replace(/ /g, ''))}
       </p>
       <Textarea
         placeholder={t(['text-length-counter', 'textarea_placeholder'])}

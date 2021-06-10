@@ -16,7 +16,7 @@ export const CopyButton = (props: Props) => {
 
   const clickHandler = () => {
     try {
-      navigator.clipboard.writeText(props.copy ?? '').then(() => {
+      navigator.clipboard.writeText(props.copy || '').then(() => {
         setText(t(['btn__copy', 'active']))
         const timeout = setTimeout(() => {
           setText(t(['btn__copy', 'default']))
@@ -32,5 +32,9 @@ export const CopyButton = (props: Props) => {
     }
   }
 
-  return <Button class={styles.copyButton} onClick={clickHandler}>{text()}!</Button>
+  return (
+    <Button class={styles.copyButton} onClick={clickHandler}>
+      {text()}!
+    </Button>
+  )
 }

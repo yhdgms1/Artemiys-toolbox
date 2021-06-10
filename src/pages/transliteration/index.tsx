@@ -121,7 +121,6 @@ const schemes: ISchema[] = [
 ]
 
 export default function () {
-
   setTitle(t(['t13n', 'title']))
 
   return (
@@ -129,7 +128,13 @@ export default function () {
       <h1 class={styles.big_text}>{t(['t13n', 'title'])}</h1>
       <p class={styles.text}>{t(['t13n', 'desk'])}</p>
       <div class={styles.main}>
-        {schemes.map(scheme => <Card href={'/transliteration/' + scheme.name} title={scheme.name} description={t(['t13n', 'schema'], { name: scheme.description })}/>)}
+        {schemes.map(scheme => (
+          <Card
+            href={'/transliteration/' + scheme.name}
+            title={scheme.name}
+            description={t(['t13n', 'schema'], { name: scheme.description })}
+          />
+        ))}
       </div>
     </>
   )

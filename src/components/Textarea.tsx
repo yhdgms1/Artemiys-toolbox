@@ -1,15 +1,17 @@
 import type { JSX } from 'solid-js'
-import { css } from 'linaria';
+import { css } from 'linaria'
 
 const textarea = css`
   font-size: inherit;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  margin-bottom: .5em;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  margin-bottom: 0.5em;
   padding: 0.4rem;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 90%; 
+  width: 90%;
   resize: vertical;
   overflow-x: hidden;
   min-height: 25vh;
@@ -26,4 +28,6 @@ const textarea = css`
   }
 `
 
-export const Textarea = (props: JSX.TextareaHTMLAttributes<HTMLTextAreaElement>) => <textarea class={textarea} {...props} />
+export const Textarea = (
+  props: JSX.TextareaHTMLAttributes<HTMLTextAreaElement>
+) => <textarea class={textarea} {...props} />

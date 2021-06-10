@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
 export const copyButton = style({
-    cursor: 'copy !important'
+  cursor: 'copy !important',
 })

@@ -19,11 +19,7 @@ export default function () {
         onInput={e => setText((e.target as HTMLInputElement).value)}
       />
       <div class={styles.responsive_container}>
-        <Button
-          onClick={() => setOutput(swagify(text()))}
-        >
-          Swagify!
-        </Button>
+        <Button onClick={() => setOutput(swagify(text()))}>Swagify!</Button>
         <CopyButton copy={output()} />
       </div>
       <Textarea
