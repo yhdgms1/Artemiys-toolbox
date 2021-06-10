@@ -7,6 +7,7 @@ body,
   padding: 0;
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
+  font-display: swap;
   font-size: 1em;
   line-height: 1.5;
 }
