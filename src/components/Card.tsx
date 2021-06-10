@@ -3,6 +3,7 @@ import { css } from 'linaria'
 
 const title = css`
     font-weight: 500;
+    font-variation-settings: 'wght' 500;
     font-size: larger;
     color: #000;
     @media (prefers-color-scheme: dark) {
