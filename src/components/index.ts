@@ -1,4 +1,3 @@
-export { Title } from './Title'
 export { CopyButton } from './CopyButton'
 export { Textarea } from './Textarea'
 export { Button } from './Button'

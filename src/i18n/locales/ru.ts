@@ -10,8 +10,9 @@ export default {
     out_textarea_placehoder: 'Текст задом наперёд будет тут',
   },
   btn__copy: {
-    default: 'Скопировать!',
-    active: 'Скопировано!',
+    default: 'Скопировать',
+    active: 'Скопировано',
+    err: 'Ошибка'
   },
   uwuifier: {
     input: 'Введите текст, что бы сделать его UwUшным',
@@ -33,11 +34,12 @@ export default {
   swagify: {
     result: 'Результат будет тут',
   },
-  iuliia: {
+  t13n: {
     desk: 'Выберите стандарт транслитерации',
     schema: 'Схема транслитерации {{ name }}',
+    title: 'Транслитерация'
   },
-  'iuliia-id': {
+  't13n-id': {
     'go back': 'назад',
     'current-schema': 'Текущая схема - {{ schema }}',
     input: 'Введите сюда текст',

@@ -1,5 +1,6 @@
 import { Link } from 'solid-app-router'
-import { Title, Card } from '../../components'
+import { Card } from '../../components'
+import { setTitle } from '../../helpers'
 
 interface ITools {
   readonly title: string
@@ -20,8 +21,8 @@ const tools: ITools[] = [
   },
   {
     title: 'transliteration',
-    description: 'Transliterate Cyrillic to Latin using iuliia',
-    link: 'iuliia',
+    description: 'Transliterate Cyrillic to Latin',
+    link: 'transliteration',
   },
   {
     title: 'punto switcher',
@@ -47,9 +48,9 @@ const tools: ITools[] = [
 ]
 
 export default function () {
+  setTitle("Artemiy's Toolbox")
   return (
     <>
-      <Title>Artemiy's Toolbox</Title>
       {tools.map(tool => <Card href={'/' + tool.link} title={tool.title} description={tool.description}/>)}
     </>
   )

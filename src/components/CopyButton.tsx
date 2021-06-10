@@ -26,8 +26,14 @@ export const CopyButton = (props: Props) => {
           clearTimeout(timeout)
         }, 750)
       })
-    } catch (_) {}
+    } catch (_) {
+      setText(t(['btn__copy', 'err']))
+      const timeout = setTimeout(() => {
+        setText(t(['btn__copy', 'default']))
+        clearTimeout(timeout)
+      }, 750)
+    }
   }
 
-  return <Button class={copy_btn} onClick={clickHandler}>{text()}</Button>
+  return <Button class={copy_btn} onClick={clickHandler}>{text()}!</Button>
 }

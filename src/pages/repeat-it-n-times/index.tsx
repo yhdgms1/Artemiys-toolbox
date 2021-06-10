@@ -1,17 +1,19 @@
 import { createSignal } from 'solid-js'
 import * as styles from '../../styles/shared'
 import { t } from '../../i18n'
-import { CopyButton, Title, Textarea, Button } from '../../components'
+import { CopyButton, Textarea, Button } from '../../components'
 import clsx from 'clsx'
+import { setTitle } from '../../helpers'
 
 export default function () {
+  setTitle('Repeat Something')
+
   const [text, setText] = createSignal('')
   const [count, setCount] = createSignal(0)
   const [output, setOutput] = createSignal('')
 
   return (
     <>
-      <Title>Repeat something n times</Title>
       <div class={clsx(styles.text, styles.responsive_container)}>
         <label>{t(['repeat-it-n-times', 'repeat'])}</label>
         <input

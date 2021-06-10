@@ -2,15 +2,17 @@ import { createSignal, onMount } from 'solid-js'
 import Graphemer from 'graphemer'
 import * as styles from '../../styles/shared'
 import { t } from '../../i18n'
-import { Title, Textarea } from '../../components'
+import { Textarea } from '../../components'
+import { setTitle } from '../../helpers'
 
 export default function () {
+  setTitle('Text Length Counter')
+
   const [text, setText] = createSignal('')
   const splitter = new Graphemer()
 
   return (
     <>
-      <Title>Text length counter</Title>
       <p class={styles.text}>
         {t(['text-length-counter', 'length'])}
         {splitter.countGraphemes(text())}

@@ -18,12 +18,12 @@ export const routes: RouteDefinition[] = [
     component: lazy(() => import('./pages/repeat-it-n-times')),
   },
   {
-    path: '/iuliia',
-    component: lazy(() => import('./pages/iuliia')),
+    path: '/transliteration',
+    component: lazy(() => import('./pages/transliteration')),
   },
   {
-    path: '/iuliia/:id',
-    component: lazy(() => import('./pages/iuliia/[id]')),
+    path: '/transliteration/:id',
+    component: lazy(() => import('./pages/transliteration/[id]')),
   },
   {
     path: '/punto-switcher',

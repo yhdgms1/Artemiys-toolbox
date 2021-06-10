@@ -1,0 +1,1 @@
+export { setTitle } from './setTitle'

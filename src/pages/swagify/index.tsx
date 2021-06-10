@@ -2,15 +2,17 @@ import { swagify } from '@artemis69/swagify'
 import { createSignal } from 'solid-js'
 import * as styles from '../../styles/shared'
 import { t } from '../../i18n'
-import { CopyButton, Title, Textarea, Button } from '../../components'
+import { CopyButton, Textarea, Button } from '../../components'
+import { setTitle } from '../../helpers'
 
 export default function () {
+  setTitle('Swagify')
+
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
 
   return (
     <>
-      <Title>Swagify</Title>
       <Textarea
         placeholder="Enter the text to swagify"
         aria-placeholder="Enter the text to swagify"

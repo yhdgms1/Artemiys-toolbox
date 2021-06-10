@@ -10,8 +10,9 @@ export default {
     out_textarea_placehoder: 'Text backwards will be here',
   },
   btn__copy: {
-    default: 'Copy!',
-    active: 'Copied!',
+    default: 'Copy',
+    active: 'Copied',
+    err: 'Error'
   },
   uwuifier: {
     input: 'Enter the text to uwuify',
@@ -33,11 +34,12 @@ export default {
   swagify: {
     result: 'Result will be here',
   },
-  iuliia: {
+  t13n: {
     desc: 'Select transliteration standard',
     schema: '{{ name }} transliteration schema',
+    title: 'Transliteration'
   },
-  'iuliia-id': {
+  't13n-id': {
     'go back': 'go back',
     'current-schema': 'Current schema is {{ schema }}',
     input: 'Type the text here',

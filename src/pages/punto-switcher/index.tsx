@@ -1,10 +1,13 @@
 import { createSignal } from 'solid-js'
 import * as styles from '../../styles/shared'
 import { t } from '../../i18n'
-import { Title, CopyButton, Button, Textarea } from '../../components'
+import { CopyButton, Button, Textarea } from '../../components'
 import rules from './rules'
+import { setTitle } from '../../helpers'
 
 export default function () {
+  setTitle('Punto Switcher')
+
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
 
@@ -29,7 +32,6 @@ export default function () {
 
   return (
     <>
-      <Title>Punto Switcher</Title>
       <p class={styles.text}>{t(['punto-switcher', 'note'])}</p>
       <Textarea
         placeholder={t(['punto-switcher', 'input-placeholder'])}
