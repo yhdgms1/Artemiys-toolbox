@@ -5,7 +5,7 @@ export const select = style({
   outline: 'none',
   padding: '.35rem .45rem',
   margin: '.4rem',
-  background: '#0000',
+  background: '#fff',
   border: '2px solid #ececec',
   borderRadius: '12px',
   width: '45vw',
@@ -20,6 +20,7 @@ export const select = style({
     '(prefers-color-scheme: dark)': {
       color: '#eee',
       border: '2px solid #3b3b3b',
+      background: '#171717',
       ':hover': {
         border: '2px solid #e69ab0',
       },

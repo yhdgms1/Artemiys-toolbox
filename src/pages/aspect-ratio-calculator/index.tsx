@@ -42,45 +42,43 @@ export default () => {
   return (
     <>
       <h2 class={styles.big_text}>{t(['aspect-ratio', 'title'])}</h2>
-      <div class={styles.row}>
-        <div class={styles.inputContainer}>
-          <label for="preset" class={styles.label}>
-            {t(['aspect-ratio', 'Common Presets'])}
-          </label>
-          <Select
-            title={t(['aspect-ratio', 'Common Presets'])}
-            id="preset"
-            onChange={e => {
-              if ((e.target as HTMLSelectElement).value !== 'custom') {
-                setState(
-                  'ratioWidth',
-                  v => (e.target as HTMLSelectElement).value.split(':')[0]
-                )
-                setState(
-                  'ratioHeight',
-                  v => (e.target as HTMLSelectElement).value.split(':')[1]
-                )
-                processWidth()
-              }
-            }}
-          >
-            <option class={styles.option} value="custom">
-              Custom
-            </option>
-            <option class={styles.option} value="4:3">
-              Old Monitor 4:3
-            </option>
-            <option class={styles.option} value="16:9">
-              Standart 16:9
-            </option>
-            <option class={styles.option} value="18:9">
-              Wide 18:9
-            </option>
-            <option class={styles.option} value="21:9">
-              Ultra-wide 21:9
-            </option>
-          </Select>
-        </div>
+      <div class={styles.inputContainer}>
+        <label for="preset" class={styles.label}>
+          {t(['aspect-ratio', 'Common Presets'])}
+        </label>
+        <Select
+          title={t(['aspect-ratio', 'Common Presets'])}
+          id="preset"
+          onChange={e => {
+            if ((e.target as HTMLSelectElement).value !== 'custom') {
+              setState(
+                'ratioWidth',
+                v => (e.target as HTMLSelectElement).value.split(':')[0]
+              )
+              setState(
+                'ratioHeight',
+                v => (e.target as HTMLSelectElement).value.split(':')[1]
+              )
+              processWidth()
+            }
+          }}
+        >
+          <option class={styles.option} value="custom">
+            Custom
+          </option>
+          <option class={styles.option} value="4:3">
+            Old Monitor 4:3
+          </option>
+          <option class={styles.option} value="16:9">
+            Standart 16:9
+          </option>
+          <option class={styles.option} value="18:9">
+            Wide 18:9
+          </option>
+          <option class={styles.option} value="21:9">
+            Ultra-wide 21:9
+          </option>
+        </Select>
       </div>
       <div class={styles.row}>
         <div class={styles.inputContainer}>

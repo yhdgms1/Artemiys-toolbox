@@ -12,9 +12,4 @@ export const inputContainer = style({
 
 export const option = style({
   fontFamily: 'var(--font-serif)',
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      background: '#252525',
-    },
-  },
 })
