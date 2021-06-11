@@ -5,5 +5,6 @@
     "scope" : "/",
     "start_url" : ".",
     "name" : "Artemiy's Toolbox",
-    "short_name" : "Artemiy's Toolbox"
+    "short_name" : "Toolbox",
+    "description": "Some tools I might need, collected in one place called Artemiy's Toolbox."
 }
