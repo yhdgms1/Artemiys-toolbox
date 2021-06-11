@@ -42,6 +42,10 @@ export const routes: RouteDefinition[] = [
     component: lazy(() => import('./pages/string-backwards')),
   },
   {
+    path: 'aspect-ratio-calculator',
+    component: lazy(() => import('./pages/aspect-ratio-calculator')),
+  },
+  {
     path: '**',
     component: NotFound,
   },

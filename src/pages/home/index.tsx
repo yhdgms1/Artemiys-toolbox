@@ -37,13 +37,19 @@ const tools: ITools[] = [
   },
   {
     title: 'swagify',
-    description: 'Swagify any sentence or word and then #SwagAllDay',
+    description: 'Swagify any sentence or word',
     link: 'swagify',
   },
   {
     title: 'string backwards',
     description: 'Turning text backwards',
     link: 'string-backwards',
+  },
+  {
+    title: 'aspect ratio calculator',
+    description:
+      'Use to check the dimensions when resizing images',
+    link: 'aspect-ratio-calculator',
   },
 ]
 

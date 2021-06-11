@@ -57,4 +57,12 @@ export default {
       desc: 'Your browser may be outdated',
     },
   },
+  'aspect-ratio': {
+    'Common Presets': 'Common Presets',
+    'title': 'Aspect Ratio Calculator',
+    'Ratio Width': 'Ratio Width',
+    'Ratio Height': 'Ratio Height',
+    'Pixels Width': 'Pixels Width',
+    'Pixels Height': 'Pixels Height',
+  }
 }

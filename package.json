@@ -1,7 +1,7 @@
 {
-  "name": "vite-template-solid",
-  "version": "0.7.0",
-  "description": "My solid + vite project + ts",
+  "name": "artemiys-toolbox",
+  "version": "0.8.0",
+  "description": "Some tools I might need, collected in one place called Artemiy's Toolbox",
   "type": "module",
   "scripts": {
     "dev": "MODE=dev vite",

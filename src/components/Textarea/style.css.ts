@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 
 export const textarea = style({
   fontSize: 'inherit',
-  fontFamily: `ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'`,
+  fontFamily: 'var(--font-serif)',
   marginBottom: '0.5em',
   padding: '0.4rem',
   boxSizing: 'border-box',
