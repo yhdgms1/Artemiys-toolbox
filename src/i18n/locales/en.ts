@@ -59,10 +59,10 @@ export default {
   },
   'aspect-ratio': {
     'Common Presets': 'Common Presets',
-    'title': 'Aspect Ratio Calculator',
+    title: 'Aspect Ratio Calculator',
     'Ratio Width': 'Ratio Width',
     'Ratio Height': 'Ratio Height',
     'Pixels Width': 'Pixels Width',
     'Pixels Height': 'Pixels Height',
-  }
+  },
 }

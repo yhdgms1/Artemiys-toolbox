@@ -6,7 +6,7 @@ import { setTitle } from '../../helpers'
 import * as styles from './style.css'
 
 export default () => {
-    setTitle(t(['aspect-ratio', 'title']))
+  setTitle(t(['aspect-ratio', 'title']))
 
   const [state, setState] = createState({
     ratioWidth: 16,
@@ -101,7 +101,7 @@ export default () => {
         </div>
         <div class={styles.inputContainer}>
           <label for="ratio_height" class={styles.label}>
-          {t(['aspect-ratio', 'Ratio Height'])}
+            {t(['aspect-ratio', 'Ratio Height'])}
           </label>
           <Input
             type="number"
@@ -121,7 +121,7 @@ export default () => {
       <div class={styles.row}>
         <div class={styles.inputContainer}>
           <label for="pixels_width" class={styles.label}>
-          {t(['aspect-ratio', 'Pixels Width'])}
+            {t(['aspect-ratio', 'Pixels Width'])}
           </label>
           <Input
             type="number"
@@ -139,7 +139,7 @@ export default () => {
         </div>
         <div class={styles.inputContainer}>
           <label for="pixels_height" class={styles.label}>
-          {t(['aspect-ratio', 'Pixels Height'])}
+            {t(['aspect-ratio', 'Pixels Height'])}
           </label>
           <Input
             type="number"

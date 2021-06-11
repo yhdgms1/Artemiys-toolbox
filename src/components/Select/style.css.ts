@@ -29,11 +29,11 @@ export const select = style({
       },
     },
     'screen and (max-width: 640px)': {
-      width: `90vw`
+      width: `90vw`,
     },
     'screen and (min-width: 1024px)': {
-      width: `calc(35vw - .8rem)`
-    }
+      width: `calc(35vw - .8rem)`,
+    },
   },
   '@supports': {
     '(appearance: none)': {
@@ -46,7 +46,7 @@ export const select = style({
         '(prefers-color-scheme: dark)': {
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%23eee' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M15.25 10.75L12 14.25L8.75 10.75'%3E%3C/path%3E%3C/svg%3E%0A")`,
         },
-      }
-    }
-  }
+      },
+    },
+  },
 })

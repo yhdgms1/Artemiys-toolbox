@@ -59,10 +59,10 @@ export default {
   },
   'aspect-ratio': {
     'Common Presets': 'Стандартные варианты',
-    'title': 'Калькулятор соотношения сторон',
+    title: 'Калькулятор соотношения сторон',
     'Ratio Width': 'Отношение ширины',
     'Ratio Height': 'Отношение высоты',
     'Pixels Width': 'Ширина пикселей',
     'Pixels Height': 'Высота пикселей',
-  }
+  },
 }

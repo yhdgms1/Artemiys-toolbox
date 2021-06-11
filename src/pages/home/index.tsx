@@ -47,8 +47,7 @@ const tools: ITools[] = [
   },
   {
     title: 'aspect ratio calculator',
-    description:
-      'Use to check the dimensions when resizing images',
+    description: 'Use to check the dimensions when resizing images',
     link: 'aspect-ratio-calculator',
   },
 ]

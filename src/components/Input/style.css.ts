@@ -27,10 +27,10 @@ export const input = style({
       },
     },
     'screen and (max-width: 640px)': {
-      width: `calc(calc(90vw / 2) - .8rem)`
+      width: `calc(calc(90vw / 2) - .8rem)`,
     },
     'screen and (min-width: 1024px)': {
-      width: `calc(calc(35vw / 2) - .8rem)`
-    }
+      width: `calc(calc(35vw / 2) - .8rem)`,
+    },
   },
 })
