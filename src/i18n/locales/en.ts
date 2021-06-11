@@ -48,13 +48,13 @@ export default {
     'not exist': 'Schema does not exists',
     'view existing': 'view existing',
   },
-  '__errors': {
+  __errors: {
     '404': {
-      title: 'Page does not exist'
+      title: 'Page does not exist',
     },
-    'unknown': {
+    unknown: {
       title: 'An error occurred',
-      desc: 'Your browser may be outdated'
-    }
-  }
+      desc: 'Your browser may be outdated',
+    },
+  },
 }
