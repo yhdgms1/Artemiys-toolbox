@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css'
 
 export const input = style({
+  fontFamily: 'var(--font-serif)',
   outline: 'none',
   padding: '.35rem .45rem',
   margin: '.4rem',
