@@ -5,7 +5,7 @@ import { t } from '../../i18n'
 import { CopyButton, Textarea, Button } from '../../components'
 import { setTitle } from '../../helpers'
 
-export default function () {
+export default () => {
   setTitle('Swagify')
 
   const [text, setText] = createSignal('')

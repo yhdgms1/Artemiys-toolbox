@@ -5,7 +5,7 @@ import { t } from '../../i18n'
 import { Textarea } from '../../components'
 import { setTitle } from '../../helpers'
 
-export default function () {
+export default () => {
   setTitle('Text Length Counter')
 
   const [text, setText] = createSignal('')

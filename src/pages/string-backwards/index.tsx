@@ -5,7 +5,7 @@ import { t } from '../../i18n'
 import { CopyButton, Textarea } from '../../components'
 import { setTitle } from '../../helpers'
 
-export default function () {
+export default () => {
   setTitle('String Backwards')
 
   const [output, setOutput] = createSignal('')

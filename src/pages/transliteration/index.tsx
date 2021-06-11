@@ -120,7 +120,7 @@ const schemes: ISchema[] = [
   },
 ]
 
-export default function () {
+export default () => {
   setTitle(t(['t13n', 'title']))
 
   return (

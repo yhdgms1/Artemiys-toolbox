@@ -5,7 +5,7 @@ import { CopyButton, Textarea, Button } from '../../components'
 import clsx from 'clsx'
 import { setTitle } from '../../helpers'
 
-export default function () {
+export default () => {
   setTitle('Repeat Something')
 
   const [text, setText] = createSignal('')

@@ -47,7 +47,7 @@ const tools: ITools[] = [
   },
 ]
 
-export default function () {
+export default () => {
   setTitle("Artemiy's Toolbox")
   return (
     <>

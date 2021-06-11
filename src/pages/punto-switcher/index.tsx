@@ -5,7 +5,7 @@ import { CopyButton, Button, Textarea } from '../../components'
 import rules from './rules'
 import { setTitle } from '../../helpers'
 
-export default function () {
+export default () => {
   setTitle('Punto Switcher')
 
   const [text, setText] = createSignal('')

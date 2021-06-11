@@ -2,7 +2,7 @@ import * as styles from '../../../styles/index.css'
 import clsx from 'clsx'
 import { t } from '../../../i18n'
 
-export default function () {
+export default () => {
   return (
     <div>
       <h2 class={clsx(styles.big_text, styles.text)}>
