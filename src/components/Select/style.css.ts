@@ -29,7 +29,7 @@ export const select = style({
       },
     },
     'screen and (max-width: 640px)': {
-      width: `calc(90vw - .8rem)`
+      width: `90vw`
     },
     'screen and (min-width: 1024px)': {
       width: `calc(35vw - .8rem)`
