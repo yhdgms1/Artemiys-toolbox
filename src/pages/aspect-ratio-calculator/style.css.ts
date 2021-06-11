@@ -14,7 +14,6 @@ export const option = style({
   fontFamily: 'var(--font-serif)',
   '@media': {
     '(prefers-color-scheme: dark)': {
-      color: '#eee',
       background: '#252525',
     },
   },
