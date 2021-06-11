@@ -8,8 +8,8 @@ export const select = style({
   background: '#0000',
   border: '2px solid #ececec',
   borderRadius: '12px',
-  width: '25rem',
-  maxWidth: `calc(100vw - .8rem)`,
+  width: '45vw',
+  maxWidth: `calc(90vw - .8rem)`,
   ':hover': {
     border: '2px solid #ffc2d4',
   },
@@ -27,6 +27,12 @@ export const select = style({
         border: '2px solid #e69ab0',
       },
     },
+    'screen and (max-width: 640px)': {
+      width: `calc(90vw - .8rem)`
+    },
+    'screen and (min-width: 1024px)': {
+      width: `calc(35vw - .8rem)`
+    }
   },
   '@supports': {
     '(appearance: none)': {

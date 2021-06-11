@@ -8,7 +8,7 @@ export const input = style({
   background: '#0000',
   border: '2px solid #ececec',
   borderRadius: '12px',
-  maxWidth: `calc(calc(100vw / 2) - .8rem)`,
+  width: `calc(calc(45vw / 2) - .4rem)`,
   ':hover': {
     border: '2px solid #ffc2d4',
   },
@@ -26,5 +26,11 @@ export const input = style({
         border: '2px solid #e69ab0',
       },
     },
+    'screen and (max-width: 640px)': {
+      width: `calc(calc(90vw / 2) - .8rem)`
+    },
+    'screen and (min-width: 1024px)': {
+      width: `calc(calc(35vw / 2) - .8rem)`
+    }
   },
 })
