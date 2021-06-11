@@ -126,7 +126,7 @@ export default function () {
   return (
     <>
       <h1 class={styles.big_text}>{t(['t13n', 'title'])}</h1>
-      <p class={styles.text}>{t(['t13n', 'desk'])}</p>
+      <p class={styles.text}>{t(['t13n', 'desc'])}</p>
       <div class={styles.main}>
         {schemes.map(scheme => (
           <Card
