@@ -1,4 +1,4 @@
 node_modules
 dist
-dist2
 pnpm-lock.yaml
+yarn.lock

@@ -2,7 +2,7 @@ import type { RouteDefinition } from 'solid-app-router'
 
 import { lazy } from 'solid-js'
 import Home from './pages/home'
-import NotFound from './pages/__errors/404'
+import { NotFound } from './pages/__errors'
 
 export const routes: RouteDefinition[] = [
   {

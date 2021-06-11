@@ -3,6 +3,7 @@ import * as styles from '../styles/index.css'
 import * as appStyles from './style.css'
 import clsx from 'clsx'
 import { ErrorBoundary } from 'solid-js'
+import { Unknown } from '../pages/__errors'
 
 const App = () => {
   const [router] = useRouter()
@@ -25,14 +26,7 @@ const App = () => {
       </nav>
       <main class={router.location === '/' ? styles.main : styles.main_layout}>
         <ErrorBoundary
-          fallback={
-            <div>
-              <h2 class={clsx(styles.big_text, styles.text)}>
-                Произошла ошибка
-              </h2>
-              <p class={styles.text}>Возможно, ваш браузер устарел</p>
-            </div>
-          }
+          fallback={Unknown}
         >
           <Route />
         </ErrorBoundary>
