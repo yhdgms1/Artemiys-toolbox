@@ -32,7 +32,7 @@ const tools: ITools[] = [
   },
   {
     title: 'uwuifier',
-    description: 'Uwuify any sentence or word',
+    description: 'UwUify any sentence or word',
     link: 'uwuifier',
   },
   {
