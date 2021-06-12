@@ -1,6 +1,6 @@
 {
   "name": "artemiys-toolbox",
-  "version": "0.8.0",
+  "version": "0.8.5",
   "description": "Some tools I might need, collected in one place called Artemiy's Toolbox",
   "type": "module",
   "scripts": {

@@ -1,10 +1,22 @@
 {
-    "theme_color" : "#FD6C9E",
+    "theme_color" : "#fd6c9e",
     "background_color" : "#171717",
     "display" : "browser",
     "scope" : "/",
     "start_url" : ".",
     "name" : "Artemiy's Toolbox",
     "short_name" : "Toolbox",
-    "description": "Some tools I might need, collected in one place called Artemiy's Toolbox."
+    "description": "Some tools I might need, collected in one place called Artemiy's Toolbox.",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
 }

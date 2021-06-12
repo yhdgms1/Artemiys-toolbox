@@ -50,6 +50,12 @@ const tools: ITools[] = [
     description: 'Use to check the dimensions when resizing images',
     link: 'aspect-ratio-calculator',
   },
+  {
+    title: 'cheap sluts',
+    description:
+      'Humiliate a fiend by showing his profile on a fake hooker site',
+    link: 'cheap-sluts',
+  },
 ]
 
 export default () => {

@@ -8,7 +8,7 @@ import { t } from '../../i18n'
 import { CopyButton, Textarea, Button } from '../../components'
 import { setTitle } from '../../helpers'
 
-export default function (props) {
+export default props => {
   const schema = props.params.id
 
   const [text, setText] = createSignal('')

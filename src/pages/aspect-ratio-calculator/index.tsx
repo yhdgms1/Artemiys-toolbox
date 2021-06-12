@@ -42,10 +42,10 @@ export default () => {
   return (
     <>
       <h2 class={styles.big_text}>{t(['aspect-ratio', 'title'])}</h2>
-      <div class={styles.inputContainer}>
-        <label for="preset" class={styles.label}>
+      <Input.Container>
+        <Input.Label for="preset" >
           {t(['aspect-ratio', 'Common Presets'])}
-        </label>
+        </Input.Label>
         <Select
           title={t(['aspect-ratio', 'Common Presets'])}
           id="preset"
@@ -79,13 +79,13 @@ export default () => {
             Ultra-wide 21:9
           </option>
         </Select>
-      </div>
+      </Input.Container>
       <div class={styles.row}>
-        <div class={styles.inputContainer}>
-          <label for="ratio_width" class={styles.label}>
+        <Input.Container>
+          <Input.Label for="ratio_width">
             {t(['aspect-ratio', 'Ratio Width'])}
-          </label>
-          <Input
+          </Input.Label>
+          <Input.default
             type="number"
             placeholder={t(['aspect-ratio', 'Ratio Width'])}
             value={state.ratioWidth}
@@ -98,12 +98,12 @@ export default () => {
               processWidth()
             }}
           />
-        </div>
-        <div class={styles.inputContainer}>
-          <label for="ratio_height" class={styles.label}>
+        </Input.Container>
+        <Input.Container>
+          <Input.Label for="ratio_height">
             {t(['aspect-ratio', 'Ratio Height'])}
-          </label>
-          <Input
+          </Input.Label>
+          <Input.default
             type="number"
             placeholder={t(['aspect-ratio', 'Ratio Height'])}
             value={state.ratioHeight}
@@ -116,14 +116,14 @@ export default () => {
               processWidth()
             }}
           />
-        </div>
+        </Input.Container>
       </div>
       <div class={styles.row}>
-        <div class={styles.inputContainer}>
-          <label for="pixels_width" class={styles.label}>
+        <Input.Container>
+          <Input.Label for="pixels_width">
             {t(['aspect-ratio', 'Pixels Width'])}
-          </label>
-          <Input
+          </Input.Label>
+          <Input.default
             type="number"
             placeholder={t(['aspect-ratio', 'Pixels Width'])}
             value={state.pixelsWidth}
@@ -136,12 +136,12 @@ export default () => {
               processWidth()
             }}
           />
-        </div>
-        <div class={styles.inputContainer}>
-          <label for="pixels_height" class={styles.label}>
+        </Input.Container>
+        <Input.Container>
+          <Input.Label for="pixels_height">
             {t(['aspect-ratio', 'Pixels Height'])}
-          </label>
-          <Input
+          </Input.Label>
+          <Input.default
             type="number"
             placeholder={t(['aspect-ratio', 'Pixels Height'])}
             value={state.pixelsHeight}
@@ -154,7 +154,7 @@ export default () => {
               processHeight()
             }}
           />
-        </div>
+        </Input.Container>
       </div>
     </>
   )
