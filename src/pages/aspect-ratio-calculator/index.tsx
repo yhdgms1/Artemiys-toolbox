@@ -69,7 +69,7 @@ export default () => {
           <option class={styles.option} value="4:3">
             Old Monitor 4:3
           </option>
-          <option class={styles.option} value="16:9">
+          <option class={styles.option} value="16:9" selected>
             Standart 16:9
           </option>
           <option class={styles.option} value="18:9">

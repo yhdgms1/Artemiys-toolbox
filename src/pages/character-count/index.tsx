@@ -14,19 +14,19 @@ export default () => {
   return (
     <>
       <p class={styles.text}>
-        {t(['text-length-counter', 'length'])}
+        {t(['character-count', 'Number of characters'])}
         {splitter.countGraphemes(text())}
       </p>
       <p class={styles.text}>
-        {t(['text-length-counter', 'length_without_ws'])}
+        {t(['character-count', 'Number of characters without whitespaces'])}
         {splitter.countGraphemes(text().replace(/ /g, ''))}
       </p>
       <Textarea
-        placeholder={t(['text-length-counter', 'textarea_placeholder'])}
-        aria-placeholder={t(['text-length-counter', 'textarea_placeholder'])}
+        placeholder={t(['character-count', 'textarea'])}
+        aria-placeholder={t(['character-count', 'textarea'])}
         spellcheck={false}
         onInput={e => setText((e.target as HTMLInputElement).value)}
-      ></Textarea>
+      />
     </>
   )
 }

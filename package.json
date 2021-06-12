@@ -30,7 +30,7 @@
     "graphemer": "^1.2.0",
     "rosetta": "^1.1.0",
     "solid-app-router": "^0.0.45",
-    "solid-js": "^1.0.0-rc.2",
+    "solid-js": "^1.0.0-rc.3",
     "uwuifier": "^4.0.4"
   }
 }

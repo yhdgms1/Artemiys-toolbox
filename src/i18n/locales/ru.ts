@@ -1,8 +1,9 @@
 export default {
-  'text-length-counter': {
-    textarea_placeholder: 'Введите текст, чтобы сосчитать',
-    length: 'Длина: ',
-    length_without_ws: 'Длина без учёта пробелов: ',
+  'character-count': {
+    textarea: 'Введите текст сюда',
+    'Number of characters': 'Кол-во символов: ',
+    'Number of characters without whitespaces':
+      'Кол-во символов без учёта пробелов: ',
   },
   'string-backwards': {
     header: 'Перевернуть текст задом наперёд',
@@ -62,7 +63,7 @@ export default {
     title: 'Калькулятор соотношения сторон',
     'Ratio Width': 'Отношение ширины',
     'Ratio Height': 'Отношение высоты',
-    'Pixels Width': 'Ширина пикселей',
-    'Pixels Height': 'Высота пикселей',
+    'Pixels Width': 'Ширина в пикселях',
+    'Pixels Height': 'Высота в пикселях',
   },
 }

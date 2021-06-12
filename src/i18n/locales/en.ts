@@ -1,8 +1,9 @@
 export default {
-  'text-length-counter': {
-    textarea_placeholder: 'Input your text here to count',
-    length: 'Length: ',
-    length_without_ws: 'Length without whitespaces: ',
+  'character-count': {
+    textarea: 'Input your text here',
+    'Number of characters': 'Number of characters: ',
+    'Number of characters without whitespaces':
+      'Number of characters without whitespaces: ',
   },
   'string-backwards': {
     header: 'turning text backwards',
