@@ -16,14 +16,15 @@ const methods: IMethod[] = [
     description: "Automatically using a friend's VKontakte profile",
     link: 'using-vk',
   },
-  // {
-  //   title: 'manually',
-  //   description: 'manually fill in all the required fields',
-  //   link: 'manually',
-  // },
+  {
+    title: 'manually',
+    description: 'manually fill in all the required fields',
+    link: 'manually',
+  },
 ]
 
 export default () => {
+  setTitle('Cheap Sluts')
   return (
     <>
       <h1 class={styles.big_text}>Cheap Sluts</h1>

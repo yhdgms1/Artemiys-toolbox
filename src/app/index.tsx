@@ -25,9 +25,9 @@ const App = () => {
         </h1>
       </nav>
       <main class={router.location === '/' ? styles.main : styles.main_layout}>
-        {/* <ErrorBoundary fallback={Unknown}> */}
+        <ErrorBoundary fallback={Unknown}>
           <Route />
-        {/* </ErrorBoundary> */}
+        </ErrorBoundary>
       </main>
     </>
   )

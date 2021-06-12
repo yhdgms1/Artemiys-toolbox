@@ -53,7 +53,7 @@ export const input = style({
         'screen and (min-width: 1024px)': {
           width: `calc(calc(35vw / 2) - .8rem)`,
         },
-      }
-    }
-  }
+      },
+    },
+  },
 })

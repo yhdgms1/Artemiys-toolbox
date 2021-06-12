@@ -8,9 +8,13 @@ export default (props: JSX.InputHTMLAttributes<HTMLInputElement>) => (
 )
 
 export const Container = (props: JSX.HTMLAttributes<HTMLDivElement>) => (
-  <div {...props} class={clsx(styles.inputContainer, props.class)}>{props.children}</div>
+  <div {...props} class={clsx(styles.inputContainer, props.class)}>
+    {props.children}
+  </div>
 )
 
 export const Label = (props: JSX.LabelHTMLAttributes<HTMLLabelElement>) => (
-  <label {...props} class={clsx(styles.label, props.class)}>{props.children}</label>
+  <label {...props} class={clsx(styles.label, props.class)}>
+    {props.children}
+  </label>
 )
