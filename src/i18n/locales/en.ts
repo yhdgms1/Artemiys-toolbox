@@ -66,4 +66,20 @@ export default {
     'Pixels Width': 'Pixels Width',
     'Pixels Height': 'Pixels Height',
   },
+  'cheap sluts': {
+    'Select a method': 'Select a method',
+    vk: {
+      'id or shortname': 'id or shortname',
+    },
+    manually: {
+      Name: 'Name',
+      Picture: 'Picture',
+      'Unique identifier': 'Unique identifier',
+    },
+    Submit: 'Submit',
+    'Look at this': 'Look at this',
+    Error: 'Error',
+    'Created Successfully': 'Created Successfully',
+    'Unexpected Error': 'Unexpected Error',
+  },
 }

@@ -7,7 +7,7 @@ import { Button, Input } from '../../components'
 import { setTitle } from '../../helpers'
 
 export default () => {
-  setTitle('Create Using VK')
+  setTitle('Create Manually')
 
   const [name, setName] = createSignal('')
   const [id, setId] = createSignal('')
@@ -20,16 +20,15 @@ export default () => {
     if (name() === '' || id() === '' || pic() === '') return
 
     try {
-     
       const res = await fetch(
         'https://cheap-sluts.artemis69.workers.dev/create',
         {
           method: 'POST',
-          body: JSON.stringify({ 
-              name: name(),
-              picture: pic(),
-              userid: id()
-           }),
+          body: JSON.stringify({
+            name: name(),
+            picture: pic(),
+            userid: id(),
+          }),
         }
       )
 
@@ -54,48 +53,56 @@ export default () => {
         {t(['t13n-id', 'go back'])}
       </Link>
       <div style={{ display: 'flex', 'flex-direction': 'column' }}>
-        <Input.Label for="name">Name</Input.Label>
+        <Input.Label for="name">
+          {t(['cheap sluts', 'manually', 'Name'])}
+        </Input.Label>
         <Input.default
           id="name"
           type="text"
-          placeholder="Name"
+          placeholder={t(['cheap sluts', 'manually', 'Name'])}
           spellcheck={false}
           autocomplete={false}
           onInput={e => setName((e.target as HTMLInputElement).value)}
         />
-        <Input.Label for="picture">Picture</Input.Label>
+        <Input.Label for="picture">
+          {t(['cheap sluts', 'manually', 'Picture'])}
+        </Input.Label>
         <Input.default
           id="picture"
           type="text"
-          placeholder="Picture"
+          placeholder={t(['cheap sluts', 'manually', 'Picture'])}
           spellcheck={false}
           autocomplete={false}
           onInput={e => setPic((e.target as HTMLInputElement).value)}
         />
-        <Input.Label for="id">Unique identifier</Input.Label>
+        <Input.Label for="id">
+          {t(['cheap sluts', 'manually', 'Unique identifier'])}
+        </Input.Label>
         <Input.default
           id="id"
           type="text"
-          placeholder="Unique identifier"
+          placeholder={t(['cheap sluts', 'manually', 'Unique identifier'])}
           spellcheck={false}
           autocomplete={false}
           onInput={e => setId((e.target as HTMLInputElement).value)}
         />
       </div>
-      <Button onClick={getData}>Submit</Button>
+      <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <Show when={result() !== ''}>
-        <p class={styles.text}>Created Successfully!</p>
+        <p class={styles.text}>{t(['cheap sluts', 'Created Successfully'])}!</p>
         <a
           class={styles.link}
           target="_blank"
           rel="noopener noreferer"
           href={'https://cheap-sluts.pages.dev/slut/' + result()}
         >
-          Look at this
+          {t(['cheap sluts', 'Look at this'])}
         </a>
       </Show>
       <Show when={err() !== ''}>
-        <p class={styles.text}>Error: {err()}</p>
+        <p class={styles.text}>
+          {t(['cheap sluts', 'Error'])}: {err()}
+        </p>
       </Show>
     </>
   )

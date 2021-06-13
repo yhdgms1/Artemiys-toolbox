@@ -66,4 +66,20 @@ export default {
     'Pixels Width': 'Ширина в пикселях',
     'Pixels Height': 'Высота в пикселях',
   },
+  'cheap sluts': {
+    'Select a method': 'Выберите метод',
+    vk: {
+      'id or shortname': 'id или shortname',
+    },
+    manually: {
+      Name: 'Имя',
+      Picture: 'Картинка',
+      'Unique identifier': 'Идентификатор',
+    },
+    Submit: 'Отправить',
+    'Look at this': 'Взглянуть',
+    Error: 'Ошибка',
+    'Created Successfully': 'Создано успешно',
+    'Unexpected Error': 'Непредвиденная ошибка',
+  },
 }

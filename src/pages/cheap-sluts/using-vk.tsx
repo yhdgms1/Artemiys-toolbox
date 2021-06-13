@@ -38,14 +38,14 @@ export default () => {
 
       if (data.error) {
         setResult('')
-        setErr(data.error || 'Unexpected Error')
+        setErr(data.error || t(['cheap sluts', 'Unexpected Error']))
         return
       }
 
       setErr('')
       setResult(data.userid)
     } catch (_) {
-      setErr('Unexpected Error')
+      setErr(t(['cheap sluts', 'Unexpected Error']))
     }
   }
 
@@ -55,28 +55,32 @@ export default () => {
         {t(['t13n-id', 'go back'])}
       </Link>
       <div style={{ display: 'flex', 'flex-direction': 'column' }}>
-        <Input.Label for="vkid">id or shortname</Input.Label>
+        <Input.Label for="vkid">
+          {t(['cheap sluts', 'vk', 'id or shortname'])}
+        </Input.Label>
         <Input.default
           id="vkid"
           type="text"
-          placeholder="id or shortname"
+          placeholder={t(['cheap sluts', 'vk', 'id or shortname'])}
           onInput={e => setShortname((e.target as HTMLInputElement).value)}
         />
       </div>
-      <Button onClick={getData}>Submit</Button>
+      <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <Show when={result() !== ''}>
-        <p class={styles.text}>Created Successfully!</p>
+        <p class={styles.text}>{t(['cheap sluts', 'Created Successfully'])}!</p>
         <a
           class={styles.link}
           target="_blank"
           rel="noopener noreferer"
           href={'https://cheap-sluts.pages.dev/slut/' + result()}
         >
-          Look at this
+          {t(['cheap sluts', 'Look at this'])}
         </a>
       </Show>
       <Show when={err() !== ''}>
-        <p class={styles.text}>Error: {err()}</p>
+        <p class={styles.text}>
+          {t(['cheap sluts', 'Error'])}: {err()}
+        </p>
       </Show>
     </>
   )

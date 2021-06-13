@@ -28,7 +28,7 @@ export default () => {
   return (
     <>
       <h1 class={styles.big_text}>Cheap Sluts</h1>
-      <p class={styles.text}>Select a method</p>
+      <p class={styles.text}>{t(['cheap sluts', 'Select a method'])}</p>
       <div class={styles.main}>
         {methods.map(method => (
           <Card

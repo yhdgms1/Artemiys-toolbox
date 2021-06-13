@@ -52,8 +52,7 @@ const tools: ITools[] = [
   },
   {
     title: 'cheap sluts',
-    description:
-      'Humiliate a friend by showing they on a fake hooker site',
+    description: 'Humiliate a friend by showing they on a fake hooker site',
     link: 'cheap-sluts',
   },
 ]
