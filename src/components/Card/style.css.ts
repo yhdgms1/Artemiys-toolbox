@@ -48,7 +48,7 @@ export const card = style({
       width: '100%',
     },
     '(prefers-color-scheme: dark)': {
-      background: '#171717',
+      background: '#191919',
       borderColor: '#333',
       ':hover': {
         borderColor: '#e69ab0',
@@ -86,7 +86,7 @@ export const cardContainer = style({
   },
   '@media': {
     '(prefers-color-scheme: dark)': {
-      background: '#171717',
+      background: '#191919',
     },
   },
   selectors: {

@@ -10,8 +10,8 @@ export const routes: RouteDefinition[] = [
     component: Home,
   },
   {
-    path: '/character-count',
-    component: lazy(() => import('./pages/character-count')),
+    path: '/characters-count',
+    component: lazy(() => import('./pages/characters-count')),
   },
   {
     path: '/repeat-it-n-times',

@@ -10,9 +10,9 @@ interface ITools {
 
 const tools: ITools[] = [
   {
-    title: 'character count',
+    title: 'characters count',
     description: 'Counts the number of characters in the text, including emoji',
-    link: 'character-count',
+    link: 'characters-count',
   },
   {
     title: 'repeat something n times',

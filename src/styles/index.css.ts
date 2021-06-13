@@ -34,7 +34,8 @@ export const text = style({
 })
 
 export const big_text = style({
-  fontSize: '1.7rem',
+  fontSize: '26px',
+  lineHeight: '30px',
   fontWeight: 'normal',
   padding: '0 0 .7rem',
   textAlign: 'center',

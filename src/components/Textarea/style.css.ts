@@ -14,7 +14,7 @@ export const textarea = style({
   minHeight: '25vh',
   '@media': {
     '(prefers-color-scheme: dark)': {
-      background: '#0000',
+      background: '#191919',
       borderColor: '#3b3b3b',
       color: '#eee',
       ':focus': {

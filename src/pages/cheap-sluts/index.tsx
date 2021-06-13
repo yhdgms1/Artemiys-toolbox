@@ -12,7 +12,7 @@ interface IMethod {
 
 const methods: IMethod[] = [
   {
-    title: 'using VK',
+    title: 'using vk',
     description: "Automatically using a friend's VKontakte profile",
     link: 'using-vk',
   },

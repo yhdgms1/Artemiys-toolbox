@@ -15,25 +15,26 @@ export const input = style({
   padding: '.35rem .45rem',
   margin: '.4rem',
   background: '#0000',
-  border: '2px solid #ececec',
+  border: '1px solid #ececec',
   borderRadius: '12px',
   width: '45vw',
   maxWidth: `calc(90vw - .8rem)`,
   ':hover': {
-    border: '2px solid #ffc2d4',
+    borderColor: '#ffc2d4',
   },
   ':focus': {
-    border: '2px solid #ffc2d4',
+    borderColor: '#ffc2d4',
   },
   '@media': {
     '(prefers-color-scheme: dark)': {
       color: '#eee',
-      border: '2px solid #3b3b3b',
+      borderColor: '#3b3b3b',
+      backgroundColor: '#191919',
       ':hover': {
-        border: '2px solid #e69ab0',
+        borderColor: '#e69ab0',
       },
       ':focus': {
-        border: '2px solid #e69ab0',
+        borderColor: '#e69ab0',
       },
     },
     'screen and (max-width: 640px)': {
