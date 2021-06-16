@@ -23,13 +23,21 @@ export const description = style({
 
 export const card = style({
   transition:
-    'background 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95), border cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s',
+    'background .2s cubic-bezier(0.445, 0.05, 0.55, 0.95), border cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s, transform .2s cubic-bezier(.4,0,.2,1)',
   padding: '.3em',
   borderRadius: '.25rem',
   border: '1px solid #ececec',
   background: '#fff',
   textDecoration: 'none',
   position: 'relative',
+  willChange: 'transform',
+  transform: `scale(1)`,
+  ':active:focus': {
+    transform: `scale(.97)`,
+  },
+  ':active:hover': {
+    transform: `scale(.97)`,
+  },
   ':hover': {
     borderColor: '#ffc2d4',
     background: '#ffe0e9',
@@ -41,6 +49,7 @@ export const card = style({
   ':active': {
     borderColor: '#ff9ebb',
     background: '#ffc2d4',
+    transform: `scale(.97)`,
   },
   '@media': {
     'screen and (max-width: 640px)': {
@@ -48,8 +57,8 @@ export const card = style({
       width: '100%',
     },
     '(prefers-color-scheme: dark)': {
-      background: '#191919',
-      borderColor: '#333',
+      background: '#1e1e1e',
+      borderColor: '#393939',
       ':hover': {
         borderColor: '#e69ab0',
         background: '#ff9ebb',
@@ -86,7 +95,7 @@ export const cardContainer = style({
   },
   '@media': {
     '(prefers-color-scheme: dark)': {
-      background: '#191919',
+      background: '#1e1e1e',
     },
   },
   selectors: {

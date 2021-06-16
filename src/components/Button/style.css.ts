@@ -13,9 +13,21 @@ export const button = style({
   border: '1px solid #1111112d',
   background: '#f2f2f2',
   color: '#323130',
+  willChange: 'transform',
+  transform: `scale(1)`,
+  transition: `all .2s cubic-bezier(.4,0,.2,1)`,
   ':hover': {
     boxShadow:
       '0px 6.4px 14.4px rgba(0, 0, 0, 0.13), 0px 1.2px 3.6px rgba(0, 0, 0, 0.11)',
+  },
+  ':active': {
+    transform: `scale(.95)`,
+  },
+  ':active:focus': {
+    transform: `scale(.95)`,
+  },
+  ':active:hover': {
+    transform: `scale(.95)`,
   },
   '@media': {
     '(prefers-color-scheme: dark)': {

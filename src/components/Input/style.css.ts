@@ -28,8 +28,8 @@ export const input = style({
   '@media': {
     '(prefers-color-scheme: dark)': {
       color: '#eee',
-      borderColor: '#3b3b3b',
       backgroundColor: '#191919',
+      borderColor: '#393939',
       ':hover': {
         borderColor: '#e69ab0',
       },

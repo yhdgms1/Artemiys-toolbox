@@ -15,7 +15,7 @@ export const textarea = style({
   '@media': {
     '(prefers-color-scheme: dark)': {
       background: '#191919',
-      borderColor: '#3b3b3b',
+      borderColor: '#393939',
       color: '#eee',
       ':focus': {
         outlineColor: '#ccc',
