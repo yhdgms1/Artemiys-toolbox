@@ -13,7 +13,6 @@ export const button = style({
   border: '1px solid #1111112d',
   background: '#f2f2f2',
   color: '#323130',
-  willChange: 'transform',
   transform: `scale(1)`,
   transition: `all .2s cubic-bezier(.4,0,.2,1)`,
   ':hover': {

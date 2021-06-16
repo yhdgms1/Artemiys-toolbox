@@ -30,7 +30,6 @@ export const card = style({
   background: '#fff',
   textDecoration: 'none',
   position: 'relative',
-  willChange: 'transform',
   transform: `scale(1)`,
   ':active:focus': {
     transform: `scale(.97)`,
