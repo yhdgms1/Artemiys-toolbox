@@ -7,7 +7,6 @@ export const button = style({
   fontSize: '16px',
   borderRadius: '7px',
   cursor: 'pointer',
-  transition: 'all 0.3s',
   boxShadow:
     '0px 3.2px 7.2px rgba(0, 0, 0, 0.13), 0px 0.6px 1.8px rgba(0, 0, 0, 0.11)',
   border: '1px solid #1111112d',
