@@ -74,7 +74,6 @@ export default {
     manually: {
       Name: 'Имя',
       Picture: 'Картинка',
-      'Unique identifier': 'Идентификатор',
     },
     Submit: 'Отправить',
     'Look at this': 'Взглянуть',

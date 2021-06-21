@@ -74,7 +74,6 @@ export default {
     manually: {
       Name: 'Name',
       Picture: 'Picture',
-      'Unique identifier': 'Unique identifier',
     },
     Submit: 'Submit',
     'Look at this': 'Look at this',

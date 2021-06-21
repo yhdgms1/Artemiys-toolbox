@@ -10,14 +10,13 @@ export default () => {
   setTitle('Create Manually')
 
   const [name, setName] = createSignal('')
-  const [id, setId] = createSignal('')
   const [pic, setPic] = createSignal('')
 
   const [err, setErr] = createSignal('')
   const [result, setResult] = createSignal('')
 
   const getData = async () => {
-    if (name() === '' || id() === '' || pic() === '') return
+    if (name() === '' || pic() === '') return
 
     try {
       const res = await fetch(
@@ -27,7 +26,6 @@ export default () => {
           body: JSON.stringify({
             name: name(),
             picture: pic(),
-            userid: id(),
           }),
         }
       )
@@ -74,17 +72,6 @@ export default () => {
           spellcheck={false}
           autocomplete={false}
           onInput={e => setPic((e.target as HTMLInputElement).value)}
-        />
-        <Input.Label for="id">
-          {t(['cheap sluts', 'manually', 'Unique identifier'])}
-        </Input.Label>
-        <Input.default
-          id="id"
-          type="text"
-          placeholder={t(['cheap sluts', 'manually', 'Unique identifier'])}
-          spellcheck={false}
-          autocomplete={false}
-          onInput={e => setId((e.target as HTMLInputElement).value)}
         />
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
