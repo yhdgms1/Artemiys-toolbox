@@ -58,6 +58,10 @@ export const routes: RouteDefinition[] = [
     component: lazy(() => import('./pages/cheap-sluts/manually')),
   },
   {
+    path: '/cheap-sluts/remove',
+    component: lazy(() => import('./pages/cheap-sluts/remove')),
+  },
+  {
     path: '**',
     component: NotFound,
   },

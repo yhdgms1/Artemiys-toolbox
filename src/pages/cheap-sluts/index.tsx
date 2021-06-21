@@ -21,6 +21,11 @@ const methods: IMethod[] = [
     description: 'manually fill in all the required fields',
     link: 'manually',
   },
+  {
+    title: 'remove',
+    description: 'removes the person from the site',
+    link: 'remove'
+  }
 ]
 
 export default () => {

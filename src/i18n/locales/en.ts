@@ -75,6 +75,10 @@ export default {
       Name: 'Name',
       Picture: 'Picture',
     },
+    remove: {
+      'id': 'id',
+      'Removed Successfully': 'Removed Successfully'
+    },
     Submit: 'Submit',
     'Look at this': 'Look at this',
     Error: 'Error',

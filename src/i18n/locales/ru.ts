@@ -75,6 +75,10 @@ export default {
       Name: 'Имя',
       Picture: 'Картинка',
     },
+    remove: {
+      'id': 'пользователя',
+      'Removed Successfully': 'Успешно удалён'
+    },
     Submit: 'Отправить',
     'Look at this': 'Взглянуть',
     Error: 'Ошибка',
