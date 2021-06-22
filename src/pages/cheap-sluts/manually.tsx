@@ -59,7 +59,7 @@ export default () => {
           type="text"
           placeholder={t(['cheap sluts', 'manually', 'Name'])}
           spellcheck={false}
-          autocomplete={false}
+          autocomplete="false"
           onInput={e => setName((e.target as HTMLInputElement).value)}
         />
         <Input.Label for="picture">
@@ -70,7 +70,7 @@ export default () => {
           type="text"
           placeholder={t(['cheap sluts', 'manually', 'Picture'])}
           spellcheck={false}
-          autocomplete={false}
+          autocomplete="false"
           onInput={e => setPic((e.target as HTMLInputElement).value)}
         />
       </div>

@@ -24,8 +24,8 @@ const methods: IMethod[] = [
   {
     title: 'remove',
     description: 'removes the person from the site',
-    link: 'remove'
-  }
+    link: 'remove',
+  },
 ]
 
 export default () => {

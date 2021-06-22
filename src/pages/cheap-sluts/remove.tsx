@@ -46,9 +46,7 @@ export default () => {
         {t(['t13n-id', 'go back'])}
       </Link>
       <div style={{ display: 'flex', 'flex-direction': 'column' }}>
-        <Input.Label for="id">
-          {t(['cheap sluts', 'remove', 'id'])}
-        </Input.Label>
+        <Input.Label for="id">{t(['cheap sluts', 'remove', 'id'])}</Input.Label>
         <Input.default
           id="id"
           type="text"
@@ -58,7 +56,9 @@ export default () => {
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <Show when={result() !== ''}>
-        <p class={styles.text}>{t(['cheap sluts', 'remove', 'Removed Successfully'])}!</p>
+        <p class={styles.text}>
+          {t(['cheap sluts', 'remove', 'Removed Successfully'])}!
+        </p>
       </Show>
       <Show when={err() !== ''}>
         <p class={styles.text}>

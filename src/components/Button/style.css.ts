@@ -21,12 +21,6 @@ export const button = style({
   ':active': {
     transform: `scale(.95)`,
   },
-  ':active:focus': {
-    transform: `scale(.95)`,
-  },
-  ':active:hover': {
-    transform: `scale(.95)`,
-  },
   '@media': {
     '(prefers-color-scheme: dark)': {
       border: '1px solid #ffffff2e',

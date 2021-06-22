@@ -65,7 +65,7 @@ body,
 @media (prefers-color-scheme: dark) {
   body,
   .__layout {
-    background: #121212;
+    background: #141414;
     color: #eee;
   }
 }

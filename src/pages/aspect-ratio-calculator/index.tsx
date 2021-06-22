@@ -20,7 +20,7 @@ export default () => {
       let pixelsHeight =
         (state.pixelsWidth / state.ratioWidth) * state.ratioHeight
       setState('pixelsHeight', v =>
-        pixelsHeight % 1 !== 0 ? pixelsHeight.toFixed(2) : pixelsHeight
+        Number(pixelsHeight % 1 !== 0 ? pixelsHeight.toFixed(2) : pixelsHeight)
       )
     } else {
       setState('pixelsHeight', v => 0)
@@ -32,7 +32,7 @@ export default () => {
       let pixelsWidth =
         (state.pixelsHeight / state.ratioHeight) * state.ratioWidth
       setState('pixelsWidth', v =>
-        pixelsWidth % 1 !== 0 ? pixelsWidth.toFixed(2) : pixelsWidth
+        Number(pixelsWidth % 1 !== 0 ? pixelsWidth.toFixed(2) : pixelsWidth)
       )
     } else {
       setState('pixelsWidth', v => 0)
@@ -51,13 +51,11 @@ export default () => {
           id="preset"
           onChange={e => {
             if ((e.target as HTMLSelectElement).value !== 'custom') {
-              setState(
-                'ratioWidth',
-                v => (e.target as HTMLSelectElement).value.split(':')[0]
+              setState('ratioWidth', v =>
+                Number((e.target as HTMLSelectElement).value.split(':')[0])
               )
-              setState(
-                'ratioHeight',
-                v => (e.target as HTMLSelectElement).value.split(':')[1]
+              setState('ratioHeight', v =>
+                Number((e.target as HTMLSelectElement).value.split(':')[1])
               )
               processWidth()
             }

@@ -30,13 +30,6 @@ export const card = style({
   background: '#fff',
   textDecoration: 'none',
   position: 'relative',
-  transform: `scale(1)`,
-  ':active:focus': {
-    transform: `scale(.97)`,
-  },
-  ':active:hover': {
-    transform: `scale(.97)`,
-  },
   ':hover': {
     borderColor: '#ffc2d4',
     background: '#ffe0e9',
@@ -48,7 +41,6 @@ export const card = style({
   ':active': {
     borderColor: '#ff9ebb',
     background: '#ffc2d4',
-    transform: `scale(.97)`,
   },
   '@media': {
     'screen and (max-width: 640px)': {
