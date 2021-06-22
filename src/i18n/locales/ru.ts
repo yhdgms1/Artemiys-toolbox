@@ -76,7 +76,7 @@ export default {
       Picture: 'Картинка',
     },
     remove: {
-      id: 'пользователя',
+      id: 'Идентификатор',
       'Removed Successfully': 'Успешно удалён',
     },
     Submit: 'Отправить',
