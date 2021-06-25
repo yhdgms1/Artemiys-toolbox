@@ -69,7 +69,7 @@ body{
   }
 }
 
-@media (prefers-reduced-motion: no-preference){
+@media (prefers-reduced-motion){
   *,*:active,*:hover{
     filter: none;
     transition: none;
