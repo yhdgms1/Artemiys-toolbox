@@ -1,4 +1,4 @@
-import { createState } from 'solid-js'
+import { createStore } from 'solid-js/store'
 import { Input, Select } from '../../components'
 import { t } from '../../i18n'
 import { setTitle } from '../../helpers'
@@ -8,7 +8,7 @@ import * as styles from './style.css'
 export default () => {
   setTitle(t(['aspect-ratio', 'title']))
 
-  const [state, setState] = createState({
+  const [state, setState] = createStore({
     ratioWidth: 16,
     ratioHeight: 9,
     pixelsWidth: 1920,
