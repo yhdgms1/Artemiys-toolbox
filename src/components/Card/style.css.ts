@@ -30,6 +30,7 @@ export const card = style({
   background: '#fff',
   textDecoration: 'none',
   position: 'relative',
+  filter: `drop-shadow(1.5px 1.5px 3px #1c1c1c10)`,
   ':hover': {
     borderColor: '#ffc2d4',
     background: '#ffe0e9',
@@ -44,12 +45,13 @@ export const card = style({
   },
   '@media': {
     'screen and (max-width: 640px)': {
-      marginBottom: '1rem',
+      marginBottom: '.6rem',
       width: '100%',
     },
     '(prefers-color-scheme: dark)': {
       background: '#1e1e1e',
       borderColor: '#393939',
+      filter: `drop-shadow(2px 2px 5px #1c1c1c)`,
       ':hover': {
         borderColor: '#e69ab0',
         background: '#ff9ebb',

@@ -68,3 +68,10 @@ body{
     color: #eee;
   }
 }
+
+@media (prefers-reduced-motion: no-preference){
+  *,*:active,*:hover{
+    filter: none;
+    transition: none;
+  }
+}
