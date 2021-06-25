@@ -54,7 +54,7 @@ body,
     U+FEFF, U+FFFD;
 }
 
-.__layout {
+body{
   width: 100%;
   background: #fff;
   -webkit-font-smoothing: antialiased;
@@ -63,8 +63,7 @@ body,
 }
 
 @media (prefers-color-scheme: dark) {
-  body,
-  .__layout {
+  body{
     background: #141414;
     color: #eee;
   }

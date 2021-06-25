@@ -9,5 +9,5 @@ render(
       <App />
     </Router>
   ),
-  document.getElementById('root')
+  document.body
 )
