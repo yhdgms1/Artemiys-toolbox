@@ -54,7 +54,7 @@ body,
     U+FEFF, U+FFFD;
 }
 
-body{
+body {
   width: 100%;
   background: #fff;
   -webkit-font-smoothing: antialiased;
@@ -63,14 +63,16 @@ body{
 }
 
 @media (prefers-color-scheme: dark) {
-  body{
+  body {
     background: #141414;
     color: #eee;
   }
 }
 
-@media (prefers-reduced-motion){
-  *,*:active,*:hover{
+@media (prefers-reduced-motion) {
+  *,
+  *:active,
+  *:hover {
     filter: none;
     transition: none;
   }

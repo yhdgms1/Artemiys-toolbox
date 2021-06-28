@@ -33,4 +33,13 @@ export const button = style({
       display: 'block',
     },
   },
+  '@supports': {
+    '(-moz-appearance:none)': {
+      filter: 'none',
+      ':hover': {
+        filter: 'none',
+      },
+      transition: 'none',
+    },
+  },
 })
