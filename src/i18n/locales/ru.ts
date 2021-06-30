@@ -7,8 +7,8 @@ export default {
   },
   'string-backwards': {
     header: 'Перевернуть текст задом наперёд',
-    input_textarea_placehoder: 'Введите текст',
-    out_textarea_placehoder: 'Текст задом наперёд будет тут',
+    'Type text': 'Введите текст',
+    'Text backwards will be here': 'Текст задом наперёд будет тут',
   },
   btn__copy: {
     default: 'Скопировать',

@@ -15,8 +15,8 @@ export default () => {
     <>
       <h2 class={styles.big_text}>{t(['string-backwards', 'header'])}</h2>
       <Textarea
-        placeholder={t(['string-backwards', 'input_textarea_placehoder'])}
-        aria-placeholder={t(['string-backwards', 'input_textarea_placehoder'])}
+        placeholder={t(['string-backwards', 'Type text'])}
+        aria-placeholder={t(['string-backwards', 'Type text'])}
         onInput={e =>
           setOutput(
             splitter
@@ -30,8 +30,11 @@ export default () => {
       <Textarea
         readonly
         value={output()}
-        placeholder={t(['string-backwards', 'out_textarea_placehoder'])}
-        aria-placeholder={t(['string-backwards', 'out_textarea_placehoder'])}
+        placeholder={t(['string-backwards', 'Text backwards will be here'])}
+        aria-placeholder={t([
+          'string-backwards',
+          'Text backwards will be here',
+        ])}
       />
     </>
   )

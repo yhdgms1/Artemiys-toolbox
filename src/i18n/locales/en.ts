@@ -7,8 +7,8 @@ export default {
   },
   'string-backwards': {
     header: 'turning text backwards',
-    input_textarea_placehoder: 'Type text',
-    out_textarea_placehoder: 'Text backwards will be here',
+    'Type text': 'Type text',
+    'Text backwards will be here': 'Text backwards will be here',
   },
   btn__copy: {
     default: 'Copy',

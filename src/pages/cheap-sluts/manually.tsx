@@ -1,6 +1,6 @@
 import * as styles from '../../styles/index.css'
 import { Link } from 'solid-app-router'
-import { createSignal, createState, Show } from 'solid-js'
+import { createSignal, Show } from 'solid-js'
 import clsx from 'clsx'
 import { t } from '../../i18n'
 import { Button, Input } from '../../components'

@@ -1,3 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
+# Let's take over the world with the cat girls
+
 User-agent: *
 Disallow:

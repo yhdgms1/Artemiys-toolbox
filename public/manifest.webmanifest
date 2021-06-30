@@ -1,7 +1,7 @@
 {
     "theme_color" : "#fd6c9e",
     "background_color" : "#171717",
-    "display" : "browser",
+    "display" : "minimal-ui",
     "scope" : "/",
     "start_url" : ".",
     "name" : "Artemiy's Toolbox",

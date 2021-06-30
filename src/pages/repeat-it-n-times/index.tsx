@@ -1,5 +1,6 @@
 import { createSignal } from 'solid-js'
 import * as styles from '../../styles/index.css'
+import { input } from './style.css'
 import { t } from '../../i18n'
 import { CopyButton, Textarea, Button } from '../../components'
 import clsx from 'clsx'
@@ -19,14 +20,14 @@ export default () => {
         <input
           type="text"
           placeholder={t(['repeat-it-n-times', 'it'])}
-          class={styles.input}
+          class={input}
           onInput={e => setText((e.target as HTMLInputElement).value)}
           spellcheck={false}
         />
         <input
           type="number"
           placeholder={t(['repeat-it-n-times', 'so many'])}
-          class={styles.input}
+          class={input}
           onInput={e => setCount((e.target as HTMLInputElement).valueAsNumber)}
           min="1"
           max="5368708"
