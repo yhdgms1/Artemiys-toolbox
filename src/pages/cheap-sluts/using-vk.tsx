@@ -36,6 +36,12 @@ export default () => {
 
       const data: { error?: string; userid?: string } = await res.json()
 
+      if(data.error === 'already added'){
+        setResult(data.userid);
+        setErr(data.error)
+        return
+      }
+
       if (data.error) {
         setResult('')
         setErr(data.error || t(['cheap sluts', 'Unexpected Error']))
@@ -45,6 +51,7 @@ export default () => {
       setErr('')
       setResult(data.userid)
     } catch (_) {
+      setResult('')
       setErr(t(['cheap sluts', 'Unexpected Error']))
     }
   }
@@ -67,7 +74,9 @@ export default () => {
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <Show when={result() !== ''}>
-        <p class={styles.text}>{t(['cheap sluts', 'Created Successfully'])}!</p>
+        {!err() && (
+          <p class={styles.text}>{t(['cheap sluts', 'Created Successfully'])}!</p>
+        )}
         <a
           class={styles.link}
           target="_blank"
