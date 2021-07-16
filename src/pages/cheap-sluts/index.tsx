@@ -13,17 +13,17 @@ interface IMethod {
 const methods: IMethod[] = [
   {
     title: 'using vk',
-    description: "Automatically using a friend's VKontakte profile",
+    description: "create automatically using a friend's VKontakte profile",
     link: 'using-vk',
   },
   {
     title: 'manually',
-    description: 'manually fill in all the required fields',
+    description: 'create by manually filling in all the required fields',
     link: 'manually',
   },
   {
     title: 'remove',
-    description: 'removes the person from the site',
+    description: 'remove the person from the site',
     link: 'remove',
   },
 ]

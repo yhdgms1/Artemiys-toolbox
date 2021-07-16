@@ -70,6 +70,7 @@ export const card = style({
 })
 
 export const cardContainer = style({
+  display: 'block',
   padding: '1.25rem 1rem',
   height: '100%',
   width: '100%',

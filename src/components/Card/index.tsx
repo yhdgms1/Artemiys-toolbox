@@ -10,9 +10,9 @@ interface Props {
 
 export const Card = (props: Props) => (
   <Link href={props.href} class={styles.card}>
-    <div class={styles.cardContainer}>
-      <h2 class={styles.title}>{props.title}</h2>
-      <p class={styles.description}>{props.description}</p>
-    </div>
+    <span class={styles.cardContainer}>
+      <h2 aria-hidden="true" class={styles.title}>{props.title}</h2>
+      <span class={styles.description}>{props.description}</span>
+    </span>
   </Link>
 )
