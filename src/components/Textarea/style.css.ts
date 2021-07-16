@@ -1,8 +1,9 @@
 import { style } from '@vanilla-extract/css'
+import { vars } from '../../styles/theme.css'
 
 export const textarea = style({
   fontSize: 'inherit',
-  fontFamily: 'var(--font-serif)',
+  fontFamily: vars.font.serif,
   marginBottom: '.5em',
   padding: '0.4rem',
   boxSizing: 'border-box',

@@ -1,11 +1,12 @@
 import { style } from '@vanilla-extract/css'
+import { vars } from '../../styles/theme.css'
 
 export const select = style({
-  fontFamily: 'var(--font-serif)',
+  fontFamily: vars.font.serif,
   outline: 'none',
   padding: '.35rem .45rem',
   margin: '.4rem',
-  background: '#fff',
+  background: vars.background.light.primary,
   border: '1px solid #ececec',
   borderRadius: '12px',
   width: '45vw',

@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css'
+import { vars } from '../../styles/theme.css'
 
 export const label = style({
   margin: '.5rem',
@@ -10,7 +11,7 @@ export const inputContainer = style({
 })
 
 export const input = style({
-  fontFamily: 'var(--font-serif)',
+  fontFamily: vars.font.serif,
   outline: 'none',
   padding: '.35rem .45rem',
   margin: '.4rem',

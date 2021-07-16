@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css'
 import { globalStyle } from '@vanilla-extract/css'
+import { vars } from '../styles/theme.css'
 
 export const title = style({
   fontSize: '30px',
@@ -14,7 +15,7 @@ export const no_underline = style({
 })
 
 export const nav = style({
-  margin: '0.92307692em 1rem 0',
+  margin: '0.92em 1rem 0',
 })
 
 globalStyle('html, body, *, *::after, *::before', {
@@ -28,11 +29,11 @@ globalStyle('html, body, *, *::after, *::before', {
 
 globalStyle('body', {
   width: '100%',
-  background: '#fff',
+  background: vars.background.light.primary,
   contentVisibility: 'auto',
   '@media': {
     '(prefers-color-scheme: dark)': {
-      background: '#141414',
+      background: vars.background.dark.primary,
       color: '#eee',
     },
   },

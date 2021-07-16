@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css'
+import { vars } from '../../styles/theme.css'
 
 export const title = style({
   fontWeight: 500,
@@ -27,7 +28,7 @@ export const card = style({
   padding: '.3em',
   borderRadius: '.25rem',
   border: '1px solid #ececec',
-  background: '#fff',
+  background: vars.background.light.primary,
   textDecoration: 'none',
   position: 'relative',
   filter: `drop-shadow(1.5px 1.5px 3px #1c1c1c10)`,
@@ -72,7 +73,7 @@ export const cardContainer = style({
   padding: '1.25rem 1rem',
   height: '100%',
   width: '100%',
-  background: '#fff',
+  background: vars.background.light.primary,
   borderRadius: '.125rem',
   '::after': {
     content: `''`,
