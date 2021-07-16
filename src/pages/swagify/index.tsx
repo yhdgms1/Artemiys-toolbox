@@ -23,7 +23,7 @@ export default () => {
         <CopyButton copy={output()} />
       </div>
       <Textarea
-        readonly
+        readOnly="true"
         value={output()}
         placeholder={t(['swagify', 'result'])}
         aria-placeholder={t(['swagify', 'result'])}

@@ -47,7 +47,7 @@ export default () => {
         <CopyButton copy={output()} />
       </div>
       <Textarea
-        readonly
+        readOnly="true"
         value={output()}
         placeholder={t(['repeat-it-n-times', 'result'])}
         aria-placeholder={t(['repeat-it-n-times', 'result'])}

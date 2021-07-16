@@ -41,7 +41,7 @@ export default props => {
         </div>
         <Textarea
           spellcheck={false}
-          readonly
+          readOnly="true"
           placeholder={t(['t13n-id', 'output'])}
           aria-placeholder={t(['t13n-id', 'output'])}
           value={output()}

@@ -11,7 +11,7 @@ export default () => {
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
 
-  const setCharAt = (string, index, char) =>
+  const setCharAt = (string: string, index: number, char: string) =>
     index > string.length - 1
       ? string
       : string.substr(0, index) + char + string.substr(index + 1)
@@ -45,7 +45,7 @@ export default () => {
         <CopyButton copy={output()} />
       </div>
       <Textarea
-        readonly
+        readOnly="true"
         value={output()}
         placeholder={t(['punto-switcher', 'result'])}
         aria-placeholder={t(['punto-switcher', 'result'])}
