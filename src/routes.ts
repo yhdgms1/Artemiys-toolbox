@@ -62,6 +62,10 @@ export const routes: RouteDefinition[] = [
     component: lazy(() => import('./pages/cheap-sluts/remove')),
   },
   {
+    path: '/text-case-changer',
+    component: lazy(() => import('./pages/text-case-changer')),
+  },
+  {
     path: '**',
     component: NotFound,
   },

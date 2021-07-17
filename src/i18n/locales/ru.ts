@@ -85,4 +85,11 @@ export default {
     'Created Successfully': 'Создано успешно',
     'Unexpected Error': 'Непредвиденная ошибка',
   },
+  'text-case-changer': {
+    title: 'Изменение Регистра Текста',
+    'Enter the text here': 'Введите текст сюда',
+    'Result will be here': 'Результат будет тут',
+    'to uppercase': 'К прописным буквам',
+    'to lowercase': 'К строчным буквам',
+  }
 }

@@ -85,4 +85,11 @@ export default {
     'Created Successfully': 'Created Successfully',
     'Unexpected Error': 'Unexpected Error',
   },
+  'text-case-changer': {
+    title: 'Text Case Changer',
+    'Enter the text here': 'Enter the text here',
+    'Result will be here': 'Result will be here',
+    'to uppercase': 'to uppercase',
+    'to lowercase': 'to lowercase',
+  }
 }

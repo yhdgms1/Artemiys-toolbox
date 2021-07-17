@@ -55,6 +55,11 @@ const tools: ITools[] = [
     description: 'Humiliate a friend by showing they on a fake hooker site',
     link: 'cheap-sluts',
   },
+  {
+    title: 'text case changer',
+    description: 'TEXT case CHANGER',
+    link: 'text-case-changer'
+  }
 ]
 
 export default () => {
