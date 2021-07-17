@@ -57,9 +57,9 @@ const tools: ITools[] = [
   },
   {
     title: 'text case changer',
-    description: 'TEXT case CHANGER',
-    link: 'text-case-changer'
-  }
+    description: 'text CASE chAnGeR',
+    link: 'text-case-changer',
+  },
 ]
 
 export default () => {

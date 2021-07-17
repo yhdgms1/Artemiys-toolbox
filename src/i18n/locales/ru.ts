@@ -91,5 +91,6 @@ export default {
     'Result will be here': 'Результат будет тут',
     'to uppercase': 'К прописным буквам',
     'to lowercase': 'К строчным буквам',
-  }
+    'randomise case': 'К случайным буквам',
+  },
 }

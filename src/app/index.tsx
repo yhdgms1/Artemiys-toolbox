@@ -24,7 +24,10 @@ const App = () => {
           </Link>
         </h1>
       </nav>
-      <main class={router.location === '/' ? styles.main : styles.main_layout} role="main">
+      <main
+        class={router.location === '/' ? styles.main : styles.main_layout}
+        role="main"
+      >
         <ErrorBoundary fallback={Unknown}>
           <Route />
         </ErrorBoundary>

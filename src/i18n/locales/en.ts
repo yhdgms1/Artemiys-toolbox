@@ -91,5 +91,6 @@ export default {
     'Result will be here': 'Result will be here',
     'to uppercase': 'to uppercase',
     'to lowercase': 'to lowercase',
-  }
+    'randomise case': 'randomize case',
+  },
 }
