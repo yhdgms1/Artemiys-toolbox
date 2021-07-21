@@ -1,12 +1,15 @@
-import { Link, Route, useRouter } from 'solid-app-router'
 import * as styles from '../styles/index.css'
 import * as appStyles from './style.css'
-import clsx from 'clsx'
+import { Link, useRoutes, useLocation } from 'solid-app-router'
 import { ErrorBoundary } from 'solid-js'
 import { Unknown } from '../pages/__errors'
+import { routes } from './routes'
+import clsx from 'clsx'
 
 const App = () => {
-  const [router] = useRouter()
+  const location = useLocation()
+
+  const Routes = useRoutes(routes)
 
   return (
     <>
@@ -17,7 +20,7 @@ const App = () => {
             class={clsx(
               appStyles.title,
               styles.link,
-              router.location === '/' ? appStyles.no_underline : ''
+              location.pathname === '/' ? appStyles.no_underline : ''
             )}
           >
             Artemiy's Toolbox
@@ -25,11 +28,11 @@ const App = () => {
         </h1>
       </nav>
       <main
-        class={router.location === '/' ? styles.main : styles.main_layout}
+        class={location.pathname === '/' ? styles.main : styles.main_layout}
         role="main"
       >
         <ErrorBoundary fallback={Unknown}>
-          <Route />
+          <Routes />
         </ErrorBoundary>
       </main>
     </>

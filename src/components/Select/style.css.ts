@@ -11,6 +11,8 @@ export const select = style({
   borderRadius: '12px',
   width: '45vw',
   maxWidth: `calc(90vw - .8rem)`,
+  WebkitAppearance: 'none',
+  appearance: 'none',
   ':hover': {
     borderColor: '#ffc2d4',
   },
