@@ -1,22 +1,22 @@
 import * as styles from '../../styles/index.css'
-import { Link } from 'solid-app-router'
+import { Link, useParams } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
-import schemas from './schemas'
 import { translate } from '@artemis69/iuliia'
-import clsx from 'clsx'
 import { t } from '../../i18n'
 import { CopyButton, Textarea, Button } from '../../components'
 import { setTitle } from '../../helpers'
+import schemas from './schemas'
+import clsx from 'clsx'
 
 export default props => {
-  const schema = props.params.id
+  const schema = useParams()?.id;
 
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
 
   return (
     <>
-      <Show when={schema in schemas} fallback={<Fallback />}>
+      <Show when={schema in schemas} fallback={Fallback}>
         {setTitle(t(['t13n', 'title']) + ' | ' + schema)}
         <Link
           class={clsx(styles.link, styles.big_text)}
