@@ -45,7 +45,7 @@ export default () => {
         <CopyButton copy={output()} />
       </div>
       <Textarea
-        readOnly="true"
+        readOnly={true}
         value={output()}
         placeholder={t(['punto-switcher', 'result'])}
         aria-placeholder={t(['punto-switcher', 'result'])}

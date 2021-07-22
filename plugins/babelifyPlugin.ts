@@ -1,6 +1,7 @@
+import type { Plugin } from 'vite'
 import * as babel from '@babel/core'
 
-export const babelifyPlugin = () => {
+export const babelifyPlugin = (): Plugin => {
   return {
     name: 'babelify',
     transform(src, id) {
@@ -11,16 +12,20 @@ export const babelifyPlugin = () => {
               '@babel/preset-env',
               {
                 targets: {
-                  chrome: '75',
+                  chrome: '74',
                   firefox: '78',
                 },
                 modules: false,
-                loose: true,
+                loose: true
               },
             ],
           ],
-          plugins: ['@babel/plugin-proposal-nullish-coalescing-operator'],
+          plugins: [
+            '@babel/plugin-proposal-nullish-coalescing-operator',
+            '@babel/plugin-proposal-optional-chaining',
+          ],
           compact: false,
+          babelrc: false
         })
         return {
           code,

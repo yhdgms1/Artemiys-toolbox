@@ -8,8 +8,8 @@ import { setTitle } from '../../helpers'
 import schemas from './schemas'
 import clsx from 'clsx'
 
-export default props => {
-  const schema = useParams()?.id;
+export default () => {
+  const schema: string = useParams().id
 
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
@@ -41,7 +41,7 @@ export default props => {
         </div>
         <Textarea
           spellcheck={false}
-          readOnly="true"
+          readOnly={true}
           placeholder={t(['t13n-id', 'output'])}
           aria-placeholder={t(['t13n-id', 'output'])}
           value={output()}
@@ -51,12 +51,14 @@ export default props => {
   )
 }
 
-const Fallback = () => (
-  <>
-    {setTitle(t(['t13n-id', 'not exist']))}
-    <p class={styles.big_text}>{t(['t13n-id', 'not exist'])}</p>
-    <Link class={styles.link} href="/transliteration">
-      {t(['t13n-id', 'view existing'])}
-    </Link>
-  </>
-)
+const Fallback = () => {
+  setTitle(t(['t13n-id', 'not exist']))
+  return (
+    <>
+      <p class={styles.big_text}>{t(['t13n-id', 'not exist'])}</p>
+      <Link class={styles.link} href="/transliteration">
+        {t(['t13n-id', 'view existing'])}
+      </Link>
+    </>
+  )
+}

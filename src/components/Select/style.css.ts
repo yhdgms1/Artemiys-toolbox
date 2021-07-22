@@ -39,7 +39,7 @@ export const select = style({
     },
   },
   '@supports': {
-    '(appearance: none)': {
+    '(-webkit-appearance: none)': {
       appearance: 'none',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: `right .2rem top 50%, 0 0`,

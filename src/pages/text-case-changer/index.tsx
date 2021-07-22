@@ -66,7 +66,7 @@ export default () => {
         <CopyButton copy={output()} />
       </div>
       <Textarea
-        readOnly="true"
+        readOnly={true}
         value={output()}
         placeholder={t(['text-case-changer', 'Result will be here'])}
         aria-placeholder={t(['text-case-changer', 'Result will be here'])}

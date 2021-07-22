@@ -28,7 +28,7 @@ export default () => {
       />
       <CopyButton copy={output()} />
       <Textarea
-        readOnly="true"
+        readOnly={true}
         value={output()}
         placeholder={t(['string-backwards', 'Text backwards will be here'])}
         aria-placeholder={t([

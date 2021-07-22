@@ -24,7 +24,7 @@ export default () => {
       />
       <CopyButton copy={output()} />
       <Textarea
-        readOnly="true"
+        readOnly={true}
         value={output()}
         placeholder={t(['uwuifier', 'output'])}
         aria-placeholder={t(['uwuifier', 'output'])}

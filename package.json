@@ -1,6 +1,7 @@
 {
   "name": "artemiys-toolbox",
   "version": "1.1.0",
+  "private": true,
   "description": "Some tools I might need, collected in one place called Artemiy's Toolbox",
   "type": "module",
   "scripts": {
@@ -14,6 +15,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.14.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
     "@babel/preset-env": "^7.14.8",
     "@vanilla-extract/css": "^1.1.2",
     "@vanilla-extract/vite-plugin": "^1.0.0",
@@ -30,7 +32,13 @@
     "graphemer": "^1.2.0",
     "rosetta": "^1.1.0",
     "solid-app-router": "^0.1.1",
-    "solid-js": "^1.0.3",
+    "solid-js": "^1.0.4",
     "uwuifier": "^4.0.4"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "chrome 74",
+    "firefox 78"
+  ]
 }
