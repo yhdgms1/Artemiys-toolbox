@@ -26,7 +26,7 @@
     "vite-plugin-solid": "^2.0.1"
   },
   "dependencies": {
-    "@artemis69/iuliia": "^0.0.2",
+    "@artemis69/iuliia": "^0.0.3",
     "@artemis69/swagify": "^1.1.1",
     "clsx": "^1.1.1",
     "graphemer": "^1.2.0",
