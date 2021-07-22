@@ -27,7 +27,7 @@ export const input = style({
     borderColor: '#ffc2d4',
   },
   '::placeholder': {
-    color: '#333'
+    color: '#333',
   },
   '@media': {
     '(prefers-color-scheme: dark)': {
@@ -41,8 +41,8 @@ export const input = style({
         borderColor: '#e69ab0',
       },
       '::placeholder': {
-        color: '#ccc'
-      }
+        color: '#ccc',
+      },
     },
     'screen and (max-width: 640px)': {
       width: `90vw`,

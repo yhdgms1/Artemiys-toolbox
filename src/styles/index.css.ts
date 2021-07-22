@@ -52,7 +52,7 @@ export const responsive_container = style({
   '@media': {
     'screen and (max-width: 1055px)': {
       display: 'grid',
-      gridTemplateColumns: '2fr 2fr'
+      gridTemplateColumns: '2fr 2fr',
     },
     'screen and (max-width: 640px)': {
       display: 'flex',

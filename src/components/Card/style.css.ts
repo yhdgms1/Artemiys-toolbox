@@ -22,7 +22,7 @@ export const description = style({
   },
   textDecoration: 'none',
   ':focus': {
-    outline: 'transparent'
+    outline: 'transparent',
   },
   '::before': {
     position: 'absolute',
@@ -30,12 +30,13 @@ export const description = style({
     left: 0,
     right: 0,
     bottom: 0,
-    content: `''`
-  }
+    content: `''`,
+  },
 })
 
 export const card = style({
-  transition: 'box-shadow cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s, border cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s',
+  transition:
+    'box-shadow cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s, border cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s',
   padding: '1.55rem 1.3rem',
   borderRadius: '.25rem',
   border: '1px solid #ececec',
@@ -57,7 +58,7 @@ export const card = style({
   },
   ':hover': {
     borderColor: '#ffc2d4',
-    boxShadow: `inset 0 0 0 .3rem #ffe0e9`
+    boxShadow: `inset 0 0 0 .3rem #ffe0e9`,
   },
   ':focus-within': {
     borderColor: '#ffc2d4',
@@ -74,17 +75,17 @@ export const card = style({
       filter: `drop-shadow(2px 2px 5px #1c1c1c)`,
       ':hover': {
         borderColor: '#1a1a1a',
-        boxShadow: `inset 0 0 0 .3rem #ff9ebb`
+        boxShadow: `inset 0 0 0 .3rem #ff9ebb`,
       },
       ':focus-within': {
         borderColor: '#1a1a1a',
-        boxShadow: `inset 0 0 0 .3rem #ff9ebb`
+        boxShadow: `inset 0 0 0 .3rem #ff9ebb`,
       },
-    }
+    },
   },
   selectors: {
     '&:active::after': {
-      opacity: 0.2
-    }
-  }
+      opacity: 0.2,
+    },
+  },
 })

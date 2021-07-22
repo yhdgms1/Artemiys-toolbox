@@ -16,7 +16,7 @@ export const babelifyPlugin = (): Plugin => {
                   firefox: '78',
                 },
                 modules: false,
-                loose: true
+                loose: true,
               },
             ],
           ],
@@ -25,7 +25,7 @@ export const babelifyPlugin = (): Plugin => {
             '@babel/plugin-proposal-optional-chaining',
           ],
           compact: false,
-          babelrc: false
+          babelrc: false,
         })
         return {
           code,

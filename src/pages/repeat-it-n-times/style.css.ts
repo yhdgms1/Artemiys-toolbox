@@ -8,7 +8,7 @@ export const input = style({
   borderRadius: '6px',
   padding: '0.25rem',
   '::placeholder': {
-    color: '#333'
+    color: '#333',
   },
   '@media': {
     '(prefers-color-scheme: dark)': {
@@ -17,8 +17,8 @@ export const input = style({
         outlineColor: '#ccc',
       },
       '::placeholder': {
-        color: '#ccc'
-      }
+        color: '#ccc',
+      },
     },
     'screen and (max-width: 640px)': {
       textAlign: 'center',

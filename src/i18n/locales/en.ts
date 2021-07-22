@@ -39,7 +39,7 @@ export default {
   swagify: {
     result: 'Result will be here',
     title: 'Swagify',
-    'Enter the text to swagify': 'Enter the text to swagify'
+    'Enter the text to swagify': 'Enter the text to swagify',
   },
   t13n: {
     desc: 'Select transliteration standard',
@@ -92,9 +92,9 @@ export default {
     'Unexpected Error': 'Unexpected Error',
     home: {
       'using vk': "create automatically using a friend's VKontakte profile",
-      'manually': 'create by manually filling in all the required fields',
-      'remove': 'remove the person from the site'
-    }
+      manually: 'create by manually filling in all the required fields',
+      remove: 'remove the person from the site',
+    },
   },
   'text-case-changer': {
     title: 'Text Case Changer',
@@ -105,15 +105,18 @@ export default {
     'randomise case': 'randomize case',
   },
   home: {
-    'characters count': 'Counts the number of characters in the text, including emoji',
+    'characters count':
+      'Counts the number of characters in the text, including emoji',
     'repeat something n times': 'Repeat the string many times',
-    'transliteration': 'Transliterate Cyrillic to Latin',
-    'punto switcher': 'Change the keyboard layout from Russian to English and back again',
-    'uwuifier': 'UwUify any sentence or word',
-    'swagify': 'Swagify any sentence or word',
+    transliteration: 'Transliterate Cyrillic to Latin',
+    'punto switcher':
+      'Change the keyboard layout from Russian to English and back again',
+    uwuifier: 'UwUify any sentence or word',
+    swagify: 'Swagify any sentence or word',
     'string backwards': 'Turning text backwards',
-    'aspect ratio calculator': 'Use to check the dimensions when resizing images',
+    'aspect ratio calculator':
+      'Use to check the dimensions when resizing images',
     'cheap sluts': 'Humiliate a friend by showing they on a fake hooker site',
-    'text case changer': 'text CASE chAnGeR'
-  }
+    'text case changer': 'text CASE chAnGeR',
+  },
 }
