@@ -26,6 +26,9 @@ export const input = style({
   ':focus': {
     borderColor: '#ffc2d4',
   },
+  '::placeholder': {
+    color: '#333'
+  },
   '@media': {
     '(prefers-color-scheme: dark)': {
       color: '#eee',
@@ -37,6 +40,9 @@ export const input = style({
       ':focus': {
         borderColor: '#e69ab0',
       },
+      '::placeholder': {
+        color: '#ccc'
+      }
     },
     'screen and (max-width: 640px)': {
       width: `90vw`,

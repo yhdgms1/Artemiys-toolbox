@@ -11,8 +11,6 @@ export const select = style({
   borderRadius: '12px',
   width: '45vw',
   maxWidth: `calc(90vw - .8rem)`,
-  WebkitAppearance: 'none',
-  appearance: 'none',
   ':hover': {
     borderColor: '#ffc2d4',
   },
@@ -32,7 +30,7 @@ export const select = style({
       },
     },
     'screen and (max-width: 640px)': {
-      width: `90vw`,
+      width: '90vw',
     },
     'screen and (min-width: 1024px)': {
       width: `calc(35vw - .8rem)`,
@@ -40,6 +38,7 @@ export const select = style({
   },
   '@supports': {
     '(-webkit-appearance: none)': {
+      WebkitAppearance: 'none',
       appearance: 'none',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: `right .2rem top 50%, 0 0`,

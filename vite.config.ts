@@ -16,6 +16,5 @@ export default defineConfig({
   build: {
     cssCodeSplit: false,
     target: ['es2020'],
-    polyfillDynamicImport: false,
   },
 })

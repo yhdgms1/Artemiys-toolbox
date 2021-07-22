@@ -13,6 +13,9 @@ export const textarea = style({
   resize: 'vertical',
   overflowX: 'hidden',
   minHeight: '25vh',
+  '::placeholder': {
+    color: '#333'
+  },
   '@media': {
     '(prefers-color-scheme: dark)': {
       background: '#191919',
@@ -21,6 +24,9 @@ export const textarea = style({
       ':focus': {
         outlineColor: '#ccc',
       },
+      '::placeholder': {
+        color: '#ccc'
+      }
     },
     'screen and (max-width: 640px)': {
       resize: 'none',

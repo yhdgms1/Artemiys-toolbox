@@ -7,12 +7,18 @@ export const input = style({
   background: 'unset',
   borderRadius: '6px',
   padding: '0.25rem',
+  '::placeholder': {
+    color: '#333'
+  },
   '@media': {
     '(prefers-color-scheme: dark)': {
       color: '#eee',
       ':focus': {
         outlineColor: '#ccc',
       },
+      '::placeholder': {
+        color: '#ccc'
+      }
     },
     'screen and (max-width: 640px)': {
       textAlign: 'center',
