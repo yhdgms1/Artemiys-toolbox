@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import { setTitle } from '../../helpers'
 
 export default () => {
-  setTitle('Repeat Something')
+  setTitle(t(['repeat-it-n-times', 'title']))
 
   const [text, setText] = createSignal('')
   const [count, setCount] = createSignal(0)
@@ -15,6 +15,7 @@ export default () => {
 
   return (
     <>
+      <h2 class={styles.heading2}>{t(['repeat-it-n-times', 'title'])}</h2>
       <div class={clsx(styles.text, styles.responsive_container)}>
         <label>{t(['repeat-it-n-times', 'repeat'])}</label>
         <input
@@ -50,7 +51,6 @@ export default () => {
         readOnly={true}
         value={output()}
         placeholder={t(['repeat-it-n-times', 'result'])}
-        aria-placeholder={t(['repeat-it-n-times', 'result'])}
       />
     </>
   )

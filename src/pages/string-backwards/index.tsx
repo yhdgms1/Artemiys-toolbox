@@ -6,17 +6,16 @@ import { CopyButton, Textarea } from '../../components'
 import { setTitle } from '../../helpers'
 
 export default () => {
-  setTitle('String Backwards')
+  setTitle(t(['string-backwards', 'header']))
 
   const [output, setOutput] = createSignal('')
   const splitter = new Graphemer()
 
   return (
     <>
-      <h2 class={styles.big_text}>{t(['string-backwards', 'header'])}</h2>
+      <h2 class={styles.heading2}>{t(['string-backwards', 'header'])}</h2>
       <Textarea
         placeholder={t(['string-backwards', 'Type text'])}
-        aria-placeholder={t(['string-backwards', 'Type text'])}
         onInput={e =>
           setOutput(
             splitter
@@ -31,10 +30,6 @@ export default () => {
         readOnly={true}
         value={output()}
         placeholder={t(['string-backwards', 'Text backwards will be here'])}
-        aria-placeholder={t([
-          'string-backwards',
-          'Text backwards will be here',
-        ])}
       />
     </>
   )

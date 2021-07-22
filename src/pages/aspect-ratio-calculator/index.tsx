@@ -41,7 +41,7 @@ export default () => {
 
   return (
     <>
-      <h2 class={styles.big_text}>{t(['aspect-ratio', 'title'])}</h2>
+      <h2 class={styles.heading2}>{t(['aspect-ratio', 'title'])}</h2>
       <Input.Container>
         <Input.Label for="preset">
           {t(['aspect-ratio', 'Common Presets'])}

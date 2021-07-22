@@ -125,7 +125,7 @@ export default () => {
 
   return (
     <>
-      <h1 class={styles.big_text}>{t(['t13n', 'title'])}</h1>
+      <h1 class={styles.heading2}>{t(['t13n', 'title'])}</h1>
       <p class={styles.text}>{t(['t13n', 'desc'])}</p>
       <div class={styles.main}>
         {schemes.map(scheme => (

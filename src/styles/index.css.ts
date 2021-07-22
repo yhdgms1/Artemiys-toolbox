@@ -33,7 +33,7 @@ export const text = style({
   textAlign: 'center',
 })
 
-export const big_text = style({
+export const heading2 = style({
   fontSize: '26px',
   lineHeight: '30px',
   fontWeight: 'normal',
@@ -50,6 +50,10 @@ export const link = style({
 
 export const responsive_container = style({
   '@media': {
+    'screen and (max-width: 1055px)': {
+      display: 'grid',
+      gridTemplateColumns: '2fr 2fr'
+    },
     'screen and (max-width: 640px)': {
       display: 'flex',
       flexDirection: 'column',

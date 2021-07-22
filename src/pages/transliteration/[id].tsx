@@ -19,7 +19,7 @@ export default () => {
       <Show when={schema in schemas} fallback={Fallback}>
         {setTitle(t(['t13n', 'title']) + ' | ' + schema)}
         <Link
-          class={clsx(styles.link, styles.big_text)}
+          class={clsx(styles.link, styles.heading2)}
           href="/transliteration"
         >
           {t(['t13n-id', 'go back'])}
@@ -30,7 +30,6 @@ export default () => {
         <Textarea
           spellcheck={false}
           placeholder={t(['t13n-id', 'input'])}
-          aria-placeholder={t(['t13n-id', 'input'])}
           onInput={e => setText((e.target as HTMLInputElement).value)}
         />
         <div class={styles.responsive_container}>
@@ -43,7 +42,6 @@ export default () => {
           spellcheck={false}
           readOnly={true}
           placeholder={t(['t13n-id', 'output'])}
-          aria-placeholder={t(['t13n-id', 'output'])}
           value={output()}
         />
       </Show>
@@ -55,7 +53,7 @@ const Fallback = () => {
   setTitle(t(['t13n-id', 'not exist']))
   return (
     <>
-      <p class={styles.big_text}>{t(['t13n-id', 'not exist'])}</p>
+      <p class={styles.heading2}>{t(['t13n-id', 'not exist'])}</p>
       <Link class={styles.link} href="/transliteration">
         {t(['t13n-id', 'view existing'])}
       </Link>

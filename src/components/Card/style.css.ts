@@ -14,35 +14,54 @@ export const title = style({
 })
 
 export const description = style({
-  color: '#000',
+  color: '#000 !important',
   '@media': {
     '(prefers-color-scheme: dark)': {
-      color: '#eee',
+      color: '#eee !important',
     },
   },
+  textDecoration: 'none',
+  ':focus': {
+    outline: 'transparent'
+  },
+  '::before': {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    content: `''`
+  }
 })
 
 export const card = style({
-  transition:
-    'background .2s cubic-bezier(0.445, 0.05, 0.55, 0.95), border cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s, transform .2s cubic-bezier(.4,0,.2,1)',
-  padding: '.3em',
+  transition: 'box-shadow cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s, border cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s',
+  padding: '1.55rem 1.3rem',
   borderRadius: '.25rem',
   border: '1px solid #ececec',
   background: vars.background.light.primary,
   textDecoration: 'none',
   position: 'relative',
   filter: `drop-shadow(1.5px 1.5px 3px #1c1c1c10)`,
+  '::after': {
+    transition: 'opacity cubic-bezier(0.455, 0.03, 0.515, 0.955) 150ms',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    content: `''`,
+    zIndex: '-1',
+    background: '#ff7aa2',
+    opacity: 0,
+  },
   ':hover': {
     borderColor: '#ffc2d4',
-    background: '#ffe0e9',
+    boxShadow: `inset 0 0 0 .3rem #ffe0e9`
   },
-  ':focus': {
+  ':focus-within': {
     borderColor: '#ffc2d4',
-    background: '#ffe0e9',
-  },
-  ':active': {
-    borderColor: '#ff9ebb',
-    background: '#ffc2d4',
+    boxShadow: `inset 0 0 0 .3rem #ffe0e9`,
   },
   '@media': {
     'screen and (max-width: 640px)': {
@@ -54,48 +73,18 @@ export const card = style({
       borderColor: '#393939',
       filter: `drop-shadow(2px 2px 5px #1c1c1c)`,
       ':hover': {
-        borderColor: '#e69ab0',
-        background: '#ff9ebb',
+        borderColor: '#1a1a1a',
+        boxShadow: `inset 0 0 0 .3rem #ff9ebb`
       },
-      ':focus': {
-        borderColor: '#e69ab0',
-        background: '#ff9ebb',
-        outline: 'transparent',
+      ':focus-within': {
+        borderColor: '#1a1a1a',
+        boxShadow: `inset 0 0 0 .3rem #ff9ebb`
       },
-      ':active': {
-        background: '#fd8aac',
-      },
-    },
-  },
-})
-
-export const cardContainer = style({
-  display: 'block',
-  padding: '1.25rem 1rem',
-  height: '100%',
-  width: '100%',
-  background: vars.background.light.primary,
-  borderRadius: '.125rem',
-  '::after': {
-    content: `''`,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    zIndex: 2,
-    opacity: 0,
-    background: '#ff7aa2',
-    transition: 'opacity 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95)',
-  },
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      background: '#1e1e1e',
-    },
+    }
   },
   selectors: {
-    [`${card}:active &::after`]: {
-      opacity: 0.2,
-    },
-  },
+    '&:active::after': {
+      opacity: 0.2
+    }
+  }
 })

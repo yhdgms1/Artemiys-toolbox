@@ -6,7 +6,7 @@ import rules from './rules'
 import { setTitle } from '../../helpers'
 
 export default () => {
-  setTitle('Punto Switcher')
+  setTitle(t(['punto-switcher', 'title']))
 
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
@@ -32,10 +32,10 @@ export default () => {
 
   return (
     <>
+      <h2 class={styles.heading2}>{t(['punto-switcher', 'title'])}</h2>
       <p class={styles.text}>{t(['punto-switcher', 'note'])}</p>
       <Textarea
         placeholder={t(['punto-switcher', 'input-placeholder'])}
-        aria-placeholder={t(['punto-switcher', 'input-placeholder'])}
         onInput={e => setText((e.target as HTMLInputElement).value)}
       />
       <div class={styles.responsive_container}>
@@ -48,7 +48,6 @@ export default () => {
         readOnly={true}
         value={output()}
         placeholder={t(['punto-switcher', 'result'])}
-        aria-placeholder={t(['punto-switcher', 'result'])}
       />
     </>
   )

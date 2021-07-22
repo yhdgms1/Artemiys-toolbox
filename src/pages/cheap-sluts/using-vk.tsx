@@ -58,7 +58,7 @@ export default () => {
 
   return (
     <>
-      <Link class={clsx(styles.link, styles.big_text)} href="/cheap-sluts">
+      <Link class={clsx(styles.link, styles.heading2)} href="/cheap-sluts">
         {t(['t13n-id', 'go back'])}
       </Link>
       <div style={{ display: 'flex', 'flex-direction': 'column' }}>

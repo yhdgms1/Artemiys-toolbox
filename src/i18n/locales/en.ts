@@ -1,5 +1,6 @@
 export default {
   'character-count': {
+    title: 'Text length counter',
     textarea: 'Input your text here',
     'Number of characters': 'Number of characters: ',
     'Number of characters without whitespaces':
@@ -16,10 +17,12 @@ export default {
     err: 'Error',
   },
   uwuifier: {
+    title: 'Uwuifier',
     input: 'Enter the text to uwuify',
     output: 'Result will be here',
   },
   'repeat-it-n-times': {
+    title: 'Repeat text',
     result: 'Result will be here',
     repeat: 'Repeat',
     it: 'it',
@@ -27,6 +30,7 @@ export default {
     times: 'times',
   },
   'punto-switcher': {
+    title: 'Punto Switcher',
     'input-placeholder': 'Enter the text you want to change the layout of',
     button: 'Change layout',
     result: 'Result will be here',
@@ -34,6 +38,8 @@ export default {
   },
   swagify: {
     result: 'Result will be here',
+    title: 'Swagify',
+    'Enter the text to swagify': 'Enter the text to swagify'
   },
   t13n: {
     desc: 'Select transliteration standard',
@@ -84,6 +90,11 @@ export default {
     Error: 'Error',
     'Created Successfully': 'Created Successfully',
     'Unexpected Error': 'Unexpected Error',
+    home: {
+      'using vk': "create automatically using a friend's VKontakte profile",
+      'manually': 'create by manually filling in all the required fields',
+      'remove': 'remove the person from the site'
+    }
   },
   'text-case-changer': {
     title: 'Text Case Changer',
@@ -93,4 +104,16 @@ export default {
     'to lowercase': 'to lowercase',
     'randomise case': 'randomize case',
   },
+  home: {
+    'characters count': 'Counts the number of characters in the text, including emoji',
+    'repeat something n times': 'Repeat the string many times',
+    'transliteration': 'Transliterate Cyrillic to Latin',
+    'punto switcher': 'Change the keyboard layout from Russian to English and back again',
+    'uwuifier': 'UwUify any sentence or word',
+    'swagify': 'Swagify any sentence or word',
+    'string backwards': 'Turning text backwards',
+    'aspect ratio calculator': 'Use to check the dimensions when resizing images',
+    'cheap sluts': 'Humiliate a friend by showing they on a fake hooker site',
+    'text case changer': 'text CASE chAnGeR'
+  }
 }

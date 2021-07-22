@@ -6,13 +6,14 @@ import { Textarea } from '../../components'
 import { setTitle } from '../../helpers'
 
 export default () => {
-  setTitle('Text Length Counter')
+  setTitle(t(['character-count', 'title']))
 
   const [text, setText] = createSignal('')
   const splitter = new Graphemer()
 
   return (
     <>
+      <h2 class={styles.heading2}>{t(['character-count', 'title'])}</h2>
       <p class={styles.text}>
         {t(['character-count', 'Number of characters'])}
         {splitter.countGraphemes(text())}
@@ -23,7 +24,6 @@ export default () => {
       </p>
       <Textarea
         placeholder={t(['character-count', 'textarea'])}
-        aria-placeholder={t(['character-count', 'textarea'])}
         spellcheck={false}
         onInput={e => setText((e.target as HTMLInputElement).value)}
       />

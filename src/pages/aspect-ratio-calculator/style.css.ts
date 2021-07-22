@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css'
 import { vars } from '../../styles/theme.css'
-export { big_text } from '../../styles/index.css'
+export { heading2 } from '../../styles/index.css'
 
 export const option = style({
   fontFamily: vars.font.serif,

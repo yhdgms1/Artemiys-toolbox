@@ -6,16 +6,16 @@ import { CopyButton, Textarea, Button } from '../../components'
 import { setTitle } from '../../helpers'
 
 export default () => {
-  setTitle('Swagify')
+  setTitle(t(['swagify', 'title']))
 
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
 
   return (
     <>
+     <h2 class={styles.heading2}>{t(['swagify', 'title'])}</h2>
       <Textarea
-        placeholder="Enter the text to swagify"
-        aria-placeholder="Enter the text to swagify"
+        placeholder={t(['swagify', 'Enter the text to swagify'])}
         onInput={e => setText((e.target as HTMLInputElement).value)}
       />
       <div class={styles.responsive_container}>
@@ -26,7 +26,6 @@ export default () => {
         readOnly={true}
         value={output()}
         placeholder={t(['swagify', 'result'])}
-        aria-placeholder={t(['swagify', 'result'])}
       />
     </>
   )
