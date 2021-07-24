@@ -4,8 +4,8 @@ export const main = style({
   padding: '1rem',
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)',
-  columnGap: '1rem',
-  rowGap: '1rem',
+  gridGap: '1rem',
+  gap: '1rem',
   width: '100%',
   '@media': {
     'screen and (max-width: 768px)': {
