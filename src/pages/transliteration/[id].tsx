@@ -9,7 +9,7 @@ import schemas from './schemas'
 import clsx from 'clsx'
 
 export default () => {
-  const schema: string = useParams().id
+  const schema = useParams().id
 
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')

@@ -1,6 +1,5 @@
-export { CopyButton } from './CopyButton'
 export { Textarea } from './Textarea'
-export { Button } from './Button'
+export { Button, CopyButton } from './Button'
 export { Card } from './Card'
 export * as Input from './Input'
 export { Select } from './Select'

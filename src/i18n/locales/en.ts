@@ -61,7 +61,6 @@ export default {
     },
     unknown: {
       title: 'An error occurred',
-      desc: 'Your browser may be outdated',
     },
   },
   'aspect-ratio': {

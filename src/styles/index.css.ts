@@ -33,14 +33,6 @@ export const text = style({
   textAlign: 'center',
 })
 
-export const heading2 = style({
-  fontSize: '26px',
-  lineHeight: '30px',
-  fontWeight: 'normal',
-  padding: '0 0 .7rem',
-  textAlign: 'center',
-})
-
 export const link = style({
   color: 'unset',
   ':hover': {
@@ -67,4 +59,12 @@ export const heading = style({
   marginBlockEnd: '1em',
   fontWeight: 400,
   fontVariationSettings: `'wght' 400`,
+})
+
+export const heading2 = style({
+  fontSize: '26px',
+  lineHeight: '30px',
+  fontWeight: 'normal',
+  padding: '0 0 .7rem',
+  textAlign: 'center',
 })

@@ -43,3 +43,7 @@ export const button = style({
     },
   },
 })
+
+export const copyButton = style({
+  cursor: 'copy !important',
+})

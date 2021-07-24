@@ -62,7 +62,6 @@ export default {
     },
     unknown: {
       title: 'Произошла ошибка',
-      desc: 'Возможно, ваш браузер устарел',
     },
   },
   'aspect-ratio': {

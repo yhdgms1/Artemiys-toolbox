@@ -66,6 +66,7 @@ export const description = style({
   '::before': {
     transition: 'opacity cubic-bezier(0.455, 0.03, 0.515, 0.955) 150ms',
     background: '#ff7aa2',
+    borderRadius: '.15rem',
     opacity: 0,
     position: 'absolute',
     top: 0,

@@ -1,15 +1,13 @@
 import * as styles from '../styles/index.css'
 import * as appStyles from './style.css'
-import { Link, useRoutes, useLocation } from 'solid-app-router'
+import { Link, useLocation } from 'solid-app-router'
 import { ErrorBoundary } from 'solid-js'
 import { Unknown } from '../pages/__errors'
-import { routes } from './routes'
+import { AppRoutes } from './routes'
 import clsx from 'clsx'
 
 const App = () => {
   const location = useLocation()
-
-  const Routes = useRoutes(routes)
 
   return (
     <>
@@ -32,7 +30,7 @@ const App = () => {
         role="main"
       >
         <ErrorBoundary fallback={Unknown}>
-          <Routes />
+          <AppRoutes />
         </ErrorBoundary>
       </main>
     </>
