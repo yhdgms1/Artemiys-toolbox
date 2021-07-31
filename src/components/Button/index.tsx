@@ -21,9 +21,9 @@ export const CopyButton = (props: CopyButtonProps) => {
   const clickHandler = () => {
     const copied = copy(props.copy || '')
 
-    if(copied){
+    if (copied) {
       setText(t(['btn__copy', 'active']))
-    }else{
+    } else {
       setText(t(['btn__copy', 'err']))
     }
 

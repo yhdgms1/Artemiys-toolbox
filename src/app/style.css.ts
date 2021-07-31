@@ -47,3 +47,7 @@ globalStyle('*, *:active, *:hover', {
     },
   },
 })
+
+globalStyle(':root', {
+  colorScheme: 'dark light'
+})

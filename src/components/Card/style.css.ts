@@ -30,6 +30,7 @@ export const card = style({
   ':focus-within': {
     borderColor: '#ffc2d4',
     boxShadow: `inset 0 0 0 .3rem #ffe0e9`,
+    transition: 'none' // transition makes it impossible to highlight an element by simply holding down Tab
   },
   '@media': {
     'screen and (max-width: 640px)': {
@@ -41,11 +42,11 @@ export const card = style({
       borderColor: '#393939',
       filter: `drop-shadow(2px 2px 5px #1c1c1c)`,
       ':hover': {
-        borderColor: '#1a1a1a',
+        borderColor: '#FFBDD1',
         boxShadow: `inset 0 0 0 .3rem #ff9ebb`,
       },
       ':focus-within': {
-        borderColor: '#1a1a1a',
+        borderColor: '#FFBDD1',
         boxShadow: `inset 0 0 0 .3rem #ff9ebb`,
       },
     },
@@ -77,6 +78,9 @@ export const description = style({
   },
   selectors: {
     [`${card}:active &::before`]: {
+      opacity: 0.2,
+    },
+    [`${card}:focus-within &::before`]: {
       opacity: 0.2,
     },
   },

@@ -7,7 +7,7 @@ export default {
       'Number of characters without whitespaces: ',
   },
   'string-backwards': {
-    header: 'turning text backwards',
+    header: 'Turning text backwards',
     'Type text': 'Type text',
     'Text backwards will be here': 'Text backwards will be here',
   },
@@ -107,9 +107,9 @@ export default {
     'characters count':
       'Counts the number of characters in the text, including emoji',
     'repeat something n times': 'Repeat the string many times',
-    transliteration: 'Transliterate Cyrillic to Latin',
+    transliteration: 'Transliterate cyrillic to latin',
     'punto switcher':
-      'Change the keyboard layout from Russian to English and back again',
+      'Change the keyboard layout from russian to english and back again',
     uwuifier: 'UwUify any sentence or word',
     swagify: 'Swagify any sentence or word',
     'string backwards': 'Turning text backwards',
