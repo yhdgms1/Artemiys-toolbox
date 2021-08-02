@@ -3,7 +3,7 @@ import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import clsx from 'clsx'
 import { t } from '../../i18n'
-import { Button, Input } from '../../components'
+import { Button, Input, Checkbox } from '../../components'
 import { setTitle } from '../../helpers'
 
 export default () => {
@@ -11,6 +11,7 @@ export default () => {
 
   const [name, setName] = createSignal('')
   const [pic, setPic] = createSignal('')
+  const [isPrivate, setIsPrivate] = createSignal(false)
 
   const [err, setErr] = createSignal('')
   const [result, setResult] = createSignal('')
@@ -26,6 +27,7 @@ export default () => {
           body: JSON.stringify({
             name: name(),
             picture: pic(),
+            private: isPrivate()
           }),
         }
       )
@@ -73,6 +75,9 @@ export default () => {
           autocomplete="false"
           onInput={e => setPic((e.target as HTMLInputElement).value)}
         />
+        <Checkbox
+          onChange={e => setIsPrivate((e.target as HTMLInputElement).checked)}
+        >Private</Checkbox>
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <Show when={result() !== ''}>
