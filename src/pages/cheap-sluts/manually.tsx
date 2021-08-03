@@ -27,7 +27,7 @@ export default () => {
           body: JSON.stringify({
             name: name(),
             picture: pic(),
-            private: isPrivate()
+            private: isPrivate(),
           }),
         }
       )
@@ -61,7 +61,6 @@ export default () => {
           type="text"
           placeholder={t(['cheap sluts', 'manually', 'Name'])}
           spellcheck={false}
-          autocomplete="false"
           onInput={e => setName((e.target as HTMLInputElement).value)}
         />
         <Input.Label for="picture">
@@ -72,12 +71,14 @@ export default () => {
           type="text"
           placeholder={t(['cheap sluts', 'manually', 'Picture'])}
           spellcheck={false}
-          autocomplete="false"
           onInput={e => setPic((e.target as HTMLInputElement).value)}
         />
         <Checkbox
           onChange={e => setIsPrivate((e.target as HTMLInputElement).checked)}
-        >Private</Checkbox>
+          id="private-check"
+        >
+          Private
+        </Checkbox>
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <Show when={result() !== ''}>

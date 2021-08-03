@@ -30,7 +30,7 @@ export const card = style({
   ':focus-within': {
     borderColor: '#ffc2d4',
     boxShadow: `inset 0 0 0 .3rem #ffe0e9`,
-    transition: 'none' // transition makes it impossible to highlight an element by simply holding down Tab
+    transition: 'none', // transition makes it impossible to highlight an element by simply holding down Tab
   },
   '@media': {
     'screen and (max-width: 640px)': {

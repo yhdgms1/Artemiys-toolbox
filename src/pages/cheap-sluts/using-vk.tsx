@@ -3,7 +3,7 @@ import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import clsx from 'clsx'
 import { t } from '../../i18n'
-import { Button, Input } from '../../components'
+import { Button, Input, Checkbox } from '../../components'
 import { setTitle } from '../../helpers'
 
 export default () => {
@@ -12,25 +12,20 @@ export default () => {
   const [shortname, setShortname] = createSignal('')
   const [err, setErr] = createSignal('')
   const [result, setResult] = createSignal('')
+  const [isPrivate, setIsPrivate] = createSignal(false)
 
   const getData = async () => {
     if (shortname() === '') return
 
     try {
-      let id = shortname()
-        .trim()
-        .replace('https://vk.com/', '')
-        .replace('http://vk.com/', '')
-
-      if (id[id.length - 1] === '/') {
-        id = id.slice(0, -1)
-      }
-
       const res = await fetch(
         'https://cheap-sluts.artemis69.workers.dev/create/vk',
         {
           method: 'POST',
-          body: JSON.stringify({ id }),
+          body: JSON.stringify({
+            id: shortname().trim(),
+            private: isPrivate(),
+          }),
         }
       )
 
@@ -71,6 +66,12 @@ export default () => {
           placeholder={t(['cheap sluts', 'vk', 'id or shortname'])}
           onInput={e => setShortname((e.target as HTMLInputElement).value)}
         />
+        <Checkbox
+          onChange={e => setIsPrivate((e.target as HTMLInputElement).checked)}
+          id="private-check"
+        >
+          Private
+        </Checkbox>
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <Show when={result() !== ''}>
