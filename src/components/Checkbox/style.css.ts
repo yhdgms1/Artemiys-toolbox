@@ -33,7 +33,7 @@ export const label = style({
       '@media': {
         '(prefers-color-scheme: dark)': {
           borderColor: '#393939',
-          backgroundColor: '#191919'
+          backgroundColor: '#191919',
         },
       },
     },
@@ -54,10 +54,17 @@ export const label = style({
     },
     [`${input}:focus + &::before`]: {
       borderColor: '#DB6D8C',
-      boxShadow: `0 0 0 .063em #DB6D8C`
+      boxShadow: `0 0 0 .063em #DB6D8C`,
     },
     [`${input}:disabled + &::before`]: {
       backgroundColor: '#e9ecef',
+      borderColor: '#e9ecef',
+      '@media': {
+        '(prefers-color-scheme: dark)': {
+          borderColor: '#242424',
+          backgroundColor: '#252525',
+        },
+      },
     },
   },
 })
