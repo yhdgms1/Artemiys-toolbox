@@ -1,10 +1,9 @@
-import { style } from '@vanilla-extract/css'
-import { globalStyle } from '@vanilla-extract/css'
+import { style, globalStyle } from '@vanilla-extract/css'
 import { vars } from '../styles/theme.css'
 
 export const title = style({
-  fontSize: '30px',
-  lineHeight: '36px',
+  fontSize: '1.875em',
+  lineHeight: '1.2em',
   fontWeight: 500,
   fontVariationSettings: `'wght' 600`,
   color: 'unset',
@@ -15,7 +14,7 @@ export const no_underline = style({
 })
 
 export const nav = style({
-  margin: '0.92em 1rem 0',
+  margin: '.92em 1rem 0',
 })
 
 globalStyle('html, body, *, *::after, *::before', {

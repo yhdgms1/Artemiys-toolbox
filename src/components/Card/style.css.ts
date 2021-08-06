@@ -4,7 +4,7 @@ import { vars } from '../../styles/theme.css'
 export const title = style({
   fontWeight: 500,
   fontVariationSettings: `'wght' 500`,
-  fontSize: 'larger',
+  fontSize: '1.2em',
   color: '#000',
   '@media': {
     '(prefers-color-scheme: dark)': {
@@ -18,11 +18,11 @@ export const card = style({
     'box-shadow cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s, border cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s',
   padding: '1.55rem 1.3rem',
   borderRadius: '.25rem',
-  border: '1px solid #ececec',
+  border: '.063rem solid #ececec',
   background: vars.background.light.primary,
   textDecoration: 'none',
   position: 'relative',
-  filter: `drop-shadow(1.5px 1.5px 3px #1c1c1c10)`,
+  filter: `drop-shadow(.094rem .094rem .188rem #1c1c1c10)`,
   ':hover': {
     borderColor: '#ffc2d4',
     boxShadow: `inset 0 0 0 .3rem #ffe0e9`,
@@ -40,7 +40,7 @@ export const card = style({
     '(prefers-color-scheme: dark)': {
       background: '#1e1e1e',
       borderColor: '#393939',
-      filter: `drop-shadow(2px 2px 5px #1c1c1c)`,
+      filter: `drop-shadow(.125rem .125rem .313rem #1c1c1c)`,
       ':hover': {
         borderColor: '#FFBDD1',
         boxShadow: `inset 0 0 0 .3rem #ff9ebb`,

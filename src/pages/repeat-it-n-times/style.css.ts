@@ -5,7 +5,7 @@ export const input = style({
   boxSizing: 'border-box',
   border: 'unset',
   background: 'unset',
-  borderRadius: '6px',
+  borderRadius: '.375rem',
   padding: '0.25rem',
   '::placeholder': {
     color: '#333',

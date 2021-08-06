@@ -24,7 +24,7 @@ export const label = style({
       height: '1.4rem',
       flexShrink: 0,
       flexGrow: 0,
-      border: '1px solid #ececec',
+      border: '.063rem solid #ececec',
       borderRadius: '.375rem',
       marginRight: '.5rem',
       backgroundRepeat: 'no-repeat',

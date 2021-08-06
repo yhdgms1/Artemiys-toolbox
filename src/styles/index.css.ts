@@ -29,7 +29,7 @@ export const main_layout = style({
 
 export const text = style({
   margin: '0.4rem 0',
-  fontSize: '1.2rem',
+  fontSize: '1.2em',
   textAlign: 'center',
 })
 
@@ -62,8 +62,8 @@ export const heading = style({
 })
 
 export const heading2 = style({
-  fontSize: '26px',
-  lineHeight: '30px',
+  fontSize: '1.625em',
+  lineHeight: '1.154em',
   fontWeight: 'normal',
   padding: '0 0 .7rem',
   textAlign: 'center',

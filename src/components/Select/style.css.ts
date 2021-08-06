@@ -7,8 +7,8 @@ export const select = style({
   padding: '.35rem .45rem',
   margin: '.4rem',
   background: vars.background.light.primary,
-  border: '1px solid #ececec',
-  borderRadius: '12px',
+  border: '.063rem solid #ececec',
+  borderRadius: '.75rem',
   width: '45vw',
   maxWidth: `calc(90vw - .8rem)`,
   ':hover': {
