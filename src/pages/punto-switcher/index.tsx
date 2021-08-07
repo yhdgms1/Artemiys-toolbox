@@ -33,7 +33,6 @@ export default () => {
   return (
     <>
       <h2 class={styles.heading2}>{t(['punto-switcher', 'title'])}</h2>
-      <p class={styles.text}>{t(['punto-switcher', 'note'])}</p>
       <Textarea
         placeholder={t(['punto-switcher', 'input-placeholder'])}
         onInput={e => setText((e.target as HTMLInputElement).value)}

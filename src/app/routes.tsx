@@ -25,7 +25,6 @@ export const AppRoutes = () => (
       path="/punto-switcher"
       element={lazy(() => import('../pages/punto-switcher'))}
     />
-    <Route path="/uwuifier" element={lazy(() => import('../pages/uwuifier'))} />
     <Route path="/swagify" element={lazy(() => import('../pages/swagify'))} />
     <Route
       path="/string-backwards"

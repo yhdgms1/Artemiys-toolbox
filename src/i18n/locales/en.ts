@@ -16,11 +16,6 @@ export default {
     active: 'Copied',
     err: 'Error',
   },
-  uwuifier: {
-    title: 'Uwuifier',
-    input: 'Enter the text to uwuify',
-    output: 'Result will be here',
-  },
   'repeat-it-n-times': {
     title: 'Repeat text',
     result: 'Result will be here',
@@ -34,7 +29,6 @@ export default {
     'input-placeholder': 'Enter the text you want to change the layout of',
     button: 'Change layout',
     result: 'Result will be here',
-    note: 'Note: Contains bugs',
   },
   swagify: {
     result: 'Result will be here',
@@ -110,7 +104,6 @@ export default {
     transliteration: 'Transliterate cyrillic to latin',
     'punto switcher':
       'Change the keyboard layout from russian to english and back again',
-    uwuifier: 'UwUify any sentence or word',
     swagify: 'Swagify any sentence or word',
     'string backwards': 'Turning text backwards',
     'aspect ratio calculator':

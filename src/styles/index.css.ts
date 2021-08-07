@@ -16,6 +16,7 @@ export const main = style({
       justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'column',
+      paddingBottom: '4rem',
     },
   },
 })

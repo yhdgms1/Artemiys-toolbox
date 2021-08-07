@@ -26,10 +26,6 @@ const tools: ITools[] = [
     link: 'punto-switcher',
   },
   {
-    title: 'uwuifier',
-    link: 'uwuifier',
-  },
-  {
     title: 'swagify',
     link: 'swagify',
   },
