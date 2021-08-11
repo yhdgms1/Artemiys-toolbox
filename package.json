@@ -23,12 +23,12 @@
   },
   "dependencies": {
     "@artemis69/iuliia": "^0.0.3",
-    "@artemis69/swagify": "^1.1.1",
+    "@artemis69/swagify": "^1.1.2",
     "clsx": "^1.1.1",
     "copy-text-to-clipboard": "^3.0.1",
     "graphemer": "^1.2.0",
     "rosetta": "^1.1.0",
     "solid-app-router": "^0.1.4",
-    "solid-js": "^1.0.7"
+    "solid-js": "^1.1.0"
   }
 }
