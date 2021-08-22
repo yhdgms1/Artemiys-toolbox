@@ -28,14 +28,9 @@ globalStyle('html, body, *, *::after, *::before', {
 
 globalStyle('body', {
   width: '100%',
-  background: vars.background.light.primary,
+  background: vars.background[0],
   contentVisibility: 'auto',
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      background: vars.background.dark.primary,
-      color: '#eee',
-    },
-  },
+  color: vars.color[0],
 })
 
 globalStyle('*, *:active, *:hover', {

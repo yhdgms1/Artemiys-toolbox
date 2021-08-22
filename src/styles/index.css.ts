@@ -29,7 +29,7 @@ export const main_layout = style({
 })
 
 export const text = style({
-  margin: '0.4rem 0',
+  margin: '.4rem 0',
   fontSize: '1.2em',
   textAlign: 'center',
 })

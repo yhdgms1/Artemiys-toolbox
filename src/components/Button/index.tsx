@@ -34,7 +34,7 @@ export const CopyButton = (props: CopyButtonProps) => {
   }
 
   return (
-    <Button class={styles.copyButton} onClick={clickHandler}>
+    <Button class={styles.copy} onClick={clickHandler}>
       {text()}!
     </Button>
   )

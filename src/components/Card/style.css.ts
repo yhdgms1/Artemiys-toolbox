@@ -1,16 +1,11 @@
 import { style } from '@vanilla-extract/css'
-import { vars } from '../../styles/theme.css'
+import { vars, fonts } from '../../styles/theme.css'
 
 export const title = style({
   fontWeight: 500,
   fontVariationSettings: `'wght' 500`,
   fontSize: '1.2em',
-  color: '#000',
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      color: '#eee',
-    },
-  },
+  color: vars.color[0],
 })
 
 export const card = style({
@@ -18,17 +13,17 @@ export const card = style({
     'box-shadow cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s, border cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s',
   padding: '1.55rem 1.3rem',
   borderRadius: '.25rem',
-  border: '.063rem solid #ececec',
-  background: vars.background.light.primary,
+  border: `.063rem solid ${vars.border[0]}`,
+  background: vars.background[2],
   textDecoration: 'none',
   position: 'relative',
   filter: `drop-shadow(.094rem .094rem .188rem #1c1c1c10)`,
   ':hover': {
-    borderColor: '#ffc2d4',
+    borderColor: vars.border[1],
     boxShadow: `inset 0 0 0 .3rem #ffe0e9`,
   },
   ':focus-within': {
-    borderColor: '#ffc2d4',
+    borderColor: vars.border[1],
     boxShadow: `inset 0 0 0 .3rem #ffe0e9`,
     transition: 'none', // transition makes it impossible to highlight an element by simply holding down Tab
   },
@@ -38,15 +33,11 @@ export const card = style({
       width: '100%',
     },
     '(prefers-color-scheme: dark)': {
-      background: '#1e1e1e',
-      borderColor: '#393939',
       filter: `drop-shadow(.125rem .125rem .313rem #1c1c1c)`,
       ':hover': {
-        borderColor: '#FFBDD1',
         boxShadow: `inset 0 0 0 .3rem #ff9ebb`,
       },
       ':focus-within': {
-        borderColor: '#FFBDD1',
         boxShadow: `inset 0 0 0 .3rem #ff9ebb`,
       },
     },
@@ -54,18 +45,13 @@ export const card = style({
 })
 
 export const description = style({
-  color: '#000 !important',
-  '@media': {
-    '(prefers-color-scheme: dark)': {
-      color: '#eee !important',
-    },
-  },
+  color: `${vars.color[0]} !important`,
   textDecoration: 'none',
   ':focus': {
     outline: 'transparent',
   },
   '::before': {
-    transition: 'opacity cubic-bezier(0.455, 0.03, 0.515, 0.955) 150ms',
+    transition: 'opacity cubic-bezier(.455, .03, .515, .955) 150ms',
     background: '#ff7aa2',
     borderRadius: '.15rem',
     opacity: 0,

@@ -1,9 +1,9 @@
 import { style } from '@vanilla-extract/css'
-import { vars } from '../../styles/theme.css'
+import { vars, fonts } from '../../styles/theme.css'
 export { heading2 } from '../../styles/index.css'
 
 export const option = style({
-  fontFamily: vars.font.serif,
+  fontFamily: fonts.serif,
 })
 
 export const row = style({
