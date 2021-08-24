@@ -2,7 +2,7 @@ import * as styles from '../styles/index.css'
 import * as appStyles from './style.css'
 import { Link, useLocation } from 'solid-app-router'
 import { ErrorBoundary } from 'solid-js'
-import { Unknown } from '../pages/__errors'
+import { Unknown } from '../components'
 import { AppRoutes } from './routes'
 import clsx from 'clsx'
 

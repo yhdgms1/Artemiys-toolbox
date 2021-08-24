@@ -1,7 +1,7 @@
 import { Routes, Route } from 'solid-app-router'
 import { lazy } from 'solid-js'
 import Home from '../pages/home'
-import { NotFound } from '../pages/__errors'
+import { NotFound } from '../components'
 
 const TransliterationId = lazy(() => import('../pages/transliteration/[id]'))
 

@@ -16,7 +16,7 @@ export default () => {
       <h2 class={styles.heading2}>{t(['swagify', 'title'])}</h2>
       <Textarea
         placeholder={t(['swagify', 'Enter the text to swagify'])}
-        onInput={e => setText((e.target as HTMLInputElement).value)}
+        onInput={e => setText(e.currentTarget.value)}
       />
       <div class={styles.responsive_container}>
         <Button onClick={() => setOutput(swagify(text()))}>Swagify!</Button>

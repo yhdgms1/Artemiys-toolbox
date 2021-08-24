@@ -25,7 +25,7 @@ export default () => {
       <Textarea
         placeholder={t(['character-count', 'textarea'])}
         spellcheck={false}
-        onInput={e => setText((e.target as HTMLInputElement).value)}
+        onInput={e => setText(e.currentTarget.value)}
       />
     </>
   )

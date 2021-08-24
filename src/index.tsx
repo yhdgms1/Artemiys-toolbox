@@ -16,7 +16,7 @@ if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
     document.documentElement.classList.add(light_theme)
   }
 
-  darkModeMediaQuery.addListener(e => {
+  darkModeMediaQuery.addEventListener('change', e => {
     const darkModeOn = e.matches
 
     if (darkModeOn) {

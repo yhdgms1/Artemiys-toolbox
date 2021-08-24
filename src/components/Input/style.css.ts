@@ -1,8 +1,8 @@
 import { style } from '@vanilla-extract/css'
 import { vars, fonts } from '../../styles/theme.css'
 
-export const label = style({
-  margin: '.5rem',
+export const title = style({
+  margin: '.5rem 0',
 })
 
 export const inputContainer = style({
@@ -10,27 +10,10 @@ export const inputContainer = style({
   flexDirection: 'column',
 })
 
-export const input = style({
-  fontFamily: fonts.serif,
-  color: vars.color[0],
-  outline: 'none',
-  padding: '.35rem .45rem',
+export const label = style({
   margin: '.4rem',
-  background: '#0000',
-  border: `.063rem solid ${vars.border[0]}`,
-  borderRadius: '.75rem',
   width: '45vw',
   maxWidth: `calc(90vw - .8rem)`,
-  backgroundColor: vars.background[1],
-  ':hover': {
-    borderColor: vars.border[1],
-  },
-  ':focus': {
-    borderColor: vars.border[1],
-  },
-  '::placeholder': {
-    color: vars.color[1],
-  },
   '@media': {
     'screen and (max-width: 640px)': {
       width: `90vw`,
@@ -51,5 +34,26 @@ export const input = style({
         },
       },
     },
+  },
+})
+
+export const input = style({
+  fontFamily: fonts.serif,
+  color: vars.color[0],
+  outline: 'none',
+  padding: '.35rem .45rem',
+  background: '#0000',
+  border: `.063rem solid ${vars.border[0]}`,
+  borderRadius: '.75rem',
+  width: '100%',
+  backgroundColor: vars.background[1],
+  ':hover': {
+    borderColor: vars.border[1],
+  },
+  ':focus': {
+    borderColor: vars.border[1],
+  },
+  '::placeholder': {
+    color: vars.color[1],
   },
 })

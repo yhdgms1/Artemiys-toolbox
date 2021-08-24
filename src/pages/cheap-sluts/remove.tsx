@@ -46,13 +46,13 @@ export default () => {
         {t(['t13n-id', 'go back'])}
       </Link>
       <div style={{ display: 'flex', 'flex-direction': 'column' }}>
-        <Input.Label for="id">{t(['cheap sluts', 'remove', 'id'])}</Input.Label>
-        <Input.default
-          id="id"
+        <Input
           type="text"
           placeholder={t(['cheap sluts', 'remove', 'id'])}
-          onInput={e => setId((e.target as HTMLInputElement).value)}
-        />
+          onInput={e => setId(e.currentTarget.value)}
+        >
+          {t(['cheap sluts', 'remove', 'id'])}
+        </Input>
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <Show when={result() !== ''}>

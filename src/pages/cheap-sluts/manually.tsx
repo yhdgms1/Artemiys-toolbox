@@ -53,28 +53,24 @@ export default () => {
         {t(['t13n-id', 'go back'])}
       </Link>
       <div style={{ display: 'flex', 'flex-direction': 'column' }}>
-        <Input.Label for="name">
-          {t(['cheap sluts', 'manually', 'Name'])}
-        </Input.Label>
-        <Input.default
-          id="name"
+        <Input
           type="text"
           placeholder={t(['cheap sluts', 'manually', 'Name'])}
           spellcheck={false}
-          onInput={e => setName((e.target as HTMLInputElement).value)}
-        />
-        <Input.Label for="picture">
-          {t(['cheap sluts', 'manually', 'Picture'])}
-        </Input.Label>
-        <Input.default
-          id="picture"
+          onInput={e => setName(e.currentTarget.value)}
+        >
+          {t(['cheap sluts', 'manually', 'Name'])}
+        </Input>
+        <Input
           type="text"
           placeholder={t(['cheap sluts', 'manually', 'Picture'])}
           spellcheck={false}
-          onInput={e => setPic((e.target as HTMLInputElement).value)}
-        />
+          onInput={e => setPic(e.currentTarget.value)}
+        >
+          {t(['cheap sluts', 'manually', 'Picture'])}
+        </Input>
         <Checkbox
-          onChange={e => setIsPrivate((e.target as HTMLInputElement).checked)}
+          onChange={e => setIsPrivate(e.currentTarget.checked)}
           id="private-check"
         >
           Private

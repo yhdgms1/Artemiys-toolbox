@@ -51,7 +51,7 @@ export default () => {
       <h2 class={styles.heading2}>{t(['text-case-changer', 'title'])}</h2>
       <Textarea
         placeholder={t(['text-case-changer', 'Enter the text here'])}
-        onInput={e => setText((e.target as HTMLInputElement).value)}
+        onInput={e => setText(e.currentTarget.value)}
       />
       <div class={styles.responsive_container}>
         <Button onClick={() => setOutput(text().toUpperCase())}>

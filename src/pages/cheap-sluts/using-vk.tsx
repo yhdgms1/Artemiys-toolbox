@@ -57,17 +57,15 @@ export default () => {
         {t(['t13n-id', 'go back'])}
       </Link>
       <div style={{ display: 'flex', 'flex-direction': 'column' }}>
-        <Input.Label for="vkid">
-          {t(['cheap sluts', 'vk', 'id or shortname'])}
-        </Input.Label>
-        <Input.default
-          id="vkid"
+        <Input
           type="text"
           placeholder={t(['cheap sluts', 'vk', 'id or shortname'])}
-          onInput={e => setShortname((e.target as HTMLInputElement).value)}
-        />
+          onInput={e => setShortname(e.currentTarget.value)}
+        >
+          {t(['cheap sluts', 'vk', 'id or shortname'])}
+        </Input>
         <Checkbox
-          onChange={e => setIsPrivate((e.target as HTMLInputElement).checked)}
+          onChange={e => setIsPrivate(e.currentTarget.checked)}
           id="private-check"
         >
           Private

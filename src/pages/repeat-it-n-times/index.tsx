@@ -22,14 +22,14 @@ export default () => {
           type="text"
           placeholder={t(['repeat-it-n-times', 'it'])}
           class={input}
-          onInput={e => setText((e.target as HTMLInputElement).value)}
+          onInput={e => setText(e.currentTarget.value)}
           spellcheck={false}
         />
         <input
           type="number"
           placeholder={t(['repeat-it-n-times', 'so many'])}
           class={input}
-          onInput={e => setCount((e.target as HTMLInputElement).valueAsNumber)}
+          onInput={e => setCount(e.currentTarget.valueAsNumber)}
           min="1"
           max="5368708"
         />

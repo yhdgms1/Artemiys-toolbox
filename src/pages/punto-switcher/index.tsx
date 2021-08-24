@@ -35,7 +35,7 @@ export default () => {
       <h2 class={styles.heading2}>{t(['punto-switcher', 'title'])}</h2>
       <Textarea
         placeholder={t(['punto-switcher', 'input-placeholder'])}
-        onInput={e => setText((e.target as HTMLInputElement).value)}
+        onInput={e => setText(e.currentTarget.value)}
       />
       <div class={styles.responsive_container}>
         <Button onClick={() => setOutput(changeLayout(text()))}>

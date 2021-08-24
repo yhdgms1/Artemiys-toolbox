@@ -18,10 +18,7 @@ export default () => {
         placeholder={t(['string-backwards', 'Type text'])}
         onInput={e =>
           setOutput(
-            splitter
-              .splitGraphemes((e.target as HTMLInputElement).value)
-              .reverse()
-              .join('')
+            splitter.splitGraphemes(e.currentTarget.value).reverse().join('')
           )
         }
       />

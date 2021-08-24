@@ -43,3 +43,12 @@ export const select = style({
     },
   },
 })
+
+export const title = style({
+  margin: '.5rem 0 0 .5rem',
+})
+
+export const label = style({
+  display: 'flex',
+  flexDirection: 'column',
+})

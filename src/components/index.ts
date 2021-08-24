@@ -1,6 +1,7 @@
 export { Textarea } from './Textarea'
 export { Button, CopyButton } from './Button'
 export { Card } from './Card'
-export * as Input from './Input'
+export { Input, InputContainer } from './Input'
 export { Select } from './Select'
 export { Checkbox } from './Checkbox'
+export { NotFound, Unknown } from './errors'

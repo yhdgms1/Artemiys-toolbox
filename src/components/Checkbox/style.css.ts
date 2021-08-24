@@ -17,6 +17,7 @@ export const label = style({
       display: 'inline-flex',
       alignItems: 'center',
       userSelect: 'none',
+      WebkitUserSelect: 'none',
     },
     [`${input} + &::before`]: {
       content: `''`,

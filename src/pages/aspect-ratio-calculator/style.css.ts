@@ -9,5 +9,4 @@ export const option = style({
 export const row = style({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'flex-start',
 })

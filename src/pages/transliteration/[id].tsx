@@ -30,7 +30,7 @@ export default () => {
         <Textarea
           spellcheck={false}
           placeholder={t(['t13n-id', 'input'])}
-          onInput={e => setText((e.target as HTMLInputElement).value)}
+          onInput={e => setText(e.currentTarget.value)}
         />
         <div class={styles.responsive_container}>
           <Button onClick={() => setOutput(translate(text(), schemas[schema]))}>

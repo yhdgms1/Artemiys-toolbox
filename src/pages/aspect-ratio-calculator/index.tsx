@@ -1,5 +1,5 @@
 import { createStore } from 'solid-js/store'
-import { Input, Select } from '../../components'
+import { Input, InputContainer, Select } from '../../components'
 import { t } from '../../i18n'
 import { setTitle } from '../../helpers'
 
@@ -42,117 +42,85 @@ export default () => {
   return (
     <>
       <h2 class={styles.heading2}>{t(['aspect-ratio', 'title'])}</h2>
-      <Input.Container>
-        <Input.Label for="preset">
-          {t(['aspect-ratio', 'Common Presets'])}
-        </Input.Label>
-        <Select
-          title={t(['aspect-ratio', 'Common Presets'])}
-          id="preset"
-          onChange={e => {
-            if ((e.target as HTMLSelectElement).value !== 'custom') {
-              setState('ratioWidth', v =>
-                Number((e.target as HTMLSelectElement).value.split(':')[0])
-              )
-              setState('ratioHeight', v =>
-                Number((e.target as HTMLSelectElement).value.split(':')[1])
-              )
-              processWidth()
-            }
-          }}
-        >
-          <option class={styles.option} value="custom">
-            Custom
-          </option>
-          <option class={styles.option} value="4:3">
-            Old Monitor 4:3
-          </option>
-          <option class={styles.option} value="16:9" selected>
-            Standart 16:9
-          </option>
-          <option class={styles.option} value="18:9">
-            Wide 18:9
-          </option>
-          <option class={styles.option} value="21:9">
-            Ultra-wide 21:9
-          </option>
-        </Select>
-      </Input.Container>
+      <Select
+        title={t(['aspect-ratio', 'Common Presets'])}
+        id="preset"
+        onChange={e => {
+          const value = e.currentTarget.value
+
+          setState('ratioWidth', v => parseInt(value.split(':')[0]))
+          setState('ratioHeight', v => parseInt(value.split(':')[1]))
+          processWidth()
+        }}
+      >
+        <option class={styles.option} value="4:3">
+          Old Monitor 4:3
+        </option>
+        <option class={styles.option} value="16:9" selected>
+          Standart 16:9
+        </option>
+        <option class={styles.option} value="18:9">
+          Wide 18:9
+        </option>
+        <option class={styles.option} value="21:9">
+          Ultra-wide 21:9
+        </option>
+      </Select>
       <div class={styles.row}>
-        <Input.Container>
-          <Input.Label for="ratio_width">
-            {t(['aspect-ratio', 'Ratio Width'])}
-          </Input.Label>
-          <Input.default
+        <InputContainer>
+          <Input
             type="number"
             placeholder={t(['aspect-ratio', 'Ratio Width'])}
             value={state.ratioWidth}
-            id="ratio_width"
             onInput={e => {
-              setState(
-                'ratioWidth',
-                v => (e.target as HTMLInputElement).valueAsNumber
-              )
+              setState('ratioWidth', v => e.currentTarget.valueAsNumber)
               processWidth()
             }}
-          />
-        </Input.Container>
-        <Input.Container>
-          <Input.Label for="ratio_height">
-            {t(['aspect-ratio', 'Ratio Height'])}
-          </Input.Label>
-          <Input.default
+          >
+            {t(['aspect-ratio', 'Ratio Width'])}
+          </Input>
+        </InputContainer>
+        <InputContainer>
+          <Input
             type="number"
             placeholder={t(['aspect-ratio', 'Ratio Height'])}
             value={state.ratioHeight}
-            id="ratio_height"
             onInput={e => {
-              setState(
-                'ratioHeight',
-                v => (e.target as HTMLInputElement).valueAsNumber
-              )
+              setState('ratioHeight', v => e.currentTarget.valueAsNumber)
               processWidth()
             }}
-          />
-        </Input.Container>
+          >
+            {t(['aspect-ratio', 'Ratio Height'])}
+          </Input>
+        </InputContainer>
       </div>
       <div class={styles.row}>
-        <Input.Container>
-          <Input.Label for="pixels_width">
-            {t(['aspect-ratio', 'Pixels Width'])}
-          </Input.Label>
-          <Input.default
+        <InputContainer>
+          <Input
             type="number"
             placeholder={t(['aspect-ratio', 'Pixels Width'])}
             value={state.pixelsWidth}
-            id="pixels_width"
             onInput={e => {
-              setState(
-                'pixelsWidth',
-                v => (e.target as HTMLInputElement).valueAsNumber
-              )
+              setState('pixelsWidth', v => e.currentTarget.valueAsNumber)
               processWidth()
             }}
-          />
-        </Input.Container>
-        <Input.Container>
-          <Input.Label for="pixels_height">
-            {t(['aspect-ratio', 'Pixels Height'])}
-          </Input.Label>
-          <Input.default
+          >
+            {t(['aspect-ratio', 'Pixels Width'])}
+          </Input>
+        </InputContainer>
+        <InputContainer>
+          <Input
             type="number"
             placeholder={t(['aspect-ratio', 'Pixels Height'])}
             value={state.pixelsHeight}
-            id="pixels_height"
             onInput={e => {
-              setState(
-                'pixelsHeight',
-                v => (e.target as HTMLInputElement).valueAsNumber
-              )
+              setState('pixelsHeight', v => e.currentTarget.valueAsNumber)
               processHeight()
             }}
-          />
-        </Input.Container>
+          >
+            {t(['aspect-ratio', 'Pixels Height'])}
+          </Input>
+        </InputContainer>
       </div>
     </>
   )
