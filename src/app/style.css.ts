@@ -6,7 +6,7 @@ export const title = style({
   lineHeight: '1.2em',
   fontWeight: 500,
   fontVariationSettings: `'wght' 600`,
-  color: 'unset',
+  color: `${vars.color[0]} !important`,
 })
 
 export const no_underline = style({

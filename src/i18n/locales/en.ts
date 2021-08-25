@@ -16,6 +16,12 @@ export default {
     active: 'Copied',
     err: 'Error',
   },
+  'color scheme switcher': {
+    Scheme: 'Scheme',
+    Light: 'Light',
+    System: 'System',
+    Dark: 'Dark',
+  },
   'repeat-it-n-times': {
     title: 'Repeat text',
     result: 'Result will be here',

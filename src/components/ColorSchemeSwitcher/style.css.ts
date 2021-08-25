@@ -32,7 +32,6 @@ export const switcher__radio = style({
   backgroundRepeat: 'no-repeat',
   backgroundSize: '24px',
   filter: 'invert(0)',
-  transition: 'filter 100ms ease',
   ':focus': {
     outline: 'none',
   },
@@ -73,8 +72,6 @@ export const switcher__status = style({
   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cdefs/%3E%3Ccircle cx='12' cy='12' r='7.25' fill='currentColor' stroke='currentColor' stroke-width='1.5'/%3E%3C/svg%3E")`,
   backgroundSize: '2.5rem',
   backgroundPosition: 'center',
-  transition:
-    'background-position 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955)',
   filter: 'invert(0)',
   selectors: {
     [`${dark_theme} &`]: {

@@ -2,7 +2,8 @@ import { style } from '@vanilla-extract/css'
 import { vars, fonts } from '../../styles/theme.css'
 
 export const title = style({
-  margin: '.5rem 0',
+  margin: '.5rem 0 .4rem 0',
+  display: 'block',
 })
 
 export const inputContainer = style({

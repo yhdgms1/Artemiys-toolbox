@@ -10,7 +10,7 @@ export const InputContainer = (props: JSX.HTMLAttributes<HTMLDivElement>) => (
 
 export const Input = (props: JSX.InputHTMLAttributes<HTMLInputElement>) => (
   <label class={styles.label}>
-    <div class={styles.title}>{props.children}</div>
+    <span class={styles.title}>{props.children}</span>
     <input {...props} class={styles.input} />
   </label>
 )

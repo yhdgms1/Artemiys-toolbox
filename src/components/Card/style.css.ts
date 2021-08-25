@@ -10,7 +10,7 @@ export const title = style({
 
 export const card = style({
   transition:
-    'box-shadow cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s, border cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s',
+    'box-shadow cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s, border-color cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s',
   padding: '1.55rem 1.3rem',
   borderRadius: '.25rem',
   border: `.063rem solid ${vars.border[0]}`,

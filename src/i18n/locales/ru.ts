@@ -16,6 +16,12 @@ export default {
     active: 'Скопировано',
     err: 'Ошибка',
   },
+  'color scheme switcher': {
+    Scheme: 'Схема',
+    Light: 'Светлая',
+    System: 'Системная',
+    Dark: 'Тёмная',
+  },
   'repeat-it-n-times': {
     title: 'Повторитель текста',
     result: 'Результат будет тут',

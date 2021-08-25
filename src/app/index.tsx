@@ -16,11 +16,10 @@ const App = () => {
           <h1>
             <Link
               href="/"
-              class={clsx(
-                appStyles.title,
-                styles.link,
-                location.pathname === '/' ? appStyles.no_underline : ''
-              )}
+              class={clsx(appStyles.title, styles.link)}
+              classList={{
+                [appStyles.no_underline]: location.pathname === '/',
+              }}
             >
               Artemiy's Toolbox
             </Link>
