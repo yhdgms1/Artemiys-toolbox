@@ -7,7 +7,7 @@ export const button = style({
   minWidth: '13rem',
   borderRadius: '.375rem',
   cursor: 'pointer',
-  filter: `drop-shadow(.094rem .094rem .188rem #1c1c1c10)`,
+  filter: vars.filter[0],
   border: `.063rem solid ${vars.border[0]}`,
   background: vars.background[3],
   color: vars.color[0],
@@ -15,7 +15,7 @@ export const button = style({
   transition: `transform .2s ease`,
   textRendering: 'optimizeLegibility',
   ':hover': {
-    filter: `drop-shadow(.094rem .094rem .188rem #1c1c1c20)`,
+    filter: vars.filter[1],
   },
   ':active': {
     transform: `scale(.97)`,
@@ -27,12 +27,6 @@ export const button = style({
     verticalAlign: 'middle',
   },
   '@media': {
-    '(prefers-color-scheme: dark)': {
-      filter: `drop-shadow(.125rem .125rem .313rem #1c1c1c)`,
-      ':hover': {
-        filter: `drop-shadow(.263rem .263rem .375rem #1c1c1c)`,
-      },
-    },
     'screen and (max-width: 640px)': {
       display: 'block',
     },

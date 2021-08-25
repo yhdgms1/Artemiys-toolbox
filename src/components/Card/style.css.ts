@@ -17,29 +17,20 @@ export const card = style({
   background: vars.background[2],
   textDecoration: 'none',
   position: 'relative',
-  filter: `drop-shadow(.094rem .094rem .188rem #1c1c1c10)`,
+  filter: vars.filter[0],
   ':hover': {
     borderColor: vars.border[1],
-    boxShadow: `inset 0 0 0 .3rem #ffe0e9`,
+    boxShadow: `inset 0 0 0 .3rem ${vars.boxShadow[0]}`,
   },
   ':focus-within': {
     borderColor: vars.border[1],
-    boxShadow: `inset 0 0 0 .3rem #ffe0e9`,
+    boxShadow: `inset 0 0 0 .3rem ${vars.boxShadow[0]}`,
     transition: 'none', // transition makes it impossible to highlight an element by simply holding down Tab
   },
   '@media': {
     'screen and (max-width: 640px)': {
       marginBottom: '.6rem',
       width: '100%',
-    },
-    '(prefers-color-scheme: dark)': {
-      filter: `drop-shadow(.125rem .125rem .313rem #1c1c1c)`,
-      ':hover': {
-        boxShadow: `inset 0 0 0 .3rem #ff9ebb`,
-      },
-      ':focus-within': {
-        boxShadow: `inset 0 0 0 .3rem #ff9ebb`,
-      },
     },
   },
 })

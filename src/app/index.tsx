@@ -2,7 +2,7 @@ import * as styles from '../styles/index.css'
 import * as appStyles from './style.css'
 import { Link, useLocation } from 'solid-app-router'
 import { ErrorBoundary } from 'solid-js'
-import { Unknown } from '../components'
+import { Unknown, ColorSchemeSwitcher } from '../components'
 import { AppRoutes } from './routes'
 import clsx from 'clsx'
 
@@ -11,20 +11,23 @@ const App = () => {
 
   return (
     <>
-      <nav class={appStyles.nav}>
-        <h1>
-          <Link
-            href="/"
-            class={clsx(
-              appStyles.title,
-              styles.link,
-              location.pathname === '/' ? appStyles.no_underline : ''
-            )}
-          >
-            Artemiy's Toolbox
-          </Link>
-        </h1>
-      </nav>
+      <header class={appStyles.header}>
+        <nav>
+          <h1>
+            <Link
+              href="/"
+              class={clsx(
+                appStyles.title,
+                styles.link,
+                location.pathname === '/' ? appStyles.no_underline : ''
+              )}
+            >
+              Artemiy's Toolbox
+            </Link>
+          </h1>
+        </nav>
+        <ColorSchemeSwitcher />
+      </header>
       <main
         class={location.pathname === '/' ? styles.main : styles.main_layout}
         role="main"

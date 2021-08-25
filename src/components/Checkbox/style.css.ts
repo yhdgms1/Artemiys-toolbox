@@ -16,8 +16,8 @@ export const label = style({
     [`${input} + &`]: {
       display: 'inline-flex',
       alignItems: 'center',
-      userSelect: 'none',
       WebkitUserSelect: 'none',
+      userSelect: 'none',
     },
     [`${input} + &::before`]: {
       content: `''`,
@@ -53,15 +53,16 @@ export const label = style({
       borderColor: '#DB6D8C',
       boxShadow: `0 0 0 .063em #DB6D8C`,
     },
-    [`${input}:disabled + &::before`]: {
-      backgroundColor: '#e9ecef',
-      borderColor: '#e9ecef',
-      '@media': {
-        '(prefers-color-scheme: dark)': {
-          borderColor: '#242424',
-          backgroundColor: '#252525',
-        },
-      },
-    },
+    // todo return in when it will be used
+    // [`${input}:disabled + &::before`]: {
+    //   backgroundColor: '#e9ecef',
+    //   borderColor: '#e9ecef',
+    //   '@media': {
+    //     '(prefers-color-scheme: dark)': {
+    //       borderColor: '#242424',
+    //       backgroundColor: '#252525',
+    //     },
+    //   },
+    // },
   },
 })

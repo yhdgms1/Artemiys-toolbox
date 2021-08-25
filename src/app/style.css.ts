@@ -13,8 +13,16 @@ export const no_underline = style({
   textDecoration: 'none',
 })
 
-export const nav = style({
+export const header = style({
   margin: '.92em 1rem 0',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+})
+
+globalStyle('body', {
+  background: vars.background[0],
+  color: vars.color[0],
 })
 
 globalStyle('html, body, *, *::after, *::before', {
@@ -24,13 +32,6 @@ globalStyle('html, body, *, *::after, *::before', {
   fontFamily: `'Raleway', sans-serif`,
   fontSize: '1em',
   lineHeight: 1.5,
-})
-
-globalStyle('body', {
-  width: '100%',
-  background: vars.background[0],
-  contentVisibility: 'auto',
-  color: vars.color[0],
 })
 
 globalStyle('*, *:active, *:hover', {
@@ -43,5 +44,5 @@ globalStyle('*, *:active, *:hover', {
 })
 
 globalStyle(':root', {
-  colorScheme: 'dark light',
+  colorScheme: 'light dark',
 })
