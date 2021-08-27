@@ -9,7 +9,7 @@ export const fonts = createGlobalTheme(':root', {
 export const [light_theme, vars] = createTheme({
   color: {
     0: '#000',
-    1: '#666',
+    1: '#333',
   },
   background: {
     0: '#fff',

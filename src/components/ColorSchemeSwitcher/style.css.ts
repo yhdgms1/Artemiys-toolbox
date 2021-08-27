@@ -4,7 +4,6 @@ import { vars, dark_theme } from '../../styles/theme.css'
 export const switcher = style({
   padding: '.125rem',
   position: 'relative',
-  display: 'table',
   border: 'none',
   // todo figure out how to display on the phone
   '@media': {
@@ -66,6 +65,7 @@ export const switcher__status = style({
   right: 0,
   bottom: 0,
   left: 0,
+  inset: 0,
   zIndex: 0 - 1,
   borderRadius: '.75rem',
   backgroundRepeat: 'no-repeat',

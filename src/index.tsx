@@ -3,7 +3,6 @@ import { Router } from 'solid-app-router'
 import App from './app'
 
 import './styles/fonts.css'
-import './polyfills'
 
 render(
   () => (

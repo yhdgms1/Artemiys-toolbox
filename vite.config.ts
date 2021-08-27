@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
     ],
     build: {
       cssCodeSplit: false,
-      target: ['chrome64'],
+      target: ['chrome75'],
     },
   }
 })
