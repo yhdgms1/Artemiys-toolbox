@@ -22,6 +22,10 @@ const methods: IMethod[] = [
     title: 'remove',
     link: 'remove',
   },
+  {
+    title: 'picture',
+    link: 'picture',
+  },
 ]
 
 export default () => {

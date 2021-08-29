@@ -84,6 +84,9 @@ export default {
       id: 'id',
       'Removed Successfully': 'Removed Successfully',
     },
+    picture: {
+      Create: 'Create using {{ template }} template',
+    },
     Submit: 'Submit',
     'Look at this': 'Look at this',
     Error: 'Error',
@@ -93,6 +96,7 @@ export default {
       'using vk': "create automatically using a friend's VKontakte profile",
       manually: 'create by manually filling in all the required fields',
       remove: 'remove the person from the site',
+      picture: 'create a picture, do not add person to the site',
     },
   },
   'text-case-changer': {

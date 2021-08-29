@@ -3,6 +3,7 @@ import { vars } from '../../styles/theme.css'
 
 export const button = style({
   margin: '1.12rem',
+  padding: '0 1.12rem',
   height: '2.7rem',
   minWidth: '13rem',
   borderRadius: '.375rem',
