@@ -86,17 +86,28 @@ export default {
     },
     picture: {
       Create: 'Create using {{ template }} template',
+      'Fill in the fields above to begin creating a picture':
+        'Fill in the fields above to begin creating a picture',
+      'Picture width': 'Picture width',
+      'Picture height': 'Picture height',
     },
     Submit: 'Submit',
     'Look at this': 'Look at this',
     Error: 'Error',
     'Created Successfully': 'Created Successfully',
     'Unexpected Error': 'Unexpected Error',
+    'picture-vk': {
+      Find: 'Find profile',
+    },
     home: {
-      'using vk': "create automatically using a friend's VKontakte profile",
-      manually: 'create by manually filling in all the required fields',
+      'using vk':
+        "add to the website automatically using a friend's VK profile",
+      manually:
+        'add to the website by manually filling in all the required fields',
       remove: 'remove the person from the site',
-      picture: 'create a picture, do not add person to the site',
+      picture: 'create a picture, but do not add person to the site',
+      'picture vk':
+        'create a picture automatically using VK profile, do not add a person to the site',
     },
   },
   'text-case-changer': {
@@ -118,7 +129,8 @@ export default {
     'string backwards': 'Turning text backwards',
     'aspect ratio calculator':
       'Use to check the dimensions when resizing images',
-    'cheap sluts': 'Humiliate a friend by showing they on a fake hooker site',
+    'cheap sluts':
+      'Humiliate people by showing them on a fake prostitution site',
     'text case changer': 'text CASE chAnGeR',
   },
 }

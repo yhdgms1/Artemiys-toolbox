@@ -48,9 +48,7 @@ export const responsive_container = style({
       gridTemplateColumns: '2fr 2fr',
     },
     'screen and (max-width: 640px)': {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
+      gridTemplateColumns: '1fr',
     },
   },
 })
@@ -68,4 +66,13 @@ export const heading2 = style({
   fontWeight: 'normal',
   padding: '0 0 .7rem',
   textAlign: 'center',
+})
+
+export const margin6 = style({
+  margin: `.6rem auto`,
+})
+
+export const flex_col = style({
+  display: 'flex',
+  flexDirection: 'column',
 })

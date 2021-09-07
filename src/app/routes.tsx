@@ -55,6 +55,10 @@ export const AppRoutes = () => (
       element={lazy(() => import('../pages/cheap-sluts/picture'))}
     />
     <Route
+      path="/cheap-sluts/picture-vk"
+      element={lazy(() => import('../pages/cheap-sluts/picture-vk'))}
+    />
+    <Route
       path="/text-case-changer"
       element={lazy(() => import('../pages/text-case-changer'))}
     />

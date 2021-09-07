@@ -26,6 +26,10 @@ const methods: IMethod[] = [
     title: 'picture',
     link: 'picture',
   },
+  {
+    title: 'picture vk',
+    link: 'picture-vk',
+  },
 ]
 
 export default () => {
