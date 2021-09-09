@@ -13,7 +13,7 @@ export const AppRoutes = () => (
       element={lazy(() => import('../pages/characters-count'))}
     />
     <Route
-      path="/repeat something n times"
+      path="/repeat-something-n-times"
       element={lazy(() => import('../pages/repeat-something-n-times'))}
     />
     <Route
