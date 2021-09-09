@@ -22,7 +22,7 @@ export default {
     System: 'System',
     Dark: 'Dark',
   },
-  'repeat-it-n-times': {
+  'repeat something n times': {
     title: 'Repeat text',
     result: 'Result will be here',
     repeat: 'Repeat',
@@ -118,6 +118,14 @@ export default {
     'to lowercase': 'to lowercase',
     'randomise case': 'randomize case',
   },
+  'chat-dot-replacer': {
+    title: 'Chat dot replacer',
+    'Type text': 'Type text',
+    Result: 'Result will be here',
+    'Replace dots': 'Replace dots',
+    'Bring it back': 'Bring it back',
+    ' (dot) ': ' (dot) ',
+  },
   home: {
     'characters count':
       'Counts the number of characters in the text, including emoji',
@@ -132,5 +140,7 @@ export default {
     'cheap sluts':
       'Humiliate people by showing them on a fake prostitution site',
     'text case changer': 'text CASE chAnGeR',
+    'chat dot replacer':
+      'Replace "." to " (dot) " to share link in chat',
   },
 }

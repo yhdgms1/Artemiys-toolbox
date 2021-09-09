@@ -9,7 +9,7 @@ import { setTitle } from '../../helpers'
 export default () => {
   const [shortname, setShortname] = createSignal('')
   const [error, setError] = createSignal('')
-  const [data, setData] = createSignal({})
+  const [data, setData] = createSignal<{ name?: string; picture?: string }>({})
 
   return (
     <>

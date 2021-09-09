@@ -22,7 +22,7 @@ export default {
     System: 'Системная',
     Dark: 'Тёмная',
   },
-  'repeat-it-n-times': {
+  'repeat something n times': {
     title: 'Повторитель текста',
     result: 'Результат будет тут',
     repeat: 'Повторить',
@@ -117,6 +117,14 @@ export default {
     'to lowercase': 'К строчным буквам',
     'randomise case': 'К случайным буквам',
   },
+  'chat-dot-replacer': {
+    title: 'Заменитель точек для сообщений в чате',
+    'Type text': 'Введите текст',
+    Result: 'Результат будет тут',
+    'Replace dots': 'Заменить точки',
+    'Bring it back': 'Вернуть обратно',
+    ' (dot) ': ' (точка) ',
+  },
   home: {
     'characters count':
       'Подсчитать количество символов в тексте, включая эмодзи',
@@ -129,5 +137,7 @@ export default {
     'aspect ratio calculator': 'Калькулятор соотношения сторон изображений',
     'cheap sluts': 'Унижайте людей показывая их на фальшивом сайте проституток',
     'text case changer': 'изменение РЕГИСТРА тЕКстА',
+    'chat dot replacer':
+      'Заменить "." на " (точка) ", чтобы поделиться ссылкой в чате',
   },
 }

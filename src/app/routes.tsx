@@ -13,8 +13,8 @@ export const AppRoutes = () => (
       element={lazy(() => import('../pages/characters-count'))}
     />
     <Route
-      path="/repeat-it-n-times"
-      element={lazy(() => import('../pages/repeat-it-n-times'))}
+      path="/repeat something n times"
+      element={lazy(() => import('../pages/repeat-something-n-times'))}
     />
     <Route
       path="/transliteration"
@@ -61,6 +61,10 @@ export const AppRoutes = () => (
     <Route
       path="/text-case-changer"
       element={lazy(() => import('../pages/text-case-changer'))}
+    />
+    <Route
+      path="/chat-dot-replacer"
+      element={lazy(() => import('../pages/chat-dot-replacer'))}
     />
     <Route path="**" element={NotFound} />
   </Routes>
