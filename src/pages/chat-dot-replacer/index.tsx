@@ -28,7 +28,7 @@ export default () => {
           {t(['chat-dot-replacer', 'Replace dots'])}
         </Button>
         <Button
-          onClick={() => setOutput(input().replace(/ (dot|точка) /gm, '.'))}
+          onClick={() => setOutput(input().replace(/ \((dot|точка)\) /gm, '.'))}
         >
           {t(['chat-dot-replacer', 'Bring it back'])}
         </Button>

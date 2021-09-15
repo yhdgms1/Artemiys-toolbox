@@ -140,7 +140,6 @@ export default {
     'cheap sluts':
       'Humiliate people by showing them on a fake prostitution site',
     'text case changer': 'text CASE chAnGeR',
-    'chat dot replacer':
-      'Replace "." to " (dot) " to share link in chat',
+    'chat dot replacer': 'Replace "." to " (dot) " to share link in chat',
   },
 }
