@@ -21,6 +21,8 @@ export default {
     Light: 'Light',
     System: 'System',
     Dark: 'Dark',
+    Close: 'Close',
+    Settings: 'Settings',
   },
   'repeat something n times': {
     title: 'Repeat text',

@@ -21,6 +21,8 @@ export default {
     Light: 'Светлая',
     System: 'Системная',
     Dark: 'Тёмная',
+    Close: 'Закрыть',
+    Settings: 'Настройки',
   },
   'repeat something n times': {
     title: 'Повторитель текста',
