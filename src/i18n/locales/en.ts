@@ -128,6 +128,11 @@ export default {
     'Bring it back': 'Bring it back',
     ' (dot) ': ' (dot) ',
   },
+  vibrator: {
+    title: 'Vibrator',
+    Vibrate: 'Vibrate',
+    Stop: 'Stop',
+  },
   home: {
     'characters count':
       'Counts the number of characters in the text, including emoji',
@@ -143,5 +148,6 @@ export default {
       'Humiliate people by showing them on a fake prostitution site',
     'text case changer': 'text CASE chAnGeR',
     'chat dot replacer': 'Replace "." to " (dot) " to share link in chat',
+    vibrator: 'Just a vibrator',
   },
 }

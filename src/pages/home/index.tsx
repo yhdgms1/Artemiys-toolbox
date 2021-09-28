@@ -14,6 +14,7 @@ const tools = [
   'cheap sluts',
   'text case changer',
   'chat dot replacer',
+  'vibrator',
 ]
 
 export default () => {

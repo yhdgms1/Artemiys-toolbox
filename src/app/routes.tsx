@@ -66,6 +66,7 @@ export const AppRoutes = () => (
       path="/chat-dot-replacer"
       element={lazy(() => import('../pages/chat-dot-replacer'))}
     />
+    <Route path="/vibrator" element={lazy(() => import('../pages/vibrator'))} />
     <Route path="**" element={NotFound} />
   </Routes>
 )
