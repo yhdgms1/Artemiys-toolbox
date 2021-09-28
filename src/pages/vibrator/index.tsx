@@ -12,7 +12,7 @@ const Vibrator = (length: number) => {
     interval = setInterval(() => {
       clearInterval(interval)
 
-      start(length)
+      start()
     }, length)
   }
 
