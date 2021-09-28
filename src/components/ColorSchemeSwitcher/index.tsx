@@ -51,55 +51,52 @@ export function ColorSchemeSwitcher() {
         </svg>
       </button>
 
-      {isOpen() && (
-        <TailwindDialog
-          defaultOpen
-          isOpen={isOpen()}
-          class={styles.dialog}
-          onClose={closeModal}
-        >
-          <TailwindDialogOverlay class={styles.dialogOverlay} />
-          <div class={styles.container}>
-            <TailwindDialogPanel class={styles.dialogPanel}>
-              <TailwindDialogTitle as="h3" class={styles.dialogTitle}>
-                {t(['color scheme switcher', 'Settings'])}
-              </TailwindDialogTitle>
-              <fieldset class={styles.fieldset}>
-                <legend class={styles.legend}>
-                  {t(['color scheme switcher', 'Scheme'])}
-                </legend>
-                <Radio
-                  id="light-theme-radio"
-                  name="color-scheme"
-                  checked={scheme() === 'light'}
-                  onChange={setLightTheme}
-                >
-                  {t(['color scheme switcher', 'Light'])}
-                </Radio>
-                <Radio
-                  id="auto-theme-radio"
-                  name="color-scheme"
-                  checked={scheme() === 'auto'}
-                  onChange={setAutoTheme}
-                >
-                  {t(['color scheme switcher', 'System'])}
-                </Radio>
-                <Radio
-                  id="dark-theme-radio"
-                  name="color-scheme"
-                  checked={scheme() === 'dark'}
-                  onChange={setDarkTheme}
-                >
-                  {t(['color scheme switcher', 'Dark'])}
-                </Radio>
-              </fieldset>
-              <Button onClick={closeModal} type="button">
-                {t(['color scheme switcher', 'Close'])}
-              </Button>
-            </TailwindDialogPanel>
-          </div>
-        </TailwindDialog>
-      )}
+      <TailwindDialog
+        isOpen={isOpen()}
+        class={styles.dialog}
+        onClose={closeModal}
+      >
+        <TailwindDialogOverlay class={styles.dialogOverlay} />
+        <div class={styles.container}>
+          <TailwindDialogPanel class={styles.dialogPanel}>
+            <TailwindDialogTitle as="h3" class={styles.dialogTitle}>
+              {t(['color scheme switcher', 'Settings'])}
+            </TailwindDialogTitle>
+            <fieldset class={styles.fieldset}>
+              <legend class={styles.legend}>
+                {t(['color scheme switcher', 'Scheme'])}
+              </legend>
+              <Radio
+                id="light-theme-radio"
+                name="color-scheme"
+                checked={scheme() === 'light'}
+                onChange={setLightTheme}
+              >
+                {t(['color scheme switcher', 'Light'])}
+              </Radio>
+              <Radio
+                id="auto-theme-radio"
+                name="color-scheme"
+                checked={scheme() === 'auto'}
+                onChange={setAutoTheme}
+              >
+                {t(['color scheme switcher', 'System'])}
+              </Radio>
+              <Radio
+                id="dark-theme-radio"
+                name="color-scheme"
+                checked={scheme() === 'dark'}
+                onChange={setDarkTheme}
+              >
+                {t(['color scheme switcher', 'Dark'])}
+              </Radio>
+            </fieldset>
+            <Button onClick={closeModal} type="button">
+              {t(['color scheme switcher', 'Close'])}
+            </Button>
+          </TailwindDialogPanel>
+        </div>
+      </TailwindDialog>
     </>
   )
 }

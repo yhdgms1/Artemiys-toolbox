@@ -11,7 +11,7 @@ export const fieldset = style({
   display: 'flex',
   alignContent: 'flex-start',
   '@media': {
-    'screen and (max-width: 768px)': {
+    '(max-width: 768px)': {
       flexDirection: 'column',
     },
   },
@@ -27,7 +27,7 @@ export const dialog = style({
 export const dialogOverlay = style({
   position: 'fixed',
   inset: 0,
-  backdropFilter: `blur(8px)`,
+  background: '#00000095',
 })
 
 export const container = style({
@@ -42,7 +42,6 @@ export const dialogPanel = style({
   maxWidth: '45vw',
   overflow: 'hidden',
   background: vars.background[0],
-  filter: vars.filter[0],
   borderRadius: '.75rem',
   zIndex: dialogZIndex + 1,
   padding: '.9rem',
@@ -51,7 +50,7 @@ export const dialogPanel = style({
   justifyContent: 'center',
   flexDirection: 'column',
   '@media': {
-    'screen and (max-width: 768px)': {
+    '(max-width: 768px)': {
       maxWidth: '95vw',
     },
   },
