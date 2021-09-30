@@ -34,6 +34,7 @@ export const dialogOverlay = style({
   bottom: 0,
   left: 0,
   background: '#00000095',
+  minHeight: 'calc(100vh + env(safe-area-inset-bottom, 4rem))'
 })
 
 export const container = style({
