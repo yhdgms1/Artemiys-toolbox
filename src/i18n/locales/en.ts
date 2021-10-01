@@ -24,6 +24,9 @@ export default {
     Close: 'Close',
     Settings: 'Settings',
   },
+  settings: {
+    'Open settings dialog': 'Open settings dialog',
+  },
   'repeat something n times': {
     title: 'Repeat text',
     result: 'Result will be here',

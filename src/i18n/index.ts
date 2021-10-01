@@ -3,7 +3,7 @@ import dict from './dictionary'
 
 const i18n = rosetta(dict)
 
-const isRussian: boolean = navigator.language.toLowerCase().includes('ru')
+const isRussian = navigator.language.toLowerCase().includes('ru')
 
 document.documentElement.setAttribute('lang', isRussian ? 'ru' : 'en')
 

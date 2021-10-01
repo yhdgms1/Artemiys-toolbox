@@ -24,6 +24,9 @@ export default {
     Close: 'Закрыть',
     Settings: 'Настройки',
   },
+  settings: {
+    'Open settings dialog': 'Открыть диалоговое окно настроек',
+  },
   'repeat something n times': {
     title: 'Повторитель текста',
     result: 'Результат будет тут',

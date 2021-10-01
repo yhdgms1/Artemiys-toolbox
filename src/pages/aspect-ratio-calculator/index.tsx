@@ -3,7 +3,8 @@ import { Input, InputContainer, Select } from '../../components'
 import { t } from '../../i18n'
 import { setTitle } from '../../helpers'
 
-import * as styles from './style.css'
+import * as styles from '../../styles/index.css'
+import { customSelectStyle } from './style.css'
 
 export default () => {
   setTitle(t(['aspect-ratio', 'title']))
@@ -42,30 +43,33 @@ export default () => {
   return (
     <>
       <h2 class={styles.heading2}>{t(['aspect-ratio', 'title'])}</h2>
-      <Select
-        title={t(['aspect-ratio', 'Common Presets'])}
-        id="preset"
-        onChange={e => {
-          const value = e.currentTarget.value
+      <div class={styles.row}>
+        <Select
+          title={t(['aspect-ratio', 'Common Presets'])}
+          id="preset"
+          selectClassName={customSelectStyle}
+          onChange={e => {
+            const value = e.currentTarget.value
 
-          setState('ratioWidth', v => parseInt(value.split(':')[0]))
-          setState('ratioHeight', v => parseInt(value.split(':')[1]))
-          processWidth()
-        }}
-      >
-        <option class={styles.option} value="4:3">
-          Old Monitor 4:3
-        </option>
-        <option class={styles.option} value="16:9" selected>
-          Standart 16:9
-        </option>
-        <option class={styles.option} value="18:9">
-          Wide 18:9
-        </option>
-        <option class={styles.option} value="21:9">
-          Ultra-wide 21:9
-        </option>
-      </Select>
+            setState('ratioWidth', v => parseInt(value.split(':')[0]))
+            setState('ratioHeight', v => parseInt(value.split(':')[1]))
+            processWidth()
+          }}
+        >
+          <option class={styles.option} value="4:3">
+            Old Monitor 4:3
+          </option>
+          <option class={styles.option} value="16:9" selected>
+            Standart 16:9
+          </option>
+          <option class={styles.option} value="18:9">
+            Wide 18:9
+          </option>
+          <option class={styles.option} value="21:9">
+            Ultra-wide 21:9
+          </option>
+        </Select>
+      </div>
       <div class={styles.row}>
         <InputContainer>
           <Input

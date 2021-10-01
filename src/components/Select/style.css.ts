@@ -10,21 +10,12 @@ export const select = style({
   color: vars.color[0],
   border: `.063rem solid ${vars.border[0]}`,
   borderRadius: '.75rem',
-  width: '45vw',
   maxWidth: `calc(90vw - .8rem)`,
   ':hover': {
     borderColor: vars.border[1],
   },
   ':focus': {
     borderColor: vars.border[1],
-  },
-  '@media': {
-    'screen and (max-width: 640px)': {
-      width: '90vw',
-    },
-    'screen and (min-width: 1024px)': {
-      width: `calc(35vw - .8rem)`,
-    },
   },
   '@supports': {
     '(-webkit-appearance: none)': {
@@ -46,4 +37,5 @@ export const title = style({
 export const label = style({
   display: 'flex',
   flexDirection: 'column',
+  width: '100%',
 })

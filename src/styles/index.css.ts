@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css'
+import { fonts } from './theme.css'
 
 export const main = style({
   padding: '1rem',
@@ -75,4 +76,13 @@ export const margin6 = style({
 export const flex_col = style({
   display: 'flex',
   flexDirection: 'column',
+})
+
+export const option = style({
+  fontFamily: fonts.serif,
+})
+
+export const row = style({
+  display: 'flex',
+  alignItems: 'center',
 })

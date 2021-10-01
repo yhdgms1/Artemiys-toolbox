@@ -1,12 +1,13 @@
 import { style } from '@vanilla-extract/css'
-import { vars, fonts } from '../../styles/theme.css'
-export { heading2 } from '../../styles/index.css'
 
-export const option = style({
-  fontFamily: fonts.serif,
-})
-
-export const row = style({
-  display: 'flex',
-  alignItems: 'center',
+export const customSelectStyle = style({
+  width: '45vw',
+  '@media': {
+    '(max-width: 640px)': {
+      width: '90vw',
+    },
+    '(min-width: 1024px)': {
+      width: `calc(35vw - .8rem)`,
+    },
+  },
 })
