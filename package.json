@@ -14,12 +14,12 @@
   "license": "ISC",
   "devDependencies": {
     "@vanilla-extract/css": "^1.6.1",
-    "@vanilla-extract/vite-plugin": "^2.1.0",
+    "@vanilla-extract/vite-plugin": "^2.1.1",
     "prettier": "2.4.1",
     "typescript": "^4.4.3",
-    "vite": "2.5.10",
+    "vite": "2.6.2",
     "vite-plugin-html": "^2.1.1",
-    "vite-plugin-solid": "^2.0.3"
+    "vite-plugin-solid": "^2.1.0"
   },
   "dependencies": {
     "@artemis69/iuliia": "^0.0.3",

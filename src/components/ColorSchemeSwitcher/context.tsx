@@ -67,10 +67,15 @@ export const ColorSchemeProvider: Component<{}> = props => {
         } else {
           setAutoTheme()
 
-          darkModeMediaQuery.addEventListener(
-            'change',
-            onPrefersColorSchemeChanges
-          )
+          try {
+            darkModeMediaQuery.addEventListener(
+              'change',
+              onPrefersColorSchemeChanges
+            )
+          } catch {
+            //Safari
+            darkModeMediaQuery.addListener(onPrefersColorSchemeChanges)
+          }
         }
       },
       setDarkTheme,
