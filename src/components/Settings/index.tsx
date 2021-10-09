@@ -5,12 +5,7 @@ import { Button } from '..'
 
 import type { Component } from 'solid-js'
 
-import {
-  TailwindDialog,
-  TailwindDialogPanel,
-  TailwindDialogTitle,
-  TailwindDialogOverlay,
-} from 'solid-headless'
+import { Dialog, DialogPanel, DialogTitle, DialogOverlay } from 'solid-headless'
 
 export const Settings: Component<{ children: {} }> = props => {
   const [isOpen, setIsOpen] = createSignal(false)
@@ -49,26 +44,20 @@ export const Settings: Component<{ children: {} }> = props => {
         </svg>
       </button>
 
-      <TailwindDialog
-        isOpen={isOpen()}
-        class={styles.dialog}
-        onClose={closeModal}
-      >
-        <TailwindDialogOverlay class={styles.dialogOverlay} />
+      <Dialog isOpen={isOpen()} class={styles.dialog} onClose={closeModal}>
+        <DialogOverlay class={styles.dialogOverlay} />
         <div class={styles.container}>
-          <TailwindDialogPanel class={styles.dialogPanel}>
-            <TailwindDialogTitle as="h3" class={styles.dialogTitle}>
+          <DialogPanel class={styles.dialogPanel}>
+            <DialogTitle as="h3" class={styles.dialogTitle}>
               {t(['color scheme switcher', 'Settings'])}
-            </TailwindDialogTitle>
-
+            </DialogTitle>
             {props.children}
-
-            <Button onClick={closeModal} type="button">
+            <Button onClick={closeModal}>
               {t(['color scheme switcher', 'Close'])}
             </Button>
-          </TailwindDialogPanel>
+          </DialogPanel>
         </div>
-      </TailwindDialog>
+      </Dialog>
     </>
   )
 }
