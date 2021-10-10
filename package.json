@@ -1,6 +1,6 @@
 {
   "name": "artemiys-toolbox",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "private": true,
   "description": "Some tools I might need, collected in one place called Artemiy's Toolbox",
   "type": "module",
@@ -28,7 +28,7 @@
     "copy-text-to-clipboard": "^3.0.1",
     "graphemer": "^1.2.0",
     "rosetta": "^1.1.0",
-    "solid-app-router": "^0.1.8",
+    "solid-app-router": "^0.1.9",
     "solid-headless": "^0.8.0",
     "solid-js": "^1.1.6",
     "solid-utils": "^0.8.1"

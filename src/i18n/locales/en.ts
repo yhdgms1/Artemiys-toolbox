@@ -68,14 +68,6 @@ export default {
       title: 'An error occurred',
     },
   },
-  'aspect-ratio': {
-    'Common Presets': 'Common Presets',
-    title: 'Aspect Ratio Calculator',
-    'Ratio Width': 'Ratio Width',
-    'Ratio Height': 'Ratio Height',
-    'Pixels Width': 'Pixels Width',
-    'Pixels Height': 'Pixels Height',
-  },
   'cheap sluts': {
     'Select a method': 'Select a method',
     vk: {
@@ -145,8 +137,6 @@ export default {
       'Change the keyboard layout from russian to english and back again',
     swagify: 'Swagify any sentence or word',
     'string backwards': 'Turning text backwards',
-    'aspect ratio calculator':
-      'Use to check the dimensions when resizing images',
     'cheap sluts':
       'Humiliate people by showing them on a fake prostitution site',
     'text case changer': 'text CASE chAnGeR',

@@ -31,10 +31,6 @@ export const AppRoutes = () => (
       element={lazy(() => import('../pages/string-backwards'))}
     />
     <Route
-      path="/aspect-ratio-calculator"
-      element={lazy(() => import('../pages/aspect-ratio-calculator'))}
-    />
-    <Route
       path="/cheap-sluts"
       element={lazy(() => import('../pages/cheap-sluts'))}
     />

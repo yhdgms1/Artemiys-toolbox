@@ -69,14 +69,6 @@ export default {
       title: 'Произошла ошибка',
     },
   },
-  'aspect-ratio': {
-    'Common Presets': 'Стандартные варианты',
-    title: 'Калькулятор соотношения сторон',
-    'Ratio Width': 'Отношение ширины',
-    'Ratio Height': 'Отношение высоты',
-    'Pixels Width': 'Ширина в пикселях',
-    'Pixels Height': 'Высота в пикселях',
-  },
   'cheap sluts': {
     'Select a method': 'Выберите метод',
     vk: {
@@ -144,7 +136,6 @@ export default {
       'Изменить раскладку клавиатуры с русской на английскую и обратно',
     swagify: '[LEGIT] xX Стилизовать любое предложение или слОво Xx',
     'string backwards': 'Переворот текста задом наперёд',
-    'aspect ratio calculator': 'Калькулятор соотношения сторон изображений',
     'cheap sluts': 'Унижайте людей показывая их на фальшивом сайте проституток',
     'text case changer': 'изменение РЕГИСТРА тЕКстА',
     'chat dot replacer':

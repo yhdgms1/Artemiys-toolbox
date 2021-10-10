@@ -10,7 +10,6 @@ const tools = [
   'punto switcher',
   'swagify',
   'string backwards',
-  'aspect ratio calculator',
   'cheap sluts',
   'text case changer',
   'chat dot replacer',
