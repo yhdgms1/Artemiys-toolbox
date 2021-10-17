@@ -6,10 +6,7 @@ import clsx from 'clsx'
 export const Select = (props: JSX.SelectHTMLAttributes<HTMLSelectElement>) => (
   <label class={styles.label}>
     <span class={styles.title}>{props.title}</span>
-    <select
-      {...props}
-      class={clsx(styles.select, props.class)}
-    >
+    <select {...props} class={clsx(styles.select, props.class)}>
       {props.children}
     </select>
   </label>

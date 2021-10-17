@@ -19,6 +19,10 @@ export default defineConfig(({ mode }) => {
     build: {
       cssCodeSplit: false,
       target: ['chrome75', 'safari13'],
+      minify: 'terser',
+    },
+    esbuild: {
+      charset: 'utf8',
     },
   }
 })
