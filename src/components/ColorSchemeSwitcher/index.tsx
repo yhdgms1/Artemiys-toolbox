@@ -5,8 +5,7 @@ import { useColorScheme } from './context'
 import { Radio } from '..'
 
 export const ColorSchemeSwitcher = () => {
-  const [scheme, , { setDarkTheme, setLightTheme, setAutoTheme }] =
-    useColorScheme()
+  const [scheme, , { setTheme }] = useColorScheme()
 
   return (
     <>
@@ -18,7 +17,7 @@ export const ColorSchemeSwitcher = () => {
           id="light-theme-radio"
           name="color-scheme"
           checked={scheme() === 'light'}
-          onChange={setLightTheme}
+          onChange={() => setTheme('light')}
         >
           {t(['color scheme switcher', 'Light'])}
         </Radio>
@@ -26,7 +25,7 @@ export const ColorSchemeSwitcher = () => {
           id="auto-theme-radio"
           name="color-scheme"
           checked={scheme() === 'auto'}
-          onChange={setAutoTheme}
+          onChange={() => setTheme('auto')}
         >
           {t(['color scheme switcher', 'System'])}
         </Radio>
@@ -34,7 +33,7 @@ export const ColorSchemeSwitcher = () => {
           id="dark-theme-radio"
           name="color-scheme"
           checked={scheme() === 'dark'}
-          onChange={setDarkTheme}
+          onChange={() => setTheme('dark')}
         >
           {t(['color scheme switcher', 'Dark'])}
         </Radio>
