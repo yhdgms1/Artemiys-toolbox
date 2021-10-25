@@ -1,9 +1,6 @@
 import type { Component, Accessor } from 'solid-js'
 import { createSignal, createContext, useContext } from 'solid-js'
 import { light_theme, dark_theme } from '../../styles/theme.css'
-import { createGlobalSignal } from 'solid-utils'
-
-const [className, setClassName] = createGlobalSignal(light_theme)
 
 const ColorSchemeContext = createContext()
 
@@ -16,16 +13,12 @@ const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
 export const ColorSchemeProvider: Component<{}> = props => {
   const [scheme, setScheme] = createSignal(savedScheme)
-  const [className, setClassName] = createSignal<string>(light_theme)
+  const [className, setClassName] = createSignal(light_theme)
 
   function onPrefersColorSchemeChanges(e: MediaQueryListEvent) {
     if (scheme() !== 'auto') return
 
-    if (e.matches) {
-      setClassName(dark_theme)
-    } else {
-      setClassName(light_theme)
-    }
+    setClassName(e.matches ? dark_theme : light_theme)
   }
 
   function setDarkTheme() {
@@ -44,15 +37,9 @@ export const ColorSchemeProvider: Component<{}> = props => {
     localStorage.removeItem('color-scheme')
     setScheme('auto')
 
-    if (!isColorSchemesSupported) {
-      setClassName(light_theme)
-    } else {
-      if (darkModeMediaQuery.matches) {
-        setClassName(dark_theme)
-      } else {
-        setClassName(light_theme)
-      }
-    }
+    isColorSchemesSupported
+      ? setClassName(darkModeMediaQuery.matches ? dark_theme : light_theme)
+      : setClassName(light_theme)
   }
 
   const store = [
@@ -68,15 +55,12 @@ export const ColorSchemeProvider: Component<{}> = props => {
           setAutoTheme()
         }
 
-        try {
-          darkModeMediaQuery.addEventListener(
-            'change',
-            onPrefersColorSchemeChanges
-          )
-        } catch {
-          //Safari
-          darkModeMediaQuery.addListener(onPrefersColorSchemeChanges)
-        }
+        typeof darkModeMediaQuery.addEventListener === 'function'
+          ? darkModeMediaQuery.addEventListener(
+              'change',
+              onPrefersColorSchemeChanges
+            )
+          : darkModeMediaQuery.addListener(onPrefersColorSchemeChanges)
       },
       setDarkTheme,
       setLightTheme,
@@ -91,6 +75,4 @@ export const ColorSchemeProvider: Component<{}> = props => {
   )
 }
 
-export function useColorScheme() {
-  return useContext(ColorSchemeContext)
-}
+export const useColorScheme = () => useContext(ColorSchemeContext)

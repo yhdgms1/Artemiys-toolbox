@@ -30,7 +30,6 @@
     "rosetta": "^1.1.0",
     "solid-app-router": "^0.1.9",
     "solid-headless": "^0.9.0",
-    "solid-js": "^1.1.7",
-    "solid-utils": "^0.8.1"
+    "solid-js": "^1.1.7"
   }
 }
