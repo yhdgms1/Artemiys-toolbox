@@ -35,12 +35,6 @@ export default {
     'so many': 'so many',
     times: 'times',
   },
-  'punto-switcher': {
-    title: 'Punto Switcher',
-    'input-placeholder': 'Enter the text you want to change the layout of',
-    button: 'Change layout',
-    result: 'Result will be here',
-  },
   swagify: {
     result: 'Result will be here',
     title: 'Swagify',
@@ -133,8 +127,6 @@ export default {
       'Counts the number of characters in the text, including emoji',
     'repeat something n times': 'Repeat the string many times',
     transliteration: 'Transliterate cyrillic to latin',
-    'punto switcher':
-      'Change the keyboard layout from russian to english and back again',
     swagify: 'Swagify any sentence or word',
     'string backwards': 'Turning text backwards',
     'cheap sluts':

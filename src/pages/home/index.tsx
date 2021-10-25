@@ -7,7 +7,6 @@ const tools = [
   'characters count',
   'repeat something n times',
   'transliteration',
-  'punto switcher',
   'swagify',
   'string backwards',
   'cheap sluts',
