@@ -6,37 +6,37 @@ import { t } from '../../i18n'
 import { Button, Input } from '../../components'
 import { setTitle } from '../../helpers'
 
+type ApiData = { error: string; userid: string; message?: string }
+
 export default () => {
   setTitle('Remove from site')
 
   const [id, setId] = createSignal('')
-  const [err, setErr] = createSignal('')
-  const [result, setResult] = createSignal('')
+  const [data, setData] = createSignal<ApiData>({ error: '', userid: '' })
 
   const getData = async () => {
     if (id() === '') return
 
     try {
-      const res = await fetch(
+      const response = await fetch(
         'https://cheap-sluts.artemis69.workers.dev/delete',
         {
           method: 'POST',
-          body: JSON.stringify({ userid: id().trim() }),
+          body: JSON.stringify({
+            userid: id().trim(),
+          }),
         }
       )
 
-      const data: { error?: string; userid?: string } = await res.json()
+      const json: ApiData = await response.json()
 
-      if (data.error) {
-        setResult('')
-        setErr(data.error || t(['cheap sluts', 'Unexpected Error']))
-        return
+      if (json.message) {
+        throw '500'
       }
 
-      setErr('')
-      setResult(data.userid)
-    } catch (_) {
-      setErr(t(['cheap sluts', 'Unexpected Error']))
+      setData(json)
+    } catch {
+      setData({ error: t(['cheap sluts', 'Unexpected Error']), userid: '' })
     }
   }
 
@@ -55,16 +55,12 @@ export default () => {
         </Input>
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
-      <Show when={result() !== ''}>
-        <p class={styles.text}>
-          {t(['cheap sluts', 'remove', 'Removed Successfully'])}!
-        </p>
-      </Show>
-      <Show when={err() !== ''}>
-        <p class={styles.text}>
-          {t(['cheap sluts', 'Error'])}: {err()}
-        </p>
-      </Show>
+      <p class={styles.text}>
+        {data().userid !== '' &&
+          t(['cheap sluts', 'remove', 'Removed Successfully']) + '!'}
+        {data().error !== '' &&
+          t(['cheap sluts', 'Error']) + ': ' + data().error}
+      </p>
     </>
   )
 }

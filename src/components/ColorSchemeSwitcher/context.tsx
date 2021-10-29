@@ -2,9 +2,22 @@ import type { Component, Accessor } from 'solid-js'
 import { createSignal, createContext, useContext } from 'solid-js'
 import { light_theme, dark_theme } from '../../styles/theme.css'
 
-const ColorSchemeContext = createContext()
+interface ColorSchemeContextInterface {
+  scheme: Accessor<string>
+  className: Accessor<string>
+  init: () => void
+  setTheme: (theme: string) => void
+}
 
-const saveScheme = scheme => localStorage.setItem('color-scheme', scheme)
+const ColorSchemeContext = createContext<ColorSchemeContextInterface>({
+  scheme: () => 'auto',
+  className: () => light_theme,
+  init: () => {},
+  setTheme: (theme: string) => {},
+})
+
+const saveScheme = (scheme: string) =>
+  localStorage.setItem('color-scheme', scheme)
 const savedScheme = localStorage.getItem('color-scheme') || 'auto'
 
 const isColorSchemesSupported =
@@ -34,23 +47,21 @@ export const ColorSchemeProvider: Component<{}> = props => {
     }
   }
 
-  const store = [
+  const store = {
     scheme,
     className,
-    {
-      init() {
-        setTheme(savedScheme)
+    init() {
+      setTheme(savedScheme)
 
-        typeof darkModeMediaQuery.addEventListener === 'function'
-          ? darkModeMediaQuery.addEventListener(
-              'change',
-              onPrefersColorSchemeChanges
-            )
-          : darkModeMediaQuery.addListener(onPrefersColorSchemeChanges)
-      },
-      setTheme,
+      typeof darkModeMediaQuery.addEventListener === 'function'
+        ? darkModeMediaQuery.addEventListener(
+            'change',
+            onPrefersColorSchemeChanges
+          )
+        : darkModeMediaQuery.addListener(onPrefersColorSchemeChanges)
     },
-  ]
+    setTheme,
+  }
 
   return (
     <ColorSchemeContext.Provider value={store}>
@@ -59,4 +70,5 @@ export const ColorSchemeProvider: Component<{}> = props => {
   )
 }
 
-export const useColorScheme = () => useContext(ColorSchemeContext)
+export const useColorScheme = () =>
+  useContext<ColorSchemeContextInterface>(ColorSchemeContext)

@@ -5,11 +5,17 @@ import clsx from 'clsx'
 import { t } from '../../i18n'
 import { Button, Input } from '../../components'
 import { setTitle } from '../../helpers'
+import { createHrefUrl } from './utils'
+
+type ApiData = { error: string; name: string; picture: string }
 
 export default () => {
   const [shortname, setShortname] = createSignal('')
-  const [error, setError] = createSignal('')
-  const [data, setData] = createSignal<{ name?: string; picture?: string }>({})
+  const [data, setData] = createSignal<ApiData>({
+    error: '',
+    name: '',
+    picture: '',
+  })
 
   return (
     <>
@@ -28,7 +34,7 @@ export default () => {
         onClick={async () => {
           if (!shortname()) return
 
-          const res = await fetch(
+          const response = await fetch(
             `https://cheap-sluts.artemis69.workers.dev/api/vk`,
             {
               method: 'POST',
@@ -36,43 +42,28 @@ export default () => {
             }
           )
 
-          const data = await res.json()
+          const json: ApiData = await response.json()
 
-          if (data?.error) {
-            setError(data.error)
-            setData({})
-            return
-          }
-
-          setError('')
-
-          setData(data)
+          setData(json)
         }}
       >
         {t(['cheap sluts', 'picture-vk', 'Find'])}
       </Button>
-      <Show when={error() !== ''}>
+      {data().error !== '' && (
         <p class={styles.text}>
-          {t(['cheap sluts', 'Error'])}: {error()}
+          {t(['cheap sluts', 'Error'])}: {data().error}
         </p>
-      </Show>
-      <Show when={data()?.name !== undefined}>
-        {['slut', 'crime', 'gay', 'muslim', 'azerbaijan'].map(v => (
+      )}
+      {!!(data().name && data().picture) &&
+        ['slut', 'crime', 'gay', 'muslim', 'azerbaijan'].map(template => (
           <a
             class={clsx(styles.link, styles.margin6)}
             target="_blank"
-            href={`https://cheap-sluts.pages.dev/${v}?name=${encodeURIComponent(
-              data()?.name
-            )}&picture=${encodeURIComponent(
-              data()?.picture
-            )}&download=true&width=${
-              v === 'gay' || v === 'azerbaijan' ? 1920 : 411
-            }&height=${v === 'gay' || v === 'azerbaijan' ? 1080 : 823}`}
+            href={createHrefUrl(template, data().name, data().picture)}
           >
-            {t(['cheap sluts', 'picture', 'Create'], { template: v })}
+            {t(['cheap sluts', 'picture', 'Create'], { template })}
           </a>
         ))}
-      </Show>
     </>
   )
 }

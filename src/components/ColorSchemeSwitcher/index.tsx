@@ -5,7 +5,7 @@ import { useColorScheme } from './context'
 import { Radio } from '..'
 
 export const ColorSchemeSwitcher = () => {
-  const [scheme, , { setTheme }] = useColorScheme()
+  const { scheme, setTheme } = useColorScheme()
 
   return (
     <>

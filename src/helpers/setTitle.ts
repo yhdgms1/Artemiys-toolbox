@@ -1,6 +1,6 @@
 export const setTitle = (text: string) => {
   try {
-    document.querySelector('title').textContent = text
-  } catch (_) {}
+    ;(document.querySelector('title') as HTMLTitleElement).textContent = text
+  } catch {}
   return null
 }

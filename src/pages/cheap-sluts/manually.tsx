@@ -40,9 +40,11 @@ export default () => {
         return
       }
 
-      setErr('')
-      setResult(data.userid)
-    } catch (_) {
+      if (data.userid) {
+        setErr('')
+        setResult(data.userid)
+      }
+    } catch {
       setErr('Unexpected Error')
     }
   }

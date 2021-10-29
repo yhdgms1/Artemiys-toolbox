@@ -3,11 +3,11 @@ import { createSignal } from 'solid-js'
 import { t } from '../../i18n'
 import { Button } from '..'
 
-import type { Component } from 'solid-js'
+import type { Component, JSX } from 'solid-js'
 
 import { Dialog, DialogPanel, DialogTitle, DialogOverlay } from 'solid-headless'
 
-export const Settings: Component<{ children: {} }> = props => {
+export const Settings: Component<{ children: JSX.Element }> = props => {
   const [isOpen, setIsOpen] = createSignal(false)
 
   function closeModal() {

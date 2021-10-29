@@ -10,7 +10,7 @@ import { useColorScheme } from '../components/ColorSchemeSwitcher/context'
 const App = () => {
   const location = useLocation()
 
-  const [, className, { init }] = useColorScheme()
+  const { init, className } = useColorScheme()
 
   init()
 
