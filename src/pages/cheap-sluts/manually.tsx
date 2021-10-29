@@ -6,6 +6,8 @@ import { t } from '../../i18n'
 import { Button, Input, Checkbox } from '../../components'
 import { setTitle } from '../../helpers'
 
+type ApiData = { error: string; userid: string; message?: string }
+
 export default () => {
   setTitle('Create Manually')
 
@@ -13,14 +15,13 @@ export default () => {
   const [pic, setPic] = createSignal('')
   const [isPrivate, setIsPrivate] = createSignal(false)
 
-  const [err, setErr] = createSignal('')
-  const [result, setResult] = createSignal('')
+  const [data, setData] = createSignal<ApiData>({ error: '', userid: '' })
 
   const getData = async () => {
     if (name() === '' || pic() === '') return
 
     try {
-      const res = await fetch(
+      const response = await fetch(
         'https://cheap-sluts.artemis69.workers.dev/create',
         {
           method: 'POST',
@@ -32,20 +33,15 @@ export default () => {
         }
       )
 
-      const data: { error?: string; userid?: string } = await res.json()
+      const json: ApiData = await response.json()
 
-      if (data.error) {
-        setResult('')
-        setErr(data.error || 'Unexpected Error')
-        return
+      if (json.message) {
+        throw '500'
       }
 
-      if (data.userid) {
-        setErr('')
-        setResult(data.userid)
-      }
+      setData(json)
     } catch {
-      setErr('Unexpected Error')
+      setData({ error: t(['cheap sluts', 'Unexpected Error']), userid: '' })
     }
   }
 
@@ -79,22 +75,26 @@ export default () => {
         </Checkbox>
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
-      <Show when={result() !== ''}>
-        <p class={styles.text}>{t(['cheap sluts', 'Created Successfully'])}!</p>
-        <a
-          class={styles.link}
-          target="_blank"
-          rel="noopener noreferer"
-          href={'https://cheap-sluts.pages.dev/slut/' + result()}
-        >
-          {t(['cheap sluts', 'Look at this'])}
-        </a>
-      </Show>
-      <Show when={err() !== ''}>
+      {data().userid !== '' && (
+        <>
+          <p class={styles.text}>
+            {t(['cheap sluts', 'Created Successfully'])}!
+          </p>
+          <a
+            class={styles.link}
+            target="_blank"
+            rel="noopener noreferer"
+            href={'https://cheap-sluts.pages.dev/slut/' + data().userid}
+          >
+            {t(['cheap sluts', 'Look at this'])}
+          </a>
+        </>
+      )}
+      {data().error !== '' && (
         <p class={styles.text}>
-          {t(['cheap sluts', 'Error'])}: {err()}
+          {t(['cheap sluts', 'Error'])}: {data().error}
         </p>
-      </Show>
+      )}
     </>
   )
 }

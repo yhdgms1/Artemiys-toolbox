@@ -33,7 +33,12 @@ export default () => {
           onInput={e => setText(e.currentTarget.value)}
         />
         <div class={styles.responsive_container}>
-          <Button onClick={() => setOutput(translate(text(), schemas[schema]))}>
+          <Button
+            onClick={() => {
+              //@ts-ignore
+              setOutput(translate(text(), schemas[schema]))
+            }}
+          >
             {t(['t13n-id', 'button'])}!
           </Button>
           <CopyButton copy={output()} />
