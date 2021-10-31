@@ -31,7 +31,7 @@ export default () => {
       const json: ApiData = await response.json()
 
       if (json.message) {
-        throw '500'
+        throw new Error('500')
       }
 
       setData(json)
