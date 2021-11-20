@@ -6,36 +6,9 @@ export const title = style({
   display: 'block',
 })
 
-export const inputContainer = style({
-  display: 'flex',
-  flexDirection: 'column',
-})
-
 export const label = style({
   margin: '.4rem',
-  width: '45vw',
-  maxWidth: `calc(90vw - .8rem)`,
-  '@media': {
-    'screen and (max-width: 640px)': {
-      width: `90vw`,
-    },
-    'screen and (min-width: 1024px)': {
-      width: `calc(35vw - .8rem)`,
-    },
-  },
-  selectors: {
-    [`${inputContainer} &`]: {
-      width: `calc(calc(45vw / 2) - .4rem)`,
-      '@media': {
-        'screen and (max-width: 640px)': {
-          width: `calc(calc(90vw / 2) - .8rem)`,
-        },
-        'screen and (min-width: 1024px)': {
-          width: `calc(calc(35vw / 2) - .8rem)`,
-        },
-      },
-    },
-  },
+  width: `calc(100% - .8rem)`,
 })
 
 export const input = style({

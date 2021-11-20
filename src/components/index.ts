@@ -1,7 +1,7 @@
 export { Textarea } from './Textarea'
 export { Button, CopyButton } from './Button'
 export { Card } from './Card'
-export { Input, InputContainer } from './Input'
+export { Input } from './Input'
 export { Select } from './Select'
 export { Checkbox } from './Checkbox'
 export { Radio } from './Radio'

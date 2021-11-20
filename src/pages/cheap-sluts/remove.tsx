@@ -45,7 +45,7 @@ export default () => {
       <Link class={clsx(styles.link, styles.heading2)} href="/cheap-sluts">
         {t(['t13n-id', 'go back'])}
       </Link>
-      <div class={styles.flex_col}>
+      <div class={clsx(styles.flex_col, styles.lonely_container)}>
         <Input
           type="text"
           placeholder={t(['cheap sluts', 'remove', 'id'])}

@@ -14,12 +14,12 @@
   "license": "ISC",
   "devDependencies": {
     "@vanilla-extract/css": "^1.6.3",
-    "@vanilla-extract/vite-plugin": "^3.0.0",
+    "@vanilla-extract/vite-plugin": "^3.0.1",
     "prettier": "2.4.1",
-    "typescript": "^4.4.4",
-    "vite": "2.6.13",
+    "typescript": "^4.5.2",
+    "vite": "2.6.14",
     "vite-plugin-html": "^2.1.1",
-    "vite-plugin-solid": "^2.1.1"
+    "vite-plugin-solid": "^2.1.2"
   },
   "dependencies": {
     "@artemis69/iuliia": "^0.0.3",
@@ -28,8 +28,8 @@
     "copy-text-to-clipboard": "^3.0.1",
     "graphemer": "^1.2.0",
     "rosetta": "^1.1.0",
-    "solid-app-router": "^0.1.9",
-    "solid-headless": "^0.9.0",
-    "solid-js": "^1.1.7"
+    "solid-app-router": "^0.1.12",
+    "solid-headless": "^0.10.9",
+    "solid-js": "^1.2.5"
   }
 }

@@ -17,19 +17,23 @@ export default () => {
     picture: '',
   })
 
+  const renderers = ['slut', 'crime', 'gay', 'muslim', 'azerbaijan', 'mom']
+
   return (
     <>
       <Link class={clsx(styles.link, styles.heading2)} href="/cheap-sluts">
         {t(['t13n-id', 'go back'])}
       </Link>
-      <Input
-        type="text"
-        placeholder={t(['cheap sluts', 'vk', 'id or shortname'])}
-        spellcheck={false}
-        onInput={e => setShortname(e.currentTarget.value)}
-      >
-        {t(['cheap sluts', 'vk', 'id or shortname'])}
-      </Input>
+      <div class={styles.lonely_container}>
+        <Input
+          type="text"
+          placeholder={t(['cheap sluts', 'vk', 'id or shortname'])}
+          spellcheck={false}
+          onInput={e => setShortname(e.currentTarget.value)}
+        >
+          {t(['cheap sluts', 'vk', 'id or shortname'])}
+        </Input>
+      </div>
       <Button
         onClick={async () => {
           if (!shortname()) return
@@ -55,7 +59,7 @@ export default () => {
         </p>
       )}
       {!!(data().name && data().picture) &&
-        ['slut', 'crime', 'gay', 'muslim', 'azerbaijan'].map(template => (
+        renderers.map(template => (
           <a
             class={clsx(styles.link, styles.margin6)}
             target="_blank"

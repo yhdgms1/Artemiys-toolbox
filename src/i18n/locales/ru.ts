@@ -83,6 +83,7 @@ export default {
       Create: 'Создать, используя шаблон {{ template }}',
       'Fill in the fields above to begin creating a picture':
         'Заполните поля выше, чтобы приступить к созданию картинки',
+      'Additional options': 'Дополнительные опции',
       'Picture width': 'Ширина картинки',
       'Picture height': 'Высота картинки',
     },

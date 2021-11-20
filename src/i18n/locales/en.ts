@@ -79,6 +79,7 @@ export default {
       Create: 'Create using {{ template }} template',
       'Fill in the fields above to begin creating a picture':
         'Fill in the fields above to begin creating a picture',
+      'Additional options': 'Additional options',
       'Picture width': 'Picture width',
       'Picture height': 'Picture height',
     },

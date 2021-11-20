@@ -1,15 +1,19 @@
 export const createHrefUrl = (
   template: string,
   name: string,
-  picture: string
+  picture: string,
+  w?: number,
+  h?: number
 ): string => {
   const baseUrl = 'https://cheap-sluts.pages.dev/'
 
   const width =
-    '?width=' + (template === 'gay' || template === 'azerbaijan' ? 1920 : 411)
+    '?width=' + w ||
+    (template === 'gay' || template === 'azerbaijan' ? 1920 : 411)
 
   const height =
-    '&height=' + (template === 'gay' || template === 'azerbaijan' ? 1080 : 823)
+    '&height=' + h ||
+    (template === 'gay' || template === 'azerbaijan' ? 1080 : 823)
 
   return (
     baseUrl +
