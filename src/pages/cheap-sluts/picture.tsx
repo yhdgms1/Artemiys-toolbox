@@ -17,7 +17,15 @@ export default () => {
   const [width, setWidth] = createSignal(0)
   const [height, setHeight] = createSignal(0)
 
-  const renderers = ['slut', 'crime', 'gay', 'muslim', 'azerbaijan', 'mom']
+  const renderers = [
+    'slut',
+    'crime',
+    'gay',
+    'muslim',
+    'azerbaijan',
+    'mom',
+    'svinoros',
+  ]
 
   return (
     <>
