@@ -8,12 +8,12 @@ export const createHrefUrl = (
   const baseUrl = 'https://cheap-sluts.pages.dev/'
 
   const width =
-    '?width=' + w ||
-    (template === 'gay' || template === 'azerbaijan' ? 1920 : 411)
+    '?width=' +
+    (w || (template === 'gay' || template === 'azerbaijan' ? 1920 : 411))
 
   const height =
-    '&height=' + h ||
-    (template === 'gay' || template === 'azerbaijan' ? 1080 : 823)
+    '&height=' +
+    (h || (template === 'gay' || template === 'azerbaijan' ? 1080 : 823))
 
   return (
     baseUrl +

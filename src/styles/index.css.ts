@@ -99,3 +99,7 @@ export const lonely_container = style({
     },
   },
 })
+
+export const rotate_180 = style({
+  transform: 'rotate(180deg)',
+})

@@ -3,7 +3,7 @@ import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import clsx from 'clsx'
 import { t } from '../../i18n'
-import { Input } from '../../components'
+import { Input, Icon, ArrowDown } from '../../components'
 import { setTitle } from '../../helpers'
 import { createHrefUrl } from './utils'
 
@@ -43,8 +43,20 @@ export default () => {
         </Input>
         <Disclosure as="div" class={componentStyles.disclosure}>
           <DisclosureButton class={componentStyles.disclosureButton}>
-            {() => (
-              <span>{t(['cheap sluts', 'picture', 'Additional options'])}</span>
+            {({ isOpen }) => (
+              <>
+                <span class={componentStyles.disclosureButtonText}>
+                  {t(['cheap sluts', 'picture', 'Additional options'])}
+                </span>
+                <Icon
+                  class={clsx(
+                    componentStyles.disclosureButtonIcon,
+                    isOpen() && styles.rotate_180
+                  )}
+                >
+                  <ArrowDown />
+                </Icon>
+              </>
             )}
           </DisclosureButton>
           <DisclosurePanel class={styles.flex_col}>

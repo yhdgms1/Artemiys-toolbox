@@ -25,7 +25,7 @@ export const select = style({
       backgroundRepeat: 'no-repeat',
       backgroundPosition: `right .2rem top 50%, 0 0`,
       backgroundSize: `2rem auto, 100%`,
-      backgroundImage: vars.icons['arrow-down'],
+      // backgroundImage: vars.icons['arrow-down'],
     },
   },
 })

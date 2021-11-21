@@ -11,20 +11,30 @@ export const disclosure = style({
   width: `calc(100% - .8rem)`,
 })
 
+const disclosureButtonIconSize = '2rem'
+
 export const disclosureButton = style({
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: `right .2rem top 50%, 0 0`,
-  backgroundSize: `2rem auto, 100%`,
-  backgroundImage: vars.icons['arrow-down'],
   backgroundColor: vars.background[1],
   color: vars.color[0],
   border: `.063rem solid ${vars.border[0]}`,
   filter: vars.filter[0],
-  padding: '.25rem .35rem',
+  padding: '.05rem .15rem',
   borderRadius: '.45rem',
   width: '100%',
   cursor: 'pointer',
   ':hover': {
     filter: vars.filter[1],
   },
+  display: 'grid',
+  gridTemplateColumns: `1fr ${disclosureButtonIconSize}`,
+  alignItems: 'center',
+})
+
+export const disclosureButtonText = style({
+  width: `calc(100% + ${disclosureButtonIconSize})`,
+})
+
+export const disclosureButtonIcon = style({
+  width: disclosureButtonIconSize,
+  height: disclosureButtonIconSize,
 })
