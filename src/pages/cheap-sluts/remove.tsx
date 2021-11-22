@@ -5,8 +5,9 @@ import clsx from 'clsx'
 import { t } from '../../i18n'
 import { Button, Input } from '../../components'
 import { setTitle } from '../../helpers'
+import { apiUrl } from './utils'
 
-type ApiData = { error: string; userid: string; message?: string }
+type ApiData = { error: string; userid: string }
 
 export default () => {
   setTitle('Remove from site')
@@ -18,21 +19,14 @@ export default () => {
     if (id() === '') return
 
     try {
-      const response = await fetch(
-        'https://cheap-sluts.artemis69.workers.dev/delete',
-        {
-          method: 'POST',
-          body: JSON.stringify({
-            userid: id().trim(),
-          }),
-        }
-      )
+      const response = await fetch(apiUrl + 'delete', {
+        method: 'POST',
+        body: JSON.stringify({
+          userid: id().trim(),
+        }),
+      })
 
       const json: ApiData = await response.json()
-
-      if (json.message) {
-        throw new Error('500')
-      }
 
       setData(json)
     } catch {

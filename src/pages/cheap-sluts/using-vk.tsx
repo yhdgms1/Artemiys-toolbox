@@ -5,8 +5,9 @@ import clsx from 'clsx'
 import { t } from '../../i18n'
 import { Button, Input, Checkbox } from '../../components'
 import { setTitle } from '../../helpers'
+import { apiUrl } from './utils'
 
-type ApiData = { error: string; userid: string; message?: string }
+type ApiData = { error: string; userid: string }
 
 export default () => {
   setTitle('Create Using VK')
@@ -19,22 +20,15 @@ export default () => {
     if (shortname() === '') return
 
     try {
-      const response = await fetch(
-        'https://cheap-sluts.artemis69.workers.dev/create/vk',
-        {
-          method: 'POST',
-          body: JSON.stringify({
-            id: shortname().trim(),
-            private: isPrivate(),
-          }),
-        }
-      )
+      const response = await fetch(apiUrl + 'create/vk', {
+        method: 'POST',
+        body: JSON.stringify({
+          id: shortname().trim(),
+          private: isPrivate(),
+        }),
+      })
 
       const json: ApiData = await response.json()
-
-      if (json.message) {
-        throw new Error('500')
-      }
 
       setData(json)
     } catch {

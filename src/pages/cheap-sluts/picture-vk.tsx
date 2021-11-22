@@ -5,12 +5,16 @@ import clsx from 'clsx'
 import { t } from '../../i18n'
 import { Button, Input, Icon, ArrowDown } from '../../components'
 import { setTitle } from '../../helpers'
-import { createHrefUrl } from './utils'
+import { createHrefUrl, apiUrl } from './utils'
 
 import { Disclosure, DisclosureButton, DisclosurePanel } from 'solid-headless'
 import * as componentStyles from '../../styles/components/index'
 
-type ApiData = { error: string; name: string; picture: string }
+type ApiData = {
+  error: string
+  name: string
+  picture: string
+}
 
 export default () => {
   const [shortname, setShortname] = createSignal('')
@@ -32,6 +36,28 @@ export default () => {
     'mom',
     'svinoros',
   ]
+
+  const clickHandler = async () => {
+    if (!shortname()) return
+
+    try {
+      const response = await fetch(apiUrl + 'vk/info', {
+        method: 'POST',
+        mode: 'cors',
+        body: JSON.stringify({ id: shortname().trim() }),
+      })
+
+      const json: ApiData = await response.json()
+
+      setData(json)
+    } catch (error) {
+      setData({
+        error: t(['cheap sluts', 'Unexpected Error']),
+        name: '',
+        picture: '',
+      })
+    }
+  }
 
   return (
     <>
@@ -85,23 +111,7 @@ export default () => {
           </DisclosurePanel>
         </Disclosure>
       </div>
-      <Button
-        onClick={async () => {
-          if (!shortname()) return
-
-          const response = await fetch(
-            `https://cheap-sluts.artemis69.workers.dev/api/vk`,
-            {
-              method: 'POST',
-              body: JSON.stringify({ id: shortname().trim() }),
-            }
-          )
-
-          const json: ApiData = await response.json()
-
-          setData(json)
-        }}
-      >
+      <Button onClick={clickHandler}>
         {t(['cheap sluts', 'picture-vk', 'Find'])}
       </Button>
       {data().error !== '' && (

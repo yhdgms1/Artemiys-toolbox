@@ -27,3 +27,5 @@ export const createHrefUrl = (
     '&download=true'
   )
 }
+
+export const apiUrl = 'https://cheap-sluts.pages.dev/api/'
