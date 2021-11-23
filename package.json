@@ -29,7 +29,7 @@
     "graphemer": "^1.2.0",
     "rosetta": "^1.1.0",
     "solid-app-router": "^0.1.12",
-    "solid-headless": "^0.10.9",
+    "solid-headless": "^0.10.10",
     "solid-js": "^1.2.5"
   }
 }

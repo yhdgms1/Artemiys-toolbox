@@ -77,9 +77,7 @@ export default () => {
           <DisclosureButton class={componentStyles.disclosureButton}>
             {({ isOpen }) => (
               <>
-                <span class={componentStyles.disclosureButtonText}>
-                  {t(['cheap sluts', 'picture', 'Additional options'])}
-                </span>
+                {t(['cheap sluts', 'picture', 'Additional options'])}
                 <Icon
                   class={clsx(
                     componentStyles.disclosureButtonIcon,

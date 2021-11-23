@@ -14,27 +14,25 @@ export const disclosure = style({
 const disclosureButtonIconSize = '2rem'
 
 export const disclosureButton = style({
+  position: 'relative',
   backgroundColor: vars.background[1],
   color: vars.color[0],
   border: `.063rem solid ${vars.border[0]}`,
   filter: vars.filter[0],
-  padding: '.05rem .15rem',
+  padding: '.25rem .35rem',
   borderRadius: '.45rem',
   width: '100%',
+  minHeight: disclosureButtonIconSize,
   cursor: 'pointer',
   ':hover': {
     filter: vars.filter[1],
   },
-  display: 'grid',
-  gridTemplateColumns: `1fr ${disclosureButtonIconSize}`,
-  alignItems: 'center',
-})
-
-export const disclosureButtonText = style({
-  width: `calc(100% + ${disclosureButtonIconSize})`,
 })
 
 export const disclosureButtonIcon = style({
   width: disclosureButtonIconSize,
   height: disclosureButtonIconSize,
+  position: 'absolute',
+  right: '.25rem',
+  top: 0,
 })
