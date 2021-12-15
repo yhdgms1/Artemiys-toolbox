@@ -1,4 +1,4 @@
-import * as styles from '../../styles/index.css'
+import { ApiResponse } from './types'
 import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import clsx from 'clsx'
@@ -6,14 +6,13 @@ import { t } from '../../i18n'
 import { Button, Input } from '../../components'
 import { setTitle } from '../../helpers'
 import { apiUrl } from './utils'
-
-type ApiData = { error: string; userid: string }
+import * as styles from '../../styles/index.css'
 
 export default () => {
   setTitle('Remove from site')
 
   const [id, setId] = createSignal('')
-  const [data, setData] = createSignal<ApiData>({ error: '', userid: '' })
+  const [data, setData] = createSignal<ApiResponse>({})
 
   const getData = async () => {
     if (id() === '') return
@@ -22,15 +21,15 @@ export default () => {
       const response = await fetch(apiUrl + 'delete', {
         method: 'POST',
         body: JSON.stringify({
-          userid: id().trim(),
+          userid: id(),
         }),
       })
 
-      const json: ApiData = await response.json()
+      const json: ApiResponse = await response.json()
 
       setData(json)
     } catch {
-      setData({ error: t(['cheap sluts', 'Unexpected Error']), userid: '' })
+      setData({ error: t(['cheap sluts', 'Unexpected Error']) })
     }
   }
 
@@ -43,17 +42,19 @@ export default () => {
         <Input
           type="text"
           placeholder={t(['cheap sluts', 'remove', 'id'])}
-          onInput={e => setId(e.currentTarget.value)}
+          onInput={e => setId(e.currentTarget.value.trim())}
         >
           {t(['cheap sluts', 'remove', 'id'])}
         </Input>
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <p class={styles.text}>
-        {data().userid !== '' &&
-          t(['cheap sluts', 'remove', 'Removed Successfully']) + '!'}
-        {data().error !== '' &&
-          t(['cheap sluts', 'Error']) + ': ' + data().error}
+        <Show when={data().userid}>
+          {t(['cheap sluts', 'remove', 'Removed Successfully']) + '!'}
+        </Show>
+        <Show when={data().error}>
+          {t(['cheap sluts', 'Error']) + ': ' + data().error}
+        </Show>
       </p>
     </>
   )

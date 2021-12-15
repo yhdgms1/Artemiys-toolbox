@@ -74,7 +74,7 @@ export default {
     },
     remove: {
       id: 'Идентификатор',
-      'Removed Successfully': 'Успешно удалён',
+      'Removed Successfully': 'Успешно удалено',
     },
     'picture-vk': {
       Find: 'Найти профиль',

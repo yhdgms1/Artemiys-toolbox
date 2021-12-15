@@ -1,4 +1,4 @@
-import * as styles from '../../styles/index.css'
+import { ApiResponse } from './types'
 import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import clsx from 'clsx'
@@ -6,8 +6,7 @@ import { t } from '../../i18n'
 import { Button, Input, Checkbox } from '../../components'
 import { setTitle } from '../../helpers'
 import { apiUrl } from './utils'
-
-type ApiData = { error: string; userid: string }
+import * as styles from '../../styles/index.css'
 
 export default () => {
   setTitle('Create Manually')
@@ -16,7 +15,7 @@ export default () => {
   const [pic, setPic] = createSignal('')
   const [isPrivate, setIsPrivate] = createSignal(false)
 
-  const [data, setData] = createSignal<ApiData>({ error: '', userid: '' })
+  const [data, setData] = createSignal<ApiResponse>({ error: '', userid: '' })
 
   const getData = async () => {
     if (name() === '' || pic() === '') return
@@ -31,11 +30,11 @@ export default () => {
         }),
       })
 
-      const json: ApiData = await response.json()
+      const json: ApiResponse = await response.json()
 
       setData(json)
     } catch {
-      setData({ error: t(['cheap sluts', 'Unexpected Error']), userid: '' })
+      setData({ error: t(['cheap sluts', 'Unexpected Error']) })
     }
   }
 
@@ -69,7 +68,7 @@ export default () => {
         </Checkbox>
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
-      {data().userid !== '' && (
+      <Show when={data().userid}>
         <>
           <p class={styles.text}>
             {t(['cheap sluts', 'Created Successfully'])}!
@@ -83,12 +82,12 @@ export default () => {
             {t(['cheap sluts', 'Look at this'])}
           </a>
         </>
-      )}
-      {data().error !== '' && (
+      </Show>
+      <Show when={data().error}>
         <p class={styles.text}>
           {t(['cheap sluts', 'Error'])}: {data().error}
         </p>
-      )}
+      </Show>
     </>
   )
 }

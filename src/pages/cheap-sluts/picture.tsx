@@ -1,6 +1,5 @@
-import * as styles from '../../styles/index.css'
 import { Link } from 'solid-app-router'
-import { createSignal, Show } from 'solid-js'
+import { createSignal, Show, For } from 'solid-js'
 import clsx from 'clsx'
 import { t } from '../../i18n'
 import { Input, Icon, ArrowDown } from '../../components'
@@ -8,7 +7,8 @@ import { setTitle } from '../../helpers'
 import { createHrefUrl } from './utils'
 
 import { Disclosure, DisclosureButton, DisclosurePanel } from 'solid-headless'
-import * as componentStyles from '../../styles/components/index'
+import * as styles from '../../styles/index.css'
+import * as componentStyles from '../../styles/components/index.css'
 
 export default () => {
   const [name, setName] = createSignal('')
@@ -85,25 +85,30 @@ export default () => {
           </DisclosurePanel>
         </Disclosure>
       </div>
-      {name() !== '' && pic() !== '' ? (
-        renderers.map(template => (
-          <a
-            class={clsx(styles.link, styles.margin6)}
-            target="_blank"
-            href={createHrefUrl(template, name(), pic(), width(), height())}
-          >
-            {t(['cheap sluts', 'picture', 'Create'], { template })}
-          </a>
-        ))
-      ) : (
-        <p class={styles.margin6}>
-          {t([
-            'cheap sluts',
-            'picture',
-            'Fill in the fields above to begin creating a picture',
-          ])}
-        </p>
-      )}
+      <Show
+        when={name() !== '' && pic() !== ''}
+        fallback={
+          <p class={styles.margin6}>
+            {t([
+              'cheap sluts',
+              'picture',
+              'Fill in the fields above to begin creating a picture',
+            ])}
+          </p>
+        }
+      >
+        <For each={renderers}>
+          {template => (
+            <a
+              class={clsx(styles.link, styles.margin6)}
+              target="_blank"
+              href={createHrefUrl(template, name(), pic(), width(), height())}
+            >
+              {t(['cheap sluts', 'picture', 'Create'], { template })}
+            </a>
+          )}
+        </For>
+      </Show>
     </>
   )
 }

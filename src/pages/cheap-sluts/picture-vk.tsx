@@ -1,28 +1,23 @@
-import * as styles from '../../styles/index.css'
 import { Link } from 'solid-app-router'
-import { createSignal } from 'solid-js'
+import { createSignal, Show, For } from 'solid-js'
 import clsx from 'clsx'
 import { t } from '../../i18n'
 import { Button, Input, Icon, ArrowDown } from '../../components'
 import { setTitle } from '../../helpers'
 import { createHrefUrl, apiUrl } from './utils'
-
 import { Disclosure, DisclosureButton, DisclosurePanel } from 'solid-headless'
-import * as componentStyles from '../../styles/components/index'
+import * as componentStyles from '../../styles/components/index.css'
+import * as styles from '../../styles/index.css'
 
 type ApiData = {
-  error: string
-  name: string
-  picture: string
+  error?: string
+  name?: string
+  picture?: string
 }
 
 export default () => {
   const [shortname, setShortname] = createSignal('')
-  const [data, setData] = createSignal<ApiData>({
-    error: '',
-    name: '',
-    picture: '',
-  })
+  const [data, setData] = createSignal<ApiData>({})
 
   const [width, setWidth] = createSignal(0)
   const [height, setHeight] = createSignal(0)
@@ -44,7 +39,7 @@ export default () => {
       const response = await fetch(apiUrl + 'vk/info', {
         method: 'POST',
         mode: 'cors',
-        body: JSON.stringify({ id: shortname().trim() }),
+        body: JSON.stringify({ id: shortname() }),
       })
 
       const json: ApiData = await response.json()
@@ -53,8 +48,6 @@ export default () => {
     } catch (error) {
       setData({
         error: t(['cheap sluts', 'Unexpected Error']),
-        name: '',
-        picture: '',
       })
     }
   }
@@ -69,7 +62,7 @@ export default () => {
           type="text"
           placeholder={t(['cheap sluts', 'vk', 'id or shortname'])}
           spellcheck={false}
-          onInput={e => setShortname(e.currentTarget.value)}
+          onInput={e => setShortname(e.currentTarget.value.trim())}
         >
           {t(['cheap sluts', 'vk', 'id or shortname'])}
         </Input>
@@ -112,27 +105,31 @@ export default () => {
       <Button onClick={clickHandler}>
         {t(['cheap sluts', 'picture-vk', 'Find'])}
       </Button>
-      {data().error !== '' && (
+      <Show when={data().error}>
         <p class={styles.text}>
           {t(['cheap sluts', 'Error'])}: {data().error}
         </p>
-      )}
-      {!!(data().name && data().picture) &&
-        renderers.map(template => (
-          <a
-            class={clsx(styles.link, styles.margin6)}
-            target="_blank"
-            href={createHrefUrl(
-              template,
-              data().name,
-              data().picture,
-              width(),
-              height()
-            )}
-          >
-            {t(['cheap sluts', 'picture', 'Create'], { template })}
-          </a>
-        ))}
+      </Show>
+      <Show when={'name' in data() && 'picture' in data()}>
+        <For each={renderers}>
+          {template => (
+            <a
+              class={clsx(styles.link, styles.margin6)}
+              target="_blank"
+              href={createHrefUrl(
+                template,
+                //@ts-ignore
+                data().name,
+                data().picture,
+                width(),
+                height()
+              )}
+            >
+              {t(['cheap sluts', 'picture', 'Create'], { template })}
+            </a>
+          )}
+        </For>
+      </Show>
     </>
   )
 }

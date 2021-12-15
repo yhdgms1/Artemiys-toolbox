@@ -1,4 +1,4 @@
-import * as styles from '../../styles/index.css'
+import { ApiResponse } from './types'
 import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import clsx from 'clsx'
@@ -6,15 +6,14 @@ import { t } from '../../i18n'
 import { Button, Input, Checkbox } from '../../components'
 import { setTitle } from '../../helpers'
 import { apiUrl } from './utils'
-
-type ApiData = { error: string; userid: string }
+import * as styles from '../../styles/index.css'
 
 export default () => {
   setTitle('Create Using VK')
 
   const [shortname, setShortname] = createSignal('')
   const [isPrivate, setIsPrivate] = createSignal(false)
-  const [data, setData] = createSignal<ApiData>({ error: '', userid: '' })
+  const [data, setData] = createSignal<ApiResponse>({})
 
   const getData = async () => {
     if (shortname() === '') return
@@ -23,16 +22,16 @@ export default () => {
       const response = await fetch(apiUrl + 'create/vk', {
         method: 'POST',
         body: JSON.stringify({
-          id: shortname().trim(),
+          id: shortname(),
           private: isPrivate(),
         }),
       })
 
-      const json: ApiData = await response.json()
+      const json: ApiResponse = await response.json()
 
       setData(json)
     } catch {
-      setData({ error: t(['cheap sluts', 'Unexpected Error']), userid: '' })
+      setData({ error: t(['cheap sluts', 'Unexpected Error']) })
     }
   }
 
@@ -45,7 +44,7 @@ export default () => {
         <Input
           type="text"
           placeholder={t(['cheap sluts', 'vk', 'id or shortname'])}
-          onInput={e => setShortname(e.currentTarget.value)}
+          onInput={e => setShortname(e.currentTarget.value.trim())}
         >
           {t(['cheap sluts', 'vk', 'id or shortname'])}
         </Input>
@@ -57,30 +56,26 @@ export default () => {
         </Checkbox>
       </div>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
-
-      {data().error !== '' && (
+      <Show when={data().error}>
         <p class={styles.text}>
           {t(['cheap sluts', 'Error'])}: {data().error}
         </p>
-      )}
-
-      {data().userid !== '' && (
-        <>
-          {!data().error && (
-            <p class={styles.text}>
-              {t(['cheap sluts', 'Created Successfully'])}!
-            </p>
-          )}
-          <a
-            class={styles.link}
-            target="_blank"
-            rel="noopener noreferer"
-            href={'https://cheap-sluts.pages.dev/slut/' + data().userid}
-          >
-            {t(['cheap sluts', 'Look at this'])}
-          </a>
-        </>
-      )}
+      </Show>
+      <Show when={data().userid}>
+        <Show when={!data().error}>
+          <p class={styles.text}>
+            {t(['cheap sluts', 'Created Successfully'])}!
+          </p>
+        </Show>
+        <a
+          class={styles.link}
+          target="_blank"
+          rel="noopener noreferer"
+          href={'https://cheap-sluts.pages.dev/slut/' + data().userid}
+        >
+          {t(['cheap sluts', 'Look at this'])}
+        </a>
+      </Show>
     </>
   )
 }
