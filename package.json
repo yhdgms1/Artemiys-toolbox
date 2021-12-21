@@ -14,11 +14,12 @@
   "license": "ISC",
   "devDependencies": {
     "@vanilla-extract/css": "^1.6.8",
-    "@vanilla-extract/vite-plugin": "^3.1.0",
+    "@vanilla-extract/vite-plugin": "^3.1.1",
     "prettier": "2.5.1",
     "typescript": "^4.5.4",
-    "vite": "2.7.2",
+    "vite": "2.6.14",
     "vite-plugin-html": "^2.1.1",
+    "vite-plugin-pwa": "^0.11.12",
     "vite-plugin-solid": "^2.1.4"
   },
   "dependencies": {
@@ -29,7 +30,9 @@
     "graphemer": "^1.3.0",
     "rosetta": "^1.1.0",
     "solid-app-router": "^0.1.14",
-    "solid-headless": "^0.10.10",
-    "solid-js": "^1.2.6"
+    "solid-headless": "^0.10.12",
+    "solid-js": "^1.2.6",
+    "solid-utils": "^0.8.1",
+    "workbox-window": "^6.4.2"
   }
 }

@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import { minifyHtml } from 'vite-plugin-html'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import { default as solidPlugin } from 'vite-plugin-solid'
+import { VitePWA } from 'vite-plugin-pwa'
+import pkg from './package.json'
 
 export default defineConfig(({ mode }) => {
   const DEV = mode !== 'production'
@@ -14,6 +16,35 @@ export default defineConfig(({ mode }) => {
         },
       }),
       vanillaExtractPlugin(),
+      VitePWA({
+        includeAssets: ['og.jpg', 'robots.txt'],
+        manifest: {
+          theme_color: '#fd6c9e',
+          background_color: '#171717',
+          display: 'minimal-ui',
+          scope: '/',
+          start_url: '.',
+          name: "Artemiy's Toolbox",
+          short_name: 'Toolbox',
+          description: pkg.description,
+          id: '/',
+          icons: [
+            {
+              src: '/android-chrome-192x192.png',
+              sizes: '192x192',
+              type: 'image/png',
+            },
+            {
+              src: '/android-chrome-512x512.png',
+              sizes: '512x512',
+              type: 'image/png',
+            },
+          ],
+        },
+        workbox: {
+          cleanupOutdatedCaches: true,
+        },
+      }),
       !DEV && minifyHtml(),
     ],
     build: {
