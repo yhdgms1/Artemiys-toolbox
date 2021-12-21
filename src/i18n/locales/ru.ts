@@ -122,6 +122,11 @@ export default {
     Vibrate: 'Вибрировать',
     Stop: 'Остановить',
   },
+  "There's a new update available": 'Доступно новое обновление',
+  'Click on reload button to update':
+    'Нажмите на кнопку перезагрузки для обновления',
+  Reload: 'Перезагрузить',
+  Close: 'Закрыть',
   home: {
     'characters count':
       'Подсчитать количество символов в тексте, включая эмодзи',

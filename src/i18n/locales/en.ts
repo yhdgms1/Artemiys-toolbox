@@ -123,6 +123,10 @@ export default {
     Vibrate: 'Vibrate',
     Stop: 'Stop',
   },
+  "There's a new update available": "There's a new update available",
+  'Click on reload button to update': 'Click on reload button to update.',
+  Reload: 'Reload',
+  Close: 'Close',
   home: {
     'characters count':
       'Counts the number of characters in the text, including emoji',
