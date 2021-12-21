@@ -21,11 +21,13 @@ export default {
     Light: 'Светлая',
     System: 'Системная',
     Dark: 'Тёмная',
-    Close: 'Закрыть',
-    Settings: 'Настройки',
   },
   settings: {
     'Open settings dialog': 'Открыть диалоговое окно настроек',
+    Close: 'Закрыть',
+    Settings: 'Настройки',
+    Language: 'Язык',
+    Auto: 'Авто',
   },
   'repeat something n times': {
     title: 'Повторитель текста',

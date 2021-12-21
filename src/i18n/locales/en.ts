@@ -21,11 +21,13 @@ export default {
     Light: 'Light',
     System: 'System',
     Dark: 'Dark',
-    Close: 'Close',
-    Settings: 'Settings',
   },
   settings: {
     'Open settings dialog': 'Open settings dialog',
+    Close: 'Close',
+    Settings: 'Settings',
+    Language: 'Language',
+    Auto: 'Auto',
   },
   'repeat something n times': {
     title: 'Repeat text',

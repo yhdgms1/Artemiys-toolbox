@@ -3,7 +3,12 @@ import dict from './dictionary'
 
 const i18n = rosetta(dict)
 
-const isRussian = navigator.language.toLowerCase().includes('ru')
+const savedLocale = localStorage.getItem('locale')
+
+const isRussian =
+  savedLocale === null
+    ? navigator.language.toLowerCase().includes('ru')
+    : savedLocale === 'ru'
 
 document.documentElement.setAttribute('lang', isRussian ? 'ru' : 'en')
 

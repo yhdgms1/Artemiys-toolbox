@@ -49,12 +49,10 @@ export const Settings: Component<{ children: JSX.Element }> = props => {
         <div class={styles.container}>
           <DialogPanel class={styles.dialogPanel}>
             <DialogTitle as="h3" class={styles.dialogTitle}>
-              {t(['color scheme switcher', 'Settings'])}
+              {t(['settings', 'Settings'])}
             </DialogTitle>
             {props.children}
-            <Button onClick={closeModal}>
-              {t(['color scheme switcher', 'Close'])}
-            </Button>
+            <Button onClick={closeModal}>{t(['settings', 'Close'])}</Button>
           </DialogPanel>
         </div>
       </Dialog>

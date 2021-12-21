@@ -1,5 +1,4 @@
 import * as styles from './style.css'
-import { createSignal, useContext } from 'solid-js'
 import { t } from '../../i18n'
 import { useColorScheme } from './context'
 import { Radio } from '..'

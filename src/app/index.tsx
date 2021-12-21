@@ -2,7 +2,12 @@ import * as styles from '../styles/index.css'
 import * as appStyles from './style.css'
 import { Link, useLocation } from 'solid-app-router'
 import { ErrorBoundary, createEffect } from 'solid-js'
-import { Unknown, ColorSchemeSwitcher, Settings } from '../components'
+import {
+  Unknown,
+  ColorSchemeSwitcher,
+  Settings,
+  LanguageSwitcher,
+} from '../components'
 import { AppRoutes } from './routes'
 import clsx from 'clsx'
 import { useColorScheme } from '../components/ColorSchemeSwitcher/context'
@@ -34,6 +39,7 @@ const App = () => {
         </nav>
         <Settings>
           <ColorSchemeSwitcher />
+          <LanguageSwitcher />
         </Settings>
       </header>
       <main
