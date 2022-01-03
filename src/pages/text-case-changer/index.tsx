@@ -50,7 +50,7 @@ export default () => {
     <>
       <h2 class={styles.heading2}>{t(['text-case-changer', 'title'])}</h2>
       <Textarea
-        placeholder={t(['text-case-changer', 'Enter the text here'])}
+        placeholder={t('Enter the text here')}
         onInput={e => setText(e.currentTarget.value)}
       />
       <div class={styles.responsive_container}>
@@ -68,7 +68,7 @@ export default () => {
       <Textarea
         readOnly={true}
         value={output()}
-        placeholder={t(['text-case-changer', 'Result will be here'])}
+        placeholder={t('Result will be here')}
       />
     </>
   )

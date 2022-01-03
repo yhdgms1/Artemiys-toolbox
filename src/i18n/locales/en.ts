@@ -8,7 +8,6 @@ export default {
   },
   'string-backwards': {
     header: 'Turning text backwards',
-    'Type text': 'Type text',
     'Text backwards will be here': 'Text backwards will be here',
   },
   btn__copy: {
@@ -31,14 +30,12 @@ export default {
   },
   'repeat something n times': {
     title: 'Repeat text',
-    result: 'Result will be here',
     repeat: 'Repeat',
     it: 'it',
     'so many': 'so many',
     times: 'times',
   },
   swagify: {
-    result: 'Result will be here',
     title: 'Swagify',
     'Enter the text to swagify': 'Enter the text to swagify',
   },
@@ -106,16 +103,12 @@ export default {
   },
   'text-case-changer': {
     title: 'Text Case Changer',
-    'Enter the text here': 'Enter the text here',
-    'Result will be here': 'Result will be here',
     'to uppercase': 'to uppercase',
     'to lowercase': 'to lowercase',
     'randomise case': 'randomize case',
   },
   'chat-dot-replacer': {
     title: 'Chat dot replacer',
-    'Type text': 'Type text',
-    Result: 'Result will be here',
     'Replace dots': 'Replace dots',
     'Bring it back': 'Bring it back',
     ' (dot) ': ' (dot) ',
@@ -129,6 +122,8 @@ export default {
   'Click on reload button to update': 'Click on reload button to update.',
   Reload: 'Reload',
   Close: 'Close',
+  'Enter the text here': 'Enter the text here',
+  'Result will be here': 'Result will be here',
   home: {
     'characters count':
       'Counts the number of characters in the text, including emoji',
@@ -141,5 +136,7 @@ export default {
     'text case changer': 'text CASE chAnGeR',
     'chat dot replacer': 'Replace "." to " (dot) " to share link in chat',
     vibrator: 'Just a vibrator',
+    'murmur hash': 'Use the hash function murmur in your browser',
+    scule: 'String case utils',
   },
 }

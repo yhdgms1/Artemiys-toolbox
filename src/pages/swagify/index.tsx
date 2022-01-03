@@ -25,7 +25,7 @@ export default () => {
       <Textarea
         readOnly={true}
         value={output()}
-        placeholder={t(['swagify', 'result'])}
+        placeholder={t('Result will be here')}
       />
     </>
   )

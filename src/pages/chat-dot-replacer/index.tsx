@@ -14,7 +14,7 @@ export default () => {
     <>
       <h2 class={styles.heading2}>{t(['chat-dot-replacer', 'title'])}</h2>
       <Textarea
-        placeholder={t(['chat-dot-replacer', 'Type text'])}
+        placeholder={t('Enter the text here')}
         onInput={e => setInput(e.currentTarget.value)}
       />
       <div class={styles.responsive_container}>
@@ -37,7 +37,7 @@ export default () => {
       <Textarea
         readOnly={true}
         value={output()}
-        placeholder={t(['chat-dot-replacer', 'Result'])}
+        placeholder={t('Result will be here')}
       />
     </>
   )

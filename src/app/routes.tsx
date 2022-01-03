@@ -59,6 +59,11 @@ export const AppRoutes = () => (
       element={lazy(() => import('../pages/chat-dot-replacer'))}
     />
     <Route path="/vibrator" element={lazy(() => import('../pages/vibrator'))} />
+    <Route
+      path="/murmur-hash"
+      element={lazy(() => import('../pages/murmur-hash'))}
+    />
+    <Route path="/scule" element={lazy(() => import('../pages/scule'))} />
     <Route path="**" element={NotFound} />
   </Routes>
 )

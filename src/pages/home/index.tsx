@@ -13,6 +13,8 @@ const tools = [
   'text case changer',
   'chat dot replacer',
   'vibrator',
+  'murmur hash',
+  'scule',
 ]
 
 export default () => {

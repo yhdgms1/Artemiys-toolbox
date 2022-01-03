@@ -8,7 +8,6 @@ export default {
   },
   'string-backwards': {
     header: 'Перевернуть текст задом наперёд',
-    'Type text': 'Введите текст',
     'Text backwards will be here': 'Текст задом наперёд будет тут',
   },
   btn__copy: {
@@ -31,7 +30,6 @@ export default {
   },
   'repeat something n times': {
     title: 'Повторитель текста',
-    result: 'Результат будет тут',
     repeat: 'Повторить',
     it: 'это',
     'so many': 'столько',
@@ -41,7 +39,6 @@ export default {
     'Enter the text to swagify':
       'Введите текст, чтобы [90s KID]$$$СТиЛиЗОвАТь ЕГо$$$',
     title: 'Стилизуйте ваш [1337][LEGIT]~ТЕкст~',
-    result: 'Результат будет тут',
   },
   t13n: {
     desc: 'Выберите стандарт транслитерации',
@@ -105,7 +102,6 @@ export default {
   },
   'text-case-changer': {
     title: 'Изменение регистра текста',
-    'Enter the text here': 'Введите текст сюда',
     'Result will be here': 'Результат будет тут',
     'to uppercase': 'К прописным буквам',
     'to lowercase': 'К строчным буквам',
@@ -113,8 +109,6 @@ export default {
   },
   'chat-dot-replacer': {
     title: 'Заменитель точек для сообщений в чате',
-    'Type text': 'Введите текст',
-    Result: 'Результат будет тут',
     'Replace dots': 'Заменить точки',
     'Bring it back': 'Вернуть обратно',
     ' (dot) ': ' (точка) ',
@@ -129,6 +123,8 @@ export default {
     'Нажмите на кнопку перезагрузки для обновления',
   Reload: 'Перезагрузить',
   Close: 'Закрыть',
+  'Enter the text here': 'Введите текст сюда',
+  'Result will be here': 'Результат будет тут',
   home: {
     'characters count':
       'Подсчитать количество символов в тексте, включая эмодзи',
@@ -141,5 +137,7 @@ export default {
     'chat dot replacer':
       'Заменить "." на " (точка) ", чтобы поделиться ссылкой в чате',
     vibrator: 'Просто вибратор',
+    'murmur hash': 'Используйте хэш-функцию murmur в вашем браузере',
+    scule: 'Утилиты строкового регистра',
   },
 }

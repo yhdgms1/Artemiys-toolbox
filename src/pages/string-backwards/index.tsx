@@ -15,7 +15,7 @@ export default () => {
     <>
       <h2 class={styles.heading2}>{t(['string-backwards', 'header'])}</h2>
       <Textarea
-        placeholder={t(['string-backwards', 'Type text'])}
+        placeholder={t('Enter the text here')}
         onInput={e =>
           setOutput(
             splitter.splitGraphemes(e.currentTarget.value).reverse().join('')
