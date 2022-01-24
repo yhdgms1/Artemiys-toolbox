@@ -654,12 +654,17 @@ export default {
       ъ: '``',
       ы: 'y`',
       ь: '`',
-      э: 'e`',
+      э: 'е`',
       ю: 'yu',
       я: 'ya',
     },
     prev_mapping: null,
-    next_mapping: { це: 'c', ци: 'c', цй: 'c', цы: 'c' },
+    next_mapping: {
+      це: 'c',
+      ци: 'c',
+      цй: 'c',
+      цы: 'c',
+    },
     ending_mapping: null,
   },
   icao_doc_9303: {
@@ -1283,18 +1288,13 @@ export default {
       ю: 'yu',
       я: 'ya',
     },
-    prev_mapping: {
-      е: 'ye',
-      ае: 'ye',
-      ие: 'ye',
-      ое: 'ye',
-      уе: 'ye',
-      эе: 'ye',
-      юе: 'ye',
-      яе: 'ye',
+    prev_mapping: null,
+    next_mapping: {
+      ъе: 'y',
     },
-    next_mapping: { ъе: 'y' },
-    ending_mapping: { ый: 'iy' },
+    ending_mapping: {
+      ый: 'iy',
+    },
   },
   yandex_money: {
     mapping: {
