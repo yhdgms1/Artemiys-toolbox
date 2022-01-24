@@ -16,24 +16,24 @@
     "@vanilla-extract/css": "^1.6.8",
     "@vanilla-extract/vite-plugin": "^3.1.2",
     "prettier": "2.5.1",
-    "typescript": "^4.5.4",
+    "typescript": "^4.5.5",
     "vite": "2.6.14",
     "vite-plugin-html": "^2.1.2",
-    "vite-plugin-pwa": "^0.11.12",
-    "vite-plugin-solid": "^2.1.4"
+    "vite-plugin-pwa": "^0.11.13",
+    "vite-plugin-solid": "^2.2.4"
   },
   "dependencies": {
-    "@artemis69/iuliia": "^0.0.3",
     "@artemis69/swagify": "^1.1.2",
     "clsx": "^1.1.1",
     "copy-text-to-clipboard": "^3.0.1",
     "graphemer": "^1.3.0",
+    "iuliia": "^0.7.2",
     "murmurhash-es": "^0.1.1",
     "rosetta": "^1.1.0",
     "scule": "^0.2.1",
-    "solid-app-router": "^0.1.14",
+    "solid-app-router": "^0.2.1",
     "solid-headless": "^0.10.12",
-    "solid-js": "^1.2.6",
+    "solid-js": "^1.3.3",
     "solid-utils": "^0.8.1",
     "workbox-window": "^6.4.2"
   }

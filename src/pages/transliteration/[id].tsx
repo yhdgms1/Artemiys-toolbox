@@ -1,7 +1,7 @@
 import * as styles from '../../styles/index.css'
 import { Link, useParams } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
-import { translate } from '@artemis69/iuliia'
+import { translate } from 'iuliia/translate'
 import { t } from '../../i18n'
 import { CopyButton, Textarea, Button } from '../../components'
 import { setTitle } from '../../helpers'
