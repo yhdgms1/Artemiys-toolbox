@@ -13,6 +13,7 @@ import {
   ColorSchemeSwitcher,
   Settings,
   LanguageSwitcher,
+  Header,
 } from '~/components'
 import clsx from 'clsx'
 import { useColorScheme } from '~/components/ColorSchemeSwitcher/context'
@@ -21,15 +22,13 @@ import { UpdateDialog } from '~/components/UpdateDialog'
 const App = () => {
   const location = useLocation()
 
-  const { init, className } = useColorScheme()
-
-  init()
+  const { className } = useColorScheme()
 
   createEffect(() => (document.body.className = className()))
 
   return (
     <>
-      <header class={appStyles.header}>
+      <Header>
         <nav>
           <h1>
             <Link
@@ -47,7 +46,7 @@ const App = () => {
           <ColorSchemeSwitcher />
           <LanguageSwitcher />
         </Settings>
-      </header>
+      </Header>
       <main
         class={location.pathname === '/' ? styles.main : styles.main_layout}
         role="main"

@@ -5,26 +5,26 @@ import { light_theme, dark_theme } from '../../styles/theme.css'
 interface ColorSchemeContextInterface {
   scheme: Accessor<string>
   className: Accessor<string>
-  init: () => void
   setTheme: (theme: string) => void
 }
 
 const ColorSchemeContext = createContext<ColorSchemeContextInterface>({
   scheme: () => 'auto',
   className: () => light_theme,
-  init: () => {},
   setTheme: (theme: string) => {},
 })
 
-const saveScheme = (scheme: string) =>
-  localStorage.setItem('color-scheme', scheme)
+function saveScheme(scheme: string) {
+  localStorage.setItem('scheme', scheme)
+}
+
 const savedScheme = localStorage.getItem('color-scheme') || 'auto'
 
 const isColorSchemesSupported =
   window.matchMedia('(prefers-color-scheme)').media !== 'not all'
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
-export const ColorSchemeProvider: Component<{}> = props => {
+export const ColorSchemeProvider: Component = props => {
   const [scheme, setScheme] = createSignal(savedScheme)
   const [className, setClassName] = createSignal(light_theme)
 
@@ -47,24 +47,20 @@ export const ColorSchemeProvider: Component<{}> = props => {
     }
   }
 
-  const store = {
-    scheme,
-    className,
-    init() {
-      setTheme(savedScheme)
+  setTheme(savedScheme)
 
-      typeof darkModeMediaQuery.addEventListener === 'function'
-        ? darkModeMediaQuery.addEventListener(
-            'change',
-            onPrefersColorSchemeChanges
-          )
-        : darkModeMediaQuery.addListener(onPrefersColorSchemeChanges)
-    },
-    setTheme,
-  }
+  typeof darkModeMediaQuery.addEventListener === 'function'
+    ? darkModeMediaQuery.addEventListener('change', onPrefersColorSchemeChanges)
+    : darkModeMediaQuery.addListener(onPrefersColorSchemeChanges)
 
   return (
-    <ColorSchemeContext.Provider value={store}>
+    <ColorSchemeContext.Provider
+      value={{
+        scheme,
+        className,
+        setTheme,
+      }}
+    >
       {props.children}
     </ColorSchemeContext.Provider>
   )

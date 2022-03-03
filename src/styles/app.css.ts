@@ -13,13 +13,6 @@ export const no_underline = style({
   textDecoration: 'none',
 })
 
-export const header = style({
-  margin: '.92em 1rem 0',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-})
-
 globalStyle('body', {
   background: vars.background[0],
   color: vars.color[0],
