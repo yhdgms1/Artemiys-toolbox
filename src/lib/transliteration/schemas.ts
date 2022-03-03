@@ -1,4 +1,4 @@
-export default {
+export const schemas = {
   ala_lc: {
     mapping: {
       а: 'a',

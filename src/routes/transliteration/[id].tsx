@@ -1,11 +1,11 @@
-import * as styles from '../../styles/index.css'
+import * as styles from '~/styles/index.css'
 import { Link, useParams } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import { translate } from '@artemis69/iuliia'
-import { t } from '../../i18n'
-import { CopyButton, Textarea, Button } from '../../components'
-import { setTitle } from '../../helpers'
-import schemas from './schemas'
+import { t } from '~/i18n'
+import { CopyButton, Textarea, Button } from '~/components'
+import { Title } from 'solid-meta'
+import { schemas } from '~/lib/transliteration/schemas'
 import clsx from 'clsx'
 
 export default () => {
@@ -17,7 +17,7 @@ export default () => {
   return (
     <>
       <Show when={schema in schemas} fallback={Fallback}>
-        {setTitle(t(['t13n', 'title']) + ' | ' + schema)}
+        <Title>{t(['t13n', 'title']) + ' | ' + schema}</Title>
         <Link
           class={clsx(styles.link, styles.heading2)}
           href="/transliteration"
@@ -55,9 +55,9 @@ export default () => {
 }
 
 const Fallback = () => {
-  setTitle(t(['t13n-id', 'not exist']))
   return (
     <>
+      <Title>{t(['t13n-id', 'not exist'])}</Title>
       <p class={styles.heading2}>{t(['t13n-id', 'not exist'])}</p>
       <Link class={styles.link} href="/transliteration">
         {t(['t13n-id', 'view existing'])}

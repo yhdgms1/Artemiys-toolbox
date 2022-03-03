@@ -1,8 +1,7 @@
-import { Link } from 'solid-app-router'
-import * as styles from '../../styles/index.css'
-import { t } from '../../i18n'
-import { Card } from '../../components'
-import { setTitle } from '../../helpers'
+import * as styles from '~/styles/index.css'
+import { t } from '~/i18n'
+import { Card } from '~/components'
+import { Title } from 'solid-meta'
 
 interface ISchema {
   readonly name: string
@@ -121,11 +120,12 @@ const schemes: ISchema[] = [
 ]
 
 export default () => {
-  setTitle(t(['t13n', 'title']))
+  const title = t(['t13n', 'title'])
 
   return (
     <>
-      <h1 class={styles.heading2}>{t(['t13n', 'title'])}</h1>
+      <Title>{title}</Title>
+      <h1 class={styles.heading2}>{title}</h1>
       <p class={styles.text}>{t(['t13n', 'desc'])}</p>
       <div class={styles.main}>
         {schemes.map(scheme => (

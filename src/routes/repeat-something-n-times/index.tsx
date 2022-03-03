@@ -4,17 +4,16 @@ import { input } from './style.css'
 import { t } from '../../i18n'
 import { CopyButton, Textarea, Button } from '../../components'
 import clsx from 'clsx'
-import { setTitle } from '../../helpers'
+import { Title } from 'solid-meta'
 
 export default () => {
-  setTitle(t(['repeat something n times', 'title']))
-
   const [text, setText] = createSignal('')
   const [count, setCount] = createSignal(0)
   const [output, setOutput] = createSignal('')
 
   return (
     <>
+      <Title>{t(['repeat something n times', 'title'])}</Title>
       <h2 class={styles.heading2}>
         {t(['repeat something n times', 'title'])}
       </h2>
