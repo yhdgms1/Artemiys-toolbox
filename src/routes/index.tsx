@@ -1,7 +1,6 @@
-import { Link } from 'solid-app-router'
-import { Card } from '../../components'
-import { setTitle } from '../../helpers'
-import { t } from '../../i18n'
+import { Title } from 'solid-meta'
+import { Card } from '~/components'
+import { t } from '~/i18n'
 
 const tools = [
   'characters count',
@@ -18,9 +17,9 @@ const tools = [
 ]
 
 export default () => {
-  setTitle("Artemiy's Toolbox")
   return (
     <>
+      <Title>Artemiy's Toolbox</Title>
       {tools.map(tool => (
         <Card
           href={'/' + tool.replace(/ /g, '-')}

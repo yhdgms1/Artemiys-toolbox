@@ -8,7 +8,7 @@ import {
 import { Button } from '..'
 import { useRegisterSW } from 'virtual:pwa-register/solid'
 
-import { t } from '../../i18n'
+import { t } from '~/i18n'
 
 type RegisterSWOptions = {
   immediate?: boolean

@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js'
-import { t } from '../../i18n'
-import { CopyButton, Textarea, Button } from '../../components'
-import { setTitle } from '../../helpers'
+import { t } from '~/i18n'
+import { CopyButton, Textarea, Button } from '~/components'
+import { Title } from 'solid-meta'
 import {
   pascalCase,
   camelCase,
@@ -11,16 +11,15 @@ import {
   lowerFirst,
 } from 'scule'
 
-import * as styles from '../../styles/index.css'
+import * as styles from '~/styles/index.css'
 
 export default () => {
-  setTitle('Scule')
-
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
 
   return (
     <>
+      <Title>Scule</Title>
       <h2 class={styles.heading2}>Scule</h2>
       <Textarea
         placeholder={t('Enter the text here')}

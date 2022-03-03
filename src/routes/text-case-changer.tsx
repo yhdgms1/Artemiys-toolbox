@@ -1,12 +1,10 @@
 import { createSignal } from 'solid-js'
-import * as styles from '../../styles/index.css'
-import { t } from '../../i18n'
-import { CopyButton, Textarea, Button } from '../../components'
-import { setTitle } from '../../helpers'
+import * as styles from '~/styles/index.css'
+import { t } from '~/i18n'
+import { CopyButton, Textarea, Button } from '~/components'
+import { Title } from 'solid-meta'
 
 export default () => {
-  setTitle(t(['text-case-changer', 'title']))
-
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
 
@@ -14,7 +12,7 @@ export default () => {
   const isLowerCase = (text: string) => text === text.toLowerCase()
 
   /*
-   * Thanks to memes for that post https://www.reddit.com/r/Python/comments/j8kpes/i_made_a_script_that_randomly_capitalizes_letters/
+   * https://www.reddit.com/r/Python/comments/j8kpes/i_made_a_script_that_randomly_capitalizes_letters/
    */
   const randomiseCase = (text: string) => {
     let newSentence = ''
@@ -48,6 +46,7 @@ export default () => {
 
   return (
     <>
+      <Title>{t(['text-case-changer', 'title'])}</Title>
       <h2 class={styles.heading2}>{t(['text-case-changer', 'title'])}</h2>
       <Textarea
         placeholder={t('Enter the text here')}

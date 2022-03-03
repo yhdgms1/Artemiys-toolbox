@@ -1,20 +1,19 @@
 import { createSignal } from 'solid-js'
-import { t } from '../../i18n'
-import { CopyButton, Textarea, Button, Checkbox } from '../../components'
-import { setTitle } from '../../helpers'
+import { t } from '~/i18n'
+import { CopyButton, Textarea, Button, Checkbox } from '~/components'
+import { Title } from 'solid-meta'
 import * as murmurhash from 'murmurhash-es'
 
-import * as styles from '../../styles/index.css'
+import * as styles from '~/styles/index.css'
 
 export default () => {
-  setTitle('Murmur Hash')
-
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
   const [radix, setRadix] = createSignal(10)
 
   return (
     <>
+      <Title>Murmur Hash</Title>
       <h2 class={styles.heading2}>Murmur Hash</h2>
       <Textarea
         placeholder={t('Enter the text here')}

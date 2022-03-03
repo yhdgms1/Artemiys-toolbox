@@ -1,10 +1,12 @@
-import type { JSX } from 'solid-js'
+import type { JSX, Component } from 'solid-js'
 import clsx from 'clsx'
 import * as styles from './style.css'
 
-export const Input = (props: JSX.InputHTMLAttributes<HTMLInputElement>) => (
+export const Input: Component<
+  JSX.InputHTMLAttributes<HTMLInputElement>
+> = props => (
   <label class={styles.label}>
     <span class={styles.title}>{props.children}</span>
-    <input {...props} class={styles.input} />
+    <input {...props} class={clsx(styles.input, props.class)} />
   </label>
 )
