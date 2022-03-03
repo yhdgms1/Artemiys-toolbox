@@ -3,7 +3,7 @@ import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import clsx from 'clsx'
 import { t } from '~/i18n'
-import { Button, Input } from '~/components'
+import { Button, Input, Container } from '~/components'
 import { Title } from 'solid-meta'
 
 import { apiUrl } from '~/lib/cheap-sluts/utils'
@@ -38,7 +38,7 @@ export default () => {
       <Link class={clsx(styles.link, styles.heading2)} href="/cheap-sluts">
         {t(['t13n-id', 'go back'])}
       </Link>
-      <div class={clsx(styles.flex_col, styles.lonely_container)}>
+      <Container independent={true}>
         <Input
           type="text"
           placeholder={t(['cheap sluts', 'remove', 'id'])}
@@ -46,7 +46,7 @@ export default () => {
         >
           {t(['cheap sluts', 'remove', 'id'])}
         </Input>
-      </div>
+      </Container>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <p class={styles.text}>
         <Show when={data().userid}>

@@ -1,6 +1,6 @@
 import { createSignal } from 'solid-js'
 import { t } from '~/i18n'
-import { CopyButton, Textarea, Button, Checkbox } from '~/components'
+import { CopyButton, Textarea, Button, Checkbox, Container } from '~/components'
 import { Title } from 'solid-meta'
 import * as murmurhash from 'murmurhash-es'
 
@@ -19,7 +19,7 @@ export default () => {
         placeholder={t('Enter the text here')}
         onInput={e => setText(e.currentTarget.value)}
       />
-      <div class={styles.responsive_container}>
+      <Container block={true} responsive={true}>
         <Button
           onClick={() =>
             setOutput(murmurhash.murmurHashV2(text()).toString(radix()))
@@ -35,11 +35,11 @@ export default () => {
           v3
         </Button>
         <CopyButton copy={output()} />
-      </div>
+      </Container>
       <Checkbox
         checked={radix() === 36}
         onChange={e => setRadix(e.currentTarget.checked ? 36 : 10)}
-        id="private-check"
+        id="radix-check"
       >
         {'.toString(36)'}
       </Checkbox>

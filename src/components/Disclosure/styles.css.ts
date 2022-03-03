@@ -29,10 +29,19 @@ export const disclosureButton = style({
   },
 })
 
+export const disclosurePanel = style({
+  display: 'flex',
+  flexDirection: 'column',
+})
+
 export const disclosureButtonIcon = style({
   width: disclosureButtonIconSize,
   height: disclosureButtonIconSize,
   position: 'absolute',
   right: '.25rem',
   top: 0,
+})
+
+export const disclosureOpenIcon = style({
+  transform: 'rotate(180deg)',
 })

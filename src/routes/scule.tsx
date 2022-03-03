@@ -1,6 +1,6 @@
 import { createSignal } from 'solid-js'
 import { t } from '~/i18n'
-import { CopyButton, Textarea, Button } from '~/components'
+import { CopyButton, Textarea, Button, Container } from '~/components'
 import { Title } from 'solid-meta'
 import {
   pascalCase,
@@ -26,7 +26,7 @@ export default () => {
         spellcheck={false}
         onInput={e => setText(e.currentTarget.value)}
       />
-      <div class={styles.responsive_container}>
+      <Container block={true} responsive={true}>
         <Button onClick={() => setOutput(pascalCase(text()))}>
           pascalCase
         </Button>
@@ -40,7 +40,7 @@ export default () => {
           lowerFirst
         </Button>
         <CopyButton copy={output()} />
-      </div>
+      </Container>
       <Textarea
         readOnly={true}
         value={output()}

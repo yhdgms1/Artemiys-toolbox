@@ -2,14 +2,11 @@ import { Link } from 'solid-app-router'
 import { createSignal, Show, For } from 'solid-js'
 import clsx from 'clsx'
 import { t } from '~/i18n'
-import { Input, Icon, ArrowDown } from '~/components'
+import { Input, Disclosure, Container } from '~/components'
 import { Title } from 'solid-meta'
-
 import { createHrefUrl } from '~/lib/cheap-sluts/utils'
 
-import { Disclosure, DisclosureButton, DisclosurePanel } from 'solid-headless'
 import * as styles from '~/styles/index.css'
-import * as componentStyles from '~/styles/components/index.css'
 
 export default () => {
   const [name, setName] = createSignal('')
@@ -33,7 +30,7 @@ export default () => {
       <Link class={clsx(styles.link, styles.heading2)} href="/cheap-sluts">
         {t(['t13n-id', 'go back'])}
       </Link>
-      <div class={clsx(styles.flex_col, styles.lonely_container)}>
+      <Container independent={true}>
         <Input
           type="text"
           placeholder={t(['cheap sluts', 'manually', 'Name'])}
@@ -50,42 +47,27 @@ export default () => {
         >
           {t(['cheap sluts', 'manually', 'Picture'])}
         </Input>
-        <Disclosure as="div" class={componentStyles.disclosure}>
-          <DisclosureButton class={componentStyles.disclosureButton}>
-            {({ isOpen }) => (
-              <>
-                {t(['cheap sluts', 'picture', 'Additional options'])}
-                <Icon
-                  class={clsx(
-                    componentStyles.disclosureButtonIcon,
-                    isOpen() && styles.rotate_180
-                  )}
-                >
-                  <ArrowDown />
-                </Icon>
-              </>
-            )}
-          </DisclosureButton>
-          <DisclosurePanel class={styles.flex_col}>
-            <Input
-              type="number"
-              placeholder={t(['cheap sluts', 'picture', 'Picture width'])}
-              spellcheck={false}
-              onInput={e => setWidth(e.currentTarget.valueAsNumber)}
-            >
-              {t(['cheap sluts', 'picture', 'Picture width'])}
-            </Input>
-            <Input
-              type="number"
-              placeholder={t(['cheap sluts', 'picture', 'Picture height'])}
-              spellcheck={false}
-              onInput={e => setHeight(e.currentTarget.valueAsNumber)}
-            >
-              {t(['cheap sluts', 'picture', 'Picture height'])}
-            </Input>
-          </DisclosurePanel>
+        <Disclosure
+          buttonChildren={t(['cheap sluts', 'picture', 'Additional options'])}
+        >
+          <Input
+            type="number"
+            placeholder={t(['cheap sluts', 'picture', 'Picture width'])}
+            spellcheck={false}
+            onInput={e => setWidth(e.currentTarget.valueAsNumber)}
+          >
+            {t(['cheap sluts', 'picture', 'Picture width'])}
+          </Input>
+          <Input
+            type="number"
+            placeholder={t(['cheap sluts', 'picture', 'Picture height'])}
+            spellcheck={false}
+            onInput={e => setHeight(e.currentTarget.valueAsNumber)}
+          >
+            {t(['cheap sluts', 'picture', 'Picture height'])}
+          </Input>
         </Disclosure>
-      </div>
+      </Container>
       <Show
         when={name() !== '' && pic() !== ''}
         fallback={

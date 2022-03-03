@@ -3,7 +3,7 @@ import { Link, useParams } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import { translate } from '@artemis69/iuliia'
 import { t } from '~/i18n'
-import { CopyButton, Textarea, Button } from '~/components'
+import { CopyButton, Textarea, Button, Container } from '~/components'
 import { Title } from 'solid-meta'
 import { schemas } from '~/lib/transliteration/schemas'
 import clsx from 'clsx'
@@ -32,7 +32,7 @@ export default () => {
           placeholder={t(['t13n-id', 'input'])}
           onInput={e => setText(e.currentTarget.value)}
         />
-        <div class={styles.responsive_container}>
+        <Container block={true} responsive={true}>
           <Button
             onClick={() => {
               //@ts-ignore
@@ -42,7 +42,7 @@ export default () => {
             {t(['t13n-id', 'button'])}!
           </Button>
           <CopyButton copy={output()} />
-        </div>
+        </Container>
         <Textarea
           spellcheck={false}
           readOnly={true}

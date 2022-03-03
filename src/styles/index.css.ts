@@ -42,18 +42,6 @@ export const link = style({
   },
 })
 
-export const responsive_container = style({
-  '@media': {
-    'screen and (max-width: 1055px)': {
-      display: 'grid',
-      gridTemplateColumns: '2fr 2fr',
-    },
-    'screen and (max-width: 640px)': {
-      gridTemplateColumns: '1fr',
-    },
-  },
-})
-
 export const heading = style({
   marginBlockStart: '1em',
   marginBlockEnd: '1em',
@@ -73,11 +61,6 @@ export const margin6 = style({
   margin: `.6rem auto`,
 })
 
-export const flex_col = style({
-  display: 'flex',
-  flexDirection: 'column',
-})
-
 export const option = style({
   fontFamily: fonts.serif,
 })
@@ -85,21 +68,4 @@ export const option = style({
 export const row = style({
   display: 'flex',
   alignItems: 'center',
-})
-
-export const lonely_container = style({
-  width: '45vw',
-  maxWidth: `calc(100% - .8rem)`,
-  '@media': {
-    'screen and (max-width: 640px)': {
-      width: `90vw`,
-    },
-    'screen and (min-width: 1024px)': {
-      width: `calc(35vw - .8rem)`,
-    },
-  },
-})
-
-export const rotate_180 = style({
-  transform: 'rotate(180deg)',
 })

@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js'
 import * as styles from '../styles/index.css'
 import { t } from '../i18n'
-import { Button, CopyButton, Textarea } from '../components'
+import { Button, CopyButton, Textarea, Container } from '../components'
 import { Title } from 'solid-meta'
 
 export default () => {
@@ -16,7 +16,7 @@ export default () => {
         placeholder={t('Enter the text here')}
         onInput={e => setInput(e.currentTarget.value)}
       />
-      <div class={styles.responsive_container}>
+      <Container block={true} responsive={true}>
         <Button
           onClick={() =>
             setOutput(
@@ -32,7 +32,7 @@ export default () => {
           {t(['chat-dot-replacer', 'Bring it back'])}
         </Button>
         <CopyButton copy={output()} />
-      </div>
+      </Container>
       <Textarea
         readOnly={true}
         value={output()}
