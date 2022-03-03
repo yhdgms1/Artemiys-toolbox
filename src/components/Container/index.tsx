@@ -13,7 +13,7 @@ interface Props {
 export const Container: Component<Props> = props => {
   return (
     <div
-      class={clsx(props.block && styles.container, props.class)}
+      class={clsx(props.block ? '' : styles.container, props.class)}
       classList={{
         [styles.independent]: props.independent,
         [styles.responsive]: props.responsive,
