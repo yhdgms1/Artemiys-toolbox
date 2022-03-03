@@ -1,16 +1,15 @@
-import { ApiResponse } from './types'
+import { ApiResponse } from '~/lib/cheap-sluts/types'
 import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import clsx from 'clsx'
-import { t } from '../../i18n'
-import { Button, Input, Checkbox } from '../../components'
-import { setTitle } from '../../helpers'
-import { apiUrl } from './utils'
-import * as styles from '../../styles/index.css'
+import { t } from '~/i18n'
+import { Button, Input, Checkbox } from '~/components'
+import { Title } from 'solid-meta'
+
+import { apiUrl } from '~/lib/cheap-sluts/utils'
+import * as styles from '~/styles/index.css'
 
 export default () => {
-  setTitle('Create Manually')
-
   const [name, setName] = createSignal('')
   const [pic, setPic] = createSignal('')
   const [isPrivate, setIsPrivate] = createSignal(false)
@@ -40,6 +39,7 @@ export default () => {
 
   return (
     <>
+      <Title>Create Manually</Title>
       <Link class={clsx(styles.link, styles.heading2)} href="/cheap-sluts">
         {t(['t13n-id', 'go back'])}
       </Link>

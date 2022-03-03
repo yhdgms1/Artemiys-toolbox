@@ -1,14 +1,15 @@
 import { Link } from 'solid-app-router'
 import { createSignal, Show, For } from 'solid-js'
 import clsx from 'clsx'
-import { t } from '../../i18n'
-import { Input, Icon, ArrowDown } from '../../components'
-import { setTitle } from '../../helpers'
-import { createHrefUrl } from './utils'
+import { t } from '~/i18n'
+import { Input, Icon, ArrowDown } from '~/components'
+import { Title } from 'solid-meta'
+
+import { createHrefUrl } from '~/lib/cheap-sluts/utils'
 
 import { Disclosure, DisclosureButton, DisclosurePanel } from 'solid-headless'
-import * as styles from '../../styles/index.css'
-import * as componentStyles from '../../styles/components/index.css'
+import * as styles from '~/styles/index.css'
+import * as componentStyles from '~/styles/components/index.css'
 
 export default () => {
   const [name, setName] = createSignal('')

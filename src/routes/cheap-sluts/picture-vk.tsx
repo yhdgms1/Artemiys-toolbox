@@ -1,13 +1,14 @@
 import { Link } from 'solid-app-router'
 import { createSignal, Show, For } from 'solid-js'
 import clsx from 'clsx'
-import { t } from '../../i18n'
-import { Button, Input, Icon, ArrowDown } from '../../components'
-import { setTitle } from '../../helpers'
-import { createHrefUrl, apiUrl } from './utils'
+import { t } from '~/i18n'
+import { Button, Input, Icon, ArrowDown } from '~/components'
+import { Title } from 'solid-meta'
+
+import { createHrefUrl, apiUrl } from '~/lib/cheap-sluts/utils'
 import { Disclosure, DisclosureButton, DisclosurePanel } from 'solid-headless'
-import * as componentStyles from '../../styles/components/index.css'
-import * as styles from '../../styles/index.css'
+import * as componentStyles from '~/styles/components/index.css'
+import * as styles from '~/styles/index.css'
 
 type ApiData = {
   error?: string
