@@ -1,6 +1,6 @@
 import * as styles from '~/styles/index.css'
 import { t } from '~/i18n'
-import { Card } from '~/components'
+import { Card, Heading } from '~/components'
 import { Title } from 'solid-meta'
 
 interface ISchema {
@@ -125,7 +125,7 @@ export default () => {
   return (
     <>
       <Title>{title}</Title>
-      <h1 class={styles.heading2}>{title}</h1>
+      <Heading as="h2">{title}</Heading>
       <p class={styles.text}>{t(['t13n', 'desc'])}</p>
       <div class={styles.main}>
         {schemes.map(scheme => (

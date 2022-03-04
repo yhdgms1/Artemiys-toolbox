@@ -1,7 +1,6 @@
-import { Link } from 'solid-app-router'
 import * as styles from '~/styles/index.css'
 import { t } from '~/i18n'
-import { Card } from '~/components'
+import { Card, Heading } from '~/components'
 import { Title } from 'solid-meta'
 
 interface IMethod {
@@ -32,11 +31,13 @@ const methods: IMethod[] = [
   },
 ]
 
+const title = 'Cheap Sluts'
+
 export default () => {
   return (
     <>
-      <Title>Cheap Sluts</Title>
-      <h1 class={styles.heading2}>Cheap Sluts</h1>
+      <Title>{title}</Title>
+      <Heading as="h2">{title}</Heading>
       <p class={styles.text}>{t(['cheap sluts', 'Select a method'])}</p>
       <div class={styles.main}>
         {methods.map(method => (

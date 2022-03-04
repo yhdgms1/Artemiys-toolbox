@@ -1,9 +1,8 @@
-import { createSignal } from 'solid-js'
-import * as styles from '../../styles/index.css'
+import { createSignal, createUniqueId } from 'solid-js'
+import * as styles from '~/styles/index.css'
 import { input } from './style.css'
-import { t } from '../../i18n'
-import { CopyButton, Textarea, Button, Container } from '../../components'
-import clsx from 'clsx'
+import { t } from '~/i18n'
+import { CopyButton, Textarea, Button, Container, Heading } from '~/components'
 import { Title } from 'solid-meta'
 
 export default () => {
@@ -11,15 +10,21 @@ export default () => {
   const [count, setCount] = createSignal(0)
   const [output, setOutput] = createSignal('')
 
+  const title = t(['repeat something n times', 'title'])
+
+  const repeatInput = createUniqueId()
+  const timesInput = createUniqueId()
+
   return (
     <>
-      <Title>{t(['repeat something n times', 'title'])}</Title>
-      <h2 class={styles.heading2}>
-        {t(['repeat something n times', 'title'])}
-      </h2>
+      <Title>{title}</Title>
+      <Heading as="h2">{title}</Heading>
       <Container class={styles.text} block={true} responsive={true}>
-        <label>{t(['repeat something n times', 'repeat'])}</label>
+        <label for={repeatInput}>
+          {t(['repeat something n times', 'repeat'])}
+        </label>
         <input
+          id={repeatInput}
           type="text"
           placeholder={t(['repeat something n times', 'it'])}
           class={input}
@@ -33,8 +38,11 @@ export default () => {
           onInput={e => setCount(e.currentTarget.valueAsNumber)}
           min="1"
           max="5368708"
+          id={timesInput}
         />
-        <label>{t(['repeat something n times', 'times'])}</label>
+        <label for={timesInput}>
+          {t(['repeat something n times', 'times'])}
+        </label>
       </Container>
       <Container block={true} responsive={true}>
         <Button

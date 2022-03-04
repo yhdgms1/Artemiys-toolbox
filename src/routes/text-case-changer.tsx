@@ -1,7 +1,6 @@
 import { createSignal } from 'solid-js'
-import * as styles from '~/styles/index.css'
 import { t } from '~/i18n'
-import { CopyButton, Textarea, Button, Container } from '~/components'
+import { CopyButton, Textarea, Button, Container, Heading } from '~/components'
 import { Title } from 'solid-meta'
 
 export default () => {
@@ -44,10 +43,12 @@ export default () => {
     return newSentence.replace(/I/gm, 'i').replace(/l/gm, 'L')
   }
 
+  const title = t(['text-case-changer', 'title'])
+
   return (
     <>
-      <Title>{t(['text-case-changer', 'title'])}</Title>
-      <h2 class={styles.heading2}>{t(['text-case-changer', 'title'])}</h2>
+      <Title>{title}</Title>
+      <Heading as="h2">{title}</Heading>
       <Textarea
         placeholder={t('Enter the text here')}
         onInput={e => setText(e.currentTarget.value)}

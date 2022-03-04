@@ -1,8 +1,7 @@
-import { Link } from 'solid-app-router'
 import { createSignal, Show, For } from 'solid-js'
 import clsx from 'clsx'
 import { t } from '~/i18n'
-import { Button, Input, Disclosure, Container } from '~/components'
+import { Button, Input, Disclosure, Container, Link } from '~/components'
 import { Title } from 'solid-meta'
 import { createHrefUrl, apiUrl } from '~/lib/cheap-sluts/utils'
 
@@ -53,9 +52,7 @@ export default () => {
 
   return (
     <>
-      <Link class={clsx(styles.link, styles.heading2)} href="/cheap-sluts">
-        {t(['t13n-id', 'go back'])}
-      </Link>
+      <Link href="/cheap-sluts">{t(['t13n-id', 'go back'])}</Link>
       <Container independent={true}>
         <Input
           type="text"
@@ -97,8 +94,9 @@ export default () => {
       <Show when={'name' in data() && 'picture' in data()}>
         <For each={renderers}>
           {template => (
-            <a
-              class={clsx(styles.link, styles.margin6)}
+            <Link
+              small={true}
+              class={styles.margin6}
               target="_blank"
               href={createHrefUrl(
                 template,
@@ -110,7 +108,7 @@ export default () => {
               )}
             >
               {t(['cheap sluts', 'picture', 'Create'], { template })}
-            </a>
+            </Link>
           )}
         </For>
       </Show>

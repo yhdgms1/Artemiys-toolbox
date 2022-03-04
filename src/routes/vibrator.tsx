@@ -1,10 +1,9 @@
-import * as styles from '~/styles/index.css'
-import { Button } from '~/components'
+import { Button, Heading } from '~/components'
 import { t } from '~/i18n'
 import { Title } from 'solid-meta'
 
 const Vibrator = (length: number) => {
-  let interval!: number
+  let interval: number | undefined
 
   function start() {
     navigator.vibrate(length)
@@ -30,10 +29,12 @@ const Vibrator = (length: number) => {
 export default () => {
   const vibrator = Vibrator(/* Random number */ 7490)
 
+  const title = t(['vibrator', 'title'])
+
   return (
     <>
-      <Title>{t(['vibrator', 'title'])}</Title>
-      <h2 class={styles.heading2}>{t(['vibrator', 'title'])}</h2>
+      <Title>{title}</Title>
+      <Heading as="h2">{title}</Heading>
       <Button onClick={vibrator.start}>{t(['vibrator', 'Vibrate'])}</Button>
       <Button onClick={vibrator.stop}>{t(['vibrator', 'Stop'])}</Button>
     </>

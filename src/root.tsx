@@ -5,7 +5,7 @@ import { ColorSchemeProvider } from '~/components/ColorSchemeSwitcher/context'
 
 import * as styles from '~/styles/index.css'
 import * as appStyles from '~/styles/app.css'
-import { Link, useLocation } from 'solid-app-router'
+import { useLocation } from 'solid-app-router'
 import { ErrorBoundary, createEffect } from 'solid-js'
 import { Portal } from 'solid-js/web'
 import {
@@ -14,6 +14,7 @@ import {
   Settings,
   LanguageSwitcher,
   Header,
+  Link,
 } from '~/components'
 import clsx from 'clsx'
 import { useColorScheme } from '~/components/ColorSchemeSwitcher/context'
@@ -33,7 +34,7 @@ const App = () => {
           <h1>
             <Link
               href="/"
-              class={clsx(appStyles.title, styles.link)}
+              class={appStyles.title}
               classList={{
                 [appStyles.no_underline]: location.pathname === '/',
               }}

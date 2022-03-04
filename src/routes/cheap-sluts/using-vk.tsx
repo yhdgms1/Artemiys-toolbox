@@ -1,9 +1,8 @@
 import { ApiResponse } from '~/lib/cheap-sluts/types'
-import { Link } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import clsx from 'clsx'
 import { t } from '~/i18n'
-import { Button, Input, Checkbox, Container } from '~/components'
+import { Button, Input, Checkbox, Container, Link } from '~/components'
 import { Title } from 'solid-meta'
 
 import { apiUrl } from '~/lib/cheap-sluts/utils'
@@ -37,9 +36,7 @@ export default () => {
   return (
     <>
       <Title>Create Using VK</Title>
-      <Link class={clsx(styles.link, styles.heading2)} href="/cheap-sluts">
-        {t(['t13n-id', 'go back'])}
-      </Link>
+      <Link href="/cheap-sluts">{t(['t13n-id', 'go back'])}</Link>
       <Container independent={true}>
         <Input
           type="text"
@@ -67,14 +64,14 @@ export default () => {
             {t(['cheap sluts', 'Created Successfully'])}!
           </p>
         </Show>
-        <a
-          class={styles.link}
+        <Link
+          small={true}
           target="_blank"
           rel="noopener noreferer"
           href={'https://cheap-sluts.pages.dev/slut/' + data().userid}
         >
           {t(['cheap sluts', 'Look at this'])}
-        </a>
+        </Link>
       </Show>
     </>
   )

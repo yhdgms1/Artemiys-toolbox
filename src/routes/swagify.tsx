@@ -1,18 +1,19 @@
 import { swagify } from '@artemis69/swagify'
 import { createSignal } from 'solid-js'
-import * as styles from '~/styles/index.css'
 import { t } from '~/i18n'
-import { CopyButton, Textarea, Button, Container } from '~/components'
+import { CopyButton, Textarea, Button, Container, Heading } from '~/components'
 import { Title } from 'solid-meta'
 
 export default () => {
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')
 
+  const title = t(['swagify', 'title'])
+
   return (
     <>
-      <Title>{t(['swagify', 'title'])}</Title>
-      <h2 class={styles.heading2}>{t(['swagify', 'title'])}</h2>
+      <Title>{title}</Title>
+      <Heading as="h2">{title}</Heading>
       <Textarea
         placeholder={t(['swagify', 'Enter the text to swagify'])}
         onInput={e => setText(e.currentTarget.value)}

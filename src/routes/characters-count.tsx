@@ -1,18 +1,21 @@
-import { createSignal, onMount } from 'solid-js'
+import { createSignal } from 'solid-js'
 import Graphemer from 'graphemer'
-import * as styles from '../styles/index.css'
-import { t } from '../i18n'
-import { Textarea } from '../components'
+import { t } from '~/i18n'
+import { Textarea, Heading } from '~/components'
 import { Title } from 'solid-meta'
+
+import * as styles from '~/styles/index.css'
 
 export default () => {
   const [text, setText] = createSignal('')
   const splitter = new Graphemer()
 
+  const title = t(['character-count', 'title'])
+
   return (
     <>
-      <Title>{t(['character-count', 'title'])}</Title>
-      <h2 class={styles.heading2}>{t(['character-count', 'title'])}</h2>
+      <Title>{title}</Title>
+      <Heading as="h2">{title}</Heading>
       <p class={styles.text}>
         {t(['character-count', 'Number of characters'])}
         {splitter.countGraphemes(text())}
