@@ -14,3 +14,7 @@ export const large = style({
   padding: '0 0 .7rem',
   textAlign: 'center',
 })
+
+export const margin = style({
+  margin: `.6rem auto`,
+})

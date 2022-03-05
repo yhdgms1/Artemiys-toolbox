@@ -11,8 +11,6 @@ import {
 import { Title } from 'solid-meta'
 import { createHrefUrl, apiUrl } from '~/lib/cheap-sluts/utils'
 
-import * as styles from '~/styles/index.css'
-
 type ApiData = {
   error?: string
   name?: string
@@ -92,30 +90,27 @@ export default () => {
       <Button onClick={clickHandler}>
         {t(['cheap sluts', 'picture-vk', 'Find'])}
       </Button>
-      <Show when={data().error}>
+      <Show when={'error' in data()}>
         <Paragraph>
           {t(['cheap sluts', 'Error'])}: {data().error}
         </Paragraph>
       </Show>
       <Show when={'name' in data() && 'picture' in data()}>
         <For each={renderers}>
-          {template => (
-            <Link
-              small={true}
-              class={styles.margin6}
-              target="_blank"
-              href={createHrefUrl(
-                template,
-                //@ts-ignore
-                data().name,
-                data().picture,
-                width(),
-                height()
-              )}
-            >
-              {t(['cheap sluts', 'picture', 'Create'], { template })}
-            </Link>
-          )}
+          {template => {
+            const { name, picture } = data() as Required<NonNullable<ApiData>>
+
+            return (
+              <Link
+                small={true}
+                margin={true}
+                target="_blank"
+                href={createHrefUrl(template, name, picture, width(), height())}
+              >
+                {t(['cheap sluts', 'picture', 'Create'], { template })}
+              </Link>
+            )
+          }}
         </For>
       </Show>
     </>

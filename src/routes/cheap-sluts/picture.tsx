@@ -1,11 +1,8 @@
 import { createSignal, Show, For } from 'solid-js'
-import clsx from 'clsx'
 import { t } from '~/i18n'
-import { Input, Disclosure, Container, Link } from '~/components'
+import { Input, Disclosure, Container, Link, Paragraph } from '~/components'
 import { Title } from 'solid-meta'
 import { createHrefUrl } from '~/lib/cheap-sluts/utils'
-
-import * as styles from '~/styles/index.css'
 
 export default () => {
   const [name, setName] = createSignal('')
@@ -68,20 +65,20 @@ export default () => {
       <Show
         when={name() !== '' && pic() !== ''}
         fallback={
-          <p class={styles.margin6}>
+          <Paragraph>
             {t([
               'cheap sluts',
               'picture',
               'Fill in the fields above to begin creating a picture',
             ])}
-          </p>
+          </Paragraph>
         }
       >
         <For each={renderers}>
           {template => (
             <Link
               small={true}
-              class={styles.margin6}
+              margin={true}
               target="_blank"
               href={createHrefUrl(template, name(), pic(), width(), height())}
             >

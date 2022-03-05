@@ -5,3 +5,7 @@ export const text = style({
   fontSize: '1.2em',
   textAlign: 'center',
 })
+
+export const margin = style({
+  margin: `.6rem auto`,
+})

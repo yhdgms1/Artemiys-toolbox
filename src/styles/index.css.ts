@@ -28,16 +28,3 @@ export const main_layout = style({
   flexDirection: 'column',
   alignItems: 'center',
 })
-
-export const margin6 = style({
-  margin: `.6rem auto`,
-})
-
-export const option = style({
-  fontFamily: fonts.serif,
-})
-
-export const row = style({
-  display: 'flex',
-  alignItems: 'center',
-})
