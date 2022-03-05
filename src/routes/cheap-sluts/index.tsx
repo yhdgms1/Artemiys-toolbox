@@ -1,6 +1,6 @@
 import * as styles from '~/styles/index.css'
 import { t } from '~/i18n'
-import { Card, Heading } from '~/components'
+import { Card, Heading, Paragraph } from '~/components'
 import { Title } from 'solid-meta'
 
 interface IMethod {
@@ -38,7 +38,7 @@ export default () => {
     <>
       <Title>{title}</Title>
       <Heading as="h2">{title}</Heading>
-      <p class={styles.text}>{t(['cheap sluts', 'Select a method'])}</p>
+      <Paragraph>{t(['cheap sluts', 'Select a method'])}</Paragraph>
       <div class={styles.main}>
         {methods.map(method => (
           <Card

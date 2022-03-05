@@ -9,7 +9,7 @@ import {
   Heading,
 } from '~/components'
 import { Title } from 'solid-meta'
-import * as murmurhash from 'murmurhash-es'
+import { murmurHashV2 as v2, murmurHashV3 as v3 } from 'murmurhash-es'
 
 export default () => {
   const [text, setText] = createSignal('')
@@ -27,18 +27,10 @@ export default () => {
         onInput={e => setText(e.currentTarget.value)}
       />
       <Container block={true} responsive={true}>
-        <Button
-          onClick={() =>
-            setOutput(murmurhash.murmurHashV2(text()).toString(radix()))
-          }
-        >
+        <Button onClick={() => setOutput(v2(text()).toString(radix()))}>
           v2
         </Button>
-        <Button
-          onClick={() =>
-            setOutput(murmurhash.murmurHashV3(text()).toString(radix()))
-          }
-        >
+        <Button onClick={() => setOutput(v3(text()).toString(radix()))}>
           v3
         </Button>
         <CopyButton copy={output()} />

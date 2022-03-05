@@ -1,5 +1,4 @@
 import { createSignal, createUniqueId } from 'solid-js'
-import * as styles from '~/styles/index.css'
 import { input } from './style.css'
 import { t } from '~/i18n'
 import { CopyButton, Textarea, Button, Container, Heading } from '~/components'
@@ -19,7 +18,7 @@ export default () => {
     <>
       <Title>{title}</Title>
       <Heading as="h2">{title}</Heading>
-      <Container class={styles.text} block={true} responsive={true}>
+      <Container text={true} block={true} responsive={true}>
         <label for={repeatInput}>
           {t(['repeat something n times', 'repeat'])}
         </label>

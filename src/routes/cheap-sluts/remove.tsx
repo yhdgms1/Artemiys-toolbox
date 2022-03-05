@@ -1,12 +1,10 @@
 import { ApiResponse } from '~/lib/cheap-sluts/types'
 import { createSignal, Show } from 'solid-js'
-import clsx from 'clsx'
 import { t } from '~/i18n'
-import { Button, Input, Container, Link } from '~/components'
+import { Button, Input, Container, Link, Paragraph } from '~/components'
 import { Title } from 'solid-meta'
 
 import { apiUrl } from '~/lib/cheap-sluts/utils'
-import * as styles from '~/styles/index.css'
 
 export default () => {
   const [id, setId] = createSignal('')
@@ -45,14 +43,14 @@ export default () => {
         </Input>
       </Container>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
-      <p class={styles.text}>
+      <Paragraph>
         <Show when={data().userid}>
           {t(['cheap sluts', 'remove', 'Removed Successfully']) + '!'}
         </Show>
         <Show when={data().error}>
           {t(['cheap sluts', 'Error']) + ': ' + data().error}
         </Show>
-      </p>
+      </Paragraph>
     </>
   )
 }

@@ -1,12 +1,17 @@
 import { ApiResponse } from '~/lib/cheap-sluts/types'
 import { createSignal, Show } from 'solid-js'
-import clsx from 'clsx'
 import { t } from '~/i18n'
-import { Button, Input, Checkbox, Container, Link } from '~/components'
+import {
+  Button,
+  Input,
+  Checkbox,
+  Container,
+  Link,
+  Paragraph,
+} from '~/components'
 import { Title } from 'solid-meta'
 
 import { apiUrl } from '~/lib/cheap-sluts/utils'
-import * as styles from '~/styles/index.css'
 
 export default () => {
   const [shortname, setShortname] = createSignal('')
@@ -54,15 +59,13 @@ export default () => {
       </Container>
       <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
       <Show when={data().error}>
-        <p class={styles.text}>
+        <Paragraph>
           {t(['cheap sluts', 'Error'])}: {data().error}
-        </p>
+        </Paragraph>
       </Show>
       <Show when={data().userid}>
         <Show when={!data().error}>
-          <p class={styles.text}>
-            {t(['cheap sluts', 'Created Successfully'])}!
-          </p>
+          <Paragraph>{t(['cheap sluts', 'Created Successfully'])}!</Paragraph>
         </Show>
         <Link
           small={true}

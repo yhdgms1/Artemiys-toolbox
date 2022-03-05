@@ -1,7 +1,13 @@
 import { createSignal, Show, For } from 'solid-js'
-import clsx from 'clsx'
 import { t } from '~/i18n'
-import { Button, Input, Disclosure, Container, Link } from '~/components'
+import {
+  Button,
+  Input,
+  Disclosure,
+  Container,
+  Link,
+  Paragraph,
+} from '~/components'
 import { Title } from 'solid-meta'
 import { createHrefUrl, apiUrl } from '~/lib/cheap-sluts/utils'
 
@@ -87,9 +93,9 @@ export default () => {
         {t(['cheap sluts', 'picture-vk', 'Find'])}
       </Button>
       <Show when={data().error}>
-        <p class={styles.text}>
+        <Paragraph>
           {t(['cheap sluts', 'Error'])}: {data().error}
-        </p>
+        </Paragraph>
       </Show>
       <Show when={'name' in data() && 'picture' in data()}>
         <For each={renderers}>

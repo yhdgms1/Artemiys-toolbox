@@ -29,12 +29,6 @@ export const main_layout = style({
   alignItems: 'center',
 })
 
-export const text = style({
-  margin: '.4rem 0',
-  fontSize: '1.2em',
-  textAlign: 'center',
-})
-
 export const margin6 = style({
   margin: `.6rem auto`,
 })

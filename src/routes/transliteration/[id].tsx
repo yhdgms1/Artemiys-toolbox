@@ -1,4 +1,3 @@
-import * as styles from '~/styles/index.css'
 import { useParams } from 'solid-app-router'
 import { createSignal, Show } from 'solid-js'
 import { translate } from '@artemis69/iuliia'
@@ -10,10 +9,10 @@ import {
   Container,
   Heading,
   Link,
+  Paragraph,
 } from '~/components'
 import { Title } from 'solid-meta'
 import { schemas } from '~/lib/transliteration/schemas'
-import clsx from 'clsx'
 
 export default () => {
   const schema = useParams().id
@@ -26,9 +25,7 @@ export default () => {
       <Show when={schema in schemas} fallback={Fallback}>
         <Title>{t(['t13n', 'title']) + ' | ' + schema}</Title>
         <Link href="/transliteration">{t(['t13n-id', 'go back'])}</Link>
-        <p class={styles.text}>
-          {t(['t13n-id', 'current-schema'], { schema })}
-        </p>
+        <Paragraph>{t(['t13n-id', 'current-schema'], { schema })}</Paragraph>
         <Textarea
           spellcheck={false}
           placeholder={t(['t13n-id', 'input'])}
