@@ -6,6 +6,8 @@ export const LanguageSwitcher = () => {
   const savedLocale = localStorage.getItem('locale')
 
   const setLocale = (lang: string | null) => {
+    if (savedLocale === lang) return
+
     lang === null
       ? localStorage.removeItem('locale')
       : localStorage.setItem('locale', lang)

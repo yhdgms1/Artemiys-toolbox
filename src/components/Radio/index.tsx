@@ -1,7 +1,9 @@
-import type { JSX } from 'solid-js'
+import type { JSX, Component } from 'solid-js'
 import * as styles from './style.css'
 
-export const Radio = (props: JSX.InputHTMLAttributes<HTMLInputElement>) => (
+export const Radio: Component<
+  JSX.InputHTMLAttributes<HTMLInputElement>
+> = props => (
   <div class={styles.checkbox}>
     <input type="radio" {...props} class={styles.input} />
     <label for={props.id}>{props.children}</label>

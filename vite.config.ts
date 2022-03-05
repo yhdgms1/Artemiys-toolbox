@@ -1,21 +1,19 @@
 import { defineConfig } from 'vite'
-import { minifyHtml } from 'vite-plugin-html'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
-import { default as solidPlugin } from 'vite-plugin-solid'
+import { default as solidPlugin } from 'solid-start'
 import { VitePWA } from 'vite-plugin-pwa'
 import pkg from './package.json'
 
-export default defineConfig(({ mode }) => {
-  const DEV = mode !== 'production'
-
+export default defineConfig(() => {
   return {
     plugins: [
+      vanillaExtractPlugin(),
       solidPlugin({
         babel: {
           babelrc: false,
         },
+        ssr: false,
       }),
-      vanillaExtractPlugin(),
       VitePWA({
         includeAssets: ['og.jpg', 'robots.txt'],
         manifest: {
@@ -45,7 +43,6 @@ export default defineConfig(({ mode }) => {
           cleanupOutdatedCaches: true,
         },
       }),
-      !DEV && minifyHtml(),
     ],
     build: {
       cssCodeSplit: false,
