@@ -15,7 +15,7 @@ const ColorSchemeContext = createContext<ColorSchemeContextInterface>({
 })
 
 function saveScheme(scheme: string) {
-  localStorage.setItem('scheme', scheme)
+  localStorage.setItem('color-scheme', scheme)
 }
 
 const savedScheme = localStorage.getItem('color-scheme') || 'auto'
