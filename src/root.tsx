@@ -1,5 +1,5 @@
 // @refresh reload
-import { Routes } from 'solid-start/components'
+import { Routes } from 'solid-start/root'
 import './styles/fonts.css'
 import { ColorSchemeProvider } from '~/components/ColorSchemeSwitcher/context'
 
@@ -16,7 +16,6 @@ import {
   Header,
   Link,
 } from '~/components'
-import clsx from 'clsx'
 import { useColorScheme } from '~/components/ColorSchemeSwitcher/context'
 import { UpdateDialog } from '~/components/UpdateDialog'
 

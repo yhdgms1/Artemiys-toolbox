@@ -7,9 +7,11 @@ import {
   Container,
   Link,
   Paragraph,
+  Checkbox,
+  Select,
 } from '~/components'
 import { Title } from 'solid-meta'
-import { createHrefUrl, apiUrl } from '~/lib/cheap-sluts/utils'
+import { createHrefUrl, apiUrl, templates } from '~/lib/cheap-sluts/utils'
 
 type ApiData = {
   error?: string
@@ -21,18 +23,12 @@ export default () => {
   const [shortname, setShortname] = createSignal('')
   const [data, setData] = createSignal<ApiData>({})
 
+  const [template, setTemplate] = createSignal(templates[0])
+
+  const [useSvg, setUseSvg] = createSignal(false)
+
   const [width, setWidth] = createSignal(0)
   const [height, setHeight] = createSignal(0)
-
-  const renderers = [
-    'slut',
-    'crime',
-    'gay',
-    'muslim',
-    'azerbaijan',
-    'mom',
-    'svinoros',
-  ]
 
   const clickHandler = async () => {
     if (!shortname()) return
@@ -49,10 +45,12 @@ export default () => {
       setData(json)
     } catch (error) {
       setData({
-        error: t(['cheap sluts', 'Unexpected Error']),
+        error: t([i18nKey, 'Unexpected Error']),
       })
     }
   }
+
+  const i18nKey = 'cheap sluts'
 
   return (
     <>
@@ -60,58 +58,82 @@ export default () => {
       <Container independent={true}>
         <Input
           type="text"
-          placeholder={t(['cheap sluts', 'vk', 'id or shortname'])}
+          placeholder={t([i18nKey, 'vk', 'id or shortname'])}
           spellcheck={false}
           onInput={e => setShortname(e.currentTarget.value.trim())}
         >
-          {t(['cheap sluts', 'vk', 'id or shortname'])}
+          {t([i18nKey, 'vk', 'id or shortname'])}
         </Input>
+        <Select
+          title={t([i18nKey, 'Template'])}
+          onChange={e => setTemplate(e.currentTarget.value)}
+        >
+          <For each={templates}>
+            {tmpl => (
+              <option value={tmpl} selected={template() === tmpl}>
+                {tmpl.charAt(0).toUpperCase() + tmpl.slice(1)}
+              </option>
+            )}
+          </For>
+        </Select>
         <Disclosure
-          buttonChildren={t(['cheap sluts', 'picture', 'Additional options'])}
+          buttonChildren={t([i18nKey, 'picture', 'Additional options'])}
         >
           <Input
             type="number"
-            placeholder={t(['cheap sluts', 'picture', 'Picture width'])}
+            placeholder={t([i18nKey, 'picture', 'Picture width'])}
             spellcheck={false}
             onInput={e => setWidth(e.currentTarget.valueAsNumber)}
           >
-            {t(['cheap sluts', 'picture', 'Picture width'])}
+            {t([i18nKey, 'picture', 'Picture width'])}
           </Input>
           <Input
             type="number"
-            placeholder={t(['cheap sluts', 'picture', 'Picture height'])}
+            placeholder={t([i18nKey, 'picture', 'Picture height'])}
             spellcheck={false}
             onInput={e => setHeight(e.currentTarget.valueAsNumber)}
           >
-            {t(['cheap sluts', 'picture', 'Picture height'])}
+            {t([i18nKey, 'picture', 'Picture height'])}
           </Input>
+          <Checkbox
+            checked={useSvg()}
+            onChange={e => setUseSvg(e.currentTarget.checked)}
+            id="svg-check"
+          >
+            {t([i18nKey, 'picture', 'Use SVG image format'])}
+          </Checkbox>
         </Disclosure>
       </Container>
       <Button onClick={clickHandler}>
-        {t(['cheap sluts', 'picture-vk', 'Find'])}
+        {t([i18nKey, 'picture-vk', 'Find'])}
       </Button>
       <Show when={'error' in data()}>
         <Paragraph>
-          {t(['cheap sluts', 'Error'])}: {data().error}
+          {t([i18nKey, 'Error'])}: {data().error}
         </Paragraph>
       </Show>
       <Show when={'name' in data() && 'picture' in data()}>
-        <For each={renderers}>
-          {template => {
-            const { name, picture } = data() as Required<NonNullable<ApiData>>
+        {(() => {
+          const { name, picture } = data() as Required<NonNullable<ApiData>>
 
-            return (
-              <Link
-                small={true}
-                margin={true}
-                target="_blank"
-                href={createHrefUrl(template, name, picture, width(), height())}
-              >
-                {t(['cheap sluts', 'picture', 'Create'], { template })}
-              </Link>
-            )
-          }}
-        </For>
+          return (
+            <Link
+              small={true}
+              margin={true}
+              target="_blank"
+              href={createHrefUrl({
+                template: template(),
+                name,
+                picture,
+                width: width(),
+                height: height(),
+                format: useSvg() ? 'svg' : undefined,
+              })}
+            >
+              {t([i18nKey, 'picture', 'Create'], { template: template() })}
+            </Link>
+          )
+        })()}
       </Show>
     </>
   )
