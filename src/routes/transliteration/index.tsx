@@ -1,7 +1,8 @@
-import * as styles from '~/styles/index.css'
 import { t } from '~/i18n'
 import { Card, Heading, Paragraph } from '~/components'
 import { Title } from 'solid-meta'
+
+import * as styles from '~/styles/index.css'
 
 interface ISchema {
   readonly name: string
