@@ -14,14 +14,14 @@
   "license": "ISC",
   "devDependencies": {
     "@vanilla-extract/css": "^1.6.8",
-    "@vanilla-extract/vite-plugin": "^3.1.2",
-    "prettier": "2.5.1",
+    "@vanilla-extract/vite-plugin": "^3.1.4",
+    "prettier": "2.6.2",
     "solid-meta": "^0.27.3",
     "solid-start": "next",
     "solid-start-node": "next",
-    "typescript": "^4.6.2",
-    "undici": "^4.15.1",
-    "vite": "2.8.6",
+    "typescript": "^4.6.3",
+    "undici": "^4.12.2",
+    "vite": "2.9.1",
     "vite-plugin-pwa": "^0.11.13"
   },
   "dependencies": {
@@ -30,13 +30,13 @@
     "clsx": "^1.1.1",
     "copy-text-to-clipboard": "^3.0.1",
     "graphemer": "^1.3.0",
-    "murmurhash-es": "^0.1.1",
+    "ohash": "^0.1.0",
     "rosetta": "^1.1.0",
     "scule": "^0.2.1",
-    "solid-app-router": "^0.3.1",
+    "solid-app-router": "^0.3.2",
     "solid-headless": "^0.10.12",
-    "solid-js": "^1.3.12",
+    "solid-js": "^1.3.13",
     "solid-utils": "^0.8.1",
-    "workbox-window": "^6.5.1"
+    "workbox-window": "^6.5.2"
   }
 }

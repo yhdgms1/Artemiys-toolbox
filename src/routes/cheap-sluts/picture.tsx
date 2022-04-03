@@ -27,6 +27,7 @@ export default () => {
 
   return (
     <>
+      <Title>Picture</Title>
       <Link href="/cheap-sluts">{t(['t13n-id', 'go back'])}</Link>
       <Container independent={true}>
         <Input

@@ -1,42 +1,24 @@
-import * as styles from './style.css'
-import { t } from '../../i18n'
+import { t } from '~/i18n'
 import { useColorScheme } from './context'
-import { Radio } from '..'
+import { Select } from '..'
 
 export const ColorSchemeSwitcher = () => {
   const { scheme, setTheme } = useColorScheme()
 
   return (
-    <>
-      <fieldset class={styles.fieldset}>
-        <legend class={styles.legend}>
-          {t(['color scheme switcher', 'Scheme'])}
-        </legend>
-        <Radio
-          id="light-theme-radio"
-          name="color-scheme"
-          checked={scheme() === 'light'}
-          onChange={() => setTheme('light')}
-        >
-          {t(['color scheme switcher', 'Light'])}
-        </Radio>
-        <Radio
-          id="auto-theme-radio"
-          name="color-scheme"
-          checked={scheme() === 'auto'}
-          onChange={() => setTheme('auto')}
-        >
-          {t(['color scheme switcher', 'System'])}
-        </Radio>
-        <Radio
-          id="dark-theme-radio"
-          name="color-scheme"
-          checked={scheme() === 'dark'}
-          onChange={() => setTheme('dark')}
-        >
-          {t(['color scheme switcher', 'Dark'])}
-        </Radio>
-      </fieldset>
-    </>
+    <Select
+      title={t(['color scheme switcher', 'Scheme'])}
+      onChange={e => setTheme(e.currentTarget.value)}
+    >
+      <option selected={scheme() === 'light'} value="light">
+        {t(['color scheme switcher', 'Light'])}
+      </option>
+      <option selected={scheme() === 'auto'} value="auto">
+        {t(['color scheme switcher', 'System'])}
+      </option>
+      <option selected={scheme() === 'dark'} value="dark">
+        {t(['color scheme switcher', 'Dark'])}
+      </option>
+    </Select>
   )
 }

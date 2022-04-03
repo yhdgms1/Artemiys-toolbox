@@ -54,6 +54,7 @@ export default () => {
 
   return (
     <>
+      <Title>Picture VK</Title>
       <Link href="/cheap-sluts">{t(['t13n-id', 'go back'])}</Link>
       <Container independent={true}>
         <Input

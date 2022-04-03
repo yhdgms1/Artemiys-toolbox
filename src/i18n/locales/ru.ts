@@ -16,7 +16,7 @@ export default {
     err: 'Ошибка',
   },
   'color scheme switcher': {
-    Scheme: 'Схема',
+    Scheme: 'Цветовая Схема',
     Light: 'Светлая',
     System: 'Системная',
     Dark: 'Тёмная',
@@ -119,6 +119,9 @@ export default {
     title: 'Вибратор',
     Vibrate: 'Вибрировать',
     Stop: 'Остановить',
+  },
+  'murmur-hash': {
+    Hash: 'Хэшировать',
   },
   "There's a new update available": 'Доступно новое обновление',
   'Click on reload button to update':

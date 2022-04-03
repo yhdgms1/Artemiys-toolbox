@@ -1,13 +1,13 @@
-import * as styles from './style.css'
+import type { Component } from 'solid-js'
+
 import { createSignal } from 'solid-js'
-import { t } from '../../i18n'
+import { t } from '~/i18n'
 import { Button } from '..'
-
-import type { Component, JSX } from 'solid-js'
-
 import { Dialog, DialogPanel, DialogTitle, DialogOverlay } from 'solid-headless'
 
-export const Settings: Component<{ children: JSX.Element }> = props => {
+import * as styles from './style.css'
+
+const Settings: Component = props => {
   const [isOpen, setIsOpen] = createSignal(false)
 
   function closeModal() {
@@ -59,3 +59,5 @@ export const Settings: Component<{ children: JSX.Element }> = props => {
     </>
   )
 }
+
+export { Settings }

@@ -1,48 +1,32 @@
-import * as styles from './style.css'
 import { t } from '../../i18n'
-import { Radio } from '..'
+import { Select } from '..'
 
 export const LanguageSwitcher = () => {
   const savedLocale = localStorage.getItem('locale')
 
-  const setLocale = (lang: string | null) => {
+  const setLocale = (lang: string) => {
     if (savedLocale === lang) return
 
-    lang === null
+    lang === 'auto'
       ? localStorage.removeItem('locale')
       : localStorage.setItem('locale', lang)
     window.location.reload()
   }
 
-  const name = 'language'
-
   return (
-    <fieldset class={styles.fieldset}>
-      <legend class={styles.legend}>{t(['settings', 'Language'])}</legend>
-      <Radio
-        id={`${name}-radio-ru`}
-        name={name}
-        checked={savedLocale === 'ru'}
-        onChange={() => setLocale('ru')}
-      >
+    <Select
+      title={t(['settings', 'Language'])}
+      onChange={e => setLocale(e.currentTarget.value)}
+    >
+      <option selected={savedLocale === 'ru'} value="ru">
         Русский
-      </Radio>
-      <Radio
-        id={`${name}-radio-auto`}
-        name={name}
-        checked={savedLocale === null}
-        onChange={() => setLocale(null)}
-      >
+      </option>
+      <option selected={savedLocale === null} value="auto">
         {t(['settings', 'Auto'])}
-      </Radio>
-      <Radio
-        id={`${name}-radio-en`}
-        name={name}
-        checked={savedLocale === 'en'}
-        onChange={() => setLocale('en')}
-      >
+      </option>
+      <option selected={savedLocale === 'en'} value="en">
         English
-      </Radio>
-    </fieldset>
+      </option>
+    </Select>
   )
 }

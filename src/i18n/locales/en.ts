@@ -16,7 +16,7 @@ export default {
     err: 'Error',
   },
   'color scheme switcher': {
-    Scheme: 'Scheme',
+    Scheme: 'Color Scheme',
     Light: 'Light',
     System: 'System',
     Dark: 'Dark',
@@ -119,6 +119,9 @@ export default {
     title: 'Vibrator',
     Vibrate: 'Vibrate',
     Stop: 'Stop',
+  },
+  'murmur-hash': {
+    Hash: 'Hash',
   },
   "There's a new update available": "There's a new update available",
   'Click on reload button to update': 'Click on reload button to update.',
