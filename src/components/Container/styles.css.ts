@@ -1,6 +1,11 @@
 import { style } from '@vanilla-extract/css'
 
 export const responsive = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+  width: '90%',
   '@media': {
     'screen and (max-width: 1055px)': {
       display: 'grid',
