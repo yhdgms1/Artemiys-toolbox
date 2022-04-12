@@ -30,23 +30,25 @@ interface Options {
 export const createHrefUrl = (options: Options): string => {
   const { template, name, picture, width: w, height: h, format } = options
 
-  const searchParams = new URLSearchParams()
+  const url = new URL(template, baseUrl)
 
   const width =
     w || (template === 'gay' || template === 'azerbaijan' ? 1920 : 411)
-  searchParams.set('width', width.toString())
+
+  url.searchParams.set('width', width.toString())
 
   const height =
     h || (template === 'gay' || template === 'azerbaijan' ? 1080 : 823)
-  searchParams.set('height', height.toString())
 
-  searchParams.set('name', encodeURIComponent(name))
-  searchParams.set('picture', encodeURIComponent(picture))
-  searchParams.set('download', 'true')
+  url.searchParams.set('height', height.toString())
 
-  searchParams.set('format', format || 'png')
+  url.searchParams.set('name', encodeURIComponent(name))
+  url.searchParams.set('picture', encodeURIComponent(picture))
+  url.searchParams.set('download', 'true')
 
-  return baseUrl.concat(template, '?', searchParams.toString())
+  url.searchParams.set('format', format || 'png')
+
+  return url.toString()
 }
 
 export const apiUrl = baseUrl + 'api/'
