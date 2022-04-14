@@ -1,8 +1,5 @@
-export { Textarea } from './Textarea'
-export { Button, CopyButton } from './Button'
+export { CopyButton } from './Button'
 export { Card } from './Card'
-export { Input } from './Input'
-export { Select } from './Select'
 export { Checkbox } from './Checkbox'
 export { Radio } from './Radio'
 export { NotFound, Unknown } from './errors'
@@ -11,8 +8,15 @@ export { LanguageSwitcher } from './LanguageSwitcher'
 export { Settings } from './Settings'
 export { Header } from './Header'
 export { CustomDisclosure as Disclosure } from './Disclosure'
-export { Container } from './Container'
-export { Heading } from './Heading'
 export { CustomLink as Link } from './Link'
-export { Paragraph } from './Paragraph'
-export * from './Icon'
+export {
+  Input,
+  Icon,
+  ArrowDown,
+  Select,
+  Container,
+  Heading,
+  Paragraph,
+  Button,
+  Textarea,
+} from 'disgraceful-ui'

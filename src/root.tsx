@@ -1,6 +1,5 @@
 // @refresh reload
 import { Routes } from 'solid-start/root'
-import './styles/fonts.css'
 import { ColorSchemeProvider } from '~/components/ColorSchemeSwitcher/context'
 
 import * as styles from '~/styles/index.css'
@@ -18,6 +17,9 @@ import {
 } from '~/components'
 import { useColorScheme } from '~/components/ColorSchemeSwitcher/context'
 import { UpdateDialog } from '~/components/UpdateDialog'
+
+import './styles/fonts.css'
+import 'disgraceful-ui/style'
 
 const App = () => {
   const location = useLocation()
