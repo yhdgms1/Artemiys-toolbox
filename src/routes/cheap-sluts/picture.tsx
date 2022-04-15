@@ -80,7 +80,6 @@ export default () => {
           <Checkbox
             checked={useSvg()}
             onChange={e => setUseSvg(e.currentTarget.checked)}
-            id="svg-check"
           >
             {t([i18nKey, 'picture', 'Use SVG image format'])}
           </Checkbox>

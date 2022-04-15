@@ -11,6 +11,7 @@ export const input = style({
   outlineColor: vars.color[0],
   '::placeholder': {
     color: vars.color[1],
+    textAlign: 'center',
   },
   '@media': {
     'screen and (max-width: 640px)': {

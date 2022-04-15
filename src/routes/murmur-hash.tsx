@@ -35,7 +35,6 @@ export default () => {
       <Checkbox
         checked={radix() === 36}
         onChange={e => setRadix(e.currentTarget.checked ? 36 : 10)}
-        id="radix-check"
       >
         {'.toString(36)'}
       </Checkbox>

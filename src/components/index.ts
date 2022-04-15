@@ -1,6 +1,5 @@
 export { CopyButton } from './Button'
 export { Card } from './Card'
-export { Checkbox } from './Checkbox'
 export { Radio } from './Radio'
 export { NotFound, Unknown } from './errors'
 export { ColorSchemeSwitcher } from './ColorSchemeSwitcher'
@@ -19,4 +18,5 @@ export {
   Paragraph,
   Button,
   Textarea,
+  Checkbox,
 } from 'disgraceful-ui'

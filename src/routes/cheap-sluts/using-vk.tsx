@@ -50,10 +50,7 @@ export default () => {
         >
           {t(['cheap sluts', 'vk', 'id or shortname'])}
         </Input>
-        <Checkbox
-          onChange={e => setIsPrivate(e.currentTarget.checked)}
-          id="private-check"
-        >
+        <Checkbox onChange={e => setIsPrivate(e.currentTarget.checked)}>
           Private
         </Checkbox>
       </Container>
