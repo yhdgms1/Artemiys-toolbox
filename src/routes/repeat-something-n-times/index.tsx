@@ -18,7 +18,7 @@ export default () => {
     <>
       <Title>{title}</Title>
       <Heading as="h2">{title}</Heading>
-      <Container text={true} block={true} responsive={true}>
+      <Container text={true} responsive={true}>
         <label for={repeatInput}>
           {t(['repeat something n times', 'repeat'])}
         </label>
@@ -43,7 +43,7 @@ export default () => {
           {t(['repeat something n times', 'times'])}
         </label>
       </Container>
-      <Container block={true} responsive={true}>
+      <Container responsive={true}>
         <Button
           onClick={() =>
             count() <= 5368708

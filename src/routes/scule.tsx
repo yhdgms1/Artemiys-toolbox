@@ -26,7 +26,7 @@ export default () => {
         spellcheck={false}
         onInput={e => setText(e.currentTarget.value)}
       />
-      <Container block={true} responsive={true}>
+      <Container responsive={true}>
         <Button onClick={() => setOutput(pascalCase(text()))}>
           pascalCase
         </Button>

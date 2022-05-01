@@ -53,7 +53,7 @@ export default () => {
         placeholder={t('Enter the text here')}
         onInput={e => setText(e.currentTarget.value)}
       />
-      <Container block={true} responsive={true}>
+      <Container responsive={true}>
         <Button onClick={() => setOutput(text().toUpperCase())}>
           {t(['text-case-changer', 'to uppercase'])}!
         </Button>

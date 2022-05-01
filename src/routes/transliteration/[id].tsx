@@ -30,7 +30,7 @@ export default () => {
         placeholder={t(['t13n-id', 'input'])}
         onInput={e => setText(e.currentTarget.value)}
       />
-      <Container block={true} responsive={true}>
+      <Container responsive={true}>
         <Button
           onClick={() => {
             const translated = translate(text(), Schemas.get(schema))

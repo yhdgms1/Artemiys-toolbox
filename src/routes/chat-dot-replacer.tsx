@@ -17,7 +17,7 @@ export default () => {
         placeholder={t('Enter the text here')}
         onInput={e => setInput(e.currentTarget.value)}
       />
-      <Container block={true} responsive={true}>
+      <Container responsive={true}>
         <Button
           onClick={() =>
             setOutput(

@@ -18,7 +18,7 @@ export default () => {
         placeholder={t(['swagify', 'Enter the text to swagify'])}
         onInput={e => setText(e.currentTarget.value)}
       />
-      <Container block={true} responsive={true}>
+      <Container responsive={true}>
         <Button onClick={() => setOutput(swagify(text()))}>Swagify!</Button>
         <CopyButton copy={output()} />
       </Container>

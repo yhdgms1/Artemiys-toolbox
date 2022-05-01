@@ -5,7 +5,6 @@ export { NotFound, Unknown } from './errors'
 export { ColorSchemeSwitcher } from './ColorSchemeSwitcher'
 export { LanguageSwitcher } from './LanguageSwitcher'
 export { Settings } from './Settings'
-export { Header } from './Header'
 export { CustomDisclosure as Disclosure } from './Disclosure'
 export { CustomLink as Link } from './Link'
 export {
@@ -19,4 +18,5 @@ export {
   Button,
   Textarea,
   Checkbox,
+  Header,
 } from 'disgraceful-ui'

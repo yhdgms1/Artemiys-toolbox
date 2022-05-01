@@ -26,7 +26,7 @@ export default () => {
         placeholder={t('Enter the text here')}
         onInput={e => setText(e.currentTarget.value)}
       />
-      <Container block={true} responsive={true}>
+      <Container responsive={true}>
         <Button onClick={() => setOutput(murmurHash(text()).toString(radix()))}>
           {t(['murmur-hash', 'Hash'])}
         </Button>
