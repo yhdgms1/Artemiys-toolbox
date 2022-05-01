@@ -1,4 +1,4 @@
-import type { Component, Accessor, Setter } from 'solid-js'
+import type { Component } from 'solid-js'
 import {
   AlertDialog,
   AlertDialogTitle,
@@ -10,30 +10,13 @@ import { useRegisterSW } from 'virtual:pwa-register/solid'
 
 import { t } from '~/i18n'
 
-type RegisterSWOptions = {
-  immediate?: boolean
-  onNeedRefresh?: () => void
-  onOfflineReady?: () => void
-  onRegistered?: (registration: ServiceWorkerRegistration | undefined) => void
-  onRegisterError?: (error: any) => void
-}
-
-declare function useRegisterSW(options?: RegisterSWOptions): {
-  needRefresh: [Accessor<boolean>, Setter<boolean>]
-  offlineReady: [Accessor<boolean>, Setter<boolean>]
-  updateServiceWorker: (reloadPage?: boolean) => Promise<void>
-}
-
 import * as styles from './style.css'
 
 export const UpdateDialog: Component = () => {
-  const {
-    needRefresh: [needRefresh, setNeedRefresh],
-    updateServiceWorker,
-  } = useRegisterSW({
-    onRegistered(registration) {},
-    onRegisterError(error) {},
-  })
+  const sw = useRegisterSW()
+
+  const { updateServiceWorker } = sw
+  const [needRefresh, setNeedRefresh] = sw.needRefresh
 
   return (
     <AlertDialog isOpen={needRefresh()}>
