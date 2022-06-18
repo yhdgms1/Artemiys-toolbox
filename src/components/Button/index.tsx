@@ -1,4 +1,4 @@
-import type { Component } from 'solid-js'
+import type { VoidComponent } from 'solid-js'
 import { createSignal, onCleanup } from 'solid-js'
 import { t } from '../../i18n'
 import { Button } from 'disgraceful-ui'
@@ -6,7 +6,7 @@ import copy from 'copy-text-to-clipboard'
 
 import * as styles from './style.css'
 
-export const CopyButton: Component<{ copy: string }> = props => {
+export const CopyButton: VoidComponent<{ copy: string }> = props => {
   const defaultText = t(['btn__copy', 'default'])
 
   const [text, setText] = createSignal(defaultText)

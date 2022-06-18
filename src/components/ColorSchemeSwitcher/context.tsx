@@ -1,4 +1,4 @@
-import type { Component, Accessor } from 'solid-js'
+import type { FlowComponent, Accessor } from 'solid-js'
 import { createSignal, createContext, useContext } from 'solid-js'
 import { light_theme, dark_theme } from '../../styles/theme.css'
 
@@ -24,7 +24,7 @@ const isColorSchemesSupported =
   window.matchMedia('(prefers-color-scheme)').media !== 'not all'
 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
-export const ColorSchemeProvider: Component = props => {
+export const ColorSchemeProvider: FlowComponent = props => {
   const [scheme, setScheme] = createSignal(savedScheme)
   const [className, setClassName] = createSignal(light_theme)
 

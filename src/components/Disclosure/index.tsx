@@ -1,4 +1,4 @@
-import type { Component, JSXElement } from 'solid-js'
+import type { FlowComponent, JSXElement } from 'solid-js'
 import clsx from 'clsx'
 import { Disclosure, DisclosureButton, DisclosurePanel } from 'solid-headless'
 import { Icon, ArrowDown } from '..'
@@ -6,11 +6,10 @@ import { Icon, ArrowDown } from '..'
 import * as styles from './styles.css'
 
 interface Props {
-  children: JSXElement
   buttonChildren: JSXElement
 }
 
-export const CustomDisclosure: Component<Props> = props => {
+export const CustomDisclosure: FlowComponent<Props> = props => {
   return (
     <Disclosure as="div" class={styles.disclosure}>
       <DisclosureButton class={styles.disclosureButton}>

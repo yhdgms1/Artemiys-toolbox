@@ -1,4 +1,4 @@
-import type { Component } from 'solid-js'
+import type { FlowComponent } from 'solid-js'
 
 import { createSignal } from 'solid-js'
 import { t } from '~/i18n'
@@ -7,14 +7,14 @@ import { Dialog, DialogPanel, DialogTitle, DialogOverlay } from 'solid-headless'
 
 import * as styles from './style.css'
 
-const Settings: Component = props => {
+const Settings: FlowComponent = props => {
   const [isOpen, setIsOpen] = createSignal(false)
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false)
   }
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true)
   }
 

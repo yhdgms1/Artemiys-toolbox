@@ -1,4 +1,4 @@
-import type { Component } from 'solid-js'
+import type { VoidComponent } from 'solid-js'
 import {
   AlertDialog,
   AlertDialogTitle,
@@ -12,7 +12,7 @@ import { t } from '~/i18n'
 
 import * as styles from './style.css'
 
-export const UpdateDialog: Component = () => {
+export const UpdateDialog: VoidComponent = () => {
   const sw = useRegisterSW()
 
   const { updateServiceWorker } = sw
