@@ -11,7 +11,9 @@ import {
   Select,
 } from '~/components'
 import { Title } from 'solid-meta'
-import { createHrefUrl, apiUrl, templates } from '~/lib/cheap-sluts/utils'
+
+import { cs, cdashs } from '~/lib/constants'
+import { createHrefUrl, apiUrl, templates } from '~/lib/cs/utils'
 
 type ApiData = {
   error?: string
@@ -50,12 +52,12 @@ export default () => {
     }
   }
 
-  const i18nKey = 'cheap sluts'
+  const i18nKey = cs
 
   return (
     <>
       <Title>Picture VK</Title>
-      <Link href="/cheap-sluts">{t(['t13n-id', 'go back'])}</Link>
+      <Link href={'/' + cdashs}>{t(['t13n-id', 'go back'])}</Link>
       <Container independent={true}>
         <Input
           type="text"

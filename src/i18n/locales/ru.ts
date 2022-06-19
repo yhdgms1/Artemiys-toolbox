@@ -1,3 +1,5 @@
+import { cs } from '~/lib/constants'
+
 export default {
   'character-count': {
     title: 'Счётчик длины текста',
@@ -62,7 +64,7 @@ export default {
       title: 'Произошла ошибка',
     },
   },
-  'cheap sluts': {
+  [cs]: {
     'Select a method': 'Выберите метод',
     vk: {
       'id or shortname': 'id или shortname',
@@ -137,7 +139,7 @@ export default {
     transliteration: 'Транслитерировать кириллицу в латиницу',
     swagify: '[LEGIT] xX Стилизовать любое предложение или слОво Xx',
     'string backwards': 'Переворот текста задом наперёд',
-    'cheap sluts': 'Унижайте людей показывая их на фальшивом сайте проституток',
+    [cs]: 'Унижайте людей показывая их на фальшивом сайте проституток',
     'text case changer': 'изменение РЕГИСТРА тЕКстА',
     'chat dot replacer':
       'Заменить "." на " (точка) ", чтобы поделиться ссылкой в чате',

@@ -1,6 +1,7 @@
 import { Title } from 'solid-meta'
 import { Card } from '~/components'
 import { t } from '~/i18n'
+import { cs } from '~/lib/constants'
 
 const tools = [
   'characters count',
@@ -8,7 +9,7 @@ const tools = [
   'transliteration',
   'swagify',
   'string backwards',
-  'cheap sluts',
+  cs,
   'text case changer',
   'chat dot replacer',
   'vibrator',

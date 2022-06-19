@@ -1,4 +1,6 @@
-const baseUrl = 'https://cheap-sluts.pages.dev/'
+import { cdashs } from '~/lib/constants'
+
+const baseUrl = `https://${cdashs}.pages.dev/`
 
 interface Options {
   /**

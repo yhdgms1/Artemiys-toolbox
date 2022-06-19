@@ -1,10 +1,11 @@
-import { ApiResponse } from '~/lib/cheap-sluts/types'
+import { ApiResponse } from '~/lib/cs/types'
 import { createSignal, Show } from 'solid-js'
 import { t } from '~/i18n'
 import { Button, Input, Container, Link, Paragraph } from '~/components'
 import { Title } from 'solid-meta'
 
-import { apiUrl } from '~/lib/cheap-sluts/utils'
+import { cs, cdashs } from '~/lib/constants'
+import { apiUrl } from '~/lib/cs/utils'
 
 export default () => {
   const [id, setId] = createSignal('')
@@ -25,30 +26,30 @@ export default () => {
 
       setData(json)
     } catch {
-      setData({ error: t(['cheap sluts', 'Unexpected Error']) })
+      setData({ error: t([cs, 'Unexpected Error']) })
     }
   }
 
   return (
     <>
       <Title>Remove from site</Title>
-      <Link href="/cheap-sluts">{t(['t13n-id', 'go back'])}</Link>
+      <Link href={'/' + cdashs}>{t(['t13n-id', 'go back'])}</Link>
       <Container independent={true}>
         <Input
           type="text"
-          placeholder={t(['cheap sluts', 'remove', 'id'])}
+          placeholder={t([cs, 'remove', 'id'])}
           onInput={e => setId(e.currentTarget.value.trim())}
         >
-          {t(['cheap sluts', 'remove', 'id'])}
+          {t([cs, 'remove', 'id'])}
         </Input>
       </Container>
-      <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
+      <Button onClick={getData}>{t([cs, 'Submit'])}</Button>
       <Paragraph>
         <Show when={data().userid}>
-          {t(['cheap sluts', 'remove', 'Removed Successfully']) + '!'}
+          {t([cs, 'remove', 'Removed Successfully']) + '!'}
         </Show>
         <Show when={data().error}>
-          {t(['cheap sluts', 'Error']) + ': ' + data().error}
+          {t([cs, 'Error']) + ': ' + data().error}
         </Show>
       </Paragraph>
     </>

@@ -10,7 +10,9 @@ import {
   Select,
 } from '~/components'
 import { Title } from 'solid-meta'
-import { createHrefUrl, templates } from '~/lib/cheap-sluts/utils'
+
+import { cs, cdashs } from '~/lib/constants'
+import { createHrefUrl, templates } from '~/lib/cs/utils'
 
 export default () => {
   const [name, setName] = createSignal('')
@@ -23,12 +25,12 @@ export default () => {
   const [width, setWidth] = createSignal(0)
   const [height, setHeight] = createSignal(0)
 
-  const i18nKey = 'cheap sluts'
+  const i18nKey = cs
 
   return (
     <>
       <Title>Picture</Title>
-      <Link href="/cheap-sluts">{t(['t13n-id', 'go back'])}</Link>
+      <Link href={'/' + cdashs}>{t(['t13n-id', 'go back'])}</Link>
       <Container independent={true}>
         <Input
           type="text"

@@ -1,3 +1,5 @@
+import { cs } from '~/lib/constants'
+
 export default {
   'character-count': {
     title: 'Text length counter',
@@ -61,7 +63,7 @@ export default {
       title: 'An error occurred',
     },
   },
-  'cheap sluts': {
+  [cs]: {
     'Select a method': 'Select a method',
     vk: {
       'id or shortname': 'id or shortname',
@@ -136,8 +138,7 @@ export default {
     transliteration: 'Transliterate cyrillic to latin',
     swagify: 'Swagify any sentence or word',
     'string backwards': 'Turning text backwards',
-    'cheap sluts':
-      'Humiliate people by showing them on a fake prostitution site',
+    [cs]: 'Humiliate people by showing them on a fake prostitution site',
     'text case changer': 'text CASE chAnGeR',
     'chat dot replacer': 'Replace "." to " (dot) " to share link in chat',
     vibrator: 'Just a vibrator',

@@ -1,4 +1,4 @@
-import { ApiResponse } from '~/lib/cheap-sluts/types'
+import { ApiResponse } from '~/lib/cs/types'
 import { createSignal, Show } from 'solid-js'
 import { t } from '~/i18n'
 import {
@@ -11,7 +11,8 @@ import {
 } from '~/components'
 import { Title } from 'solid-meta'
 
-import { apiUrl } from '~/lib/cheap-sluts/utils'
+import { cs, cdashs } from '~/lib/constants'
+import { apiUrl } from '~/lib/cs/utils'
 
 export default () => {
   const [name, setName] = createSignal('')
@@ -37,52 +38,52 @@ export default () => {
 
       setData(json)
     } catch {
-      setData({ error: t(['cheap sluts', 'Unexpected Error']) })
+      setData({ error: t([cs, 'Unexpected Error']) })
     }
   }
 
   return (
     <>
       <Title>Create Manually</Title>
-      <Link href="/cheap-sluts">{t(['t13n-id', 'go back'])}</Link>
+      <Link href={'/' + cdashs}>{t(['t13n-id', 'go back'])}</Link>
       <Container independent={true}>
         <Input
           type="text"
-          placeholder={t(['cheap sluts', 'manually', 'Name'])}
+          placeholder={t([cs, 'manually', 'Name'])}
           spellcheck={false}
           onInput={e => setName(e.currentTarget.value)}
         >
-          {t(['cheap sluts', 'manually', 'Name'])}
+          {t([cs, 'manually', 'Name'])}
         </Input>
         <Input
           type="text"
-          placeholder={t(['cheap sluts', 'manually', 'Picture'])}
+          placeholder={t([cs, 'manually', 'Picture'])}
           spellcheck={false}
           onInput={e => setPic(e.currentTarget.value)}
         >
-          {t(['cheap sluts', 'manually', 'Picture'])}
+          {t([cs, 'manually', 'Picture'])}
         </Input>
         <Checkbox onChange={e => setIsPrivate(e.currentTarget.checked)}>
           Private
         </Checkbox>
       </Container>
-      <Button onClick={getData}>{t(['cheap sluts', 'Submit'])}</Button>
+      <Button onClick={getData}>{t([cs, 'Submit'])}</Button>
       <Show when={data().userid}>
         <>
-          <Paragraph>{t(['cheap sluts', 'Created Successfully'])}!</Paragraph>
+          <Paragraph>{t([cs, 'Created Successfully'])}!</Paragraph>
           <Link
             small={true}
             target="_blank"
             rel="noopener noreferer"
-            href={'https://cheap-sluts.pages.dev/slut/' + data().userid}
+            href={`https://${cdashs}.pages.dev/slut/` + data().userid}
           >
-            {t(['cheap sluts', 'Look at this'])}
+            {t([cs, 'Look at this'])}
           </Link>
         </>
       </Show>
       <Show when={data().error}>
         <Paragraph>
-          {t(['cheap sluts', 'Error'])}: {data().error}
+          {t([cs, 'Error'])}: {data().error}
         </Paragraph>
       </Show>
     </>

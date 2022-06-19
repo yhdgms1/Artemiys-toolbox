@@ -3,6 +3,8 @@ import { t } from '~/i18n'
 import { Card, Heading, Paragraph } from '~/components'
 import { Title } from 'solid-meta'
 
+import { cs, cdashs } from '~/lib/constants'
+
 interface IMethod {
   readonly title: string
   readonly link: string
@@ -31,20 +33,20 @@ const methods: IMethod[] = [
   },
 ]
 
-const title = 'Cheap Sluts'
+const title = cs
 
 export default () => {
   return (
     <>
       <Title>{title}</Title>
       <Heading as="h2">{title}</Heading>
-      <Paragraph>{t(['cheap sluts', 'Select a method'])}</Paragraph>
+      <Paragraph>{t([cs, 'Select a method'])}</Paragraph>
       <div class={styles.main}>
         {methods.map(method => (
           <Card
-            href={'/cheap-sluts/' + method.link}
+            href={'/' + cdashs + '/' + method.link}
             title={method.title}
-            description={t(['cheap sluts', 'home', method.title])}
+            description={t([cs, 'home', method.title])}
           />
         ))}
       </div>
