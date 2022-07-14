@@ -3,6 +3,7 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import { default as solidPlugin } from 'solid-start'
 import { VitePWA } from 'vite-plugin-pwa'
 import pkg from './package.json'
+import adapter from './adapter-custom'
 
 export default defineConfig(() => {
   return {
@@ -13,6 +14,7 @@ export default defineConfig(() => {
           babelrc: false,
         },
         ssr: false,
+        adapter: adapter(),
       }),
       VitePWA({
         includeAssets: ['og.jpg', 'robots.txt'],
