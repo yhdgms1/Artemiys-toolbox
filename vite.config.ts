@@ -12,6 +12,9 @@ export default defineConfig(() => {
       solidPlugin({
         babel: {
           babelrc: false,
+          browserslistConfigFile: false,
+          configFile: false,
+          highlightCode: false,
         },
         ssr: false,
         adapter: adapter(),
