@@ -21,12 +21,6 @@ import { UpdateDialog } from '~/components/UpdateDialog'
 import './styles/fonts.css'
 import 'disgraceful-ui/style'
 
-import Default from './routes/index'
-
-const BasicRoutes = (): any => {
-  return [{ path: '/', component: Default }]
-}
-
 const App = () => {
   const location = useLocation()
 
@@ -60,7 +54,6 @@ const App = () => {
         <ErrorBoundary fallback={Unknown}>
           <Suspense fallback={<>{/* @todo: fancy loading indicator here */}</>}>
             <Routes>
-              <BasicRoutes />
               <FileRoutes />
             </Routes>
           </Suspense>

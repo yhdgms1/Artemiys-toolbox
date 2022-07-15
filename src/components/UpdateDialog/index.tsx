@@ -6,13 +6,15 @@ import {
   AlertDialogOverlay,
 } from 'solid-headless'
 import { Button } from '..'
-import { useRegisterSW } from 'virtual:pwa-register/solid'
+// import { useRegisterSW } from 'virtual:pwa-register/solid'
 
 import { t } from '~/i18n'
 
 import * as styles from './style.css'
 
 export const UpdateDialog: VoidComponent = () => {
+  return null
+
   const sw = useRegisterSW()
 
   const { updateServiceWorker } = sw

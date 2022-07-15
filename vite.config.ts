@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import { default as solidPlugin } from 'solid-start'
-import { VitePWA } from 'vite-plugin-pwa'
+// import { VitePWA } from 'vite-plugin-pwa'
+// less lines of code will be affected (prettier)
+const VitePWA = (...args: any[]) => undefined
 import pkg from './package.json'
 import adapter from './adapter-custom'
 
