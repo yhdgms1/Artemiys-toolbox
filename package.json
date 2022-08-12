@@ -37,7 +37,6 @@
     "scule": "^0.3.2",
     "solid-headless": "^0.12.6",
     "solid-js": "1.4.8",
-    "solid-start-static": "0.1.0-alpha.99",
     "solid-utils": "^0.8.1",
     "workbox-window": "^6.5.3"
   }
