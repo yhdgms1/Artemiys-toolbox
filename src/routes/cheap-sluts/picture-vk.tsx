@@ -115,27 +115,21 @@ export default () => {
         </Paragraph>
       </Show>
       <Show when={'name' in data() && 'picture' in data()}>
-        {(() => {
-          const { name, picture } = data() as Required<NonNullable<ApiData>>
-
-          return (
-            <Link
-              small={true}
-              margin={true}
-              target="_blank"
-              href={createHrefUrl({
-                template: template(),
-                name,
-                picture,
-                width: width(),
-                height: height(),
-                format: useSvg() ? 'svg' : undefined,
-              })}
-            >
-              {t([i18nKey, 'picture', 'Create'], { template: template() })}
-            </Link>
-          )
-        })()}
+        <Link
+          small={true}
+          margin={true}
+          target="_blank"
+          href={createHrefUrl({
+            template: template(),
+            name: data().name!,
+            picture: data().picture!,
+            width: width(),
+            height: height(),
+            format: useSvg() ? 'svg' : undefined,
+          })}
+        >
+          {t([i18nKey, 'picture', 'Create'], { template: template() })}
+        </Link>
       </Show>
     </>
   )

@@ -37,18 +37,20 @@ export const createHrefUrl = (options: Options): string => {
   const width =
     w || (template === 'gay' || template === 'azerbaijan' ? 1920 : 411)
 
-  url.searchParams.set('width', width.toString())
+  const set = url.searchParams.set.bind(url.searchParams)
+
+  set('width', width.toString())
 
   const height =
     h || (template === 'gay' || template === 'azerbaijan' ? 1080 : 823)
 
-  url.searchParams.set('height', height.toString())
+  set('height', height.toString())
 
-  url.searchParams.set('name', encodeURIComponent(name))
-  url.searchParams.set('picture', encodeURIComponent(picture))
-  url.searchParams.set('download', 'true')
+  set('name', encodeURIComponent(name))
+  set('picture', encodeURIComponent(picture))
+  set('download', 'true')
 
-  url.searchParams.set('format', format || 'png')
+  set('format', format || 'png')
 
   return url.toString()
 }
