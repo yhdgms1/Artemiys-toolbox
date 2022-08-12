@@ -19,7 +19,6 @@ specifiers:
   solid-js: 1.4.8
   solid-start: 0.1.0-alpha.99
   solid-start-node: 0.1.0-alpha.99
-  solid-utils: ^0.8.1
   typescript: ^4.7.4
   undici: ^5.8.2
   vite: 3.0.5
@@ -40,7 +39,6 @@ dependencies:
   scule: 0.3.2
   solid-headless: 0.12.6_solid-js@1.4.8
   solid-js: 1.4.8
-  solid-utils: 0.8.1_solid-js@1.4.8
   workbox-window: 6.5.3
 
 devDependencies:
@@ -4415,14 +4413,6 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       solid-js: ^1.2
-    dependencies:
-      solid-js: 1.4.8
-    dev: false
-
-  /solid-utils/0.8.1_solid-js@1.4.8:
-    resolution: {integrity: sha512-LLeO7Hr99OLFY+Zfx8U7Hw5VZOaFT8qWoLWGfnq3kDmo7KAGdIoq44ijy7mdYj88e+2cWPdkyhItsS3FGjeS6g==}
-    peerDependencies:
-      solid-js: '>= 1.0'
     dependencies:
       solid-js: 1.4.8
     dev: false

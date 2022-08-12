@@ -11,7 +11,7 @@ interface Props {
 
 export const CustomDisclosure: FlowComponent<Props> = props => {
   return (
-    <Disclosure as="div" class={styles.disclosure}>
+    <Disclosure defaultOpen={false} as="div" class={styles.disclosure}>
       <DisclosureButton class={styles.disclosureButton}>
         {({ isOpen }) => (
           <>
