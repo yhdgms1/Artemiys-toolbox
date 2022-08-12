@@ -2,7 +2,7 @@ import { swagify } from '@artemis69/swagify'
 import { createSignal } from 'solid-js'
 import { t } from '~/i18n'
 import { CopyButton, Textarea, Button, Container, Heading } from '~/components'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 
 export default () => {
   const [text, setText] = createSignal('')

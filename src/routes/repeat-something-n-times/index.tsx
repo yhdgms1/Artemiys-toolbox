@@ -2,7 +2,7 @@ import { createSignal, createUniqueId } from 'solid-js'
 import { input } from './style.css'
 import { t } from '~/i18n'
 import { CopyButton, Textarea, Button, Container, Heading } from '~/components'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 
 export default () => {
   const [text, setText] = createSignal('')

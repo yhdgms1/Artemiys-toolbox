@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
-import { default as solidPlugin } from 'solid-start'
+import { default as solidPlugin } from 'solid-start/vite'
 // import { VitePWA } from 'vite-plugin-pwa'
 // less lines of code will be affected (prettier)
 const VitePWA = (...args: any[]) => undefined
@@ -19,6 +19,7 @@ export default defineConfig(() => {
           highlightCode: false,
         },
         ssr: false,
+        inspect: false,
         adapter: adapter(),
       }),
       VitePWA({

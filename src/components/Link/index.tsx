@@ -1,5 +1,5 @@
 import { type Component, splitProps } from 'solid-js'
-import { type LinkProps, Link } from 'solid-app-router'
+import { type LinkProps, Link } from '@solidjs/router'
 import clsx from 'clsx'
 
 import * as styles from './styles.css'

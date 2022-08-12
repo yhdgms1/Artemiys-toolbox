@@ -1,6 +1,7 @@
 import type { FlowComponent, Accessor } from 'solid-js'
 import { createSignal, createContext, useContext } from 'solid-js'
 import { light_theme, dark_theme } from '../../styles/theme.css'
+import { isServer } from '~/lib/constants'
 
 interface ColorSchemeContextInterface {
   scheme: Accessor<string>
@@ -11,18 +12,24 @@ interface ColorSchemeContextInterface {
 const ColorSchemeContext = createContext<ColorSchemeContextInterface>({
   scheme: () => 'auto',
   className: () => light_theme,
-  setTheme: (theme: string) => {},
+  setTheme: (_: string) => {},
 })
 
 function saveScheme(scheme: string) {
-  localStorage.setItem('color-scheme', scheme)
+  !isServer && localStorage.setItem('color-scheme', scheme)
 }
 
-const savedScheme = localStorage.getItem('color-scheme') || 'auto'
+const getSavedScheme = () => {
+  return localStorage.getItem('color-scheme') || 'auto'
+}
 
-const isColorSchemesSupported =
-  window.matchMedia('(prefers-color-scheme)').media !== 'not all'
-const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+const savedScheme = isServer ? 'light' : getSavedScheme()
+
+const isColorSchemesSupported = isServer
+  ? false
+  : matchMedia('(prefers-color-scheme)').media !== 'not all'
+
+const darkMQ = isServer ? null : matchMedia('(prefers-color-scheme: dark)')
 
 export const ColorSchemeProvider: FlowComponent = props => {
   const [scheme, setScheme] = createSignal(savedScheme)
@@ -40,18 +47,19 @@ export const ColorSchemeProvider: FlowComponent = props => {
 
     if (theme === 'auto') {
       isColorSchemesSupported
-        ? setClassName(darkModeMediaQuery.matches ? dark_theme : light_theme)
+        ? setClassName(darkMQ!.matches ? dark_theme : light_theme)
         : setClassName(light_theme)
     } else {
       setClassName(theme === 'dark' ? dark_theme : light_theme)
     }
   }
 
-  setTheme(savedScheme)
-
-  typeof darkModeMediaQuery.addEventListener === 'function'
-    ? darkModeMediaQuery.addEventListener('change', onPrefersColorSchemeChanges)
-    : darkModeMediaQuery.addListener(onPrefersColorSchemeChanges)
+  if (!isServer) {
+    setTheme(savedScheme)
+    typeof darkMQ!.addEventListener === 'function'
+      ? darkMQ!.addEventListener('change', onPrefersColorSchemeChanges)
+      : darkMQ!.addListener(onPrefersColorSchemeChanges)
+  }
 
   return (
     <ColorSchemeContext.Provider

@@ -1,13 +1,13 @@
-import type { FlowComponent } from 'solid-js'
+import type { VoidComponent } from 'solid-js'
 
 import { createSignal } from 'solid-js'
 import { t } from '~/i18n'
-import { Button } from '..'
+import { Button, ColorSchemeSwitcher, LanguageSwitcher } from '..'
 import { Dialog, DialogPanel, DialogTitle, DialogOverlay } from 'solid-headless'
 
 import * as styles from './style.css'
 
-const Settings: FlowComponent = props => {
+const Settings: VoidComponent = () => {
   const [isOpen, setIsOpen] = createSignal(false)
 
   const closeModal = () => {
@@ -51,7 +51,8 @@ const Settings: FlowComponent = props => {
             <DialogTitle as="h3" class={styles.dialogTitle}>
               {t(['settings', 'Settings'])}
             </DialogTitle>
-            {props.children}
+            <ColorSchemeSwitcher />
+            <LanguageSwitcher />
             <Button onClick={closeModal}>{t(['settings', 'Close'])}</Button>
           </DialogPanel>
         </div>

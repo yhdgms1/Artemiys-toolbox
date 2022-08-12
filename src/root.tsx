@@ -1,75 +1,55 @@
 // @refresh reload
+
+import { ErrorBoundary, Suspense } from 'solid-js'
+import { Body, Html, Scripts } from 'solid-start'
 import { FileRoutes } from 'solid-start/root'
-import { ColorSchemeProvider } from '~/components/ColorSchemeSwitcher/context'
+import { useLocation, Routes } from '@solidjs/router'
+import { Unknown, Header } from '~/components'
+
+import {
+  ColorSchemeProvider,
+  useColorScheme,
+} from '~/components/ColorSchemeSwitcher'
+import { UpdateDialog } from '~/components/UpdateDialog'
 
 import * as styles from '~/styles/index.css'
-import * as appStyles from '~/styles/app.css'
-import { useLocation, Routes } from 'solid-app-router'
-import { ErrorBoundary, Suspense, createEffect } from 'solid-js'
-import { Portal } from 'solid-js/web'
-import {
-  Unknown,
-  ColorSchemeSwitcher,
-  Settings,
-  LanguageSwitcher,
-  Header,
-  Link,
-} from '~/components'
-import { useColorScheme } from '~/components/ColorSchemeSwitcher/context'
-import { UpdateDialog } from '~/components/UpdateDialog'
 
 import './styles/fonts.css'
 import 'disgraceful-ui/style'
 
-const App = () => {
+const Root = () => {
+  const { className } = useColorScheme()
   const location = useLocation()
 
-  const { className } = useColorScheme()
-
-  createEffect(() => (document.body.className = className()))
-
   return (
-    <>
-      <Header>
-        <h1>
-          <Link
-            href="/"
-            class={appStyles.title}
-            classList={{
-              [appStyles.no_underline]: location.pathname === '/',
-            }}
+    <Html lang="en">
+      <Body>
+        <div id="root" class={className()}>
+          <Header location={location} />
+          <main
+            class={location.pathname === '/' ? styles.main : styles.main_layout}
+            role="main"
           >
-            Artemiy's Toolbox
-          </Link>
-        </h1>
-        <Settings>
-          <ColorSchemeSwitcher />
-          <LanguageSwitcher />
-        </Settings>
-      </Header>
-      <main
-        class={location.pathname === '/' ? styles.main : styles.main_layout}
-        role="main"
-      >
-        <ErrorBoundary fallback={Unknown}>
-          <Suspense fallback={<>{/* @todo: fancy loading indicator here */}</>}>
-            <Routes>
-              <FileRoutes />
-            </Routes>
-          </Suspense>
-        </ErrorBoundary>
-      </main>
-    </>
+            <ErrorBoundary fallback={Unknown}>
+              <Suspense>
+                <Routes>
+                  <FileRoutes />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </main>
+          <UpdateDialog />
+        </div>
+        <Scripts />
+      </Body>
+    </Html>
   )
 }
 
-export default function Root() {
+export default function () {
   return (
     <ColorSchemeProvider>
-      <App />
-      <Portal>
-        <UpdateDialog />
-      </Portal>
+      <Root />
     </ColorSchemeProvider>
   )
 }

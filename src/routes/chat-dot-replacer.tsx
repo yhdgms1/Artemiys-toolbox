@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js'
 import { t } from '../i18n'
 import { Button, CopyButton, Textarea, Container, Heading } from '~/components'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 
 export default () => {
   const [input, setInput] = createSignal('')

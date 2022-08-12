@@ -1,4 +1,16 @@
 import { render } from 'solid-js/web'
-import { StartClient } from 'solid-start/entry-client'
+import { MetaProvider } from '@solidjs/meta'
+import { Router } from '@solidjs/router'
+import Root from './root'
 
-render(() => <StartClient />, document.body)
+function App() {
+  return (
+    <MetaProvider>
+      <Router>
+        <Root />
+      </Router>
+    </MetaProvider>
+  )
+}
+
+render(() => <App />, document.body)

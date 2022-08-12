@@ -1,6 +1,6 @@
 import { Button, Heading } from '~/components'
 import { t } from '~/i18n'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 
 const Vibrator = (length: number) => {
   let interval: number | undefined

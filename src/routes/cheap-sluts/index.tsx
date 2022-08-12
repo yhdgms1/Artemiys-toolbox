@@ -1,7 +1,7 @@
 import * as styles from '~/styles/index.css'
 import { t } from '~/i18n'
 import { Card, Heading, Paragraph } from '~/components'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 
 import { cs, cdashs } from '~/lib/constants'
 

@@ -2,7 +2,7 @@ import { createSignal } from 'solid-js'
 import Graphemer from 'graphemer'
 import { t } from '~/i18n'
 import { CopyButton, Textarea, Heading } from '~/components'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 
 export default () => {
   const [output, setOutput] = createSignal('')

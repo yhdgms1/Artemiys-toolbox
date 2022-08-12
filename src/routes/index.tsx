@@ -1,4 +1,4 @@
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 import { Card } from '~/components'
 import { t } from '~/i18n'
 import { cs } from '~/lib/constants'

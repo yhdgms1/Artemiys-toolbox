@@ -7,6 +7,7 @@ export { LanguageSwitcher } from './LanguageSwitcher'
 export { Settings } from './Settings'
 export { CustomDisclosure as Disclosure } from './Disclosure'
 export { CustomLink as Link } from './Link'
+export { Header } from './Header'
 export {
   Input,
   Icon,
@@ -18,5 +19,4 @@ export {
   Button,
   Textarea,
   Checkbox,
-  Header,
 } from 'disgraceful-ui'

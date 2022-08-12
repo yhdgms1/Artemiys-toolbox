@@ -2,7 +2,7 @@ import { ApiResponse } from '~/lib/cs/types'
 import { createSignal, Show } from 'solid-js'
 import { t } from '~/i18n'
 import { Button, Input, Container, Link, Paragraph } from '~/components'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 
 import { cs, cdashs } from '~/lib/constants'
 import { apiUrl } from '~/lib/cs/utils'

@@ -1,5 +1,5 @@
 import type { VoidComponent } from 'solid-js'
-import { Link } from 'solid-app-router'
+import { Link } from '@solidjs/router'
 
 import * as styles from './style.css'
 

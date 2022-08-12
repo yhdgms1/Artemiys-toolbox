@@ -8,7 +8,7 @@ import {
   Container,
   Heading,
 } from '~/components'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 import { murmurHash } from 'ohash'
 
 export default () => {

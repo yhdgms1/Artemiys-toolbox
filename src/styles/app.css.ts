@@ -13,12 +13,13 @@ export const no_underline = style({
   textDecoration: 'none',
 })
 
-globalStyle('body', {
+globalStyle('#root', {
+  minHeight: ['100svh', '100vh'],
   background: vars.background[0],
   color: vars.color[0],
 })
 
-globalStyle('html, body, *, *::after, *::before', {
+globalStyle('*, *::after, *::before', {
   margin: 0,
   padding: 0,
   boxSizing: 'border-box',
@@ -34,8 +35,4 @@ globalStyle('*, *:active, *:hover', {
       transition: 'none',
     },
   },
-})
-
-globalStyle(':root', {
-  colorScheme: 'light dark',
 })

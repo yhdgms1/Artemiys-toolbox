@@ -9,7 +9,7 @@ import {
   Link,
   Paragraph,
 } from '~/components'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 
 import { cs, cdashs } from '~/lib/constants'
 import { apiUrl } from '~/lib/cs/utils'

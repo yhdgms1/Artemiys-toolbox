@@ -9,7 +9,7 @@ import {
   Checkbox,
   Select,
 } from '~/components'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 
 import { cs, cdashs } from '~/lib/constants'
 import { createHrefUrl, templates } from '~/lib/cs/utils'

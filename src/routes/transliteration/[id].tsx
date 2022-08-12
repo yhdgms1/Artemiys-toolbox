@@ -1,4 +1,4 @@
-import { useParams } from 'solid-app-router'
+import { useParams } from '@solidjs/router'
 import { createSignal, Show } from 'solid-js'
 
 import { translate, Schemas } from 'iuliia'
@@ -12,7 +12,7 @@ import {
   Link,
   Paragraph,
 } from '~/components'
-import { Title } from 'solid-meta'
+import { Title } from '@solidjs/meta'
 
 export default () => {
   const schema = useParams().id

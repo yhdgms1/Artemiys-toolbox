@@ -1,5 +1,5 @@
 import { t } from '~/i18n'
-import { useColorScheme } from './context'
+import { useColorScheme, ColorSchemeProvider } from './context'
 import { Select } from '..'
 
 export const ColorSchemeSwitcher = () => {
@@ -22,3 +22,5 @@ export const ColorSchemeSwitcher = () => {
     </Select>
   )
 }
+
+export { useColorScheme, ColorSchemeProvider }

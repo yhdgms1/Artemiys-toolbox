@@ -1,8 +1,9 @@
+import { isServer } from '~/lib/constants'
 import { t } from '../../i18n'
 import { Select } from '..'
 
 export const LanguageSwitcher = () => {
-  const savedLocale = localStorage.getItem('locale')
+  const savedLocale = isServer ? 'en' : localStorage.getItem('locale')
 
   const setLocale = (lang: string) => {
     if (savedLocale === lang) return
@@ -10,7 +11,7 @@ export const LanguageSwitcher = () => {
     lang === 'auto'
       ? localStorage.removeItem('locale')
       : localStorage.setItem('locale', lang)
-    window.location.reload()
+    location.reload()
   }
 
   return (
