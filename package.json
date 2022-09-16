@@ -13,20 +13,20 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "@vanilla-extract/css": "^1.7.2",
-    "@vanilla-extract/vite-plugin": "^3.3.0",
+    "@vanilla-extract/css": "^1.9.0",
+    "@vanilla-extract/vite-plugin": "^3.5.0",
     "prettier": "2.7.1",
     "solid-start": "0.1.0-alpha.99",
     "solid-start-node": "0.1.0-alpha.99",
     "typescript": "^4.7.4",
     "undici": "^5.8.2",
-    "vite": "3.0.5",
-    "vite-plugin-pwa": "^0.12.3"
+    "vite": "3.1.1",
+    "vite-plugin-pwa": "^0.12.7"
   },
   "dependencies": {
     "@artemis69/swagify": "^1.1.2",
     "@solidjs/meta": "^0.28.0",
-    "@solidjs/router": "^0.4.2",
+    "@solidjs/router": "^0.4.3",
     "clsx": "^1.2.1",
     "copy-text-to-clipboard": "^3.0.1",
     "disgraceful-ui": "^0.5.1",

@@ -17,6 +17,7 @@ export default defineConfig(() => {
           browserslistConfigFile: false,
           configFile: false,
           highlightCode: false,
+          plugins: []
         },
         ssr: false,
         inspect: false,
