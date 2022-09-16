@@ -1,4 +1,4 @@
-import { useParams } from '@solidjs/router'
+import { useLocation } from '@solidjs/router'
 import { createSignal, Show } from 'solid-js'
 
 import { translate, Schemas } from 'iuliia'
@@ -15,7 +15,8 @@ import {
 import { Title } from '@solidjs/meta'
 
 export default () => {
-  const schema = useParams().id
+  const pathname = useLocation().pathname;
+  const schema = pathname.slice(17)
 
   const [text, setText] = createSignal('')
   const [output, setOutput] = createSignal('')

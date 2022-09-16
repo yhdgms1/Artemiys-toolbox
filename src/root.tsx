@@ -1,8 +1,6 @@
 // @refresh reload
-
-import { ErrorBoundary, Suspense } from 'solid-js'
-import { Body, Html, Scripts } from 'solid-start'
-import { FileRoutes } from 'solid-start/root'
+import type { JSX } from 'solid-js';
+import { ErrorBoundary, Suspense, lazy, createComponent } from 'solid-js'
 import { useLocation, Routes } from '@solidjs/router'
 import { Unknown, Header } from '~/components'
 
@@ -21,30 +19,35 @@ const Root = () => {
   const { className } = useColorScheme()
   const location = useLocation()
 
+  const routes = Object.entries(import.meta.glob('./routes/**/*.tsx')).reduce((acc, curr) => {
+    const path = curr[0];
+    const fn = curr[1] as () => Promise<{ default: () => any; }>;
+
+    const splitted = path.split('.');
+    const start = splitted.slice(1, splitted.length - 1)[0].slice(8).replace('index', '/').replace('//', '/').replace('[id]', ':id');
+
+    acc.push({ path: start, component: () => createComponent(() => lazy(fn), {})})
+
+    return acc;
+  }, [] as { path: string; component: () => any; }[])
+
   return (
-    // <Html lang="en">
-      //<Body>
-        <>
-        <div id="root" class={className()}>
-          <Header location={location} />
-          <main
-            class={location.pathname === '/' ? styles.main : styles.main_layout}
-            role="main"
-          >
-            <ErrorBoundary fallback={Unknown}>
-              <Suspense>
-                <Routes>
-                  <FileRoutes />
-                </Routes>
-              </Suspense>
-            </ErrorBoundary>
-          </main>
-          <UpdateDialog />
-        </div>
-        <Scripts />
-        </>
-       // </Body>
-    //  </Html>
+    <div id="root" class={className()}>
+      <Header location={location} />
+      <main
+        class={location.pathname === '/' ? styles.main : styles.main_layout}
+        role="main"
+      >
+        <ErrorBoundary fallback={Unknown}>
+          <Suspense>
+            <Routes>
+              {routes as unknown as JSX.Element}
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
+      </main>
+      <UpdateDialog />
+    </div>
   )
 }
 

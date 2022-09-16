@@ -1,11 +1,11 @@
+import path from 'node:path'
 import { defineConfig } from 'vite'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
-import { default as solidPlugin } from 'solid-start/vite'
+import { default as solidPlugin } from 'vite-plugin-solid'
 // import { VitePWA } from 'vite-plugin-pwa'
 // less lines of code will be affected (prettier)
 const VitePWA = (...args: any[]) => undefined
 import pkg from './package.json'
-import adapter from './adapter-custom'
 
 export default defineConfig(() => {
   return {
@@ -19,9 +19,6 @@ export default defineConfig(() => {
           highlightCode: false,
           plugins: []
         },
-        ssr: false,
-        inspect: false,
-        adapter: adapter(),
       }),
       VitePWA({
         includeAssets: ['og.jpg', 'robots.txt'],
@@ -61,5 +58,10 @@ export default defineConfig(() => {
     esbuild: {
       charset: 'utf8',
     },
+    resolve: {
+      alias: {
+        '~': path.resolve(process.cwd(), 'src'),
+      }
+    }
   }
 })
