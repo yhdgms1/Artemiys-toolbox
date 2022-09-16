@@ -29,25 +29,26 @@ interface Options {
   format?: 'svg'
 }
 
+const isHorizontal = (type: string) => {
+  return type === 'gay' || type === 'azerbaijan'
+}
+
 export const createHrefUrl = (options: Options): string => {
   const { template, name, picture, width: w, height: h, format } = options
 
   const url = new URL(template, baseUrl)
+  const horizontal = isHorizontal(template)
 
-  const width =
-    w || (template === 'gay' || template === 'azerbaijan' ? 1920 : 411)
+  const width = w || (horizontal ? 1920 : 411)
+  const height = h || (horizontal ? 1080 : 823)
 
   const set = url.searchParams.set.bind(url.searchParams)
 
   set('width', width.toString())
-
-  const height =
-    h || (template === 'gay' || template === 'azerbaijan' ? 1080 : 823)
-
   set('height', height.toString())
 
-  set('name', encodeURIComponent(name))
-  set('picture', encodeURIComponent(picture))
+  set('name', name)
+  set('picture', picture)
   set('download', 'true')
 
   set('format', format || 'png')
