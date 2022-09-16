@@ -15,21 +15,27 @@ import * as styles from '~/styles/index.css'
 import './styles/fonts.css'
 import 'disgraceful-ui/style'
 
+import Home from './routes/index'
+
 const Root = () => {
   const { className } = useColorScheme()
   const location = useLocation()
 
   const routes = Object.entries(import.meta.glob('./routes/**/*.tsx')).reduce((acc, curr) => {
     const path = curr[0];
-    const fn = curr[1] as () => Promise<{ default: () => any; }>;
+    const fn = curr[1] as () => Promise<{ default: () => JSX.Element; }>;
 
     const splitted = path.split('.');
     const start = splitted.slice(1, splitted.length - 1)[0].slice(8).replace('index', '/').replace('//', '/').replace('[id]', ':id');
 
-    acc.push({ path: start, component: () => createComponent(() => lazy(fn), {})})
+    if (start !== '/') {
+      acc.push({ path: start, component: () => createComponent(() => lazy(fn), {})})
+    }
 
     return acc;
-  }, [] as { path: string; component: () => any; }[])
+  }, [] as { path: string; component: () => JSX.Element; }[])
+
+  routes.push({ path: '/', component: Home })
 
   return (
     <div id="root" class={className()}>
