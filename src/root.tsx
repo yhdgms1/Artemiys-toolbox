@@ -22,8 +22,9 @@ const Root = () => {
   const location = useLocation()
 
   return (
-    <Html lang="en">
-      <Body>
+    // <Html lang="en">
+      //<Body>
+        <>
         <div id="root" class={className()}>
           <Header location={location} />
           <main
@@ -41,8 +42,9 @@ const Root = () => {
           <UpdateDialog />
         </div>
         <Scripts />
-      </Body>
-    </Html>
+        </>
+       // </Body>
+    //  </Html>
   )
 }
 
