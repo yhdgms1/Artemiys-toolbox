@@ -1,3 +1,5 @@
+import 'vite/client'
+
 /**
  * @see https://vite-plugin-pwa.netlify.app/frameworks/solidjs.html#type-declarations
  */
