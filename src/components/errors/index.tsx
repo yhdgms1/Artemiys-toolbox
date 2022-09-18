@@ -4,17 +4,9 @@ import { Heading } from '~/components'
 import * as styles from './styles.css'
 
 export const Unknown = () => (
-  <Heading
-    as="h1"
-    class={styles.error}
-    children={t(['__errors', 'unknown', 'title'])}
-  />
+  <Heading as="h1" class={styles.error} children={t('global.4')} />
 )
 
 export const NotFound = () => (
-  <Heading
-    as="h1"
-    class={styles.error}
-    children={t(['__errors', '404', 'title'])}
-  />
+  <Heading as="h1" class={styles.error} children={t('global.3')} />
 )

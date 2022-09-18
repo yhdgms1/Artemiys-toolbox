@@ -26,31 +26,27 @@ export default () => {
 
       setData(json)
     } catch {
-      setData({ error: t([cs, 'Unexpected Error']) })
+      setData({ error: t('cs.5') })
     }
   }
 
   return (
     <>
       <Title>Remove from site</Title>
-      <Link href={'/' + cdashs}>{t(['t13n-id', 'go back'])}</Link>
+      <Link href={'/' + cdashs}>{t('global.11')}</Link>
       <Container independent={true}>
         <Input
           type="text"
-          placeholder={t([cs, 'remove', 'id'])}
+          placeholder={t('cs.9.0')}
           onInput={e => setId(e.currentTarget.value.trim())}
         >
-          {t([cs, 'remove', 'id'])}
+          {t('cs.9.0')}
         </Input>
       </Container>
-      <Button onClick={getData}>{t([cs, 'Submit'])}</Button>
+      <Button onClick={getData}>{t('cs.1')}</Button>
       <Paragraph>
-        <Show when={data().userid}>
-          {t([cs, 'remove', 'Removed Successfully']) + '!'}
-        </Show>
-        <Show when={data().error}>
-          {t([cs, 'Error']) + ': ' + data().error}
-        </Show>
+        <Show when={data().userid}>{t('cs.9.1') + '!'}</Show>
+        <Show when={data().error}>{t('cs.3') + ': ' + data().error}</Show>
       </Paragraph>
     </>
   )

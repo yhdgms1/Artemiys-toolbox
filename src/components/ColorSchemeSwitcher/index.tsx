@@ -7,17 +7,17 @@ export const ColorSchemeSwitcher = () => {
 
   return (
     <Select
-      title={t(['color scheme switcher', 'Scheme'])}
+      title={t('color-scheme-switcher.0')}
       onChange={e => setTheme(e.currentTarget.value)}
     >
       <option selected={scheme() === 'light'} value="light">
-        {t(['color scheme switcher', 'Light'])}
+        {t('color-scheme-switcher.1')}
       </option>
       <option selected={scheme() === 'auto'} value="auto">
-        {t(['color scheme switcher', 'System'])}
+        {t('color-scheme-switcher.2')}
       </option>
       <option selected={scheme() === 'dark'} value="dark">
-        {t(['color scheme switcher', 'Dark'])}
+        {t('color-scheme-switcher.3')}
       </option>
     </Select>
   )

@@ -23,12 +23,12 @@ export default () => {
       <Title>{title}</Title>
       <Heading as="h2">{title}</Heading>
       <Textarea
-        placeholder={t('Enter the text here')}
+        placeholder={t('global.9')}
         onInput={e => setText(e.currentTarget.value)}
       />
       <Container responsive={true}>
         <Button onClick={() => setOutput(murmurHash(text()).toString(radix()))}>
-          {t(['murmur-hash', 'Hash'])}
+          {t('murmur-hash.0')}
         </Button>
         <CopyButton copy={output()} />
       </Container>
@@ -38,11 +38,7 @@ export default () => {
       >
         {'.toString(36)'}
       </Checkbox>
-      <Textarea
-        readOnly={true}
-        value={output()}
-        placeholder={t('Result will be here')}
-      />
+      <Textarea readOnly={true} value={output()} placeholder={t('global.10')} />
     </>
   )
 }

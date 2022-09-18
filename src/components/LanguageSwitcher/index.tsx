@@ -16,14 +16,14 @@ export const LanguageSwitcher = () => {
 
   return (
     <Select
-      title={t(['settings', 'Language'])}
+      title={t('settings.3')}
       onChange={e => setLocale(e.currentTarget.value)}
     >
       <option selected={savedLocale === 'ru'} value="ru">
         Русский
       </option>
       <option selected={savedLocale === null} value="auto">
-        {t(['settings', 'Auto'])}
+        {t('settings.4')}
       </option>
       <option selected={savedLocale === 'en'} value="en">
         English

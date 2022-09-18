@@ -21,11 +21,13 @@ export default () => {
   return (
     <>
       <Title>Artemiy's Toolbox</Title>
-      {tools.map(tool => (
+      {tools.map((tool, i) => (
         <Card
           href={'/' + tool.replace(/ /g, '-')}
           title={tool}
-          description={t(['home', tool])}
+          description={t(
+            ('global.home.' + i.toString()) as Parameters<typeof t>[0]
+          )}
         />
       ))}
     </>

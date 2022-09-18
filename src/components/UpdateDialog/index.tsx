@@ -25,16 +25,16 @@ export const UpdateDialog: VoidComponent = () => {
       <AlertDialogOverlay class={styles.dialogOverlay}>
         <div class={styles.dialog}>
           <AlertDialogTitle class={styles.dialogTitle}>
-            {t("There's a new update available")}
+            {t('global.5')}
           </AlertDialogTitle>
           <AlertDialogPanel>
-            <p>{t('Click on reload button to update')}</p>
+            <p>{t('global.6')}</p>
             <div class={styles.buttonsContainer}>
               <Button onClick={() => updateServiceWorker(true)}>
-                {t('Reload')}
+                {t('global.7')}
               </Button>
               <Button onClick={() => setNeedRefresh(false)}>
-                {t('Close')}
+                {t('global.8')}
               </Button>
             </div>
           </AlertDialogPanel>

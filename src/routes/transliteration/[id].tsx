@@ -15,7 +15,7 @@ import {
 import { Title } from '@solidjs/meta'
 
 export default () => {
-  const pathname = useLocation().pathname;
+  const pathname = useLocation().pathname
   const schema = pathname.slice(17)
 
   const [text, setText] = createSignal('')
@@ -23,12 +23,12 @@ export default () => {
 
   return (
     <Show when={Schemas.names().includes(schema)} fallback={Fallback}>
-      <Title>{t(['t13n', 'title']) + ' | ' + schema}</Title>
-      <Link href="/transliteration">{t(['t13n-id', 'go back'])}</Link>
-      <Paragraph>{t(['t13n-id', 'current-schema'], { schema })}</Paragraph>
+      <Title>{t('transliteration.2') + ' | ' + schema}</Title>
+      <Link href="/transliteration">{t('global.11')}</Link>
+      <Paragraph>{t('transliteration.3', { schema })}</Paragraph>
       <Textarea
         spellcheck={false}
-        placeholder={t(['t13n-id', 'input'])}
+        placeholder={t('transliteration.4')}
         onInput={e => setText(e.currentTarget.value)}
       />
       <Container responsive={true}>
@@ -39,14 +39,14 @@ export default () => {
             setOutput(translated)
           }}
         >
-          {t(['t13n-id', 'button'])}!
+          {t('transliteration.6')}!
         </Button>
         <CopyButton copy={output()} />
       </Container>
       <Textarea
         spellcheck={false}
         readOnly={true}
-        placeholder={t(['t13n-id', 'output'])}
+        placeholder={t('transliteration.5')}
         value={output()}
       />
     </Show>
@@ -54,13 +54,13 @@ export default () => {
 }
 
 const Fallback = () => {
-  const title = t(['t13n-id', 'not exist'])
+  const title = t('transliteration.7')
 
   return (
     <>
       <Title>{title}</Title>
       <Heading as="h2">{title}</Heading>
-      <Link href="/transliteration">{t(['t13n-id', 'view existing'])}</Link>
+      <Link href="/transliteration">{t('transliteration.8')}</Link>
     </>
   )
 }

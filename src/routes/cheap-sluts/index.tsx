@@ -1,52 +1,26 @@
-import * as styles from '~/styles/index.css'
 import { t } from '~/i18n'
 import { Card, Heading, Paragraph } from '~/components'
 import { Title } from '@solidjs/meta'
-
 import { cs, cdashs } from '~/lib/constants'
 
-interface IMethod {
-  readonly title: string
-  readonly link: string
-}
+import * as styles from '~/styles/index.css'
 
-const methods: IMethod[] = [
-  {
-    title: 'using vk',
-    link: 'using-vk',
-  },
-  {
-    title: 'manually',
-    link: 'manually',
-  },
-  {
-    title: 'remove',
-    link: 'remove',
-  },
-  {
-    title: 'picture',
-    link: 'picture',
-  },
-  {
-    title: 'picture vk',
-    link: 'picture-vk',
-  },
-]
-
-const title = cs
+const methods = ['using vk', 'manually', 'remove', 'picture', 'picture vk']
 
 export default () => {
   return (
     <>
-      <Title>{title}</Title>
-      <Heading as="h2">{title}</Heading>
-      <Paragraph>{t([cs, 'Select a method'])}</Paragraph>
+      <Title>{cs}</Title>
+      <Heading as="h2">{cs}</Heading>
+      <Paragraph>{t('cs.0')}</Paragraph>
       <div class={styles.main}>
-        {methods.map(method => (
+        {methods.map((method, i) => (
           <Card
-            href={'/' + cdashs + '/' + method.link}
-            title={method.title}
-            description={t([cs, 'home', method.title])}
+            href={'/' + cdashs + '/' + method.replace(' ', '-')}
+            title={method}
+            description={t(
+              ('cs.home.' + i.toString()) as Parameters<typeof t>[0]
+            )}
           />
         ))}
       </div>

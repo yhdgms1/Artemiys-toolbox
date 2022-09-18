@@ -43,33 +43,29 @@ export default () => {
     return newSentence.replace(/I/gm, 'i').replace(/l/gm, 'L')
   }
 
-  const title = t(['text-case-changer', 'title'])
+  const title = t('text-case-changer.0')
 
   return (
     <>
       <Title>{title}</Title>
       <Heading as="h2">{title}</Heading>
       <Textarea
-        placeholder={t('Enter the text here')}
+        placeholder={t('global.9')}
         onInput={e => setText(e.currentTarget.value)}
       />
       <Container responsive={true}>
         <Button onClick={() => setOutput(text().toUpperCase())}>
-          {t(['text-case-changer', 'to uppercase'])}!
+          {t('text-case-changer.1')}!
         </Button>
         <Button onClick={() => setOutput(text().toLowerCase())}>
-          {t(['text-case-changer', 'to lowercase'])}!
+          {t('text-case-changer.2')}!
         </Button>
         <Button onClick={() => setOutput(randomiseCase(text()))}>
-          {t(['text-case-changer', 'randomise case'])}!
+          {t('text-case-changer.3')}!
         </Button>
         <CopyButton copy={output()} />
       </Container>
-      <Textarea
-        readOnly={true}
-        value={output()}
-        placeholder={t('Result will be here')}
-      />
+      <Textarea readOnly={true} value={output()} placeholder={t('global.10')} />
     </>
   )
 }

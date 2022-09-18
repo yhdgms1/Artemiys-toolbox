@@ -8,14 +8,14 @@ export default () => {
   const [output, setOutput] = createSignal('')
   const splitter = new Graphemer()
 
-  const title = t(['string-backwards', 'header'])
+  const title = t('string-backwards.0')
 
   return (
     <>
       <Title>{title}</Title>
       <Heading as="h2">{title}</Heading>
       <Textarea
-        placeholder={t('Enter the text here')}
+        placeholder={t('global.9')}
         onInput={e =>
           setOutput(
             splitter.splitGraphemes(e.currentTarget.value).reverse().join('')
@@ -26,7 +26,7 @@ export default () => {
       <Textarea
         readOnly={true}
         value={output()}
-        placeholder={t(['string-backwards', 'Text backwards will be here'])}
+        placeholder={t('string-backwards.1')}
       />
     </>
   )

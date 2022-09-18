@@ -29,14 +29,14 @@ const Vibrator = (length: number) => {
 export default () => {
   const vibrator = Vibrator(/* Random number */ 7490)
 
-  const title = t(['vibrator', 'title'])
+  const title = t('vibrator.0')
 
   return (
     <>
       <Title>{title}</Title>
       <Heading as="h2">{title}</Heading>
-      <Button onClick={vibrator.start}>{t(['vibrator', 'Vibrate'])}</Button>
-      <Button onClick={vibrator.stop}>{t(['vibrator', 'Stop'])}</Button>
+      <Button onClick={vibrator.start}>{t('vibrator.1')}</Button>
+      <Button onClick={vibrator.stop}>{t('vibrator.2')}</Button>
     </>
   )
 }

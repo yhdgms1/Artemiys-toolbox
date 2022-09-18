@@ -24,7 +24,7 @@ const Settings: VoidComponent = () => {
         type="button"
         class={styles.button}
         onClick={openModal}
-        aria-label={t(['settings', 'Open settings dialog'])}
+        aria-label={t('settings.0')}
       >
         <svg width="24" height="24" fill="none">
           <path
@@ -49,11 +49,11 @@ const Settings: VoidComponent = () => {
         <div class={styles.container}>
           <DialogPanel class={styles.dialogPanel}>
             <DialogTitle as="h3" class={styles.dialogTitle}>
-              {t(['settings', 'Settings'])}
+              {t('settings.2')}
             </DialogTitle>
             <ColorSchemeSwitcher />
             <LanguageSwitcher />
-            <Button onClick={closeModal}>{t(['settings', 'Close'])}</Button>
+            <Button onClick={closeModal}>{t('settings.1')}</Button>
           </DialogPanel>
         </div>
       </Dialog>

@@ -121,19 +121,19 @@ const schemes: ISchema[] = [
 ]
 
 export default () => {
-  const title = t(['t13n', 'title'])
+  const title = t('transliteration.2')
 
   return (
     <>
       <Title>{title}</Title>
       <Heading as="h2">{title}</Heading>
-      <Paragraph>{t(['t13n', 'desc'])}</Paragraph>
+      <Paragraph>{t('transliteration.0')}</Paragraph>
       <div class={styles.main}>
         {schemes.map(scheme => (
           <Card
             href={'/transliteration/' + scheme.name}
             title={scheme.name}
-            description={t(['t13n', 'schema'], { name: scheme.description })}
+            description={t('transliteration.1', { name: scheme.description })}
           />
         ))}
       </div>

@@ -11,7 +11,7 @@ import {
 } from '~/components'
 import { Title } from '@solidjs/meta'
 
-import { cs, cdashs } from '~/lib/constants'
+import { cdashs } from '~/lib/constants'
 import { apiUrl } from '~/lib/cs/utils'
 
 export default () => {
@@ -38,52 +38,52 @@ export default () => {
 
       setData(json)
     } catch {
-      setData({ error: t([cs, 'Unexpected Error']) })
+      setData({ error: t('cs.5') })
     }
   }
 
   return (
     <>
       <Title>Create Manually</Title>
-      <Link href={'/' + cdashs}>{t(['t13n-id', 'go back'])}</Link>
+      <Link href={'/' + cdashs}>{t('global.11')}</Link>
       <Container independent={true}>
         <Input
           type="text"
-          placeholder={t([cs, 'manually', 'Name'])}
+          placeholder={t('cs.8.0')}
           spellcheck={false}
           onInput={e => setName(e.currentTarget.value)}
         >
-          {t([cs, 'manually', 'Name'])}
+          {t('cs.8.0')}
         </Input>
         <Input
           type="text"
-          placeholder={t([cs, 'manually', 'Picture'])}
+          placeholder={t('cs.8.1')}
           spellcheck={false}
           onInput={e => setPic(e.currentTarget.value)}
         >
-          {t([cs, 'manually', 'Picture'])}
+          {t('cs.8.1')}
         </Input>
         <Checkbox onChange={e => setIsPrivate(e.currentTarget.checked)}>
           Private
         </Checkbox>
       </Container>
-      <Button onClick={getData}>{t([cs, 'Submit'])}</Button>
+      <Button onClick={getData}>{t('cs.1')}</Button>
       <Show when={data().userid}>
         <>
-          <Paragraph>{t([cs, 'Created Successfully'])}!</Paragraph>
+          <Paragraph>{t('cs.4')}!</Paragraph>
           <Link
             small={true}
             target="_blank"
             rel="noopener noreferer"
             href={`https://${cdashs}.pages.dev/slut/` + data().userid}
           >
-            {t([cs, 'Look at this'])}
+            {t('cs.2')}
           </Link>
         </>
       </Show>
       <Show when={data().error}>
         <Paragraph>
-          {t([cs, 'Error'])}: {data().error}
+          {t('cs.3')}: {data().error}
         </Paragraph>
       </Show>
     </>

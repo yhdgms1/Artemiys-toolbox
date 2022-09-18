@@ -30,26 +30,26 @@ export default () => {
   return (
     <>
       <Title>Picture</Title>
-      <Link href={'/' + cdashs}>{t(['t13n-id', 'go back'])}</Link>
+      <Link href={'/' + cdashs}>{t('global.11')}</Link>
       <Container independent={true}>
         <Input
           type="text"
-          placeholder={t([i18nKey, 'manually', 'Name'])}
+          placeholder={t('cs.8.0')}
           spellcheck={false}
           onInput={e => setName(e.currentTarget.value)}
         >
-          {t([i18nKey, 'manually', 'Name'])}
+          {t('cs.8.0')}
         </Input>
         <Input
           type="text"
-          placeholder={t([i18nKey, 'manually', 'Picture'])}
+          placeholder={t('cs.8.1')}
           spellcheck={false}
           onInput={e => setPic(e.currentTarget.value)}
         >
-          {t([i18nKey, 'manually', 'Picture'])}
+          {t('cs.8.1')}
         </Input>
         <Select
-          title={t([i18nKey, 'Template'])}
+          title={t('cs.6')}
           onChange={e => setTemplate(e.currentTarget.value)}
         >
           <For each={templates}>
@@ -60,44 +60,34 @@ export default () => {
             )}
           </For>
         </Select>
-        <Disclosure
-          buttonChildren={t([i18nKey, 'picture', 'Additional options'])}
-        >
+        <Disclosure buttonChildren={t('cs.10.2')}>
           <Input
             type="number"
-            placeholder={t([i18nKey, 'picture', 'Picture width'])}
+            placeholder={t('cs.10.3')}
             spellcheck={false}
             onInput={e => setWidth(e.currentTarget.valueAsNumber)}
           >
-            {t([i18nKey, 'picture', 'Picture width'])}
+            {t('cs.10.3')}
           </Input>
           <Input
             type="number"
-            placeholder={t([i18nKey, 'picture', 'Picture height'])}
+            placeholder={t('cs.10.4')}
             spellcheck={false}
             onInput={e => setHeight(e.currentTarget.valueAsNumber)}
           >
-            {t([i18nKey, 'picture', 'Picture height'])}
+            {t('cs.10.4')}
           </Input>
           <Checkbox
             checked={useSvg()}
             onChange={e => setUseSvg(e.currentTarget.checked)}
           >
-            {t([i18nKey, 'picture', 'Use SVG image format'])}
+            {t('cs.10.5')}
           </Checkbox>
         </Disclosure>
       </Container>
       <Show
         when={name() !== '' && pic() !== ''}
-        fallback={
-          <Paragraph>
-            {t([
-              i18nKey,
-              'picture',
-              'Fill in the fields above to begin creating a picture',
-            ])}
-          </Paragraph>
-        }
+        fallback={<Paragraph>{t('cs.10.1')}</Paragraph>}
       >
         <Link
           small={true}
@@ -112,7 +102,7 @@ export default () => {
             format: useSvg() ? 'svg' : undefined,
           })}
         >
-          {t([i18nKey, 'picture', 'Create'], { template: template() })}
+          {t('cs.10.0', { template: template() })}
         </Link>
       </Show>
     </>

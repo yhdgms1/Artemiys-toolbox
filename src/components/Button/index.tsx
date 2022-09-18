@@ -7,7 +7,7 @@ import copy from 'copy-text-to-clipboard'
 import * as styles from './style.css'
 
 export const CopyButton: VoidComponent<{ copy: string }> = props => {
-  const defaultText = t(['btn__copy', 'default'])
+  const defaultText = t('global.0')
 
   const [text, setText] = createSignal(defaultText)
 
@@ -16,7 +16,7 @@ export const CopyButton: VoidComponent<{ copy: string }> = props => {
   const clickHandler = () => {
     const copied = copy(props.copy)
 
-    setText(t(['btn__copy', copied ? 'active' : 'err']))
+    setText(t(copied ? 'global.1' : 'global.2'))
 
     timeout = setTimeout(() => {
       setText(defaultText)

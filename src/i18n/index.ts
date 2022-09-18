@@ -1,6 +1,6 @@
 import { isServer } from '~/lib/constants'
 
-import rosetta from 'rosetta'
+import { rosetta } from './service'
 import dict from './dictionary'
 
 const i18n = rosetta(dict)
