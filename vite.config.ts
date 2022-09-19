@@ -17,7 +17,7 @@ export default defineConfig(() => {
           browserslistConfigFile: false,
           configFile: false,
           highlightCode: false,
-          plugins: []
+          plugins: [],
         },
       }),
       VitePWA({
@@ -54,6 +54,16 @@ export default defineConfig(() => {
       cssCodeSplit: false,
       target: ['chrome75', 'safari13'],
       minify: 'terser',
+      rollupOptions: {
+        output: {
+          manualChunks: id => {
+            if (id.includes('graphemer')) return 'graphemer'
+            if (id.includes('iuliia')) return 'iuliia'
+
+            return null
+          },
+        },
+      },
     },
     esbuild: {
       charset: 'utf8',
@@ -61,7 +71,7 @@ export default defineConfig(() => {
     resolve: {
       alias: {
         '~': path.resolve(process.cwd(), 'src'),
-      }
-    }
+      },
+    },
   }
 })

@@ -1,6 +1,7 @@
 // @refresh reload
-import type { JSX } from 'solid-js';
-import { ErrorBoundary, Suspense, lazy, createComponent } from 'solid-js'
+import type { Component, JSX } from 'solid-js'
+
+import { ErrorBoundary, Suspense, createComponent } from 'solid-js'
 import { useLocation, Routes } from '@solidjs/router'
 import { Unknown, Header } from '~/components'
 
@@ -15,27 +16,29 @@ import * as styles from '~/styles/index.css'
 import './styles/fonts.css'
 import 'disgraceful-ui/style'
 
-import Home from './routes/index'
-
 const Root = () => {
   const { className } = useColorScheme()
   const location = useLocation()
 
-  const routes = Object.entries(import.meta.glob('./routes/**/*.tsx')).reduce((acc, curr) => {
-    const path = curr[0];
-    const fn = curr[1] as () => Promise<{ default: () => JSX.Element; }>;
+  type Files = Record<`./routes/${string}`, { default: Component }>
 
-    const splitted = path.split('.');
-    const start = splitted.slice(1, splitted.length - 1)[0].slice(8).replace('index', '/').replace('//', '/').replace('[id]', ':id');
+  const files: Files = import.meta.glob('./routes/**/*.tsx', { eager: true })
 
-    if (start !== '/') {
-      acc.push({ path: start, component: () => createComponent(() => lazy(fn), {})})
+  const routes = Object.entries(files).reduce((acc, curr) => {
+    const [path, _module] = curr
+
+    const splitted = path.split('.')
+    const filename = splitted[1]
+
+    const start = filename.slice(7).replace('/index', '/').slice(1)
+
+    const route = {
+      path: start,
+      component: () => createComponent(_module.default, {}),
     }
 
-    return acc;
-  }, [] as { path: string; component: () => JSX.Element; }[])
-
-  routes.push({ path: '/', component: Home })
+    return acc.push(route), acc
+  }, [] as { path: string; component: () => JSX.Element }[])
 
   return (
     <div id="root" class={className()}>
@@ -46,9 +49,7 @@ const Root = () => {
       >
         <ErrorBoundary fallback={Unknown}>
           <Suspense>
-            <Routes>
-              {routes as unknown as JSX.Element}
-            </Routes>
+            <Routes>{routes as unknown as JSX.Element}</Routes>
           </Suspense>
         </ErrorBoundary>
       </main>
