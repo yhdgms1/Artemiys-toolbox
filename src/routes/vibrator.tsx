@@ -2,16 +2,14 @@ import { Button, Heading } from '~/components'
 import { t } from '~/i18n'
 import { Title } from '@solidjs/meta'
 
-const Vibrator = (length: number) => {
+const Vibrator = (length = 7490) => {
   let interval: number | undefined
 
   function start() {
     navigator.vibrate(length)
 
     interval = setInterval(() => {
-      clearInterval(interval)
-
-      start()
+      navigator.vibrate(length)
     }, length)
   }
 
@@ -27,8 +25,7 @@ const Vibrator = (length: number) => {
 }
 
 export default () => {
-  const vibrator = Vibrator(/* Random number */ 7490)
-
+  const vibrator = Vibrator()
   const title = t('vibrator.0')
 
   return (
