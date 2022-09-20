@@ -1,10 +1,19 @@
+import type { ErrorBoundary } from 'solid-js'
+
 import { t } from '~/i18n'
-import { Heading } from '~/components'
+import { Heading, Paragraph } from '~/components'
 
 import * as styles from './styles.css'
 
-export const Unknown = () => (
-  <Heading as="h1" class={styles.error} children={t('global.4')} />
+type FallbackComponent = Parameters<typeof ErrorBoundary>[0]['fallback']
+
+export const Unknown: FallbackComponent = (error, reset) => (
+  <>
+    <Heading as="h1" class={styles.error} children={t('global.4')} />
+    <Paragraph
+      children={error instanceof Error ? error.message : String(error)}
+    />
+  </>
 )
 
 export const NotFound = () => (

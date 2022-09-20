@@ -8,6 +8,7 @@ export { Settings } from './Settings'
 export { CustomDisclosure as Disclosure } from './Disclosure'
 export { CustomLink as Link } from './Link'
 export { Header } from './Header'
+export { Await } from './Await'
 export {
   Input,
   Icon,

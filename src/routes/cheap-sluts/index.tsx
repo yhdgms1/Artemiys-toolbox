@@ -18,9 +18,7 @@ export default () => {
           <Card
             href={'/' + cdashs + '/' + method.replace(' ', '-')}
             title={method}
-            description={t(
-              ('cs.home.' + i.toString()) as Parameters<typeof t>[0]
-            )}
+            description={t('cs.home.' + i.toString())}
           />
         ))}
       </div>

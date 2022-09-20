@@ -29,6 +29,14 @@ const i18n = <T extends Locales>(obj: T) => {
   type Lang = keyof T | (string & Record<never, never>)
   type Table = Readonly<Record<keyof Keys, string>>
 
+  function t(key: any, params?: any): string
+  // prettier-ignore
+  function t<Key extends LocaleKeys<T[keyof T]>, Value extends LocaleValue = ScopedValue<T[keyof T], Key>>(key: Key, params: ParamsObject<Value> = {}) {
+    let val = tree[locale][key]
+
+    return tmpl(val, params)
+  }
+
   return {
     set(lang: Lang, table: Table) {
       ;(tree[lang] as any) = Object.assign(tree[lang] || {}, table)
@@ -39,14 +47,7 @@ const i18n = <T extends Locales>(obj: T) => {
     table(lang: Lang): Table {
       return tree[lang]
     },
-    t<
-      Key extends LocaleKeys<T[keyof T]>,
-      Value extends LocaleValue = ScopedValue<T[keyof T], Key>
-    >(key: Key, params: ParamsObject<Value> = {}) {
-      let val = tree[locale][key]
-
-      return tmpl(val, params)
-    },
+    t,
   }
 }
 

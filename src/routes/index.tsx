@@ -25,9 +25,7 @@ export default () => {
         <Card
           href={'/' + tool.replace(/ /g, '-')}
           title={tool}
-          description={t(
-            ('global.home.' + i.toString()) as Parameters<typeof t>[0]
-          )}
+          description={t('global.home.' + i.toString())}
         />
       ))}
     </>

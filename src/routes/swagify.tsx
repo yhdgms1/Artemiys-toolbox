@@ -19,7 +19,13 @@ export default () => {
         onInput={e => setText(e.currentTarget.value)}
       />
       <Container responsive={true}>
-        <Button onClick={() => setOutput(swagify(text()))}>Swagify!</Button>
+        <Button
+          onClick={() => {
+            setOutput(swagify(text()))
+          }}
+        >
+          Swagify!
+        </Button>
         <CopyButton copy={output()} />
       </Container>
       <Textarea readOnly={true} value={output()} placeholder={t('global.10')} />
