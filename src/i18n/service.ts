@@ -14,10 +14,6 @@ export declare type ParamsObject<Value extends LocaleValue> = Record<
   Params<Value>[number],
   LocaleValue
 >
-export declare type ScopedValue<
-  Locale extends BaseLocale,
-  Key extends LocaleKeys<Locale>
-> = Locale[Key]
 
 type Locales = Readonly<Record<string, Readonly<Record<string, string>>>>
 
@@ -29,13 +25,16 @@ const i18n = <T extends Locales>(obj: T) => {
   type Lang = keyof T | (string & Record<never, never>)
   type Table = Readonly<Record<keyof Keys, string>>
 
-  function t(key: any, params?: any): string
+  type ExaString = string & Record<never, never>
+
   // prettier-ignore
-  function t<Key extends LocaleKeys<T[keyof T]>, Value extends LocaleValue = ScopedValue<T[keyof T], Key>>(key: Key, params: ParamsObject<Value> = {}) {
+  function t<Key extends LocaleKeys<T[keyof T]>, Value extends LocaleValue = T[keyof T][Key]>(key: Key, params: ParamsObject<Value> = {}) {
     let val = tree[locale][key]
 
     return tmpl(val, params)
   }
+  // @ts-ignore
+  function t(key: ExaString, params?: any): string
 
   return {
     set(lang: Lang, table: Table) {

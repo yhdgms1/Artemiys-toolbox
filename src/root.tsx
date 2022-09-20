@@ -1,5 +1,6 @@
 // @refresh reload
 import type { Component, JSX } from 'solid-js'
+import type { RouteProps } from '@solidjs/router'
 
 import { ErrorBoundary, Suspense, createComponent } from 'solid-js'
 import { useLocation, Routes } from '@solidjs/router'
@@ -38,7 +39,7 @@ const Root = () => {
     }
 
     return acc.push(route), acc
-  }, [] as { path: string; component: () => JSX.Element }[])
+  }, [] as RouteProps[])
 
   return (
     <div id="root" class={className()}>
