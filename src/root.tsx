@@ -26,16 +26,14 @@ const Root = () => {
   const files: Files = import.meta.glob('./routes/**/*.tsx', { eager: true })
 
   const routes = Object.entries(files).reduce((acc, curr) => {
-    const [path, _module] = curr
+    const [path, { default: cmp }] = curr
 
     const splitted = path.split('.')
     const filename = splitted[1]
 
-    const start = filename.slice(7).replace('/index', '/').slice(1)
-
     const route = {
-      path: start,
-      component: () => createComponent(_module.default, {}),
+      path: filename.slice(7).replace('/index', '/').slice(1),
+      component: () => createComponent(cmp, {}),
     }
 
     return acc.push(route), acc
