@@ -6,6 +6,7 @@ const Vibrator = (length = 7490) => {
   let interval: number | undefined
 
   function start() {
+    clearInterval(interval)
     navigator.vibrate(length)
 
     interval = setInterval(() => {
