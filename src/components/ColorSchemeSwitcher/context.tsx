@@ -2,6 +2,7 @@ import type { FlowComponent, Accessor } from 'solid-js'
 import { createSignal, createContext, useContext } from 'solid-js'
 import { light_theme, dark_theme } from '../../styles/theme.css'
 import { isServer } from '~/lib/constants'
+import { channel } from '~/lib'
 
 interface ColorSchemeContextInterface {
   scheme: Accessor<string>
@@ -32,25 +33,25 @@ const isColorSchemesSupported = isServer
 const darkMQ = isServer ? null : matchMedia('(prefers-color-scheme: dark)')
 
 export const ColorSchemeProvider: FlowComponent = props => {
-  const [scheme, setScheme] = createSignal(savedScheme)
-  const [className, setClassName] = createSignal(light_theme)
+  const scheme = channel(savedScheme)
+  const className = channel(light_theme)
 
   function onPrefersColorSchemeChanges(e: MediaQueryListEvent) {
     if (scheme() !== 'auto') return
 
-    setClassName(e.matches ? dark_theme : light_theme)
+    className(e.matches ? dark_theme : light_theme)
   }
 
   const setTheme = (theme: string) => {
     saveScheme(theme)
-    setScheme(theme)
+    scheme(theme)
 
     if (theme === 'auto') {
       isColorSchemesSupported
-        ? setClassName(darkMQ!.matches ? dark_theme : light_theme)
-        : setClassName(light_theme)
+        ? className(darkMQ!.matches ? dark_theme : light_theme)
+        : className(light_theme)
     } else {
-      setClassName(theme === 'dark' ? dark_theme : light_theme)
+      className(theme === 'dark' ? dark_theme : light_theme)
     }
   }
 

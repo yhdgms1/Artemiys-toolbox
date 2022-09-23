@@ -4,18 +4,19 @@ import { createSignal } from 'solid-js'
 import { t } from '~/i18n'
 import { Button, ColorSchemeSwitcher, LanguageSwitcher } from '..'
 import { Dialog, DialogPanel, DialogTitle, DialogOverlay } from 'solid-headless'
+import { channel } from '~/lib'
 
 import * as styles from './style.css'
 
 const Settings: VoidComponent = () => {
-  const [isOpen, setIsOpen] = createSignal(false)
+  const isOpen = channel(false)
 
   const closeModal = () => {
-    setIsOpen(false)
+    isOpen(false)
   }
 
   const openModal = () => {
-    setIsOpen(true)
+    isOpen(true)
   }
 
   return (
