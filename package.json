@@ -33,7 +33,7 @@
     "iuliia": "^0.8.2",
     "ohash": "^0.1.5",
     "scule": "^0.3.2",
-    "solid-headless": "^0.12.6",
+    "solid-headless": "^0.13.0",
     "solid-js": "1.5.5",
     "templite": "^1.2.0",
     "workbox-window": "^6.5.3"
