@@ -17,7 +17,7 @@ export const UpdateDialog: VoidComponent = () => {
   const sw = useRegisterSW()
 
   const updateSW = sw.updateServiceWorker
-  const needRefresh = channel.fromSignal(sw.needRefresh)
+  const needRefresh = channel(sw.needRefresh, true)
 
   return (
     <AlertDialog isOpen={needRefresh()}>
