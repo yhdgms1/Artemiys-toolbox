@@ -6,8 +6,8 @@ import { Button, Input, Container, Link, Paragraph } from '~/components'
 import { Title } from '@solidjs/meta'
 
 import { cdashs } from '~/lib/constants'
-import { apiUrl } from '~/lib/cs/utils'
 import { createNamedItemReceiver, inlineStyles } from '~/lib/forms'
+import { request } from '~/lib/cs/api'
 
 export default () => {
   const [data, setData] = createSignal<ApiResponse>({})
@@ -23,14 +23,7 @@ export default () => {
     if (id === '') return
 
     try {
-      const response = await fetch(apiUrl + 'delete', {
-        method: 'POST',
-        body: JSON.stringify({
-          userid: id,
-        }),
-      })
-
-      const json: ApiResponse = await response.json()
+      const json = await request('delete', id)
 
       setData(json)
     } catch {

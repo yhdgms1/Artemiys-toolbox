@@ -1,4 +1,3 @@
-import type { ApiResponse } from '~/lib/cs/types'
 import { OnSubmit } from '~/lib/forms'
 
 import { createSignal, Show } from 'solid-js'
@@ -14,11 +13,12 @@ import {
 import { Title } from '@solidjs/meta'
 
 import { cdashs } from '~/lib/constants'
-import { apiUrl } from '~/lib/cs/utils'
 import { inlineStyles, createNamedItemReceiver } from '~/lib/forms'
+import { request } from '~/lib/cs/api'
 
 export default () => {
-  const [data, setData] = createSignal<ApiResponse>({})
+  // prettier-ignore
+  const [data, setData] = createSignal<{ error?: string; id?: string}>({})
 
   const onSubmit: OnSubmit = async e => {
     e.preventDefault()
@@ -32,18 +32,14 @@ export default () => {
     if (id === '') return
 
     try {
-      const response = await fetch(apiUrl + 'create/vk', {
-        method: 'POST',
-        body: JSON.stringify({
-          id,
-          private: isPrivate,
-        }),
+      const json = await request('add_vk', {
+        private: isPrivate,
+        id: id,
       })
 
-      const json: ApiResponse = await response.json()
-
       setData(json)
-    } catch {
+    } catch (E) {
+      console.log(E)
       setData({ error: t('cs.5') })
     }
   }
@@ -66,7 +62,7 @@ export default () => {
           {t('cs.3')}: {data().error}
         </Paragraph>
       </Show>
-      <Show when={data().userid}>
+      <Show when={data().id}>
         <Show when={!data().error}>
           <Paragraph>{t('cs.4')}!</Paragraph>
         </Show>
@@ -74,7 +70,7 @@ export default () => {
           small={true}
           target="_blank"
           rel="noopener noreferer"
-          href={`https://${cdashs}.pages.dev/slut/` + data().userid}
+          href={`https://${cdashs}.pages.dev/slut/` + data().id}
         >
           {t('cs.2')}
         </Link>

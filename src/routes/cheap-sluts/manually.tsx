@@ -1,4 +1,3 @@
-import type { ApiResponse } from '~/lib/cs/types'
 import type { OnSubmit } from '~/lib/forms'
 
 import { createSignal, Show } from 'solid-js'
@@ -14,11 +13,14 @@ import {
 import { Title } from '@solidjs/meta'
 
 import { cdashs } from '~/lib/constants'
-import { apiUrl } from '~/lib/cs/utils'
 import { createNamedItemReceiver, inlineStyles } from '~/lib/forms'
+import { request } from '~/lib/cs/api'
 
 export default () => {
-  const [data, setData] = createSignal<ApiResponse>({ error: '', userid: '' })
+  const [data, setData] = createSignal<{ error?: string; id?: string }>({
+    error: '',
+    id: '',
+  })
 
   const onSubmit: OnSubmit = async e => {
     e.preventDefault()
@@ -35,16 +37,11 @@ export default () => {
     }
 
     try {
-      const response = await fetch(apiUrl + 'create', {
-        method: 'POST',
-        body: JSON.stringify({
-          name: name,
-          picture: picture,
-          private: isPrivate,
-        }),
+      const json = await request('add', {
+        name: name,
+        picture: picture,
+        private: isPrivate,
       })
-
-      const json: ApiResponse = await response.json()
 
       setData(json)
     } catch {
@@ -78,14 +75,14 @@ export default () => {
         </Container>
         <Button type="submit">{t('cs.1')}</Button>
       </form>
-      <Show when={data().userid}>
+      <Show when={data().id}>
         <>
           <Paragraph>{t('cs.4')}!</Paragraph>
           <Link
             small={true}
             target="_blank"
             rel="noopener noreferer"
-            href={`https://${cdashs}.pages.dev/slut/` + data().userid}
+            href={`https://${cdashs}.pages.dev/slut/` + data().id}
           >
             {t('cs.2')}
           </Link>

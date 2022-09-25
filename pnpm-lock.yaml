@@ -23,6 +23,7 @@ specifiers:
   vite-plugin-pwa: ^0.12.7
   vite-plugin-solid: ^2.3.2
   workbox-window: ^6.5.3
+  zod: ^3.19.1
 
 dependencies:
   '@artemis69/swagify': 1.1.2
@@ -49,6 +50,7 @@ devDependencies:
   vite: 3.1.1
   vite-plugin-pwa: 0.12.7_5zfdmaa3er5rn7uaiudeq27hca
   vite-plugin-solid: 2.3.2_solid-js@1.5.5+vite@3.1.1
+  zod: 3.19.1
 
 packages:
 
@@ -3410,4 +3412,8 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  /zod/3.19.1:
+    resolution: {integrity: sha512-LYjZsEDhCdYET9ikFu6dVPGp2YH9DegXjdJToSzD9rO6fy4qiRYFoyEYwps88OseJlPyl2NOe2iJuhEhL7IpEA==}
     dev: true

@@ -20,7 +20,8 @@
     "undici": "^5.8.2",
     "vite": "3.1.1",
     "vite-plugin-pwa": "^0.12.7",
-    "vite-plugin-solid": "^2.3.2"
+    "vite-plugin-solid": "^2.3.2",
+    "zod": "^3.19.1"
   },
   "dependencies": {
     "@artemis69/swagify": "^1.1.2",
