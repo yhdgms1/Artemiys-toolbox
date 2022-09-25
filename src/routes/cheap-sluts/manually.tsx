@@ -1,4 +1,5 @@
-import { ApiResponse } from '~/lib/cs/types'
+import type { OnSubmit } from '~/lib/forms'
+
 import { createSignal, Show } from 'solid-js'
 import { t } from '~/i18n'
 import {
@@ -12,29 +13,35 @@ import {
 import { Title } from '@solidjs/meta'
 
 import { cdashs } from '~/lib/constants'
-import { apiUrl } from '~/lib/cs/utils'
+import { createNamedItemReceiver, inlineStyles } from '~/lib/forms'
+import { request } from '~/lib/cs/api'
 
 export default () => {
-  const [name, setName] = createSignal('')
-  const [pic, setPic] = createSignal('')
-  const [isPrivate, setIsPrivate] = createSignal(false)
+  const [data, setData] = createSignal<{ error?: string; id?: string }>({
+    error: '',
+    id: '',
+  })
 
-  const [data, setData] = createSignal<ApiResponse>({ error: '', userid: '' })
+  const onSubmit: OnSubmit = async e => {
+    e.preventDefault()
 
-  const getData = async () => {
-    if (name() === '' || pic() === '') return
+    const elements = e.currentTarget.elements
+    const namedItem = createNamedItemReceiver(elements)
+
+    const name = namedItem('name').value
+    const picture = namedItem('picture').value
+    const isPrivate = namedItem('private').checked
+
+    if (name === '' || picture === '') {
+      return
+    }
 
     try {
-      const response = await fetch(apiUrl + 'create', {
-        method: 'POST',
-        body: JSON.stringify({
-          name: name(),
-          picture: pic(),
-          private: isPrivate(),
-        }),
+      const json = await request('add', {
+        name: name,
+        picture: picture,
+        private: isPrivate,
       })
-
-      const json: ApiResponse = await response.json()
 
       setData(json)
     } catch {
@@ -46,36 +53,36 @@ export default () => {
     <>
       <Title>Create Manually</Title>
       <Link href={'/' + cdashs}>{t('global.11')}</Link>
-      <Container independent={true}>
-        <Input
-          type="text"
-          placeholder={t('cs.8.0')}
-          spellcheck={false}
-          onInput={e => setName(e.currentTarget.value)}
-        >
-          {t('cs.8.0')}
-        </Input>
-        <Input
-          type="text"
-          placeholder={t('cs.8.1')}
-          spellcheck={false}
-          onInput={e => setPic(e.currentTarget.value)}
-        >
-          {t('cs.8.1')}
-        </Input>
-        <Checkbox onChange={e => setIsPrivate(e.currentTarget.checked)}>
-          Private
-        </Checkbox>
-      </Container>
-      <Button onClick={getData}>{t('cs.1')}</Button>
-      <Show when={data().userid}>
+      <form style={inlineStyles()} onSubmit={onSubmit}>
+        <Container independent={true}>
+          <Input
+            type="text"
+            name="name"
+            placeholder={t('cs.8.0')}
+            spellcheck={false}
+          >
+            {t('cs.8.0')}
+          </Input>
+          <Input
+            type="text"
+            name="picture"
+            placeholder={t('cs.8.1')}
+            spellcheck={false}
+          >
+            {t('cs.8.1')}
+          </Input>
+          <Checkbox name="private">Private</Checkbox>
+        </Container>
+        <Button type="submit">{t('cs.1')}</Button>
+      </form>
+      <Show when={data().id}>
         <>
           <Paragraph>{t('cs.4')}!</Paragraph>
           <Link
             small={true}
             target="_blank"
             rel="noopener noreferer"
-            href={`https://${cdashs}.pages.dev/slut/` + data().userid}
+            href={`https://${cdashs}.pages.dev/slut/` + data().id}
           >
             {t('cs.2')}
           </Link>

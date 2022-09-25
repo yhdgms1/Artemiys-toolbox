@@ -1,10 +1,10 @@
-import { createSignal } from 'solid-js'
 import { t } from '~/i18n'
+import { channel } from '~/lib'
 import { Textarea, Heading, Paragraph, Await } from '~/components'
 import { Title } from '@solidjs/meta'
 
 export default () => {
-  const [text, setText] = createSignal('')
+  const text = channel('')
 
   const title = t('character-count.0')
 
@@ -30,7 +30,9 @@ export default () => {
               <Textarea
                 placeholder={t('character-count.1')}
                 spellcheck={false}
-                onInput={e => setText(e.currentTarget.value)}
+                onInput={e => {
+                  text(e.currentTarget.value)
+                }}
               />
             </>
           )

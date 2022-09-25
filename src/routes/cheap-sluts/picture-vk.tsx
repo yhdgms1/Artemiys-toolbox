@@ -12,8 +12,9 @@ import {
 } from '~/components'
 import { Title } from '@solidjs/meta'
 
-import { cs, cdashs } from '~/lib/constants'
-import { createHrefUrl, apiUrl, templates } from '~/lib/cs/utils'
+import { cdashs } from '~/lib/constants'
+import { createHrefUrl, templates } from '~/lib/cs/utils'
+import { request } from '~/lib/cs/api'
 
 type ApiData = {
   error?: string
@@ -36,13 +37,7 @@ export default () => {
     if (!shortname()) return
 
     try {
-      const response = await fetch(apiUrl + 'vk/info', {
-        method: 'POST',
-        mode: 'cors',
-        body: JSON.stringify({ id: shortname() }),
-      })
-
-      const json: ApiData = await response.json()
+      const json = await request('get_vk_info', shortname())
 
       setData(json)
     } catch (error) {
@@ -51,8 +46,6 @@ export default () => {
       })
     }
   }
-
-  const i18nKey = cs
 
   return (
     <>

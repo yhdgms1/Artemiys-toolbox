@@ -14,7 +14,7 @@ specifiers:
   ohash: ^0.1.5
   prettier: 2.7.1
   scule: ^0.3.2
-  solid-headless: ^0.12.6
+  solid-headless: ^0.13.0
   solid-js: 1.5.5
   templite: ^1.2.0
   typescript: ^4.7.4
@@ -23,6 +23,7 @@ specifiers:
   vite-plugin-pwa: ^0.12.7
   vite-plugin-solid: ^2.3.2
   workbox-window: ^6.5.3
+  zod: ^3.19.1
 
 dependencies:
   '@artemis69/swagify': 1.1.2
@@ -35,7 +36,7 @@ dependencies:
   iuliia: 0.8.2
   ohash: 0.1.5
   scule: 0.3.2
-  solid-headless: 0.12.6_solid-js@1.5.5
+  solid-headless: 0.13.0_solid-js@1.5.5
   solid-js: 1.5.5
   templite: 1.2.0
   workbox-window: 6.5.3
@@ -49,6 +50,7 @@ devDependencies:
   vite: 3.1.1
   vite-plugin-pwa: 0.12.7_5zfdmaa3er5rn7uaiudeq27hca
   vite-plugin-solid: 2.3.2_solid-js@1.5.5+vite@3.1.1
+  zod: 3.19.1
 
 packages:
 
@@ -2912,8 +2914,8 @@ packages:
       object-inspect: 1.12.2
     dev: true
 
-  /solid-headless/0.12.6_solid-js@1.5.5:
-    resolution: {integrity: sha512-NNnsuICNYMtvXbnU/WQTo7xf9sVGGXhzcQQx0DTeKDf+VD9oiyvVrM5H3tNT8K3TaYBMG8QRuHiG+rs+LS0hZw==}
+  /solid-headless/0.13.0_solid-js@1.5.5:
+    resolution: {integrity: sha512-N118iPl7W5lyug4K+4c0cwM8YR2yEVJ/3H4wq6tVijATHfXfLnB1ACFI5GGHSXlwu70PUzaGSKwcVqLlloUMyA==}
     engines: {node: '>=10'}
     peerDependencies:
       solid-js: ^1.2
@@ -3410,4 +3412,8 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  /zod/3.19.1:
+    resolution: {integrity: sha512-LYjZsEDhCdYET9ikFu6dVPGp2YH9DegXjdJToSzD9rO6fy4qiRYFoyEYwps88OseJlPyl2NOe2iJuhEhL7IpEA==}
     dev: true

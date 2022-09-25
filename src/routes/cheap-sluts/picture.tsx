@@ -11,21 +11,17 @@ import {
 } from '~/components'
 import { Title } from '@solidjs/meta'
 
-import { cs, cdashs } from '~/lib/constants'
+import { cdashs } from '~/lib/constants'
 import { createHrefUrl, templates } from '~/lib/cs/utils'
+import { channel } from '~/lib'
 
 export default () => {
-  const [name, setName] = createSignal('')
-  const [pic, setPic] = createSignal('')
-
-  const [template, setTemplate] = createSignal(templates[0])
-
-  const [useSvg, setUseSvg] = createSignal(false)
-
-  const [width, setWidth] = createSignal(0)
-  const [height, setHeight] = createSignal(0)
-
-  const i18nKey = cs
+  const name = channel('')
+  const pic = channel('')
+  const template = channel(templates[0])
+  const svg = channel(false)
+  const width = channel(0)
+  const height = channel(0)
 
   return (
     <>
@@ -36,7 +32,7 @@ export default () => {
           type="text"
           placeholder={t('cs.8.0')}
           spellcheck={false}
-          onInput={e => setName(e.currentTarget.value)}
+          onInput={e => name(e.currentTarget.value)}
         >
           {t('cs.8.0')}
         </Input>
@@ -44,13 +40,13 @@ export default () => {
           type="text"
           placeholder={t('cs.8.1')}
           spellcheck={false}
-          onInput={e => setPic(e.currentTarget.value)}
+          onInput={e => pic(e.currentTarget.value)}
         >
           {t('cs.8.1')}
         </Input>
         <Select
           title={t('cs.6')}
-          onChange={e => setTemplate(e.currentTarget.value)}
+          onChange={e => template(e.currentTarget.value)}
         >
           <For each={templates}>
             {tmpl => (
@@ -65,7 +61,7 @@ export default () => {
             type="number"
             placeholder={t('cs.10.3')}
             spellcheck={false}
-            onInput={e => setWidth(e.currentTarget.valueAsNumber)}
+            onInput={e => width(e.currentTarget.valueAsNumber)}
           >
             {t('cs.10.3')}
           </Input>
@@ -73,13 +69,13 @@ export default () => {
             type="number"
             placeholder={t('cs.10.4')}
             spellcheck={false}
-            onInput={e => setHeight(e.currentTarget.valueAsNumber)}
+            onInput={e => height(e.currentTarget.valueAsNumber)}
           >
             {t('cs.10.4')}
           </Input>
           <Checkbox
-            checked={useSvg()}
-            onChange={e => setUseSvg(e.currentTarget.checked)}
+            checked={svg()}
+            onChange={e => svg(e.currentTarget.checked)}
           >
             {t('cs.10.5')}
           </Checkbox>
@@ -99,7 +95,7 @@ export default () => {
             picture: pic(),
             width: width(),
             height: height(),
-            format: useSvg() ? 'svg' : undefined,
+            format: svg() ? 'svg' : undefined,
           })}
         >
           {t('cs.10.0', { template: template() })}

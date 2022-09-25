@@ -2,10 +2,8 @@ import path from 'node:path'
 import { defineConfig } from 'vite'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import { default as solidPlugin } from 'vite-plugin-solid'
-// import { VitePWA } from 'vite-plugin-pwa'
-// less lines of code will be affected (prettier)
-const VitePWA = (...args: any[]) => undefined
-import pkg from './package.json'
+import { VitePWA } from 'vite-plugin-pwa'
+import { description } from './package.json'
 
 export default defineConfig(() => {
   return {
@@ -30,7 +28,7 @@ export default defineConfig(() => {
           start_url: '.',
           name: "Artemiy's Toolbox",
           short_name: 'Toolbox',
-          description: pkg.description,
+          description,
           id: '/',
           icons: [
             {

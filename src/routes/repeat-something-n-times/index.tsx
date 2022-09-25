@@ -1,13 +1,14 @@
-import { createSignal, createUniqueId } from 'solid-js'
+import { createUniqueId } from 'solid-js'
 import { input } from './style.css'
 import { t } from '~/i18n'
 import { CopyButton, Textarea, Button, Container, Heading } from '~/components'
 import { Title } from '@solidjs/meta'
+import { channel } from '~/lib'
 
 export default () => {
-  const [text, setText] = createSignal('')
-  const [count, setCount] = createSignal(0)
-  const [output, setOutput] = createSignal('')
+  const text = channel('')
+  const count = channel(0)
+  const output = channel('')
 
   const title = t('repeat-something-n-times.0')
 
@@ -25,14 +26,16 @@ export default () => {
           type="text"
           placeholder={t('repeat-something-n-times.2')}
           class={input}
-          onInput={e => setText(e.currentTarget.value)}
+          onInput={e => text(e.currentTarget.value)}
           spellcheck={false}
         />
         <input
           type="number"
           placeholder={t('repeat-something-n-times.3')}
           class={input}
-          onInput={e => setCount(e.currentTarget.valueAsNumber)}
+          onInput={e => {
+            count(e.currentTarget.valueAsNumber)
+          }}
           min="1"
           max="5368708"
           id={timesInput}
@@ -43,7 +46,7 @@ export default () => {
         <Button
           onClick={() =>
             count() <= 5368708
-              ? setOutput(text().repeat(count()))
+              ? output(text().repeat(count()))
               : alert('The number is too high')
           }
         >

@@ -1,4 +1,5 @@
-import { ApiResponse } from '~/lib/cs/types'
+import { OnSubmit } from '~/lib/forms'
+
 import { createSignal, Show } from 'solid-js'
 import { t } from '~/i18n'
 import {
@@ -11,30 +12,34 @@ import {
 } from '~/components'
 import { Title } from '@solidjs/meta'
 
-import { cdashs, cs } from '~/lib/constants'
-import { apiUrl } from '~/lib/cs/utils'
+import { cdashs } from '~/lib/constants'
+import { inlineStyles, createNamedItemReceiver } from '~/lib/forms'
+import { request } from '~/lib/cs/api'
 
 export default () => {
-  const [shortname, setShortname] = createSignal('')
-  const [isPrivate, setIsPrivate] = createSignal(false)
-  const [data, setData] = createSignal<ApiResponse>({})
+  // prettier-ignore
+  const [data, setData] = createSignal<{ error?: string; id?: string}>({})
 
-  const getData = async () => {
-    if (shortname() === '') return
+  const onSubmit: OnSubmit = async e => {
+    e.preventDefault()
+
+    const elements = e.currentTarget.elements
+    const namedItem = createNamedItemReceiver(elements)
+
+    const id = namedItem('id').value.trim()
+    const isPrivate = namedItem('private').checked
+
+    if (id === '') return
 
     try {
-      const response = await fetch(apiUrl + 'create/vk', {
-        method: 'POST',
-        body: JSON.stringify({
-          id: shortname(),
-          private: isPrivate(),
-        }),
+      const json = await request('add_vk', {
+        private: isPrivate,
+        id: id,
       })
 
-      const json: ApiResponse = await response.json()
-
       setData(json)
-    } catch {
+    } catch (E) {
+      console.log(E)
       setData({ error: t('cs.5') })
     }
   }
@@ -43,25 +48,21 @@ export default () => {
     <>
       <Title>Create Using VK</Title>
       <Link href={'/' + cdashs}>{t('global.11')}</Link>
-      <Container independent={true}>
-        <Input
-          type="text"
-          placeholder={t('cs.7.0')}
-          onInput={e => setShortname(e.currentTarget.value.trim())}
-        >
-          {t('cs.7.0')}
-        </Input>
-        <Checkbox onChange={e => setIsPrivate(e.currentTarget.checked)}>
-          Private
-        </Checkbox>
-      </Container>
-      <Button onClick={getData}>{t('cs.1')}</Button>
+      <form style={inlineStyles()} onSubmit={onSubmit}>
+        <Container independent={true}>
+          <Input type="text" name="id" placeholder={t('cs.7.0')}>
+            {t('cs.7.0')}
+          </Input>
+          <Checkbox name="private">Private</Checkbox>
+        </Container>
+        <Button type="submit">{t('cs.1')}</Button>
+      </form>
       <Show when={data().error}>
         <Paragraph>
           {t('cs.3')}: {data().error}
         </Paragraph>
       </Show>
-      <Show when={data().userid}>
+      <Show when={data().id}>
         <Show when={!data().error}>
           <Paragraph>{t('cs.4')}!</Paragraph>
         </Show>
@@ -69,7 +70,7 @@ export default () => {
           small={true}
           target="_blank"
           rel="noopener noreferer"
-          href={`https://${cdashs}.pages.dev/slut/` + data().userid}
+          href={`https://${cdashs}.pages.dev/slut/` + data().id}
         >
           {t('cs.2')}
         </Link>

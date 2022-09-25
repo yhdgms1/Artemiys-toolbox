@@ -20,7 +20,8 @@
     "undici": "^5.8.2",
     "vite": "3.1.1",
     "vite-plugin-pwa": "^0.12.7",
-    "vite-plugin-solid": "^2.3.2"
+    "vite-plugin-solid": "^2.3.2",
+    "zod": "^3.19.1"
   },
   "dependencies": {
     "@artemis69/swagify": "^1.1.2",
@@ -33,7 +34,7 @@
     "iuliia": "^0.8.2",
     "ohash": "^0.1.5",
     "scule": "^0.3.2",
-    "solid-headless": "^0.12.6",
+    "solid-headless": "^0.13.0",
     "solid-js": "1.5.5",
     "templite": "^1.2.0",
     "workbox-window": "^6.5.3"

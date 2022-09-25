@@ -1,11 +1,11 @@
-import { createSignal } from 'solid-js'
 import { t } from '../i18n'
 import { Button, CopyButton, Textarea, Container, Heading } from '~/components'
 import { Title } from '@solidjs/meta'
+import { channel } from '~/lib'
 
 export default () => {
-  const [input, setInput] = createSignal('')
-  const [output, setOutput] = createSignal('')
+  const input = channel('')
+  const output = channel('')
 
   const title = t('chat-dot-replacer.0')
 
@@ -15,18 +15,20 @@ export default () => {
       <Heading as="h2">{title}</Heading>
       <Textarea
         placeholder={t('global.9')}
-        onInput={e => setInput(e.currentTarget.value)}
+        onInput={e => input(e.currentTarget.value)}
       />
       <Container responsive={true}>
         <Button
-          onClick={() =>
-            setOutput(input().replace(/\./gm, t('chat-dot-replacer.3')))
-          }
+          onClick={() => {
+            output(input().replace(/\./gm, t('chat-dot-replacer.3')))
+          }}
         >
           {t('chat-dot-replacer.1')}
         </Button>
         <Button
-          onClick={() => setOutput(input().replace(/ \((dot|точка)\) /gm, '.'))}
+          onClick={() => {
+            output(input().replace(/ \((dot|точка)\) /gm, '.'))
+          }}
         >
           {t('chat-dot-replacer.2')}
         </Button>
