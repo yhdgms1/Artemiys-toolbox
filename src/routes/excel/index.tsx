@@ -3,6 +3,7 @@ import {
   CopyButton,
   Textarea,
   Input,
+  Checkbox,
   Paragraph,
   Container,
   Heading,
@@ -26,6 +27,13 @@ const createTable = (values: (number | null)[]) => {
 }
 
 /**
+ * Заменить ли `>` на `<`, `<=` на `>=`
+ * 
+ * Переменная на уровне модуля, т.к. функции `create` и `createHuge` используются только в связке с одним экземпляром компонента
+ */
+let flipСomparisonOperators = false;
+
+/**
  * Создаёт одно выражение ЕСЛИ, в которое вложены последующие
  * @param data Таблица
  */
@@ -42,7 +50,7 @@ const create = function (data: Table, key: string, DATA_KEY: string): string {
   }
 
   // prettier-ignore
-  return `ЕСЛИ(${DATA_KEY} <= ${data[key]}; ${key}; ${create(data, next.toString(), DATA_KEY)})`
+  return `ЕСЛИ(${DATA_KEY} ${flipСomparisonOperators ? '>=' : '<='} ${data[key]}; ${key}; ${create(data, next.toString(), DATA_KEY)})`
 }
 
 /**
@@ -60,10 +68,30 @@ const createHuge = function (data: Table, DATA_KEY: string) {
 
   for (let i = 0; i < entries.length; i++) {
     const [score, value] = entries[i]
-    const prevValue = entries[i - 1]?.[1]
+
+    /**
+     * Находит предыдущее макс. число
+     */
+    let j = i + 1;
+    let prev = entries[j]?.[1];
+
+    while (((prev = entries[j]?.[1])! <= 0)) {
+      if (j > entries.length) {
+        break;
+      }
+
+      j++;
+    }
+
+    /**
+     * Если числа "плохие" - не будем добавлять их в выражение
+     */
+    if ((!prev && !value) || !value) {
+      continue;
+    }
 
     // prettier-ignore
-    result += `ЕСЛИ(И(${DATA_KEY} <= ${escape(value)}; ${DATA_KEY} > ${escape(prevValue)}); ${score};) & `
+    result += `ЕСЛИ(И(${DATA_KEY} ${flipСomparisonOperators ? '>=' : '<='} ${escape(value)}; ${DATA_KEY} ${flipСomparisonOperators ? '<' : '>'} ${escape(prev)}); ${score};) & `
   }
 
   // Удалим лишние ` & `
@@ -119,7 +147,11 @@ export default () => {
           type="number"
           value={score()}
           onInput={e => {
-            score(e.currentTarget.valueAsNumber)
+            const value = e.currentTarget.valueAsNumber;
+
+            if (!Number.isNaN(value) && Number.isFinite(value)) {
+              score(value)
+            }
           }}
         >
           Максимальное количество очков
@@ -133,6 +165,11 @@ export default () => {
         >
           Столбец с результатами
         </Input>
+        <Checkbox onClick={e => {
+          flipСomparisonOperators = e.currentTarget.checked;
+        }}>
+          Перевернуть операторы сравнивания
+        </Checkbox>
         <Paragraph>Результаты</Paragraph>
         <Textarea
           placeholder="Результаты, соответствующие оценкам. Каждый результат должен быть на новой строке. Пустая строка - отсутствие результата"
