@@ -100,6 +100,7 @@ const ru = {
   [`${global}.home.9` as const]:
     'Используйте хэш-функцию murmur в вашем браузере',
   [`${global}.home.10` as const]: 'Утилиты строкового регистра',
+  [`${global}.home.11` as const]: 'Приблуды для формул Excel',
 } as const
 
 export default ru

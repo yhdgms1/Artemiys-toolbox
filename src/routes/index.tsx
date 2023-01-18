@@ -15,6 +15,7 @@ const tools = [
   'vibrator',
   'murmur hash',
   'scule',
+  'excel'
 ]
 
 export default () => {
