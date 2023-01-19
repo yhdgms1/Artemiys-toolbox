@@ -9,6 +9,7 @@ import {
   Heading,
   Disclosure,
 } from '~/components'
+import { onCleanup } from 'solid-js'
 import { Title } from '@solidjs/meta'
 import { channel } from '~/lib'
 
@@ -28,10 +29,10 @@ const createTable = (values: (number | null)[]) => {
 
 /**
  * Заменить ли `>` на `<`, `<=` на `>=`
- * 
+ *
  * Переменная на уровне модуля, т.к. функции `create` и `createHuge` используются только в связке с одним экземпляром компонента
  */
-let flipСomparisonOperators = false;
+let flipСomparisonOperators = false
 
 /**
  * Создаёт одно выражение ЕСЛИ, в которое вложены последующие
@@ -72,22 +73,22 @@ const createHuge = function (data: Table, DATA_KEY: string) {
     /**
      * Находит предыдущее макс. число
      */
-    let j = i + 1;
-    let prev = entries[j]?.[1];
+    let j = i + 1
+    let prev = entries[j]?.[1]
 
-    while (((prev = entries[j]?.[1])! <= 0)) {
+    while ((prev = entries[j]?.[1])! <= 0) {
       if (j > entries.length) {
-        break;
+        break
       }
 
-      j++;
+      j++
     }
 
     /**
      * Если числа "плохие" - не будем добавлять их в выражение
      */
     if ((!prev && !value) || !value) {
-      continue;
+      continue
     }
 
     // prettier-ignore
@@ -122,6 +123,10 @@ export default () => {
     }
   }
 
+  onCleanup(() => {
+    flipСomparisonOperators = false
+  })
+
   return (
     <>
       <Title>Excel</Title>
@@ -147,7 +152,7 @@ export default () => {
           type="number"
           value={score()}
           onInput={e => {
-            const value = e.currentTarget.valueAsNumber;
+            const value = e.currentTarget.valueAsNumber
 
             if (!Number.isNaN(value) && Number.isFinite(value)) {
               score(value)
@@ -165,9 +170,11 @@ export default () => {
         >
           Столбец с результатами
         </Input>
-        <Checkbox onClick={e => {
-          flipСomparisonOperators = e.currentTarget.checked;
-        }}>
+        <Checkbox
+          onClick={e => {
+            flipСomparisonOperators = e.currentTarget.checked
+          }}
+        >
           Перевернуть операторы сравнивания
         </Checkbox>
         <Paragraph>Результаты</Paragraph>
