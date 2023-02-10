@@ -33,6 +33,10 @@ const createTable = (values: (number | null)[]) => {
  * Переменная на уровне модуля, т.к. функции `create` и `createHuge` используются только в связке с одним экземпляром компонента
  */
 let flipСomparisonOperators = false
+/**
+ * Использовать ли `createHuge`, несмотря на `score()`
+ */
+let alwaysUseHugeMethod = false
 
 /**
  * Создаёт одно выражение ЕСЛИ, в которое вложены последующие
@@ -114,9 +118,9 @@ export default () => {
     const table = createTable(results())
 
     /**
-     * В Excel есть ограничение на вложенность - 64
+     * В Excel есть ограничение на вложенность - 64 (начиная с 2007, до этого было 7)
      */
-    if (score() > 64) {
+    if (alwaysUseHugeMethod || score() > 64) {
       return createHuge(table, key())
     } else {
       return create(table, '1', key())
@@ -125,6 +129,7 @@ export default () => {
 
   onCleanup(() => {
     flipСomparisonOperators = false
+    alwaysUseHugeMethod = false
   })
 
   return (
@@ -176,6 +181,13 @@ export default () => {
           }}
         >
           Перевернуть операторы сравнивания
+        </Checkbox>
+        <Checkbox
+          onClick={e => {
+            alwaysUseHugeMethod = e.currentTarget.checked
+          }}
+        >
+          Всегда использовать метод с `&`
         </Checkbox>
         <Paragraph>Результаты</Paragraph>
         <Textarea

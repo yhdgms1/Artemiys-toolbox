@@ -99,7 +99,7 @@ const en = {
   [`${global}.home.8` as const]: 'Just a vibrator',
   [`${global}.home.9` as const]: 'Use the hash function murmur in your browser',
   [`${global}.home.10` as const]: 'String case utils',
-  [`${global}.home.11` as const]: 'Excel formula tools',
+  [`${global}.home.11` as const]: 'Excel formula tools (Only 🇷🇺 language supported)',
 } as const
 
 export default en
