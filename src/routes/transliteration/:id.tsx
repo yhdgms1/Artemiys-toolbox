@@ -35,7 +35,10 @@ const ID = () => {
   return (
     <Await for={import('iuliia')}>
       {({ Schemas, translate }) => (
-        <Show when={Schemas.names().includes(schema)} fallback={Fallback}>
+        <Show
+          when={Schemas.names().includes(schema)}
+          fallback={<Fallback />}
+        >
           <Title>{t('transliteration.2') + ' | ' + schema}</Title>
           <Link href="/transliteration">{t('global.11')}</Link>
           <Paragraph>{t('transliteration.3', { schema })}</Paragraph>

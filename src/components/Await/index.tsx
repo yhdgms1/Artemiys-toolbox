@@ -40,6 +40,7 @@ function Await<T extends unknown>(props: AwaitProps<T>) {
     get children() {
       return children(state().value!)
     },
+    keyed: true
   })
 }
 

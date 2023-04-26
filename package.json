@@ -13,20 +13,20 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "@vanilla-extract/css": "^1.9.2",
-    "@vanilla-extract/vite-plugin": "^3.7.0",
+    "@vanilla-extract/css": "^1.11.0",
+    "@vanilla-extract/vite-plugin": "^3.8.0",
     "prettier": "2.8.3",
     "typescript": "^4.9.4",
     "undici": "^5.8.2",
-    "vite": "^3.1.1",
-    "vite-plugin-pwa": "^0.14.1",
-    "vite-plugin-solid": "^2.5.0",
+    "vite": "^4.3.3",
+    "vite-plugin-pwa": "^0.14.7",
+    "vite-plugin-solid": "^2.7.0",
     "zod": "^3.19.1"
   },
   "dependencies": {
     "@artemis69/swagify": "^1.1.2",
-    "@solidjs/meta": "^0.28.2",
-    "@solidjs/router": "^0.6.0",
+    "@solidjs/meta": "^0.28.4",
+    "@solidjs/router": "^0.8.2",
     "clsx": "^1.2.1",
     "copy-text-to-clipboard": "^3.0.1",
     "disgraceful-ui": "^0.5.2",
@@ -34,8 +34,8 @@
     "iuliia": "^0.8.2",
     "ohash": "^0.1.5",
     "scule": "^0.3.2",
-    "solid-headless": "^0.13.0",
-    "solid-js": "1.6.9",
+    "solid-headless": "^0.13.1",
+    "solid-js": "1.7.3",
     "templite": "^1.2.0",
     "workbox-window": "^6.5.4"
   }
