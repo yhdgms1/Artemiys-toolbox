@@ -12,8 +12,6 @@ interface Props {
 export const Card: VoidComponent<Props> = props => (
   <div class={styles.card}>
     <h2 class={styles.title}>{props.title}</h2>
-    <Link href={props.href} class={styles.description}>
-      {props.description}
-    </Link>
+    <Link href={props.href} class={styles.description} innerHTML={props.description} />
   </div>
 )

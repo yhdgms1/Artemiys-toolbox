@@ -37,6 +37,16 @@ let flipСomparisonOperators = false
  * Использовать ли `createHuge`, несмотря на `score()`
  */
 let alwaysUseHugeMethod = false
+/**
+ * Перевернуть ряд результатов
+ *
+ * 1 -> 5
+ * 2 -> 4
+ * 3 -> 3
+ * 4 -> 2
+ * 5 -> 1
+ */
+let flipResultsRow = false
 
 /**
  * Создаёт одно выражение ЕСЛИ, в которое вложены последующие
@@ -115,7 +125,7 @@ export default () => {
       return 'Количество очков не сопоставимо количеству результатов'
     }
 
-    const table = createTable(results())
+    const table = createTable(flipResultsRow ? results().slice().reverse() : results())
 
     /**
      * В Excel есть ограничение на вложенность - 64 (начиная с 2007, до этого было 7)
@@ -130,6 +140,7 @@ export default () => {
   onCleanup(() => {
     flipСomparisonOperators = false
     alwaysUseHugeMethod = false
+    flipResultsRow = false
   })
 
   return (
@@ -181,6 +192,13 @@ export default () => {
           }}
         >
           Перевернуть операторы сравнивания
+        </Checkbox>
+        <Checkbox
+          onClick={e => {
+            flipResultsRow = e.currentTarget.checked
+          }}
+        >
+          Перевернуть ряд результатов
         </Checkbox>
         <Checkbox
           onClick={e => {
