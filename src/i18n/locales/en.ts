@@ -1,4 +1,5 @@
 import { global, keys } from './shared'
+import { RU_FLAG_SVG } from '../../lib/constants'
 
 const en = {
   [`${keys[0]}.0` as const]: 'Text length counter',
@@ -99,6 +100,7 @@ const en = {
   [`${global}.home.8` as const]: 'Just a vibrator',
   [`${global}.home.9` as const]: 'Use the hash function murmur in your browser',
   [`${global}.home.10` as const]: 'String case utils',
+  [`${global}.home.11` as const]: `Excel formula tools (Only ${RU_FLAG_SVG} language supported)`,
 } as const
 
 export default en

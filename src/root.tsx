@@ -37,7 +37,7 @@ const Root = () => {
     }
 
     return acc.push(route), acc
-  }, [] as RouteProps[])
+  }, [] as RouteProps<string>[])
 
   return (
     <div id="root" class={className()}>
