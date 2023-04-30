@@ -1,6 +1,7 @@
 import { t } from '~/i18n'
 import { Card, Heading, Paragraph } from '~/components'
 import { Title } from '@solidjs/meta'
+import { For } from 'solid-js';
 
 import * as styles from '~/styles/index.css'
 
@@ -13,13 +14,15 @@ export default () => {
       <Heading as="h2">Excel</Heading>
       <Paragraph>{t('cs.0')}</Paragraph>
       <div class={styles.main}>
-        {tools.map((method, i) => (
-          <Card
-            href={'/excel/' + method.replaceAll(' ', '-')}
-            title={method}
-            description={method}
-          />
-        ))}
+        <For each={tools}>
+          {tool => (
+            <Card
+              href={'/excel/' + tool.replaceAll(' ', '-')}
+              title={tool}
+              description={tool}
+            />
+          )}
+        </For>
       </div>
     </>
   )
