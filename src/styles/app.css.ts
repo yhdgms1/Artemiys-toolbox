@@ -23,7 +23,7 @@ globalStyle('*, *::after, *::before', {
   margin: 0,
   padding: 0,
   boxSizing: 'border-box',
-  fontFamily: `'Raleway', sans-serif`,
+  fontFamily: `"Raleway", "RalewayFallback", sans-serif`,
   fontSize: '1em',
   lineHeight: 1.5,
 })

@@ -8,6 +8,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "start": "vite preview",
+    "preview": "vite preview",
     "typecheck": "tsc --project ./",
     "format": "prettier --write ."
   },
@@ -35,7 +36,7 @@
     "ohash": "^0.1.5",
     "scule": "^0.3.2",
     "solid-headless": "^0.13.1",
-    "solid-js": "1.7.3",
+    "solid-js": "1.7.6",
     "templite": "^1.2.0",
     "workbox-window": "^6.5.4"
   }
