@@ -9,7 +9,7 @@ const tools = [
   'transliteration',
   'swagify',
   'string backwards',
-  cs,
+  // cs,
   'text case changer',
   'chat dot replacer',
   'vibrator',
