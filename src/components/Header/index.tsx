@@ -1,7 +1,7 @@
 import type { VoidComponent } from 'solid-js'
 import type { Location } from '@solidjs/router'
 
-import { Link } from '@solidjs/router'
+import { A } from '@solidjs/router'
 import { Settings } from '..'
 import { Header as BasicHeader } from 'disgraceful-ui'
 
@@ -15,7 +15,7 @@ export const Header: VoidComponent<Props> = props => {
   return (
     <BasicHeader>
       <h1>
-        <Link
+        <A
           href="/"
           class={styles.title}
           classList={{
@@ -23,7 +23,7 @@ export const Header: VoidComponent<Props> = props => {
           }}
         >
           Artemiy's Toolbox
-        </Link>
+        </A>
       </h1>
       <Settings />
     </BasicHeader>

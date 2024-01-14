@@ -1,9 +1,9 @@
 // @refresh reload
-import type { Component, JSX } from 'solid-js'
-import type { RouteProps } from '@solidjs/router'
+import type { Component } from 'solid-js'
+import type { RouteDefinition, RouteSectionProps } from '@solidjs/router'
 
 import { ErrorBoundary, Suspense, createComponent } from 'solid-js'
-import { useLocation, Routes } from '@solidjs/router'
+import { useLocation } from '@solidjs/router'
 import { Unknown, Header } from '~/components'
 
 import {
@@ -17,27 +17,29 @@ import * as styles from '~/styles/index.css'
 import './styles/fonts.css'
 import 'disgraceful-ui/style'
 
-const Root = () => {
+type Files = Record<`./routes/${string}`, { default: Component }>
+
+const files: Files = import.meta.glob('./routes/**/*.tsx', { eager: true })
+
+const routes = Object.entries(files).reduce((acc, curr) => {
+  const [path, { default: cmp }] = curr
+
+  const splitted = path.split('.')
+  const filename = splitted[1]
+
+  acc.push({
+    path: filename.slice(7).replace('/index', '/').slice(1),
+    component: () => createComponent(cmp, {}),
+  })
+
+  return acc
+}, [] as RouteDefinition[])
+
+import { Router } from '@solidjs/router'
+
+const Root: Component<RouteSectionProps> = (props) => {
   const { className } = useColorScheme()
   const location = useLocation()
-
-  type Files = Record<`./routes/${string}`, { default: Component }>
-
-  const files: Files = import.meta.glob('./routes/**/*.tsx', { eager: true })
-
-  const routes = Object.entries(files).reduce((acc, curr) => {
-    const [path, { default: cmp }] = curr
-
-    const splitted = path.split('.')
-    const filename = splitted[1]
-
-    const route = {
-      path: filename.slice(7).replace('/index', '/').slice(1),
-      component: () => createComponent(cmp, {}),
-    }
-
-    return acc.push(route), acc
-  }, [] as RouteProps<string>[])
 
   return (
     <div id="root" class={className()}>
@@ -48,7 +50,7 @@ const Root = () => {
       >
         <ErrorBoundary fallback={Unknown}>
           <Suspense>
-            <Routes>{routes as unknown as JSX.Element}</Routes>
+            {props.children}
           </Suspense>
         </ErrorBoundary>
       </main>
@@ -60,7 +62,9 @@ const Root = () => {
 export default function () {
   return (
     <ColorSchemeProvider>
-      <Root />
+      <Router root={Root}>
+        {routes}
+      </Router>
     </ColorSchemeProvider>
   )
 }

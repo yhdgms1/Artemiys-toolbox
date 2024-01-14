@@ -1,10 +1,10 @@
 import { type Component, splitProps } from 'solid-js'
-import { type LinkProps, Link } from '@solidjs/router'
+import { type AnchorProps, A } from '@solidjs/router'
 import clsx from 'clsx'
 
 import * as styles from './styles.css'
 
-interface Props extends LinkProps {
+interface Props extends AnchorProps {
   small?: boolean
   margin?: boolean
 }
@@ -19,5 +19,5 @@ export const CustomLink: Component<Props> = props => {
       local.class
     )
 
-  return <Link {...rest} class={className()} />
+  return <A {...rest} class={className()} />
 }
